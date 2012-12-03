@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CollectionDataObjectItems"
+    targetNamespace="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sodo="http://www.ByteartRetail.com/SalesOrderDataObject.xsd"
+    xmlns:sldo="http://www.ByteartRetail.com/SalesLineDataObject.xsd"
+    xmlns:scido="http://www.ByteartRetail.com/ShoppingCartItemDataObject.xsd"
+    xmlns:pdo="http://www.ByteartRetail.com/ProductDataObject.xsd"
+    xmlns:cdo="http://www.ByteartRetail.com/CategoryDataObject.xsd"
+    xmlns:catedo="http://www.ByteartRetail.com/CategorizationDataObject.xsd"
+    xmlns:udo="http://www.ByteartRetail.com/UserDataObject.xsd"
+    xmlns:rdo="http://www.ByteartRetail.com/RoleDataObject.xsd"
+    xmlns:qs="http://www.ByteartRetail.com/QuerySpec.xsd"
+>
+  <xs:import namespace="http://www.ByteartRetail.com/SalesOrderDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/SalesLineDataObject.xsd" />
+  <xs:import namespace="http://www.ByteartRetail.com/ShoppingCartItemDataObject.xsd" />
+  <xs:import namespace="http://www.ByteartRetail.com/ProductDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/CategoryDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/CategorizationDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/UserDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/RoleDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/QuerySpec.xsd"/>
+  
+  <xs:complexType name="SalesOrderDataObjectList">
+    <xs:sequence>
+      <xs:element name="SalesOrderDataObject" type="sodo:SalesOrderDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SalesLineDataObjectList">
+    <xs:sequence>
+      <xs:element name="SalesLineDataObject" type="sldo:SalesLineDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShoppingCartItemDataObjectList">
+    <xs:sequence>
+      <xs:element name="ShoppingCartItemDataObject" type="scido:ShoppingCartItemDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductDataObjectList">
+    <xs:sequence>
+      <xs:element name="ProductDataObject" type="pdo:ProductDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CategoryDataObjectList">
+    <xs:sequence>
+      <xs:element name="CategoryDataObject" type="cdo:CategoryDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CategorizationDataObjectList">
+    <xs:sequence>
+      <xs:element name="CategorizationDataObject" type="catedo:CategorizationDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UserDataObjectList">
+    <xs:sequence>
+      <xs:element name="UserDataObject" type="udo:UserDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RoleDataObjectList">
+    <xs:sequence>
+      <xs:element name="RoleDataObject" type="rdo:RoleDataObject" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IDList">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ProductDataObjectListWithPagination">
+    <xs:sequence>
+	  <xs:element name="Pagination" type="qs:Pagination" minOccurs="0" maxOccurs="1" nillable="true"/>
+	  <xs:element name="ProductDataObjectList" type="ProductDataObjectList" minOccurs="0" maxOccurs="1" nillable="true"/>
+	</xs:sequence>
+  </xs:complexType>
+</xs:schema>

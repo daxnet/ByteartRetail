@@ -1,0 +1,799 @@
+
+2012-10-10 20:54:18,401 [8] ERROR ByteartRetail.Logger - Exception caught
+System.Data.ProviderIncompatibleException: An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct. ---> System.Data.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_651abb7812b146b2bab24b093e5f6548.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 20:55:17,338 [12] ERROR ByteartRetail.Logger - Exception caught
+System.Data.ProviderIncompatibleException: An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct. ---> System.Data.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_651abb7812b146b2bab24b093e5f6548.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 20:55:53,141 [5] ERROR ByteartRetail.Logger - Exception caught
+System.Data.ProviderIncompatibleException: An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct. ---> System.Data.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_651abb7812b146b2bab24b093e5f6548.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 21:16:36,572 [12] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in f:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 92
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateUsers(UserDataObjectList userDataObjects) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 60
+   at DynamicModule.ns.Wrapped_IUserService_55e38c70caa042c8a6e7a7559a027754.<CreateUsers_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 21:19:58,752 [17] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in f:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 92
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateUsers(UserDataObjectList userDataObjects) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 60
+   at DynamicModule.ns.Wrapped_IUserService_55e38c70caa042c8a6e7a7559a027754.<CreateUsers_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 21:20:54,361 [17] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in f:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 92
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateUsers(UserDataObjectList userDataObjects) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 60
+   at DynamicModule.ns.Wrapped_IUserService_55e38c70caa042c8a6e7a7559a027754.<CreateUsers_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:12:56,081 [9] ERROR ByteartRetail.Logger - Exception caught
+System.Data.SqlClient.SqlException (0x80131904): Cannot create file 'C:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Services\App_Data\ByteartRetail.mdf' because it already exists. Change the file path or the file name, and retry the operation.
+CREATE DATABASE failed. Some file names listed could not be created. Check related errors.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClassa.<DbCreateDatabase>b__7(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Common.DbProviderServices.CreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.CreateDatabase()
+   at System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection)
+   at System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists()
+   at System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   at System.Data.Entity.Internal.DatabaseCreator.CreateDatabase(InternalContext internalContext, Func`3 createMigrator, ObjectContext objectContext)
+   at System.Data.Entity.Internal.InternalContext.CreateDatabase(ObjectContext objectContext)
+   at System.Data.Entity.Database.Create()
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_c49fa0bf80224e8d84721a9d66175904.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+ClientConnectionId:c7b73a85-6ad4-4c73-b484-6c2d26373b43
+
+2012-10-11 11:13:50,409 [9] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot attach the file 'C:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Services\App_Data\ByteartRetail.mdf' as database 'ByteartRetail'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_62e2a167efa7459ea973c597cee1601a.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:14:14,875 [9] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot attach the file 'C:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Services\App_Data\ByteartRetail.mdf' as database 'ByteartRetail'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_62e2a167efa7459ea973c597cee1601a.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:16:31,970 [9] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot attach the file 'C:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Services\App_Data\ByteartRetail.mdf' as database 'ByteartRetail'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_c968243070144a6aba980bc7e77546ab.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:16:33,377 [10] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot attach the file 'C:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Services\App_Data\ByteartRetail.mdf' as database 'ByteartRetail'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_c968243070144a6aba980bc7e77546ab.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:27:02,705 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Model compatibility cannot be checked because the database does not contain model metadata. Model compatibility can only be checked for databases created using Code First or Code First Migrations.
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_28cbc875bed64d6dafa1eccc426a4299.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:27:04,233 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Model compatibility cannot be checked because the database does not contain model metadata. Model compatibility can only be checked for databases created using Code First or Code First Migrations.
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_28cbc875bed64d6dafa1eccc426a4299.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:28:36,657 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Model compatibility cannot be checked because the database does not contain model metadata. Model compatibility can only be checked for databases created using Code First or Code First Migrations.
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_526a5f8e30f5465ca226e65c5a74ee1f.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 11:28:44,018 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Model compatibility cannot be checked because the database does not contain model metadata. Model compatibility can only be checked for databases created using Code First or Code First Migrations.
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_526a5f8e30f5465ca226e65c5a74ee1f.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 15:23:24,831 [9] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=13400; handshake=2; [Login] initialization=0; authentication=1; [Post-Login] complete=1128;  ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_3d730da15c4345e99d26fa2d06c95eea.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-11 15:46:57,396 [10] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: Aggregate not found.
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoGet(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 133
+   at ByteartRetail.Domain.Repositories.Repository`1.Get(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 562
+   at ByteartRetail.Domain.Repositories.UserRepository.GetUserByEmail(String email) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\UserRepository.cs:line 43
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetUserByEmail(String email, QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 234
+   at DynamicModule.ns.Wrapped_IUserService_484469d51408423d80367562a12168f7.<GetUserByEmail_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-12 08:37:55,228 [8] ERROR ByteartRetail.Logger - Exception caught
+System.Data.DataException: An exception occurred while initializing the database. See the InnerException for details. ---> System.Data.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=13363; handshake=2; [Login] initialization=0; authentication=0; [Post-Login] complete=1123;  ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   at System.Data.EntityClient.EntityConnection.Open()
+   at System.Data.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at System.Data.Entity.Internal.EdmMetadataRepository.QueryForModelHash(Func`2 createContext)
+   at System.Data.Entity.Internal.InternalContext.QueryForModelHash()
+   at System.Data.Entity.Internal.ModelCompatibilityChecker.CompatibleWithModel(InternalContext internalContext, ModelHashCalculator modelHashCalculator, Boolean throwIfNoMetadata)
+   at System.Data.Entity.Internal.InternalContext.CompatibleWithModel(Boolean throwIfNoMetadata)
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 86
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_e7863871b9a647e6bbd2ba34e81fbaeb.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-12 15:36:02,769 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Unable to create a constant value of type 'ByteartRetail.Domain.Model.ShoppingCart'. Only primitive types or enumeration types are supported in this context.
+   at System.Data.Objects.ELinq.ExpressionConverter.ConstantTranslator.TypedTranslate(ExpressionConverter parent, ConstantExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 264
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 591
+   at ByteartRetail.Domain.Repositories.ShoppingCartItemRepository.FindItemsByCart(ShoppingCart cart) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ShoppingCartItemRepository.cs:line 26
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 381
+   at DynamicModule.ns.Wrapped_IUserService_8083c1ebb1de4a21abdff3a0ed6f664d.<GetShoppingCartItemCount_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-12 15:37:29,753 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Unable to create a constant value of type 'ByteartRetail.Domain.Model.ShoppingCart'. Only primitive types or enumeration types are supported in this context.
+   at System.Data.Objects.ELinq.ExpressionConverter.ConstantTranslator.TypedTranslate(ExpressionConverter parent, ConstantExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 264
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 591
+   at ByteartRetail.Domain.Repositories.ShoppingCartItemRepository.FindItemsByCart(ShoppingCart cart) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ShoppingCartItemRepository.cs:line 26
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 381
+   at DynamicModule.ns.Wrapped_IUserService_6028732b1b6e482cbc95e7dfd65575be.<GetShoppingCartItemCount_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-12 15:40:00,543 [9] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Unable to create a constant value of type 'ByteartRetail.Domain.Model.ShoppingCart'. Only primitive types or enumeration types are supported in this context.
+   at System.Data.Objects.ELinq.ExpressionConverter.ConstantTranslator.TypedTranslate(ExpressionConverter parent, ConstantExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 264
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 591
+   at ByteartRetail.Domain.Repositories.ShoppingCartItemRepository.FindItemsByCart(ShoppingCart cart) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ShoppingCartItemRepository.cs:line 26
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 381
+   at DynamicModule.ns.Wrapped_IUserService_e43a94d2bfc648ab8dd1900ab8fae9ad.<GetShoppingCartItemCount_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-12 15:43:12,189 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Unable to create a constant value of type 'ByteartRetail.Domain.Model.ShoppingCart'. Only primitive types or enumeration types are supported in this context.
+   at System.Data.Objects.ELinq.ExpressionConverter.ConstantTranslator.TypedTranslate(ExpressionConverter parent, ConstantExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.EqualsTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 264
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 591
+   at ByteartRetail.Domain.Repositories.ShoppingCartItemRepository.FindItemsByCart(ShoppingCart cart) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ShoppingCartItemRepository.cs:line 26
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 381
+   at DynamicModule.ns.Wrapped_IUserService_4978fa33e3d64ee9aeef2924871c3ad3.<GetShoppingCartItemCount_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

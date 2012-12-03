@@ -1,0 +1,47 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model RoleDataObject
+
+@{
+    ViewBag.Title = "添加账户角色";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("Role_32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm("AddRole", "Admin", FormMethod.Post, new { id = "AddRoleForm" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Description)
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
+}
+
+<p>
+    <span>@Html.ImageSubmitButton("AddRoleForm", Url.Content("~/Images/Save.png"), "保存", "保存更改")</span>
+    <span>&nbsp;</span>
+    <span>@Html.ImageActionLink(Url.Content("~/Images/Cancel.png"), "取消编辑", "取消编辑", "Roles", "Admin")</span>
+</p>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#Name").focus();
+        });
+    </script>
+}

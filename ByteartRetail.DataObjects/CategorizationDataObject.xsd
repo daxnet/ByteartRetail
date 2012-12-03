@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CategorizationDataObject"
+    targetNamespace="http://www.ByteartRetail.com/CategorizationDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/CategorizationDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/CategorizationDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="CategorizationDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="ProductID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CategoryID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

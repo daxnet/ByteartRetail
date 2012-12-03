@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CategoryDataObject"
+    targetNamespace="http://www.ByteartRetail.com/CategoryDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/CategoryDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/CategoryDataObject.xsd"
+    xmlns:coldol="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  
+  <xs:import namespace="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"/>
+    
+  <xs:complexType name="CategoryDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Products" type="coldol:ProductDataObjectList" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

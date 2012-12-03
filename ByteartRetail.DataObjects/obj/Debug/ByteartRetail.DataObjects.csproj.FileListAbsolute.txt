@@ -1,0 +1,10 @@
+G:\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.dll
+G:\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.pdb
+G:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.dll
+G:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.pdb
+G:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.csprojResolveAssemblyReference.cache
+F:\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.dll
+F:\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.pdb
+F:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.csprojResolveAssemblyReference.cache
+F:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.dll
+F:\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.pdb

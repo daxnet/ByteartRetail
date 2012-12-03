@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QuerySpec"
+    targetNamespace="http://www.ByteartRetail.com/QuerySpec.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/QuerySpec.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/QuerySpec.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="Pagination">
+    <xs:sequence>
+      <xs:element name="PageNumber" type="xs:int" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="PageSize" type="xs:int" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="TotalPages" type="xs:int" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="QuerySpec">
+    <xs:sequence>
+      <xs:element name="Verbose" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

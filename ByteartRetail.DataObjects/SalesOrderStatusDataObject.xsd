@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalesOrderStatusDataObject"
+    targetNamespace="http://www.ByteartRetail.com/SalesOrderStatusDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/SalesOrderStatusDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/SalesOrderStatusDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:simpleType name="SalesOrderStatusDataObject">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Created"/>
+      <xs:enumeration value="Paid"/>
+      <xs:enumeration value="Picked"/>
+      <xs:enumeration value="Dispatched"/>
+      <xs:enumeration value="Delivered"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

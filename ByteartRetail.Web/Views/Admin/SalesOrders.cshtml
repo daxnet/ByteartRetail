@@ -1,0 +1,61 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+
+@model SalesOrderDataObjectList
+
+@{
+    ViewBag.Title = "销售订单管理";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("SalesOrder_32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+@if (Model.Count > 0)
+{
+    var grid = new WebGrid(Model, defaultSort: "DateCreated", canSort: false, selectionFieldName: "ID");
+    @grid.GetHtml(tableStyle: "webgrid",
+    headerStyle: "webgrid-header",
+    footerStyle: "webgrid-footer",
+    rowStyle: "webgrid-row",
+    alternatingRowStyle: "webgrid-alternating-row",
+    columns: grid.Columns(
+    grid.Column(
+        style: "webgrid-guid",
+        format: @<text>@Html.ActionLink((string)item.IDText.ToUpper(), "SalesOrder", "Admin", new { id = item.ID }, new { title = item.ID })</text>,
+        columnName: "ID",
+        header: "编号"),
+    grid.Column(
+        columnName: "CustomerName",
+        header: "用户名"),
+    grid.Column(
+        style: "webgrid-numeric",
+        columnName: "TotalLines",
+        header: "条目数"),
+    grid.Column(
+        style: "webgrid-numeric",
+        columnName: "TotalAmount",
+        header: "总金额"),
+    grid.Column(
+        style: "webgrid-datetime",
+        columnName: "DateCreatedText",
+        header: "创建日期"),
+    grid.Column(
+        style: "webgrid-datetime",
+        columnName: "DateDispatchedText",
+        header: "发货日期"),
+    grid.Column(
+        style: "webgrid-datetime",
+        columnName: "DateDeliveredText",
+        header: "收货日期"),
+    grid.Column(
+        style: "webgrid-center",
+        columnName: "StatusText",
+        header: "当前状态"),
+    grid.Column(
+        style: "webgrid-center",
+        columnName: "Confirm",
+        header: "发货",
+        format: item => item.Status == SalesOrderStatusDataObject.Paid || item.Status == SalesOrderStatusDataObject.Picked ? Html.ActionLink("发货", "DispatchOrder", "Admin", new { id = item.ID }, new { onclick = "return confirm('是否确认发货？');" }) : MvcHtmlString.Create("&nbsp;"))))
+}

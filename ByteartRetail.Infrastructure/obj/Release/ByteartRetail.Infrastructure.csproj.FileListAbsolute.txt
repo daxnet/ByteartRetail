@@ -1,0 +1,17 @@
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\ByteartRetail.Infrastructure.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\ByteartRetail.Infrastructure.pdb
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\log4net.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\log4net.xml
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.xml
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Interception.xml
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.xml
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\obj\Release\ByteartRetail.Infrastructure.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\obj\Release\ByteartRetail.Infrastructure.pdb
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Infrastructure\obj\Release\ByteartRetail.Infrastructure.csprojResolveAssemblyReference.cache

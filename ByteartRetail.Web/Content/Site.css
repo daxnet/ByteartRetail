@@ -1,0 +1,554 @@
+﻿body, td, th {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体';
+    font-size: 13px;
+    color: #292525;
+}
+
+body {
+    background-color: #FFFFFF;
+    background-repeat: repeat-x;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+a:link {
+    color: #292525;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #292525;
+}
+
+a:hover {
+    color: #5e5e5e;
+}
+
+a:active {
+    color: #292525;
+}
+
+.logo {
+    background-color: #353535;
+    background-image: url(/images/byteartretail_logo.png);
+    background-repeat: no-repeat;
+}
+
+.menu {
+    background-color: #353535;
+    vertical-align: middle;
+}
+
+.slide {
+    background-image: url(/images/menu_beforelogo.jpg);
+}
+
+#white {
+    color: #FFFFFF;
+}
+
+#whitetxt {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.style4 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.style6 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #40728C;
+}
+
+.style7 {
+    font-size: 12px;
+}
+
+.product_name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.category {
+    background-image: url(/images/category.jpg);
+    background-repeat: no-repeat;
+    width: 202px;
+    height: 31px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.linkmenu {
+    width: 202px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.red {
+    color: #FF0000;
+}
+
+.popular {
+    background-image: url(/images/popular.jpg);
+    background-repeat: no-repeat;
+}
+
+.popular_text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.popular_center {
+    background-image: url(/images/taling_center.jpg);
+    background-repeat: repeat-y;
+}
+
+.newtovar {
+    background-image: url(/images/newtovar.jpg);
+    background-repeat: no-repeat;
+}
+
+.price {
+    color: #FF0000;
+    font-size: 16px;
+}
+
+#blue1 {
+    font-size: 12px;
+    color: #368DC5;
+}
+
+.login_label {
+    text-align: right;
+    color: #adadad;
+    font-size: 12px;
+}
+
+.login_textbox {
+    border-color: #242424;
+    border-width: 1px;
+    font-size: 12px;
+    width: 100px;
+}
+
+.login_button {
+    border-width: 1px;
+    border-color: #242424;
+    color: #333333;
+    font-size: 12px;
+    background-color: #CCCCCC;
+}
+
+.productleft_top {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.webgrid {
+    font-family: Arial;
+    font-size: 22px;
+    width: 100%;
+    background-color: #EAEAEA;
+}
+
+.webgrid-header {
+    font-weight: bold;
+}
+
+.webgrid-footer {
+}
+
+.webgrid-row {
+    background-color: #FDFDFD;
+}
+
+.webgrid-alternating-row {
+    background-color: #EAEAEA;
+}
+
+.webgrid-guid {
+    font-family: 'Segoe UI', 'Consolas', 'Courier New';
+    width: 130px;
+}
+
+.webgrid-numeric {
+    text-align: right;
+}
+
+.webgrid-datetime {
+    text-align: right;
+}
+
+.webgrid-center {
+    text-align: center;
+}
+
+.webgrid-toolicon {
+    width: 18px;
+}
+
+.editor-label {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.text-box {
+    font-size: 14px;
+    width: 235px;
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.product-grid-img {
+    width: 65px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+}
+
+.product-grid-name {
+    width: 185px;
+}
+
+.product-grid-description {
+    vertical-align: top;
+    text-align: left;
+}
+
+.product-grid-category {
+    width: 105px;
+    text-align: center;
+}
+
+.product-grid-unitprice {
+    width: 75px;
+    font-size: x-small;
+    text-align: right;
+}
+
+.loginPartial_ShoppingCartIcon {
+    text-align: right;
+}
+
+.loginPartial_ShoppingCartItemNumber {
+    color: #eadc36;
+    font-weight: bold;
+}
+
+.loginPartial_Text {
+    color: #adadad;
+}
+
+.loginPartial_ShoppingCartHint {
+    vertical-align: top;
+    text-align: left;
+    color: #adadad;
+}
+
+.loginPartial_LogOffIcon {
+    text-align: right;
+    width: 40px;
+}
+
+.ShoppingCart_Count {
+    font-size: 14px;
+    color: maroon;
+    font-weight: bold;
+}
+
+.loginPartialLink {
+    width: 100%;
+    border: 0;
+}
+
+    .loginPartialLink a {
+        text-decoration: none;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        color: #adadad;
+    }
+
+        .loginPartialLink a:hover, .loginPartialLink a:active {
+            background: #353535;
+            outline: 0;
+            color: white;
+        }
+
+#checkout {
+    text-align: right;
+    
+}
+
+    #checkout a {
+        text-decoration: none;
+        font-size: 16px;
+        font-size: 16px;
+        color: #368DC5;
+        font-weight: bold;
+    }
+
+        #checkout a:hover, #checkout a:active {
+            color: #58AFE7;
+        }
+#ShoppingCartTable {
+    border: 0px;
+    border-spacing: 1px;
+    width: 100%;
+}
+
+    #ShoppingCartTable thead {
+        background-color: #adadad;
+    }
+
+    #ShoppingCartTable #CommandColumn {
+        width: 30px;
+    }
+
+    #ShoppingCartTable #ImageColumn {
+        width: 80px;
+    }
+
+    #ShoppingCartTable #NameColumn {
+        width: 235px;
+    }
+
+    #ShoppingCartTable #UnitPriceColumn {
+        width: 120px;
+    }
+
+    #ShoppingCartTable #QuantityColumn {
+        width: 100px;
+    }
+
+    #ShoppingCartTable tfoot {
+        background-color: #adadad;
+    }
+
+.UpdateShoppingCartItemButton {
+    border: 0px;
+    cursor: pointer;
+}
+
+.DeleteShoppingCartItemButton {
+    border: 0px;
+    cursor: pointer;
+}
+
+
+#SalesLineTable {
+    border: 0px;
+    border-spacing: 1px;
+    width: 100%;
+}
+
+    #SalesLineTable thead {
+        background-color: #adadad;
+    }
+
+    #SalesLineTable #CommandColumn {
+        width: 30px;
+    }
+
+    #SalesLineTable #ImageColumn {
+        width: 80px;
+    }
+
+    #SalesLineTable #NameColumn {
+        width: 235px;
+    }
+
+    #SalesLineTable #UnitPriceColumn {
+        width: 120px;
+    }
+
+    #SalesLineTable #QuantityColumn {
+        width: 100px;
+    }
+
+    #SalesLineTable tfoot {
+        background-color: #adadad;
+    }
+
+/*** Super Fish **/
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sf-menu {
+    line-height: 1.0;
+}
+
+    .sf-menu ul {
+        position: absolute;
+        top: -999em;
+        width: 12em; /* left offset of submenus need to match (see below) */
+    }
+
+        .sf-menu ul li {
+            width: 100%;
+        }
+
+    .sf-menu li:hover {
+        visibility: inherit; /* fixes IE7 'sticky bug' */
+    }
+
+    .sf-menu li {
+        float: left;
+        position: relative;
+    }
+
+    .sf-menu a {
+        display: block;
+        position: relative;
+    }
+
+    .sf-menu li:hover ul,
+    .sf-menu li.sfHover ul {
+        left: 0;
+        top: 2.5em; /* match top ul list item height */
+        z-index: 99;
+    }
+
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+    top: -999em;
+}
+
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+    left: 10em; /* match ul width */
+    top: 0;
+}
+
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+    top: -999em;
+}
+
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+    left: 10em; /* match ul width */
+    top: 0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+    float: left;
+    margin-bottom: 1em;
+}
+
+    .sf-menu a {
+        border-left: 1px solid #4d4d4d;
+        border-top: 1px solid #353535;
+        padding: .75em 1em;
+        text-decoration: none;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        color: #adadad;
+    }
+
+        .sf-menu a, .sf-menu a:visited { /* visited pseudo selector so IE6 applies text colour*/
+            color: #adadad;
+        }
+
+    .sf-menu li {
+        background: #353535;
+    }
+
+        .sf-menu li li {
+            background: #353535;
+            font-size: small;
+            border-bottom: 1px solid #4d4d4d;
+        }
+
+            .sf-menu li li li {
+                background: #353535;
+                font-size: small;
+            }
+
+        .sf-menu li:hover, .sf-menu li.sfHover,
+        .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+            background: #353535;
+            outline: 0;
+            color: white;
+        }
+
+    .sf-menu a.sf-with-ul {
+        padding-right: 2.25em;
+        min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
+    }
+
+.sf-sub-indicator {
+    position: absolute;
+    display: block;
+    right: .75em;
+    top: 1.05em; /* IE6 only */
+    width: 10px;
+    height: 10px;
+    text-indent: -999em;
+    overflow: hidden;
+    background: url('/images/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+
+a > .sf-sub-indicator { /* give all except IE6 the correct values */
+    top: .8em;
+    background-position: 0 -99px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px -99px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator {
+    background-position: -10px 0;
+}
+
+.sf-menu ul a > .sf-sub-indicator {
+    background-position: 0 0;
+}
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+    background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+    background: url('/images/shadow.png') no-repeat bottom right;
+    padding: 0 8px 9px 0;
+    -moz-border-radius-bottomleft: 17px;
+    -moz-border-radius-topright: 17px;
+    -webkit-border-top-right-radius: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+}
+
+    .sf-shadow ul.sf-shadow-off {
+        background: transparent;
+    }

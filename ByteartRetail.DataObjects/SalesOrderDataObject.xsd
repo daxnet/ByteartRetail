@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalesOrderDataObject"
+    targetNamespace="http://www.ByteartRetail.com/SalesOrderDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/SalesOrderDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/SalesOrderDataObject.xsd"
+    xmlns:cdoi="http://www.ByteartRetail.com/CollectionDataObjectList.xsd"
+    xmlns:sosdo="http://www.ByteartRetail.com/SalesOrderStatusDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:import namespace="http://www.ByteartRetail.com/CollectionDataObjectList.xsd" />
+  <xs:import namespace="http://www.ByteartRetail.com/SalesOrderStatusDataObject.xsd"/>
+  
+  <xs:complexType name="SalesOrderDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Status" type="sosdo:SalesOrderStatusDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DateCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DateDispatched" type="xs:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DateDelivered" type="xs:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerName" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerContact" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerPhone" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerEmail" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerAddressCountry" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerAddressState" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerAddressCity" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerAddressStreet" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="CustomerAddressZip" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="SalesLines" type="cdoi:SalesLineDataObjectList" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Subtotal" type="xs:decimal" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

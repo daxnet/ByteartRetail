@@ -1,0 +1,1919 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Practices.EnterpriseLibrary.Caching.Silverlight</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider">
+            <summary>
+            This class is primarily a testing hook. Testing code that
+            calls <see cref="P:System.DateTime.Now"/> is fraught with pain and often results in
+            weird test failures. To avoid this, all the code in the
+            caching block that needs the current <see cref="T:System.DateTime"/>
+            calls <see cref="P:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider.Now"/> instead. Tests
+            can use <see cref="M:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider.SetTimeProviderForTests(System.Func{System.DateTimeOffset})"/> to
+            change the definition of "now" for testing purposes.
+            </summary>
+            <remarks>Don't change the time provider in production code. That way lies madness.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider.SetTimeProviderForTests(System.Func{System.DateTimeOffset})">
+            <summary>
+            Change the current time provider.
+            </summary>
+            <param name="newTimeProvider">Method to call to return the current time.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider.ResetTimeProvider">
+            <summary>
+            Resets the time provider to the default.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.CachingTimeProvider.Now">
+            <summary>
+            Returns the current date time as given by the current time provider func.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheData">
+            <summary>
+            Base class for configuration objects describing instances of caches.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheData.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Returns the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> entries for this configuration object.
+            </summary>
+            <returns>A set of registry entries.</returns>        
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings.SectionName">
+            <summary>
+            The name used to serialize the configuration section.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>
+            The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>
+            The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.
+            </returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings.Caches">
+            <summary>
+            Gets the collection of caches.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings.DefaultCache">
+            <summary>
+            Gets or sets the default cache name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ConfigureCachingExtension">
+            <summary>
+            Base class for fluent interface builders that extend the caching configuration fluent interface.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching">
+            <summary>
+            Root fluent interface for building up caching configuration.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCachingExtension">
+            <summary>
+            Allows access to the underlying <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCachingExtension.CachingSettings"/> being configured.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCachingExtension.CachingSettings">
+            <summary>
+            Returns the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCachingExtension.CachingSettings"/> instance that is currently being build up.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ConfigureCachingExtension.#ctor(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching)">
+            <summary>
+            Creates an instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ConfigureCachingExtension"/> passing the caching configuration's fluent interface builder.
+            </summary>
+            <param name="context">The current caching configuration's fluent interface builder.<br/>
+            This interface must implement <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCachingExtension"/>.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ConfigureCachingExtension.CachingSettings">
+            <summary>
+            Returns the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ConfigureCachingExtension.CachingSettings"/> instance that is currently being build up.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.CachingConfigurationSourceBuilderExtension">
+            <summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder"/> extensions to support creation of caching configuration settings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.CachingConfigurationSourceBuilderExtension.ConfigureCaching(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder)">
+            <summary>
+            Main entry point to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CachingSettings"/> section.
+            </summary>
+            <param name="configurationSourceBuilder">The builder interface to extend.</param>
+            <returns>A fluent interface to further configure the caching configuration section.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.SetupIsolatedStorageCacheNamedExtension">
+            <summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching"/> extensions to support configuring <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> instances.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.SetupIsolatedStorageCacheNamedExtension.SetupIsolatedStorageCacheNamed(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching,System.String)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> to the caching configuration settings.
+            </summary>
+            <param name="context">Fluent interface extension point.</param>
+            <param name="cacheName">The name of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> that should be configured.</param>
+            <returns>Fluent interface to further configure the created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>.</returns>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamed">
+            <summary>
+            Fluent interface used to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamed.SetAsDefault">
+            <summary>
+            Specifies this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> should be the caching blocks' default <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamed.WithOptions">
+            <summary>
+            Returns a fluent interface to further configure the current <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> instance. 
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamedOptions">
+            <summary>
+            Fluent interface used to further configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamedOptions.WithScavengingThresholds(System.Int32,System.Int32)">
+            <summary>
+            Specifies the thresholds for when the scavenging logic should start/stop removing items from this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> instance.
+            </summary>
+            <param name="percentOfQuotaUsedBeforeScavenging">The percentage of quota before scavenging of entries needs to take place.</param>
+            <param name="percentOfQuotaUsedAfterScavenging">The percentage of quota after scavenging has taken place.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamedOptions.UsingExpirationPollingInterval(System.TimeSpan)">
+            <summary>
+            Specifies the frequency of expiration polling cycle that should be used by this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> to check for items that expired.
+            </summary>
+            <param name="interval">The frequency of expiration polling cycle.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamedOptions.WithMaxSizeInKilobytes(System.Int32)">
+            <summary>
+            Specifies the maximum size in kilobytes that can be used by this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> to store items.
+            </summary>
+            <param name="maxSizeInKilobytes">The maximum size in kilobytes for the cache.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupIsolatedStorageCacheNamedOptions.UsingSerializerOfType(System.Type)">
+            <summary>
+            Specifies the serializer <see cref="T:System.Type"/> used for serializing and deserializing the cache entries.
+            </summary>
+            <param name="serializerType">The type used for serializing and deserializing the cache entries.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.SetupInMemoryCacheNamedExtension">
+            <summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching"/> extensions to support configuring <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> instances.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.SetupInMemoryCacheNamedExtension.SetupInMemoryCacheNamed(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureCaching,System.String)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> to the caching configuration settings.
+            </summary>
+            <param name="context">Fluent interface extension point.</param>
+            <param name="cacheName">The name of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> that should be configured.</param>
+            <returns>Fluent interface to further configure the created <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>.</returns>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamed">
+            <summary>
+            Fluent interface used to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamed.SetAsDefault">
+            <summary>
+            Specifies this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> should be the caching blocks' default <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamed.WithOptions">
+            <summary>
+            Returns a fluent interface to further configure the current <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> instance. 
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamedOptions">
+            <summary>
+            Fluent interface used to further configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> instance.
+            </summary>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamedOptions.WithScavengingThresholds(System.Int32,System.Int32)">
+            <summary>
+            Specifies the thresholds for when the scavenging logic should start/stop removing items from this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> instance.
+            </summary>
+            <param name="maxItemsBeforeScavenging">The maximum number of items in cache before an add causes scavenging to take place.</param>
+            <param name="itemsLeftAfterScavenging">The number of items left in the cache after scavenging has taken place.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.ISetupInMemoryCacheNamedOptions.UsingExpirationPollingInterval(System.TimeSpan)">
+            <summary>
+            Specifies the frequency of expiration polling cycle that should be used by this <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> to check for items that expired.
+            </summary>
+            <param name="interval">The frequency of expiration polling cycle.</param>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData">
+            <summary>
+            Configuration object for an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Returns the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> entries for this configuration object.
+            </summary>
+            <param name="configurationSource"></param>
+            <returns>
+            A set of registry entries.
+            </returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData.MaxItemsBeforeScavenging">
+            <summary>
+            Gets or sets the maximum number of items in cache before an add causes scavenging to take place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData.ItemsLeftAfterScavenging">
+            <summary>
+            Gets or sets the number of items left in the cache after scavenging has taken place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.InMemoryCacheData.ExpirationPollingInterval">
+            <summary>
+            Gets or sets the frequency of expiration polling cycle.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData">
+            <summary>
+            Configuration object for an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Returns the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> entries for this configuration object.
+            </summary>
+            <param name="configurationSource"></param>
+            <returns>
+            A set of registry entries.
+            </returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.MaxSizeInKilobytes">
+            <summary>
+            Gets or sets the maximum size in kilobytes for the cache.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.PercentOfQuotaUsedBeforeScavenging">
+            <summary>
+            Gets or sets the percentage of quota before scavenging of entries needs to take place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.PercentOfQuotaUsedAfterScavenging">
+            <summary>
+            Gets or sets the percentage of quota after scavenging has taken place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.ExpirationPollingInterval">
+            <summary>
+            Gets or sets the frequency of expiration polling cycle.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.SerializerTypeName">
+            <summary>
+            Gets or sets name of the type used for serializing and deserializing the cache entries.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.IsolatedStorageCacheData.SerializerType">
+            <summary>
+            Gets or sets the type used for serializing and deserializing the cache entries.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache">
+            <summary>
+            Represents the type that implements an in-memory cache.
+            </summary>
+            <remarks>
+            The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> class is a concrete implementation of the abstract <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> class.
+            <para>
+            Note: The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> class is somewhat similar to the System.Runtime.Caching.MemoryCache class available in the .NET Framework in the Desktop.
+            The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> class has many properties and methods for accessing the cache that will be familiar to you if you have used the Desktop's MemoryCache class.
+            The MemoryCache class does not allow null as a value in the cache. Any attempt to add or change a cache entry with a value of null will fail.
+            </para>
+            <para> The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> type does not implement cache regions. Therefore, when you call <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> methods that 
+            implement base methods that contain a parameter for regions, do not pass a value for the parameter. The methods that use the region parameter 
+            all supply a default <see langword="null"/> value. For example, the <see cref="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.AddOrGetExisting(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)"/> 
+            method overload has a regionName parameter whose default value is <see langword="null"/>.</para>
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1">
+            <summary>
+            Base class for caches that keep items in memory.
+            </summary>
+            <typeparam name="TCacheEntry">The type of the cache entry specific for the concrete implementations.</typeparam>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache">
+            <summary>
+            Represents an object cache and provides the base methods and properties for accessing the object cache.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration">
+            <summary>
+            Gets a value that indicates that a cache entry has no absolute expiration. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.NoSlidingExpiration">
+            <summary>
+            Indicates that a cache entry has no sliding expiration time.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Add(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            When overridden in a derived class, tries to insert a cache entry into the cache as a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> 
+            instance, and adds details about how the entry should be evicted.
+            </summary>
+            <param name="item">The item to add.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>true if insertion succeeded, or false if there is an already an entry in the cache that has the same key as item.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Add(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache without overwriting any existing cache entry. 
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="absoluteExpiration">The absolute expiration.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>true if insertion succeeded, or false if there is an already an entry in the cache that has the same key as item.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Add(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache, specifying information about how the entry will be evicted.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>true if insertion succeeded, or false if there is an already an entry in the cache that has the same key as item.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.AddOrGetExisting(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            When overridden in a derived class, inserts the specified CacheItem object into the cache, specifying 
+            information about how the entry will be evicted.
+            </summary>
+            <param name="value">The value to add.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>If a cache entry with the same key exists, the specified cache entry; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache, by using a key, an object for the 
+            cache entry, an absolute expiration value, and an optional region to add the cache into.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="absoluteExpiration">The absolute expiration.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>If a cache entry with the same key exists, the specified cache entry's value; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache, specifying a key and a value for 
+            the cache entry, and information about how the entry will be evicted.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>If a cache entry with the same key exists, the specified cache entry's value; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Contains(System.String,System.String)">
+            <summary>
+            When overridden in a derived class, checks whether the cache entry already exists in the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>true if the cache contains a cache entry with the same key value as key; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Get(System.String,System.String)">
+            <summary>
+            When overridden in a derived class, gets the specified cache entry from the cache as an object.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>The cache entry that is identified by key.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.GetCacheItem(System.String,System.String)">
+            <summary>
+            When overridden in a derived class, gets the specified cache entry from the cache as a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> instance.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>The cache item.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.GetCount(System.String)">
+            <summary>
+            When overridden in a derived class, gets the total number of cache entries in the cache. 
+            </summary>
+            <param name="regionName">Optional. A named region in the cache for which the cache entry count should be computed, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>The number of cache entries in the cache. If regionName is not Nothing, the count indicates the 
+            number of entries that are in the specified cache region. </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.GetEnumerator">
+            <summary>
+            When overridden in a derived class, creates an enumerator that can be used to iterate through a collection 
+            of cache entries. 
+            </summary>
+            <returns>The enumerator object that provides access to the cache entries in the cache.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.GetValues(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            When overridden in a derived class, gets a set of cache entries that correspond to the specified keys.
+            </summary>
+            <param name="keys">A collection of unique identifiers for the cache entries to get.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry or entries were 
+            added, if regions are implemented. The default value for the optional parameter is <see langword="null"/>.</param>
+            <returns>A dictionary of key/value pairs that represent cache entries.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.GetValues(System.String,System.String[])">
+            <summary>
+            Gets a set of cache entries that correspond to the specified keys.
+            </summary>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry or entries were 
+            added, if regions are implemented. The default value for the optional parameter is <see langword="null"/>.</param>
+            <param name="keys">A collection of unique identifiers for the cache entries to get.</param>
+            <returns>A dictionary of key/value pairs that represent cache entries.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Remove(System.String,System.String)">
+            <summary>
+            When overridden in a derived class, removes the cache entry from the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>An object that represents the value of the removed cache entry that was specified by the key, 
+            or <see langword="null"/> if the specified entry was not found.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Set(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            When overridden in a derived class, inserts the cache entry into the cache as a CacheItem instance, 
+            specifying information about how the entry will be evicted.
+            </summary>
+            <param name="item">The cache item to add.</param>
+            <param name="policy">An object that contains eviction details for the cache entry. This object provides 
+            more options for eviction than a simple absolute expiration.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Set(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache, specifying time-based expiration details.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="absoluteExpiration">The fixed date and time at which the cache entry will expire.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Set(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)">
+            <summary>
+            When overridden in a derived class, inserts a cache entry into the cache. 
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if 
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.DefaultCacheCapabilities">
+            <summary>
+            When overridden in a derived class, gets a description of the features that a cache implementation provides.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Name">
+            <summary>
+            Gets the name of the ObjectCache instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Item(System.String)">
+            <summary>
+            Gets or sets the default indexer for the ObjectCache class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy{`0},Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.IManuallyScheduledWork,Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1"/> class.
+            </summary>
+            <param name="name">The name of the cache.</param>
+            <param name="scavengingStrategy">The scavenging strategy.</param>
+            <param name="scavengingScheduler">The scavenging scheduler.</param>
+            <param name="expirationScheduler">The expiration scheduler.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Dispose">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Dispose(System.Boolean)">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Finalize">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.AddOrGetExisting(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Inserts the specified CacheItem object into the cache, specifying
+            information about how the entry will be evicted.
+            </summary>
+            <param name="value">The value to add.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>
+            If a cache entry with the same key exists, the specified cache entry; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.AddOrGetExisting(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            Inserts a cache entry into the cache, by using a key, an object for the
+            cache entry, an absolute expiration value, and an optional region to add the cache into.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="absoluteExpiration">The absolute expiration.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            If a cache entry with the same key exists, the specified cache entry's value; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.AddOrGetExisting(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)">
+            <summary>
+            Inserts a cache entry into the cache, specifying a key and a value for
+            the cache entry, and information about how the entry will be evicted.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            If a cache entry with the same key exists, the specified cache entry's value; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Contains(System.String,System.String)">
+            <summary>
+            Checks whether the cache entry already exists in the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            true if the cache contains a cache entry with the same key value as key; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Get(System.String,System.String)">
+            <summary>
+            Gets the specified cache entry from the cache as an object.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            The cache entry that is identified by key.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.GetCacheItem(System.String,System.String)">
+            <summary>
+            Gets the specified cache entry from the cache as a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> instance.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            The cache item.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.GetCount(System.String)">
+            <summary>
+            Gets the total number of cache entries in the cache.
+            </summary>
+            <param name="regionName">Optional. A named region in the cache for which the cache entry count should be computed, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            The number of cache entries in the cache. If regionName is not Nothing, the count indicates the
+            number of entries that are in the specified cache region.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.GetEnumerator">
+            <summary>
+            Creates an enumerator that can be used to iterate through a collection
+            of cache entries.
+            </summary>
+            <returns>
+            The enumerator object that provides access to the cache entries in the cache.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.GetValues(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Gets a set of cache entries that correspond to the specified keys.
+            </summary>
+            <param name="keys">A collection of unique identifiers for the cache entries to get.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry or entries were
+            added, if regions are implemented. The default value for the optional parameter is <see langword="null"/>.</param>
+            <returns>
+            A dictionary of key/value pairs that represent cache entries.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Remove(System.String,System.String)">
+            <summary>
+            Removes the cache entry from the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry was added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+            <returns>
+            An object that represents the value of the removed cache entry that was specified by the key,
+            or <see langword="null"/> if the specified entry was not found.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Set(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Inserts the cache entry into the cache as a CacheItem instance,
+            specifying information about how the entry will be evicted.
+            </summary>
+            <param name="item">The cache item to add.</param>
+            <param name="policy">An object that contains eviction details for the cache entry. This object provides
+            more options for eviction than a simple absolute expiration.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Set(System.String,System.Object,System.DateTimeOffset,System.String)">
+            <summary>
+            Inserts a cache entry into the cache, specifying time-based expiration details.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="absoluteExpiration">The fixed date and time at which the cache entry will expire.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Set(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.String)">
+            <summary>
+            Inserts a cache entry into the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <param name="regionName">Optional. A named region in the cache to which the cache entry can be added, if
+            regions are implemented. Defaults to <see langword="null"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.GuardNoRegion(System.String)">
+            <summary>
+            Ensures that no region has been specified.
+            </summary>
+            <param name="regionName">Name of the region.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.InnerAdd(`0)">
+            <summary>
+            Adds an entry to the dictionary in the cache object.
+            </summary>
+            <param name="entry">The entry to add.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.OnItemRemoving(`0,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason)">
+            <summary>
+            Invoked when an entry is being removed from the cache.
+            </summary>
+            <param name="entry">The entry that is being removed.</param>
+            <param name="reason">The reason for the removal.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.TryUpdateItem(`0,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason)">
+            <summary>
+            Updates an entry in the cache.
+            </summary>
+            <param name="entry">The entry to update.</param>
+            <param name="reason">The reason for the update.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.OnItemRemoved(`0,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason)">
+            <summary>
+            Invoked when an entry was removed from the cache.
+            </summary>
+            <param name="entry">The entry that was removed.</param>
+            <param name="reason">The reason for the removal.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoAddOrGetExisting(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Actual implementation for adding or getting a cache item.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>
+            If a cache entry with the same key exists, the specified cache entry's value; otherwise, <see langword="null"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoGet(System.String)">
+            <summary>
+            Actual implementation for getting a cache item.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <returns>
+            The cache entry that is identified by key.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoUpdateLastAccessTime(`0)">
+            <summary>
+            Updates the last access time on an entry.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoContains(System.String)">
+            <summary>
+            Checks whether the entry identified by a key is stored in memory.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <returns>
+            true if the cache contains a cache entry with the same key value as key; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoGetCount">
+            <summary>
+            Gets the total number of cache entries in the cache.
+            </summary>
+            <returns>
+            The number of cache entries in the cache. If regionName is not Nothing, the count indicates the
+            number of entries that are in the specified cache region.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoGetEnumerator">
+            <summary>
+            Creates an enumerator that can be used to iterate through a collection
+            of cache entries.
+            </summary>
+            <returns>
+            The enumerator object that provides access to the cache entries in the cache.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoGetValues(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets a set of cache entries that correspond to the specified keys.
+            </summary>
+            <param name="keys">A collection of unique identifiers for the cache entries to get.</param>
+            <returns>
+            A dictionary of key/value pairs that represent cache entries.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoRemove(System.String,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason)">
+            <summary>
+            Removes a cache entry from the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry to remove.</param>
+            <param name="reason">The reason for the removal.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoSet(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Inserts a cache entry into the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.CreateCacheEntry(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Creates a cache entry.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object for the cache entry.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>A new cache entry of type <typeparamref name="TCacheEntry"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.AddNew(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Adds the new entry to the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.ScheduleScavengingIfNeeded">
+            <summary>
+            Schedules a scavenging operation if needed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.ScheduleScavenging">
+            <summary>
+            Schedules a scavenging operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoExpirations">
+            <summary>
+            Performs an expiration sweep.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.DoScavenging">
+            <summary>
+            Performs a scavenging sweep.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Name">
+            <summary>
+            Gets the name of the cache instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.MemoryBackedCacheBase`1.Item(System.String)">
+            <summary>
+            Gets or sets the default indexer for the ObjectCache class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache.#ctor(System.String,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> class.
+            </summary>
+            <param name="name">The name to use to look up configuration information.</param>
+            <param name="maxItemsBeforeScavenging">Maximum number of items in cache before an add causes scavenging to take place.</param>
+            <param name="itemsLeftAfterScavenging">Number of items left in the cache after scavenging has taken place.</param>
+            <param name="expirationPollingInterval">Frequency of expiration polling cycle.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache.#ctor(System.String,System.Int32,System.Int32,Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.IManuallyScheduledWork,Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache"/> class.
+            </summary>
+            <param name="name">The name to use to look up configuration information.</param>
+            <param name="maxItemsBeforeScavenging">Maximum number of items in cache before an add causes scavenging to take place.</param>
+            <param name="itemsLeftAfterScavenging">Number of items left in the cache after scavenging has taken place.</param>
+            <param name="scavengingScheduler">The scavenging scheduler.</param>
+            <param name="expirationScheduler">The expiration scheduler.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache.CreateCacheEntry(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Creates a cache entry.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object for the cache entry.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>A new cache entry of type <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemoryCache.DefaultCacheCapabilities">
+            <summary>
+            Gets a description of the features that a cache implementation provides.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry">
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> for in-memory caches.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem">
+            <summary>
+            Represents an individual cache entry in the cache.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> class.
+            </summary>
+            <param name="key">A unique identifier for a CacheItem entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> class.
+            </summary>
+            <param name="key">A unique identifier for a CacheItem entry.</param>
+            <param name="value">The data for a CacheItem entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.#ctor(System.String,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> class.
+            </summary>
+            <param name="key">A unique identifier for a CacheItem entry.</param>
+            <param name="value">The data for a CacheItem entry.</param>
+            <param name="regionName">The name of a region in the cache that will contain the CacheItem entry.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.Key">
+            <summary>
+            Gets or sets a unique identifier for a CacheItem instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.Value">
+            <summary>
+            Gets or sets the data for a CacheItem instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem.RegionName">
+            <summary>
+            Gets or sets the name of a region in the cache that contains a CacheItem entry.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry.#ctor(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="policy">The policy.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry.UpdateLastAccessTime">
+            <summary>
+            Updates the last access time for the entry to the current time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry.Policy">
+            <summary>
+            Gets the policy for the entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry.LastAccessTime">
+            <summary>
+            Gets or sets the last access time for the entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheEntry.Priority">
+            <summary>
+            Gets the priority for the entry.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheItemPolicyExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheItemPolicyExtensions.IsExpired(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy,System.DateTimeOffset)">
+            <summary>
+            Determines whether an entry is expired.
+            </summary>
+            <param name="policy">The policy for the entry.</param>
+            <param name="lastAccessedTime">The last accessed time for the entry.</param>
+            <returns>
+              <c>true</c> if the entry is expired; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.CacheItemPolicyExtensions.Validate(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Validates the specified policy.
+            </summary>
+            <param name="policy">The policy.</param>
+            <exception cref="T:System.ArgumentException">when <paramref name="policy"/> is invalid.</exception>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy`1">
+            <summary>
+            This interface encapsulates the logic used to determine when a
+            scavenging is performed and which items are removed.
+            </summary>
+            <typeparam name="TCacheEntry"></typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy`1.ShouldScavenge(System.Collections.Generic.IDictionary{System.String,`0})">
+            <summary>
+            Determines whether scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy`1.ShouldScavengeMore(System.Collections.Generic.IDictionary{System.String,`0})">
+            <summary>
+            Determines whether additional scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if additional scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy`1.EntriesToScavenge(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines the entries that should be scavenged from <paramref name="currentEntries"/>.
+            </summary>
+            <param name="currentEntries">The entries to scavenge.</param>
+            <returns>A set of the entries that should be scavenged.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.IScavengingStrategy`1"/>
+            that bases decisions on the number of items in the cache.
+            </summary>
+            <typeparam name="TCacheEntry"></typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1"/> class.
+            </summary>
+            <param name="maxItemsBeforeScavenging">Maximum number of items in cache before an add causes scavenging to take place.</param>
+            <param name="itemsLeftAfterScavenging">Number of items left in the cache after scavenging has taken place.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1.ShouldScavenge(System.Collections.Generic.IDictionary{System.String,`0})">
+            <summary>
+            Determines whether scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1.ShouldScavengeMore(System.Collections.Generic.IDictionary{System.String,`0})">
+            <summary>
+            Determines whether additional scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if additional scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.InMemory.NumberOfItemsScavengingStrategy`1.EntriesToScavenge(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines the entries that should be scavenged from <paramref name="currentEntries"/>.
+            </summary>
+            <param name="currentEntries">The entries to scavenge.</param>
+            <returns>A set of the entries that should be scavenged.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore">
+            <summary>
+            Manages the storage and retrieval of cache entries in isolated storage.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore">
+            <summary>
+            Manages the storage and retrieval of cache entries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.Add(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Stores a new entry.
+            </summary>
+            <param name="entry">The entry to add.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.Remove(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Removes an entry from storage.
+            </summary>
+            <param name="entry">The entry to remove.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.UpdateLastUpdateTime(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Updates the last access time for the entry in storage.
+            </summary>
+            <param name="entry">The entry to update.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.GetSerializedEntries">
+            <summary>
+            Retrieves all the entries currently stored by the store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.IsWritable">
+            <summary>
+            Gets a value indicating whether this instance is writable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.Quota">
+            <summary>
+            Gets the quota allowed for the store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore.UsedPhysicalSize">
+            <summary>
+            Gets an estimate of the physical size used by the store.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.#ctor(System.String,System.Int32,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore"/> class.
+            </summary>
+            <param name="name">The name of the store.</param>
+            <param name="maxSizeInKilobytes">The maximum size in bytes.</param>
+            <param name="serializer">An entry serializer.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Add(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Stores a new entry.
+            </summary>
+            <param name="entry">The entry to add.</param>
+            <remarks>
+            The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry.StorageId"/> on the added entry is updated to match the physical
+            storage.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Remove(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Removes an entry from storage.
+            </summary>
+            <param name="entry">The entry to remove.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.UpdateLastUpdateTime(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Updates the last access time for the entry in storage.
+            </summary>
+            <param name="entry">The entry to update.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.GetSerializedEntries">
+            <summary>
+            Retrieves all the entries currently stored by the store.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.DeleteStore(System.String)">
+            <summary>
+            Deletes the store with the given name.
+            </summary>
+            <param name="name">The store name.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Dispose">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Dispose(System.Boolean)">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Finalize">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.IsWritable">
+            <summary>
+            Gets a value indicating whether this instance is writable.
+            </summary>
+            <remarks>
+            An instance is not writable if another instance of the same application is already using the
+            isolated storage with the same name.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.Quota">
+            <summary>
+            Gets the quota allowed for the store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.CacheEntryStore.UsedPhysicalSize">
+            <summary>
+            Gets an estimate of the physical size used by the store.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer">
+            <summary>
+            Manages serialization of entries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer.Serialize(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Serializes <paramref name="entry"/> as an array of bytes.
+            </summary>
+            <param name="entry">The entry to serialize.</param>
+            <returns>An array of bytes.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer.Deserialize(System.Byte[])">
+            <summary>
+            Deserializes an entry from an array of bytes.
+            </summary>
+            <param name="serializedEntry">An array of bytes representing an entry.</param>
+            <returns>The represented entry.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer.GetUpdateForLastUpdateTime(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Generates an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate"/> representing an update to the last access time in an entry.
+            </summary>
+            <param name="entry">The entry.</param>
+            <returns>The update to the serialized bytes.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate">
+            <summary>
+            Represents an update to an entry saved to isolated storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate"/> type.
+            </summary>
+            <param name="value">The bytes to update.</param>
+            <param name="offset">The offset for the update.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate.GetValue">
+            <summary>
+            The bytes to update.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate.Offset">
+            <summary>
+            The offset for the update.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageInfo">
+            <summary>
+            Provides information about the isolated storage.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageInfo.AvailableFreeSpace">
+            <summary>
+            Gets the available free space.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException">
+            <summary>
+            Represents an error caused by invalid data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException"/> class.
+            </summary>
+            <param name="message">A message describing the error.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.InvalidDataException"/> class.
+            </summary>
+            <param name="message">A message describing the error.</param>
+            <param name="inner">The exception that is the cause of the current exception, or 
+            <see langword="null"/> if no inner exception is specified.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageInfo">
+            <summary>
+            Provides information about the isolated storage.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageInfo.AvailableFreeSpace">
+            <summary>
+            Gets the available free space.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy">
+            <summary>
+            Scavenging strategy for isolated storage, based on quota usage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy.#ctor(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageInfo,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy"/> class.
+            </summary>
+            <param name="store">The cache entry store.</param>
+            <param name="isoStorage">The isolated storage information provider.</param>
+            <param name="percentOfQuotaUsedBeforeScavenging">The percentage of quota used before scavenging.</param>
+            <param name="percentOfQuotaUsedAfterScavenging">The percentage of quota used after scavenging.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy.ShouldScavenge(System.Collections.Generic.IDictionary{System.String,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry})">
+            <summary>
+            Determines whether scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy.ShouldScavengeMore(System.Collections.Generic.IDictionary{System.String,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry})">
+            <summary>
+            Determines whether additional scavenging is needed for <paramref name="entries"/>.
+            </summary>
+            <param name="entries">The entries.</param>
+            <returns><see langword="true"/> if additional scavenging is needed, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy.EntriesToScavenge(System.Collections.Generic.IEnumerable{Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry})">
+            <summary>
+            Determines the entries that should be scavenged from <paramref name="currentEntries"/>.
+            </summary>
+            <param name="currentEntries">The entries to scavenge.</param>
+            <returns>A set of the entries that should be scavenged.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageSizeScavengingStrategy.GetMaxItemsBeforeScavengingWhenNotWritable(System.Int32)">
+            <summary>
+            Gets the maximum quantity of items allowed before scavenging when the cache is in-memory only.
+            </summary>
+            <param name="entriesCount">The entries count.</param>
+            <returns>The maximum quantity of items.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason">
+            <summary>Specifies the reason why a cache entry was removed or an entry is about to be removed.</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason.Removed">
+            <summary>
+            A cache entry was removed by using the <see cref="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Remove(System.String,System.String)"/>
+            or <see cref="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache.Set(System.String,System.Object,System.DateTimeOffset,System.String)"/> method.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason.Expired">
+            <summary>
+            A cache entry was removed because it expired. Expiration can be based on
+            an absolute time or on a sliding expiration time.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason.Evicted">
+            <summary>
+            A cache entry was removed to free memory in the cache. This occurs when a
+            cache instance approaches cache-specific memory limits, or when a process
+            or cache instance approaches computer-wide memory limits.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy">
+            <summary>
+            Represents a set of eviction and expiration details for a specific cache entry.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.AbsoluteExpiration">
+            <summary>
+            Gets or sets a value that indicates whether a cache entry should be evicted after a specified duration.
+            </summary>
+            <returns>The period of time that must pass before a cache entry is evicted. The default
+                value is System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration, meaning
+                that the entry does not expire.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.Priority">
+            <summary>
+            Gets or sets a priority setting that is used to determine whether to evict a cache entry.
+            </summary>
+            <returns>One of the enumeration values that indicates the priority for eviction. The
+                default priority value is System.Runtime.Caching.CacheItemPriority.Default,
+                which means no priority.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.SlidingExpiration">
+            <summary>
+            Gets or sets a value that indicates whether a cache entry should be evicted if it has not been accessed in a given span of time.
+            </summary>
+            <returns>A span of time within which a cache entry must be accessed before the cache entry is 
+            evicted from the cache. The default is System.Runtime.Caching.ObjectCache.NoSlidingExpiration,
+            meaning that the item should not be expired based on a time span.
+            </returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.RemovedCallback">
+            <summary>
+            Gets or sets a reference to a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedCallback"/> delegate that is called after an entry is removed from the cache.
+            </summary>
+            <returns>A reference to a delegate that is called by a cache implementation.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy.UpdateCallback">
+            <summary>
+            Gets or sets a reference to a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateCallback"/>
+            delegate that is called before a cache entry is removed from the cache.
+            </summary>
+            <returns>A reference to a delegate that is called by a cache implementation.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPriority">
+            <summary>
+            Specifies a priority setting that is used to decide whether to evict a cache entry.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPriority.Default">
+            <summary>
+            Indicates that there is no priority for removing the cache entry.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPriority.NotRemovable">
+            <summary>
+            Indicates that a cache entry should never be removed from the cache.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedCallback">
+            <summary>
+            Defines a reference to a method that is called after a cache entry is removed from the cache.
+            </summary>
+            <param name="arguments">The information about the cache entry that was removed from the cache.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments">
+            <summary>
+            Provides information about a cache entry that was removed from the cache.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments.#ctor(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments"/> class.
+            </summary>
+            <param name="source">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance from which cacheItem was removed.</param>
+            <param name="reason">One of the enumeration values that indicate why <paramref name="cacheItem"/> was removed.</param>
+            <param name="cacheItem">An instance of the cached entry that was removed.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="source"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="cacheItem"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments.CacheItem">
+            <summary>Gets an instance of a cache entry that was removed from the cache.</summary>
+            <returns>An instance of the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments.CacheItem"/> class that was removed from the cache.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments.RemovedReason">
+            <summary>Gets a value that indicates why a cache entry was removed.</summary>
+            <returns>One of the enumeration values that indicates why the entry was removed.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedArguments.Source">
+            <summary>Gets a reference to the source <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance that originally contained the removed cache entry.</summary>
+            <returns>A reference to the cache that originally contained the removed cache entry.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateCallback">
+            <summary>
+             Defines a reference to a method that is invoked when a cache entry is about to be removed from the cache.
+            </summary>
+            <param name="arguments">The information about the entry that is about to be removed from the cache.</param>
+            <remarks>
+            Information about a cache entry to be removed is contained in a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> object.
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> object is passed to the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateCallback"/> delegate.
+            The method that implements the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateCallback"/> delegate can pass an updated cache entry value back to the cache implementation.
+            The updated cache entry replaces the cache item that is about to be removed.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments">
+            <summary>
+            Provides information about a cache entry that will be removed from the cache.
+            </summary>
+            <remarks>
+            <para>
+            The arguments in the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> class contain details about an entry that the cache implementation is about to remove.
+            The arguments include a key to the cache entry, a reference to the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance that the entry will be removed from, a reason 
+            for the removal, and the region name in the cache that contains the entry. The constructor of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> class uses 
+            these arguments to create a new instance of the class.
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> object is passed to a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateCallback"/> handler, which notifies the cache about 
+            the entry to remove.
+            </para>
+            <para>
+            Notes to Implementers.
+            A callback handler must notify the cache implementation whether to insert a replacement entry into the cache in place of the cache entry that is 
+            about to be removed. If you want to exchange cache entries, you must assign a value other than null to the 
+            <see cref="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem"/>  property. Cache implementations will interpret a null value for the 
+            <see cref="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem"/> property as a notice that the current cache entry should be removed but not replaced.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.#ctor(Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments"/> class.
+            </summary>
+            <param name="source">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance from which cacheItem was removed.</param>
+            <param name="reason">One of the enumeration values that indicate why the item was removed.</param>
+            <param name="key">The key of the cache entry that will be removed.</param>
+            <param name="regionName">The name of the region in the cache to remove the cache entry from. This
+               parameter is optional. If cache regions are not defined, <paramref name="regionName"/> must be <see langword="null"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="source"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="key"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.Key">
+            <summary>Gets the unique identifier for a cache entry that is about to be removed.</summary>
+            <returns>The unique identifier for the cache entry.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.RemovedReason">
+            <summary>Gets a value that indicates why a cache entry was removed.</summary>
+            <returns>One of the enumeration values that indicates why the entry was removed.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.Source">
+            <summary>Gets a reference to the source <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.ObjectCache"/> instance that originally contained the removed cache entry.</summary>
+            <returns>A reference to the cache that originally contained the removed cache entry.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.RegionName">
+            <summary>Gets the name of a region in the cache that contains a cache entry.</summary>
+            <returns>The name of a region in the cache. If regions are not used, this value is <see langword="null"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem">
+            <summary>Gets or sets the value of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> entry that is used to update the cache object.</summary>
+            <returns>The cache entry to update in the cache object. The default is <see langword="null"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItemPolicy">
+            <summary>Gets or sets the cache eviction or expiration policy of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItem"/> entry that is updated.</summary>
+            <returns>The cache eviction or expiration policy of the cache item that was updated. The default is <see langword="null"/>.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities">
+            <summary>
+            Represents a set of features that a cache implementation provides.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.None">
+            <summary>
+            A cache implementation does not provide any of the features that are described in the DefaultCacheCapabilities enumeration.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.InMemoryProvider">
+            <summary>
+            A cache implementation runs at least partially in memory.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.OutOfProcessProvider">
+            <summary>
+            A cache implementation runs out-of-process.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryChangeMonitors">
+            <summary>
+            A cache implementation supports the ability to create change monitors that monitor entries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.AbsoluteExpirations">
+            <summary>
+            A cache implementation supports the ability to automatically remove cache entries at a specific date and time.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.SlidingExpirations">
+            <summary>
+            A cache implementation supports the ability to automatically remove cache entries that have not been accessed in a specified time span.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback">
+            <summary>
+            A cache implementation can raise a notification that an entry is about to be removed from the cache. 
+            This setting also indicates that a cache implementation supports the ability to automatically replace the entry 
+            that is being removed with a new cache entry.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback">
+            <summary>
+            A cache implementation can raise a notification that an entry has been removed from the cache.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheRegions">
+            <summary>
+            A cache implementation supports the ability to partition its storage into cache regions, and supports the 
+            ability to insert cache entries into those regions and to retrieve cache entries from those regions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache">
+            <summary>
+            Cache that persists entries in isolated storage and loads the entries on initialization.
+            </summary>
+            <remarks>
+            If a second instance of an application using this cache is started, the cache on the second instance will
+            only load the items in isolated storage but will not save them.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> class.
+            </summary>
+            <param name="name">The name for the cache.</param>
+            <param name="maxSizeInKilobytes">The maximum size in kilobytes.</param>
+            <param name="percentOfQuotaUsedBeforeScavenging">The percentage of quota used before scavenging.</param>
+            <param name="percentOfQuotaUsedAfterScavenging">The percentage of quota used after scavenging.</param>
+            <param name="expirationPollingInterval">The expiration polling interval.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.TimeSpan,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IIsolatedStorageCacheEntrySerializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> class.
+            </summary>
+            <param name="name">The name for the cache.</param>
+            <param name="maxSizeInKilobytes">The maximum size in kilobytes.</param>
+            <param name="percentOfQuotaUsedBeforeScavenging">The percentage of quota used before scavenging.</param>
+            <param name="percentOfQuotaUsedAfterScavenging">The percentage of quota used after scavenging.</param>
+            <param name="expirationPollingInterval">The expiration polling interval.</param>
+            <param name="serializer">An entry serializer.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.ICacheEntryStore,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> class.
+            </summary>
+            <param name="name">The name for the cache.</param>
+            <param name="store">The isolated storage entries store.</param>
+            <param name="percentOfQuotaUsedBeforeScavenging">The percentage of quota used before scavenging.</param>
+            <param name="percentOfQuotaUsedAfterScavenging">The percentage of quota used after scavenging.</param>
+            <param name="expirationPollingInterval">The expiration polling interval.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.DeleteCache(System.String)">
+            <summary>
+            Deletes the data persisted by the cache with the specified name.
+            </summary>
+            <param name="name">The name of the cache that is to be removed.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.CreateCacheEntry(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Creates a cache entry.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object for the cache entry.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+            <returns>A new cache entry of type <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.DoSet(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Inserts a cache entry into the cache.
+            </summary>
+            <param name="key">A unique identifier for the cache entry.</param>
+            <param name="value">The object to insert.</param>
+            <param name="policy">An object that contains eviction details for the cache entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.OnItemRemoved(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheEntryRemovedReason)">
+            <summary>
+            Invoked when an entry was removed from the cache.
+            </summary>
+            <param name="entry">The entry that was removed.</param>
+            <param name="reason">The reason for the removal.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.DoUpdateLastAccessTime(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Updates the last access time on an entry.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.Dispose(System.Boolean)">
+            <summary>
+            Releases the store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.DefaultCacheCapabilities">
+            <summary>
+            Gets a description of the features that the cache provides. See remarks section for more info on <see cref="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback"/> 
+            and <see cref="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback"/>.
+            </summary>
+            <remarks>
+            The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/> implementation partially supports <see cref="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback"/> and 
+            <see cref="F:Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback"/>; the callbacks are invoked as long as the cache object instance that added
+            the cache entry with the callbacks is the same one that is running when the cache entry expires. If the cache instance is different (i.e. the 
+            application was closed and reopened, so the cache entries are rehydrated from disk), then the callbacks will not be invoked, as they are
+            not (de)serialized.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.UsedPhysicalSize">
+            <summary>
+            The amount of isolated storage space being used to store the cache entries.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache.IsPersisting">
+            <summary>
+            Gets a value indicating if this instance of the cache is using the isolated storage to persist the cache entries. 
+            </summary>
+            <remarks>There might be occasions where the cache is working just in memory, so any changes to the cache will not be reflected 
+            in future instances of the same cache.</remarks>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry">
+            <summary>
+            A cache entry for the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorageCache"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry.#ctor(System.String,System.Object,Microsoft.Practices.EnterpriseLibrary.Caching.Runtime.Caching.CacheItemPolicy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="policy">The policy.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry.StorageId">
+            <summary>
+            Gets or sets the storage id for the entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry.LastAccessTime">
+            <summary>
+            Gets or sets the last access time for the entry.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer">
+            <summary>
+            Manages the serialization and deserialization of entries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.#ctor(System.Text.Encoding)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer"/> class.
+            </summary>
+            <param name="encoding">The encoding to use when serializing text.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.GetUpdateForLastUpdateTime(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Generates an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.EntryUpdate"/> representing an update to the last access time in an entry.
+            </summary>
+            <param name="entry">The entry.</param>
+            <returns>
+            The update to the serialized bytes.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.Serialize(Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntry)">
+            <summary>
+            Serializes <paramref name="entry"/> as an array of bytes.
+            </summary>
+            <param name="entry">The entry to serialize.</param>
+            <returns>
+            An array of bytes.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.Deserialize(System.Byte[])">
+            <summary>
+            Deserializes an entry from an array of bytes.
+            </summary>
+            <param name="serializedEntry">An array of bytes representing an entry.</param>
+            <returns>
+            The represented entry.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.SerializeObject(System.Object)">
+            <summary>
+            Serializes the object.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>An array of bytes representing <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.IsolatedStorage.IsolatedStorageCacheEntrySerializer.DeserializeObject(System.Byte[])">
+            <summary>
+            Deserializes the object.
+            </summary>
+            <param name="serializedObject">The bytes representing the object.</param>
+            <returns>The represented object.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ExceptionEntryNotPersisted">
+            <summary>
+              Looks up a localized string similar to Invalid operation on entry that is not persisted..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ExceptionInvalidCallbackCombination">
+            <summary>
+              Looks up a localized string similar to Only one callback can be specified.  Either RemovedCallback or UpdateCallback must be null..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ExceptionInvalidExpirationCombination">
+            <summary>
+              Looks up a localized string similar to AbsoluteExpiration must be DateTimeOffset.MaxValue or SlidingExpiration must be TimeSpan.Zero..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ExceptionPercentOfQuotaRangeComparison">
+            <summary>
+              Looks up a localized string similar to The percentOfQuotaUsedBeforeScavenging threshold value ({0:F2}) cannot be lower than the percentOfQuotaUsedAfterScavenging threshold value ({1:F2})..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ItemsLeftAfterScavengingMustBePositive">
+            <summary>
+              Looks up a localized string similar to The number of items left in the cache after scavenging must be greater than zero..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.ItemsLeftMustBeLessThanMaxItemsBefore">
+            <summary>
+              Looks up a localized string similar to The number of items left in the cache after scavenging must be less than or equal to the number of items allowed before scavenging..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.MaxItemsBeforeScavengingMustBePositive">
+            <summary>
+              Looks up a localized string similar to The number of items allowed in the cache before scavenging happens must be greater than zero..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.RegionsNotSupported">
+            <summary>
+              Looks up a localized string similar to This cache object does not support regions..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.Serializer_ValueLengthDoesNotMatchMetadata">
+            <summary>
+              Looks up a localized string similar to The serialized value is invalid: serialized value length is different than the logical size..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.Serializer_ValueTooShort">
+            <summary>
+              Looks up a localized string similar to The serialized value is invalid: too short..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Caching.Properties.Resources.SerializerType_DerivedTypeNotCorrect">
+            <summary>
+              Looks up a localized string similar to SerializerType value must be a type that implements IIsolatedStorageCacheEntrySerializer and has a default constructor..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.IManuallyScheduledWork">
+            <summary>
+            This interface represents an object that can perform
+            some sort of operation. The operation will be run at
+            some point in the future.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.IManuallyScheduledWork.SetAction(System.Action)">
+            <summary>
+            Set the action that will be run when work is scheduled.
+            </summary>
+            <param name="workToDo">The <see cref="T:System.Action"/> that will
+            be invoked when the action is scheduled.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.IManuallyScheduledWork.ScheduleWork">
+            <summary>
+            Requests that the object perform its work
+            at some point in the future.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.ScavengingScheduler">
+            <summary>
+            A scheduler that will queue scavenging requests onto a background
+            thread in the thread pool. Only one scavenging request will
+            be queued at a time.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.ScavengingScheduler.SetAction(System.Action)">
+            <summary>
+            Set the action that will be run when work is scheduled.
+            </summary>
+            <param name="workToDo">The <see cref="T:System.Action"/> that will
+            be invoked when the action is scheduled.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.ScavengingScheduler.ScheduleWork">
+            <summary>
+            Requests that the object perform its work
+            at some point in the future.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.Scheduling.ScavengingScheduler.Dispose">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Caching.SerializationUtility">
+            <summary>
+            Utility class for serializing and deserializing objects to and from byte streams
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.SerializationUtility.ToBytes(System.Object)">
+            <summary>
+            Converts an object into an array of bytes. Object must be serializable.
+            </summary>
+            <param name="value">Object to serialize. May be null.</param>
+            <returns>Serialized object, or null if input was null.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Caching.SerializationUtility.ToObject(System.Byte[])">
+            <summary>
+            Converts a byte array into an object. 
+            </summary>
+            <param name="serializedObject">Object to deserialize. May be null.</param>
+            <returns>Deserialized object, or null if input was null.</returns>
+        </member>
+    </members>
+</doc>

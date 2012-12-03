@@ -1,0 +1,148 @@
+﻿@using ByteartRetail.DataObjects;
+@using ByteartRetail.Web;
+
+@model SalesOrderDataObject
+
+@{
+    ViewBag.Title = "订单详细信息";
+}
+
+<h1>@Html.Image("SalesOrder_32.png")&nbsp;@ViewBag.Title</h1>
+
+<div>
+    <table id="SalesOrderDetailsHeader">
+        <tr>
+            <td style="width: 75px;">
+                订单编号：
+            </td>
+            <td>
+                <b>@Model.ID.ToUpper()</b>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;">
+                收货地址：
+            </td>
+            <td>
+                <b>@Model.CustomerAddressZip, @Model.CustomerAddressStreet</b>
+                <br />
+                <b>@Model.CustomerAddressCity, @Model.CustomerAddressState, @Model.CustomerAddressCountry</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                联系人：
+            </td>
+            <td>
+                <b>@Model.CustomerContact</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                联系电话：
+            </td>
+            <td>
+                <b>@Model.CustomerPhone</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                电子邮件：
+            </td>
+            <td>
+                <b>@Model.CustomerEmail</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                创建日期：
+            </td>
+            <td>
+                <b>@Model.DateCreatedText</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                发货日期：
+            </td>
+            <td>
+                <b>@Model.DateDispatchedText</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                收货日期：
+            </td>
+            <td>
+                <b>@Model.DateDeliveredText</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                订单状态：
+            </td>
+            <td>
+                <b>@Model.StatusText</b>
+                @if (Model.CanConfirm)
+                {
+                    @Html.ActionLink("确认收货", "Confirm", "Home", new { id = Model.ID }, new { id = "blue1", onclick = "return confirm('请确保您已经收到了货品，否则可能财物两空。是否继续？');" });
+                }
+            </td>
+        </tr>
+        
+    </table>
+</div>
+<h3>订单明细</h3>
+<div>
+    <table id="SalesLineTable">
+            <thead>
+                <tr>
+                    <th id="ImageColumn">&nbsp;
+                    </th>
+                    <th id="NameColumn">名称
+                    </th>
+                    <th id="UnitPriceColumn">单价
+                    </th>
+                    <th id="QuantityColumn">数量
+                    </th>
+                    <th>总价
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.SalesLines)
+                {
+                    <tr>
+                        <td>
+                            @Html.ProductImage(item.Product.ImageUrl, ImageSize.Small)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.Product.Name, "Product", "Home", new { id = item.Product.ID }, null)
+                        </td>
+                        <td class="price" style="text-align: right;">
+                            @string.Format("{0:N2} 元", item.Product.UnitPrice)
+                        </td>
+                        <td style="text-align: right">
+                            @string.Format("{0:##,#}", item.Quantity)
+                        </td>
+                        <td class="price" style="text-align: right;">
+                            @string.Format("{0:N2} 元", item.LineAmount)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td style="text-align: right; font-weight: bold;">总计</td>
+                    <td>&nbsp;</td>
+                    <td style="text-align: right;">@string.Format("{0:##,#}", Model.SalesLines.Sum(i => i.Quantity))</td>
+                    <td class="price" style="text-align: right;">@string.Format("{0:N2} 元", Model.Subtotal)</td>
+                </tr>
+            </tfoot>
+        </table>
+</div>
+<p />
+<div>
+    @Html.ImageActionLink(Url.Content("~/Images/Cancel.png"), "返回订单列表", "返回订单列表", "SalesOrders", "Home")
+</div>

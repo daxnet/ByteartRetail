@@ -1,0 +1,69 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model IEnumerable<UserAccountModel>
+
+@{
+    ViewBag.Title = "用户账户管理";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("User_32.png")&nbsp;@ViewBag.Title</h1>
+    <h4>请使用下面的工具按钮对用户账户进行增添、编辑或删除的管理操作。单击用户账户名同样可以打开该账户的编辑页面。
+    </h4>
+</hgroup>
+
+
+@if (Model.Count() > 0)
+{
+    var grid = new WebGrid(Model, defaultSort: "Name", selectionFieldName: "ID");
+    @grid.GetHtml(tableStyle:"webgrid", 
+    headerStyle:"webgrid-header", 
+    footerStyle:"webgrid-footer", 
+    rowStyle:"webgrid-row", 
+    alternatingRowStyle:"webgrid-alternating-row",
+    columns: grid.Columns(
+        grid.Column(
+            format: @<text>@Html.ActionLink((string)item.UserName, "EditUserAccount", "Admin", new {id = item.ID}, null)</text>,
+            columnName: "UserName",
+            header: "用户名",
+            canSort: true),
+        grid.Column(
+            columnName: "Email",
+            header: "电子邮件", 
+            canSort: false),
+        grid.Column(
+            columnName: "Role",
+            format: (item) => item.RoleStr,
+            header: "角色",
+            canSort: true),
+        grid.Column(
+            columnName: "IsDisabled",
+            header: "已禁用"),
+        grid.Column(
+            columnName: "DateRegistered",
+            format: item => item.DateRegisteredStr,
+            header: "注册时间"), 
+        grid.Column(
+            columnName: "DateLastLogon",
+            format: item => item.DateLastLogonStr,
+            header: "最后登录"),
+        grid.Column(
+            style: "webgrid-toolicon",
+            format: item => item.IsDisabled ? @Html.ImageActionLink(Url.Content("/Images/Enable.png"), "启用", "EnableUserAccount", "Admin", new {id = item.ID}, new { onclick = "return confirm('是否确定启用所选账户？');" }) : @Html.ImageActionLink(Url.Content("/Images/Disable.png"), "禁用", "DisableUserAccount", "Admin", new {id = item.ID}, new { onclick = "return confirm('是否确定禁用所选账户？');" }),
+            header: "",
+            canSort: false),
+        grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Edit.png"), "编辑", "EditUserAccount", "Admin", new {id = item.ID})</text>,
+            header: "",
+            canSort: false),
+            grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Delete.png"), "删除", "DeleteUserAccount", "Admin", new { id = item.ID }, new { onclick = "return confirm('是否确定删除所选账户？');" })</text>,
+            header: "",
+            canSort: false)))
+}
+<p>
+    @Html.ImageActionLink(Url.Content("/Images/Add.png"), "添加", "添加用户", "AddUserAccount", "Admin")
+</p>

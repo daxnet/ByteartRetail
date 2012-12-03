@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PostbackDataObject"
+    targetNamespace="http://www.ByteartRetail.com/PostbackDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/PostbackDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/PostbackDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="PostbackDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="ServerDateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="ServerOS" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="ServerArchitecture" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="MachineName" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="CLRVersion" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

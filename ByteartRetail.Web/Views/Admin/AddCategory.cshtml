@@ -1,0 +1,48 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model CategoryDataObject
+
+@{
+    ViewBag.Title = "添加商品分类";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("Category_32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post, new { id = "AddCategoryForm" }))
+{
+    @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+}
+
+<p>
+    <span>@Html.ImageSubmitButton("AddCategoryForm", Url.Content("~/Images/Save.png"), "保存", "保存更改")</span>
+    <span>&nbsp;</span>
+    <span>@Html.ImageActionLink(Url.Content("~/Images/Cancel.png"), "取消添加", "取消添加", "Categories", "Admin")</span>
+</p>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#Name").focus();
+        });
+    </script>
+}

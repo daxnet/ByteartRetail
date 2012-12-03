@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalesLineDataObject"
+    targetNamespace="http://www.ByteartRetail.com/SalesLineDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/SalesLineDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/SalesLineDataObject.xsd"
+    xmlns:pdo="http://www.ByteartRetail.com/ProductDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:import namespace="http://www.ByteartRetail.com/ProductDataObject.xsd"/>
+  
+  <xs:complexType name="SalesLineDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Quantity" type="xs:int" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="SalesOrderID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="false"/>
+      <xs:element name="Product" type="pdo:ProductDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="LineAmount" type="xs:decimal" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

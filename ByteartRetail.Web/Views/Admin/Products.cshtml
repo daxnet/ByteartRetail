@@ -1,0 +1,65 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model IEnumerable<ProductDataObject>
+
+@{
+    ViewBag.Title = "商品信息管理";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("Product_32.png")&nbsp;@ViewBag.Title</h1>
+    <h4>请使用下面的工具按钮对商品信息进行增添、编辑或删除的管理操作。单击商品名称同样可以打开该分类的编辑页面。
+    </h4>
+</hgroup>
+
+@if (Model.Count() > 0)
+{
+    var grid = new WebGrid(Model, defaultSort: "Name", selectionFieldName: "ID");
+    @grid.GetHtml(tableStyle:"webgrid", 
+    headerStyle:"webgrid-header", 
+    footerStyle:"webgrid-footer", 
+    rowStyle:"webgrid-row", 
+    alternatingRowStyle:"webgrid-alternating-row",
+    columns: grid.Columns(
+        grid.Column(
+            format: @<text>@Html.ProductImage((string)item.ImageUrl, ImageSize.Small)</text>,
+            style:"product-grid-image",
+            canSort:false),
+        grid.Column(
+            format: @<text>@Html.ActionLink((string)item.Name, "EditProduct", "Admin", new {id = item.ID}, null)</text>,
+            columnName: "Name",
+            header: "名称",
+            style: "product-grid-name", 
+            canSort: true),
+        grid.Column(
+            columnName: "Description",
+            header: "描述", 
+            style: "product-grid-description",
+            canSort: false),
+        grid.Column(
+            columnName: "Category",
+            format: (item) => item.Category == null ? Html.Encode("(未分类)") : item.Category.Name,
+            header: "分类",
+            style: "product-grid-category",
+            canSort: true),
+        grid.Column(
+            columnName: "UnitPrice",
+            format: @<text>@string.Format("{0:c}", item.UnitPrice)</text>,
+            header: "单价",
+            style: "product-grid-unitprice",
+            canSort: true), 
+        grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Edit.png"), "编辑", "EditProduct", "Admin", new {id = item.ID})</text>,
+            header: "",
+            canSort: false),
+            grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Delete.png"), "删除", "DeleteProduct", "Admin", new { id = item.ID }, new { onclick = "return confirm('是否确定删除所选商品？');" })</text>,
+            header: "",
+            canSort: false)))
+}
+<p>
+    @Html.ImageActionLink(Url.Content("/Images/Add.png"), "添加", "添加商品", "AddProduct", "Admin")
+</p>

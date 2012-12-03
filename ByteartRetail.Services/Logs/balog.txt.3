@@ -1,0 +1,1023 @@
+
+2012-06-15 10:12:35,567 [10] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: Customer with the UserName of 'daxnet' already exists.
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.CreateCustomer(CustomerDataObject dataObject) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 37
+   at DynamicModule.ns.Wrapped_ICustomerService_02511012697a430ba458ddbc5715c9b7.<CreateCustomer_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-15 10:12:45,603 [10] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: Customer with the UserName of 'daxnet' already exists.
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.CreateCustomer(CustomerDataObject dataObject) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 37
+   at DynamicModule.ns.Wrapped_ICustomerService_02511012697a430ba458ddbc5715c9b7.<CreateCustomer_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:28:41,491 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a60b33bfba1f44c0922feb8b647f04ab.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:30:34,834 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a60b33bfba1f44c0922feb8b647f04ab.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:30:36,595 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a60b33bfba1f44c0922feb8b647f04ab.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:30:40,023 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a60b33bfba1f44c0922feb8b647f04ab.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:30:56,070 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a60b33bfba1f44c0922feb8b647f04ab.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:39:09,895 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_ccb57e34362e4553b6412552d14365bb.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:39:22,520 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_ccb57e34362e4553b6412552d14365bb.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:42:44,197 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_1d85e619d22b4318a7e9bb5c4b3c2a8d.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:42:48,027 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_1d85e619d22b4318a7e9bb5c4b3c2a8d.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-16 22:42:49,570 [7] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 57
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_1d85e619d22b4318a7e9bb5c4b3c2a8d.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-06-20 08:05:29,653 [6] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> Nullable`1
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 -> System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+SalesOrderDataObject.SalesLines.SalesLines0[0].LineAmount
+
+Source value:
+System.Data.Entity.DynamicProxies.SalesLine_68D1D1659DA35EF99AE07E7F3C96DB436F91FEF86B28049CA853DD2C1FF31059 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Model.SalesLine.get_LineAmount() in C:\ByteartRetail\ByteartRetail.Domain\Model\SalesLine.cs:line 56
+   at lambda_method(Closure , Object )
+   at AutoMapper.Internal.PropertyGetter.GetValue(Object source)
+   at AutoMapper.Internal.MemberGetter.Resolve(ResolutionResult source)
+   at AutoMapper.PropertyMap.<ResolveValue>b__6(ResolutionResult current, IValueResolver resolver)
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at AutoMapper.PropertyMap.ResolveValue(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.CollectionMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.Implementation.CustomerServiceImpl.GetSalesOrders(Guid customerID) in C:\ByteartRetail\ByteartRetail.Application\Implementation\CustomerServiceImpl.cs:line 195
+   at DynamicModule.ns.Wrapped_ICustomerService_a1fd8e8cd3f54aaca8ed350ae67b7bf7.<GetSalesOrders_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-09 13:21:10,213 [10] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User with the UserName of 'daxnet' already exists.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 82
+   at DynamicModule.ns.Wrapped_IUserService_d1aa806b985f489894d12510511d8ce9.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-09 13:23:34,048 [26] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User with the UserName of 'daxnet' already exists.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 82
+   at DynamicModule.ns.Wrapped_IUserService_d1aa806b985f489894d12510511d8ce9.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-09 13:26:31,458 [13] ERROR ByteartRetail.Logger - Exception caught
+System.Configuration.ConfigurationErrorsException: An error occurred creating the configuration section handler for byteartRetailConfigSection: Could not load file or assembly 'ByteartRetail.Infrastructure.Config' or one of its dependencies. The system cannot find the file specified. (G:\Projects\ByteartRetail\ByteartRetail.Services\web.config line 7) ---> System.IO.FileNotFoundException: Could not load file or assembly 'ByteartRetail.Infrastructure.Config' or one of its dependencies. The system cannot find the file specified.
+   at System.Configuration.TypeUtil.GetTypeWithReflectionPermission(IInternalConfigHost host, String typeString, Boolean throwOnError)
+   at System.Configuration.RuntimeConfigurationRecord.RuntimeConfigurationFactory.Init(RuntimeConfigurationRecord configRecord, FactoryRecord factoryRecord)
+   at System.Configuration.RuntimeConfigurationRecord.RuntimeConfigurationFactory.InitWithRestrictedPermissions(RuntimeConfigurationRecord configRecord, FactoryRecord factoryRecord)
+   at System.Configuration.RuntimeConfigurationRecord.CreateSectionFactory(FactoryRecord factoryRecord)
+   at System.Configuration.BaseConfigurationRecord.FindAndEnsureFactoryRecord(String configKey, Boolean& isRootDeclaredHere)
+   --- End of inner exception stack trace ---
+   at System.Configuration.BaseConfigurationRecord.FindAndEnsureFactoryRecord(String configKey, Boolean& isRootDeclaredHere)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.get_Instance() in g:\Projects\ByteartRetail\ByteartRetail.Infrastructure\Config\ByteartRetailConfigSection.csd.cs:line 36
+   at ByteartRetail.Application.Security.PermissionKeyAttribute.CreatePermission() in g:\Projects\ByteartRetail\ByteartRetail.Application\Security\PermissionKeyAttribute.cs:line 67
+   at System.Security.PermissionSet.CreateSerialized(Object[] attrs, Boolean serialize, Byte[]& nonCasBlob, PermissionSet& casPset, HostProtectionResource fullTrustOnlyResources, Boolean allowEmptyPermissionSets)
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 77
+   at DynamicModule.ns.Wrapped_IUserService_375b6f8ac67f4722b0cdaa8d220d7aa6.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-09 13:27:44,313 [15] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 77
+   at DynamicModule.ns.Wrapped_IUserService_057143bc385543e6b7a0bb13638bd1e1.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-09-10 07:52:42,022 [15] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 77
+   at DynamicModule.ns.Wrapped_IUserService_b08a241f3e684c8cbb92a3ca6d65adf2.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-09-10 07:54:27,706 [3] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateCustomer(CustomerDataObject dataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 77
+   at DynamicModule.ns.Wrapped_IUserService_b08a241f3e684c8cbb92a3ca6d65adf2.<CreateCustomer_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="Administrators"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-09-13 20:55:41,619 [9] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User 'admin' is not a customer.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetSalesOrdersForCustomer(Guid customerID) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 252
+   at DynamicModule.ns.Wrapped_IUserService_97c13641b5874361ad3eaea7e4853af0.<GetSalesOrdersForCustomer_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-13 20:56:47,848 [9] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: Aggregate not found.
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoGet(ISpecification`1 specification) in g:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 133
+   at ByteartRetail.Domain.Repositories.Repository`1.Get(ISpecification`1 specification) in g:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 562
+   at ByteartRetail.Domain.Repositories.UserRepository.GetUserByEmail(String email) in g:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\UserRepository.cs:line 43
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetUserByEmail(String email) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 207
+   at DynamicModule.ns.Wrapped_IUserService_97c13641b5874361ad3eaea7e4853af0.<GetUserByEmail_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:25:50,091 [7] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in g:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformCreateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 81
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 169
+   at DynamicModule.ns.Wrapped_IUserService_a4918c5502ab4a25b1db973ac44c8e1d.<CreateUser_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:34:09,729 [14] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Cannot update a customer with user data
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 105
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 201
+   at DynamicModule.ns.Wrapped_IUserService_be01d2fdee9544ff87a4c194c4e92145.<UpdateUser_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:37:32,061 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 109
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 201
+   at DynamicModule.ns.Wrapped_IUserService_ad4f46c696154fb48ec3beb3e3f3be6a.<UpdateUser_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:42:00,617 [6] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User with the ID of '0ec2c371-f1cb-404c-981b-5d266fc7cd77' is a customer, and you cannot update a customer with user data.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 105
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 201
+   at DynamicModule.ns.Wrapped_IUserService_1e2f1579b5d24181ba7306efea8deb58.<UpdateUser_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:45:21,681 [11] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: userDataObject.ID
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 90
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomer(CustomerDataObject customerDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 206
+   at DynamicModule.ns.Wrapped_IUserService_1e2f1579b5d24181ba7306efea8deb58.<UpdateCustomer_DelegateImplementation>__4(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-14 21:51:42,431 [17] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User with the ID of '0ec2c371-f1cb-404c-981b-5d266fc7cd77' is a customer, and you cannot update a customer with user data.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 105
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUser(UserDataObject userDataObject) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 201
+   at DynamicModule.ns.Wrapped_IUserService_1e2f1579b5d24181ba7306efea8deb58.<UpdateUser_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-21 21:36:09,078 [16] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Application.QuerySpecExtension.IsVerbose(QuerySpec spec) in g:\Projects\ByteartRetail\ByteartRetail.Application\QuerySpecExtension.cs:line 13
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 159
+   at DynamicModule.ns.Wrapped_IProductService_a50e9398100944669f73add8e5570638.<GetCategories_DelegateImplementation>__8(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-25 19:25:21,840 [5] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+CategoryDataObject -> Category
+ByteartRetail.DataObjects.CategoryDataObject -> ByteartRetail.Domain.Model.Category
+
+Destination path:
+Category
+
+Source value:
+笔记本电脑 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.DataObjects.CategoryDataObject.GetHashCode() in g:\Projects\ByteartRetail\ByteartRetail.DataObjects\ByteartRetailDataObjects.Partial.cs:line 27
+   at AutoMapper.ResolutionContext.GetHashCode()
+   at System.Collections.Generic.GenericEqualityComparer`1.GetHashCode(T obj)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   --- End of inner exception stack trace ---
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in g:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 88
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.CreateCategories(CategoryDataObjectList categoryDataObjects) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 51
+   at DynamicModule.ns.Wrapped_IProductService_73c7ebcca46b4641a78d725256521104.<CreateCategories_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-25 19:29:00,395 [10] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+CategoryDataObject -> Category
+ByteartRetail.DataObjects.CategoryDataObject -> ByteartRetail.Domain.Model.Category
+
+Destination path:
+Category
+
+Source value:
+笔记本电脑 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.DataObjects.CategoryDataObject.GetHashCode() in g:\Projects\ByteartRetail\ByteartRetail.DataObjects\ByteartRetailDataObjects.Partial.cs:line 27
+   at AutoMapper.ResolutionContext.GetHashCode()
+   at System.Collections.Generic.GenericEqualityComparer`1.GetHashCode(T obj)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   --- End of inner exception stack trace ---
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in g:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 88
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.CreateCategories(CategoryDataObjectList categoryDataObjects) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 51
+   at DynamicModule.ns.Wrapped_IProductService_d5f421aee72c4313b9037e089c1fb03d.<CreateCategories_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-25 19:32:38,184 [9] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+CategoryDataObject -> Category
+ByteartRetail.DataObjects.CategoryDataObject -> ByteartRetail.Domain.Model.Category
+
+Destination path:
+Category
+
+Source value:
+笔记本电脑 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.DataObjects.CategoryDataObject.GetHashCode() in g:\Projects\ByteartRetail\ByteartRetail.DataObjects\ByteartRetailDataObjects.Partial.cs:line 27
+   at AutoMapper.ResolutionContext.GetHashCode()
+   at System.Collections.Generic.GenericEqualityComparer`1.GetHashCode(T obj)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   --- End of inner exception stack trace ---
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in g:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 88
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.CreateCategories(CategoryDataObjectList categoryDataObjects) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 51
+   at DynamicModule.ns.Wrapped_IProductService_10c01c0e7ca64ab0a741081e959d88b7.<CreateCategories_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-25 19:33:21,652 [11] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+CategoryDataObject -> Category
+ByteartRetail.DataObjects.CategoryDataObject -> ByteartRetail.Domain.Model.Category
+
+Destination path:
+Category
+
+Source value:
+345 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.DataObjects.CategoryDataObject.GetHashCode() in g:\Projects\ByteartRetail\ByteartRetail.DataObjects\ByteartRetailDataObjects.Partial.cs:line 27
+   at AutoMapper.ResolutionContext.GetHashCode()
+   at System.Collections.Generic.GenericEqualityComparer`1.GetHashCode(T obj)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   --- End of inner exception stack trace ---
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in g:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 88
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.CreateCategories(CategoryDataObjectList categoryDataObjects) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 51
+   at DynamicModule.ns.Wrapped_IProductService_b6bdab5ef8ef488a809b4cffebb920fa.<CreateCategories_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-25 19:53:52,928 [14] ERROR ByteartRetail.Logger - Exception caught
+AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+CategoryDataObject -> Category
+ByteartRetail.DataObjects.CategoryDataObject -> ByteartRetail.Domain.Model.Category
+
+Destination path:
+Category
+
+Source value:
+笔记本电脑 ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.DataObjects.CategoryDataObject.GetHashCode() in g:\Projects\ByteartRetail\ByteartRetail.DataObjects\ByteartRetailDataObjects.Partial.cs:line 27
+   at AutoMapper.ResolutionContext.GetHashCode()
+   at System.Collections.Generic.GenericEqualityComparer`1.GetHashCode(T obj)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   --- End of inner exception stack trace ---
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source)
+   at AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in g:\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 88
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.CreateCategories(CategoryDataObjectList categoryDataObjects) in g:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 51
+   at DynamicModule.ns.Wrapped_IProductService_d4ee742c984e47048800884d5cbd673c.<CreateCategories_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:16:54,904 [5] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoGetByKey(Guid key) in g:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 65
+   at ByteartRetail.Domain.Repositories.Repository`1.GetByKey(Guid key) in g:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 447
+   at ByteartRetail.Application.ApplicationService.PerformUpdateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository, Func`2 idFieldFunc, Action`2 fieldUpdateAction) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 133
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.UpdateProducts(ProductDataObjectList productDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 56
+   at DynamicModule.ns.Wrapped_IProductService_46c194e634524baebde1d93286791892.<UpdateProducts_DelegateImplementation>__2(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:37:42,030 [6] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_aad667a33d9847e3800674a65adf31bf.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:41:31,374 [6] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_13049a9fa3954c14bd8c8bf8180b6646.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:42:35,812 [5] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_9cafbd62bc174608a768dd7b90b61a2b.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:47:11,054 [6] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_ee0c559d6c8c4e12b57e119d6297308e.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:49:07,770 [6] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_4c3157bc6e224e3b9c788659c3229a66.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 09:55:04,811 [10] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: customerDataObjects
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 273
+   at DynamicModule.ns.Wrapped_IUserService_8ced6bc565b04c6eb7c5885546ea0628.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 10:14:37,024 [26] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User has not been disabled.
+   at ByteartRetail.Domain.Model.User.Enable() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Model\User.cs:line 86
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 151
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUsers(UserDataObjectList userDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 265
+   at DynamicModule.ns.Wrapped_IUserService_8819ab83508f43fcb32d138cbbf6dbd8.<UpdateUsers_DelegateImplementation>__5(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 10:18:42,032 [14] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User has not been disabled.
+   at ByteartRetail.Domain.Model.User.Enable() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Model\User.cs:line 86
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 151
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 279
+   at DynamicModule.ns.Wrapped_IUserService_5e10ef982d3740dca920d1172527a223.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 10:21:27,181 [14] ERROR ByteartRetail.Logger - Exception caught
+ByteartRetail.Domain.DomainException: User has not been disabled.
+   at ByteartRetail.Domain.Model.User.Enable() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Model\User.cs:line 86
+   at ByteartRetail.Application.Implementation.UserServiceImpl.PerformUpdateUser(UserDataObject userDataObject) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 151
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateCustomers(CustomerDataObjectList customerDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 279
+   at DynamicModule.ns.Wrapped_IUserService_c85dc6ea47824ce1bebd1e5bd26cf5c0.<UpdateCustomers_DelegateImplementation>__6(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 18:53:57,963 [14] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Roles'. Cannot insert duplicate key in object 'dbo.Roles'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 92
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateRoles(RoleDataObjectList roleDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 386
+   at DynamicModule.ns.Wrapped_IUserService_84caf7c61cd24deda2b2e720743b87b7.<CreateRoles_DelegateImplementation>__13(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 18:57:21,314 [8] ERROR ByteartRetail.Logger - Exception caught
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_Roles'. Cannot insert duplicate key in object 'dbo.Roles'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.Commit() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 32
+   at ByteartRetail.Application.ApplicationService.PerformCreateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 92
+   at ByteartRetail.Application.Implementation.UserServiceImpl.CreateRoles(RoleDataObjectList roleDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 386
+   at DynamicModule.ns.Wrapped_IUserService_a7717f9965f34618bfe686c67cbd225d.<CreateRoles_DelegateImplementation>__13(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-09-29 19:05:52,635 [15] ERROR ByteartRetail.Logger - Exception caught
+System.Data.SqlClient.SqlException (0x80131904): Cannot drop database "ByteartRetail" because it is currently in use.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass1c.<DropDatabase>b__1b(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DropDatabase(SqlConnection sqlConnection, Nullable`1 commandTimeout, String databaseName)
+   at System.Data.SqlClient.SqlProviderServices.DbDeleteDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.DeleteDatabase()
+   at System.Data.Entity.Internal.DatabaseOperations.DeleteIfExists(ObjectContext objectContext)
+   at System.Data.Entity.Database.Delete()
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_ba4794ec10b64dc9bfc7621ab0e3b862.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+ClientConnectionId:721db7f0-c4bf-4512-9d11-5f03ed49cab3
+
+2012-10-10 20:51:53,887 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Data.ProviderIncompatibleException: An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct. ---> System.Data.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_bcc38c231b864976be6c94f411bb729a.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-10 20:52:40,297 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Data.ProviderIncompatibleException: An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct. ---> System.Data.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.ModelConfiguration.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in f:\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 100
+   at ByteartRetail.Domain.Repositories.Repository`1.DoFindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 219
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll() in f:\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 570
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in f:\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 162
+   at DynamicModule.ns.Wrapped_IProductService_651abb7812b146b2bab24b093e5f6548.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

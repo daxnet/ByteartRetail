@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RoleDataObject"
+    targetNamespace="http://www.ByteartRetail.com/RoleDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/RoleDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/RoleDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="RoleDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

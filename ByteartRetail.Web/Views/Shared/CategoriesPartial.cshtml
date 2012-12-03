@@ -1,0 +1,24 @@
+﻿@model ByteartRetail.DataObjects.CategoryDataObjectList
+
+<table width="202" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td height="320" align="left" valign="top">
+            <div class="category">
+                <img src="/images/spacer.gif" alt="" width="30" height="19">商品分类<a href="http://daxnet.cnblogs.com/"><img src="/images/spacer.gif" alt="" width="10" height="10" border="0"></a></div>
+            <div class="linkmenu">
+                <img src="/images/spacer.gif" alt="" width="20" height="19"><span class="red">&bull;</span>&nbsp;&nbsp;<a href="http://daxnet.cnblogs.com/">@Html.ActionLink("所有商品", "Category", "Home", null, null)</a></div>
+            @foreach(var item in Model)
+            {
+            <div class="linkmenu">
+                <img src="/images/spacer.gif" alt="" width="20" height="19"><span class="red">&bull;</span>&nbsp;&nbsp;@Html.ActionLink(item.Name, "Category", "Home", new { categoryID = item.ID }, null)</div>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td height="26">&nbsp;</td>
+    </tr>
+    <tr>
+        <td align="center"><a href="http://daxnet.cnblogs.com/">
+            <img src="/images/banner.jpg" alt="" width="197" height="215" border="0"></a></td>
+    </tr>
+</table>

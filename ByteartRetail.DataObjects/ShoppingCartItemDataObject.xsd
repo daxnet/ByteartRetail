@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ShoppingCartItemDataObject"
+    targetNamespace="http://www.ByteartRetail.com/ShoppingCartItemDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/ShoppingCartItemDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/ShoppingCartItemDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:pdo="http://www.ByteartRetail.com/ProductDataObject.xsd"
+>
+  <xs:import namespace="http://www.ByteartRetail.com/ProductDataObject.xsd"/>
+  
+  <xs:complexType name="ShoppingCartItemDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Quantity" type="xs:int" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Product" type="pdo:ProductDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="LineAmount" type="xs:decimal" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="ShoppingCartID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

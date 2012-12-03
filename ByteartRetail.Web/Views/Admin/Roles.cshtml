@@ -1,0 +1,47 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model IEnumerable<RoleDataObject>
+
+@{
+    ViewBag.Title = "用户角色管理";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("Role_32.png")&nbsp;@ViewBag.Title</h1>
+    <h4>请使用下面的工具按钮对用户角色进行增添、编辑或删除的管理操作。单击用户角色名同样可以打开该角色的编辑页面。
+    </h4>
+</hgroup>
+
+@if (Model != null && Model.Count() > 0)
+{
+    var grid = new WebGrid(Model, defaultSort: "Name", selectionFieldName: "ID");
+    @grid.GetHtml(tableStyle:"webgrid", 
+    headerStyle:"webgrid-header", 
+    footerStyle:"webgrid-footer", 
+    rowStyle:"webgrid-row", 
+    alternatingRowStyle:"webgrid-alternating-row",
+    columns: grid.Columns(
+        grid.Column(
+            format: @<text>@Html.ActionLink((string)item.Name, "EditRole", "Admin", new {id = item.ID}, null)</text>,
+            columnName: "Name",
+            header: "角色名",
+            canSort: true),
+        grid.Column(
+            columnName: "Description",
+            header: "角色描述", 
+            canSort: false),
+        grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Edit.png"), "编辑", "EditRole", "Admin", new {id = item.ID})</text>,
+            header: "",
+            canSort: false),
+            grid.Column(
+            style: "webgrid-toolicon",
+            format: @<text>@Html.ImageActionLink(Url.Content("/Images/Delete.png"), "删除", "DeleteRole", "Admin", new { id = item.ID }, new { onclick = "return confirm('是否确定删除所选角色？');" })</text>,
+            header: "",
+            canSort: false)))
+}
+<p>
+    @Html.ImageActionLink(Url.Content("/Images/Add.png"), "添加", "添加角色", "AddRole", "Admin")
+</p>

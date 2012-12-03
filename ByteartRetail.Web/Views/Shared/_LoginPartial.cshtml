@@ -1,0 +1,36 @@
+﻿@using ByteartRetail.Web;
+
+@if (Request.IsAuthenticated) {
+    <table style="width: 100%;">
+        <tr>
+            <td class="loginPartial_ShoppingCartIcon">
+                @Html.Image("ShoppingCart.png")
+            </td>
+            <td class="loginPartial_ShoppingCartHint">
+                <span class="loginPartial_Text">欢迎您，@User.Identity.Name</span>
+                <br />
+                <a href="@Url.Action("ShoppingCart", "Home")">
+                <span class="loginPartial_ShoppingCartItemNumber">@ViewBag.ShoppingCartItems</span><span class="loginPartial_Text">个商品</span>
+                    </a>
+            </td>
+            <td class="loginPartial_LogOffIcon">
+                @using(Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm"})){<span class="loginPartialLink">
+                    <a href="javascript:if (confirm('是否确认退出？')) document.getElementById('logoutForm').submit()">退出</a></span>
+                }
+            </td>
+        </tr>
+    </table>
+} else {
+    using (Html.BeginForm("LogIn", "Account", FormMethod.Post, new { id="loginForm" }))
+    {
+        @Html.AntiForgeryToken()
+    <table class="loginPartialLink">
+        <tr>
+            <td style="width:100%; text-align: right">
+                <a href="@Url.Action("LogIn", "Account")" >登录</a>
+            </td>
+        </tr>
+    </table>
+        
+    }
+}

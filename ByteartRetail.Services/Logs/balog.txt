@@ -1,0 +1,501 @@
+
+2012-10-24 10:01:54,949 [6] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: Aggregate not found.
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoGet(ISpecification`1 specification, Expression`1[] eagerLoadingProperties) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 279
+   at ByteartRetail.Domain.Repositories.Repository`1.Get(ISpecification`1 specification, Expression`1[] eagerLoadingProperties) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 721
+   at ByteartRetail.Domain.Repositories.SalesOrderRepository.GetSalesOrderByID(Guid orderID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\SalesOrderRepository.cs:line 26
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetSalesOrder(Guid orderID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 184
+   at DynamicModule.ns.Wrapped_IOrderService_f2286418bc9a4348bedf3a68a0768955.<GetSalesOrder_DelegateImplementation>__8(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-24 13:31:11,792 [4] ERROR ByteartRetail.Logger - Exception caught
+System.Data.SqlClient.SqlException (0x80131904): Cannot drop database "ByteartRetail" because it is currently in use.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass1c.<DropDatabase>b__1b(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DropDatabase(SqlConnection sqlConnection, Nullable`1 commandTimeout, String databaseName)
+   at System.Data.SqlClient.SqlProviderServices.DbDeleteDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.DeleteDatabase()
+   at System.Data.Entity.Internal.DatabaseOperations.DeleteIfExists(ObjectContext objectContext)
+   at System.Data.Entity.Database.Delete()
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.ProductRepository.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ProductRepository.cs:line 30
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 259
+   at DynamicModule.ns.Wrapped_IProductService_8bfbf7949e464b53b6ab0e34555b605c.<GetFeaturedProducts_DelegateImplementation>__15(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+ClientConnectionId:1bb10e3d-fb99-4d1b-b370-3dd3d0ff4ff0
+
+2012-10-24 13:35:47,051 [6] ERROR ByteartRetail.Logger - Exception caught
+System.Data.SqlClient.SqlException (0x80131904): Cannot drop database "ByteartRetail" because it is currently in use.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass1c.<DropDatabase>b__1b(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DropDatabase(SqlConnection sqlConnection, Nullable`1 commandTimeout, String databaseName)
+   at System.Data.SqlClient.SqlProviderServices.DbDeleteDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.DeleteDatabase()
+   at System.Data.Entity.Internal.DatabaseOperations.DeleteIfExists(ObjectContext objectContext)
+   at System.Data.Entity.Database.Delete()
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.ProductRepository.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ProductRepository.cs:line 30
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 259
+   at DynamicModule.ns.Wrapped_IProductService_f942242326d944d69ad7629f11ec1737.<GetFeaturedProducts_DelegateImplementation>__15(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+ClientConnectionId:ce5a0d3f-0242-45e3-a4ff-50056eed08f8
+
+2012-10-24 13:36:34,853 [6] ERROR ByteartRetail.Logger - Exception caught
+System.Data.SqlClient.SqlException (0x80131904): Cannot drop database "ByteartRetail" because it is currently in use.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlProviderServices.<>c__DisplayClass1c.<DropDatabase>b__1b(SqlConnection conn)
+   at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+   at System.Data.SqlClient.SqlProviderServices.DropDatabase(SqlConnection sqlConnection, Nullable`1 commandTimeout, String databaseName)
+   at System.Data.SqlClient.SqlProviderServices.DbDeleteDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   at System.Data.Objects.ObjectContext.DeleteDatabase()
+   at System.Data.Entity.Internal.DatabaseOperations.DeleteIfExists(ObjectContext objectContext)
+   at System.Data.Entity.Database.Delete()
+   at System.Data.Entity.DropCreateDatabaseIfModelChanges`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Database.<>c__DisplayClass2`1.<SetInitializerInternal>b__0(DbContext c)
+   at System.Data.Entity.Internal.InternalContext.<>c__DisplayClass8.<PerformDatabaseInitialization>b__6()
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ByteartRetail.Domain.Repositories.ProductRepository.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\ProductRepository.cs:line 30
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetFeaturedProducts(Int32 count) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 259
+   at DynamicModule.ns.Wrapped_IProductService_f942242326d944d69ad7629f11ec1737.<GetFeaturedProducts_DelegateImplementation>__15(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+ClientConnectionId:ce5a0d3f-0242-45e3-a4ff-50056eed08f8
+
+2012-10-25 14:35:41,204 [40] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 59
+   at DynamicModule.ns.Wrapped_IOrderService_67d071de7d6a4f27ac96bba6aa1728d0.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-10-25 14:37:08,434 [47] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 59
+   at DynamicModule.ns.Wrapped_IOrderService_67d071de7d6a4f27ac96bba6aa1728d0.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-10-25 14:42:54,305 [34] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 59
+   at DynamicModule.ns.Wrapped_IOrderService_67d071de7d6a4f27ac96bba6aa1728d0.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-10-25 14:49:06,703 [34] ERROR ByteartRetail.Logger - Exception caught
+System.Security.SecurityException: Request for principal permission failed.
+   at System.Security.Permissions.PrincipalPermission.ThrowSecurityException()
+   at System.Security.Permissions.PrincipalPermission.Demand()
+   at System.Security.PermissionSet.DemandNonCAS()
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 59
+   at DynamicModule.ns.Wrapped_IOrderService_d82a0ad1815643d18b232d52152b1363.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+The action that failed was:
+Demand
+The type of the first permission that failed was:
+System.Security.Permissions.PrincipalPermission
+The first permission that failed was:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The demand was for:
+<IPermission class="System.Security.Permissions.PrincipalPermission, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+version="1">
+<Identity Authenticated="true"
+Role="普通客户"/>
+</IPermission>
+
+The assembly or AppDomain that failed was:
+mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+
+2012-10-26 10:40:31,598 [29] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: 没有可用的购物车实例。
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 62
+   at DynamicModule.ns.Wrapped_IOrderService_903328a45ab84fdaa304d5a624113995.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 11:20:41,842 [31] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentNullException: Value cannot be null.
+Parameter name: ID
+   at ByteartRetail.Application.ApplicationService.PerformUpdateObjects[TDataObjectList,TDataObject,TAggregateRoot](TDataObjectList dataTransferObjects, IRepository`1 repository, Func`2 idFieldFunc, Action`2 fieldUpdateAction) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\ApplicationService.cs:line 138
+   at ByteartRetail.Application.Implementation.UserServiceImpl.UpdateUsers(UserDataObjectList userDataObjects) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 137
+   at DynamicModule.ns.Wrapped_IUserService_f5dcc9c5e7f743ce8a5f47d2d583056f.<UpdateUsers_DelegateImplementation>__4(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:43:27,340 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:43:27,468 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:44:58,944 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:44:58,964 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:47:43,921 [15] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:47:43,940 [15] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:48:35,459 [11] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:50:13,232 [22] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:50:13,255 [21] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:54:57,017 [5] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 12:54:57,039 [22] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_ac1eeee6cd264be790ef9ad49dc46a1b.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:01:49,256 [14] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_35fdd6cee55449b8916afa7d27f4d750.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:01:49,403 [6] ERROR ByteartRetail.Logger - Exception caught
+System.NotImplementedException: 没有实现
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_35fdd6cee55449b8916afa7d27f4d750.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:27,047 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:33,304 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:42,622 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:43,430 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:43,603 [10] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:43,780 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:43,941 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:44,112 [10] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:44,277 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:44,452 [5] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:44,653 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:45,385 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:45,576 [5] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:45,757 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:45,934 [6] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,115 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,279 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,430 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,581 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,734 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:46,906 [16] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:56,885 [10] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:04:58,648 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.UpdateShoppingCartItem(Guid shoppingCartItemID, Int32 quantity) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 125
+   at DynamicModule.ns.Wrapped_IOrderService_b1f8cc0cb19346ea9e8bc8fac8971e30.<UpdateShoppingCartItem_DelegateImplementation>__3(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:10:49,719 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_f8af5a207bae4afc9e33b042075bbb3d.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 13:10:49,861 [3] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: test
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 161
+   at DynamicModule.ns.Wrapped_IProductService_f8af5a207bae4afc9e33b042075bbb3d.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 14:44:11,589 [7] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\CategorizationRepository.cs:line 44
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 249
+   at DynamicModule.ns.Wrapped_IProductService_402a85072c5f4337a96587b7c1d9ca8a.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 14:44:20,401 [7] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\CategorizationRepository.cs:line 44
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 249
+   at DynamicModule.ns.Wrapped_IProductService_402a85072c5f4337a96587b7c1d9ca8a.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 14:44:26,491 [10] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\CategorizationRepository.cs:line 44
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 249
+   at DynamicModule.ns.Wrapped_IProductService_402a85072c5f4337a96587b7c1d9ca8a.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 14:44:47,254 [7] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\CategorizationRepository.cs:line 44
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 249
+   at DynamicModule.ns.Wrapped_IProductService_402a85072c5f4337a96587b7c1d9ca8a.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 14:45:50,903 [4] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Domain.Repositories\CategorizationRepository.cs:line 44
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 249
+   at DynamicModule.ns.Wrapped_IProductService_fb1a59fd544e415cac08da4e1c77c3fc.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-26 16:01:52,007 [14] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Application.QuerySpecExtension.IsVerbose(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\QuerySpecExtension.cs:line 13
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetUsers(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 289
+   at DynamicModule.ns.Wrapped_IUserService_3a2ac6ee408c434496cb5cf60139685a.<GetUsers_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-10-30 19:01:36,765 [32] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: GetCategories failed - test
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 184
+   at DynamicModule.ns.Wrapped_IProductService_c1dbcef457454cb3bc41d48d81d55fa3.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

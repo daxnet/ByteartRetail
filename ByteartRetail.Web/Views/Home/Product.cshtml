@@ -1,0 +1,75 @@
+﻿@using ByteartRetail.Web;
+@model ByteartRetail.DataObjects.ProductDataObject
+
+@{
+    ViewBag.Title = "商品详细信息";
+}
+<table style="width: 100%">
+    <tr>
+        <td style="width: 135px; text-align: center;">
+            @Html.ProductImage(Model.ImageUrl, ImageSize.Large)
+        </td>
+        <td style="text-align:left; vertical-align: top;">
+            <table style="width: 100%"> 
+                <tr>
+                    <td>
+                        <h2>@Model.Name</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">
+                        <span>商品分类：@Model.CategoryName</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.Description
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 75%; text-align: right;">
+                                    单价：
+                                </td>
+                                <td class="price">
+                                    @string.Format("{0:N2} 元", Model.UnitPrice)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 75%; text-align: right;">
+                                    数量：
+                                </td>
+                                <td style="text-align: left;">
+                                    @using (Html.BeginForm("AddToCart", "Home", new { productID = Model.ID }, FormMethod.Post, new { id = "AddToCartForm" }))
+                                    {
+                                        @Html.AntiForgeryToken();
+                                        <span><input type="text" id="items" name="items" style="width: 30px;" /></span>
+                                        <span><a href="javascript:document.getElementById('AddToCartForm').submit()" id="blue1">购买</a></span>
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $('#items').val("1");
+            $('#items').focus();
+        });
+    </script>
+}

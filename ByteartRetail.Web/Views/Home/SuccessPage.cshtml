@@ -1,0 +1,30 @@
+﻿@using ByteartRetail.Web;
+
+@{
+    ViewBag.Title = ViewBag.PageTitle;
+}
+
+<div>
+    <h1>@Html.Image("Success_32.png")&nbsp;@ViewBag.PageTitle</h1>
+    <div>页面将在&nbsp;<b><span id="seconds">&nbsp;</span></b>&nbsp;秒后返回，或直接单击 <b>@Html.ActionLink("此处", (string)ViewBag.RetAction, (string)ViewBag.RetController)</b> 返回。</div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            var secs = @ViewBag.WaitSeconds;
+            var cur = secs;
+            $("#seconds").text(cur.toString());
+            setInterval(function () {
+                cur--;
+                if (cur == 0) return;
+                $("#seconds").text(cur.toString());
+            }, 1000);
+
+            setInterval(function () {
+                window.location.href = '@Url.Action((string)ViewBag.RetAction, (string)ViewBag.RetController)';
+            }, secs * 1000);
+        });
+    </script>
+}

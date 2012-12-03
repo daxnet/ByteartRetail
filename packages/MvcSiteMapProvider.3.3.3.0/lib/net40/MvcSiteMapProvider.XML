@@ -1,0 +1,3447 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvcSiteMapProvider</name>
+    </assembly>
+    <members>
+        <member name="T:MvcSiteMapProvider.AmbiguousControllerException">
+            <summary>
+            AmbiguousControllerException
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.AmbiguousControllerException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.AmbiguousControllerException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.AmbiguousControllerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.AuthorizeAttributeAclModule">
+            <summary>
+            AuthorizeAttributeAclModule class
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.IAclModule">
+            <summary>
+            IAclModule contract
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.IAclModule.IsAccessibleToUser(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,MvcSiteMapProvider.DefaultSiteMapProvider,System.Web.HttpContext,System.Web.SiteMapNode)">
+            <summary>
+            Determines whether node is accessible to user.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="provider">The provider.</param>
+            <param name="context">The context.</param>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if accessible to user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.AuthorizeAttributeAclModule.IsAccessibleToUser(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,MvcSiteMapProvider.DefaultSiteMapProvider,System.Web.HttpContext,System.Web.SiteMapNode)">
+            <summary>
+            Determines whether node is accessible to user.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="provider">The provider.</param>
+            <param name="context">The context.</param>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if accessible to user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.AclModuleNotSupportedException">
+            <summary>
+            AclModuleNotSupportedException
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.AclModuleNotSupportedException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.AclModuleNotSupportedException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.AclModuleNotSupportedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.ControllerExtensions">
+            <summary>
+            ControllerExtensions
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.ControllerExtensions.GetCurrentSiteMapNode(System.Web.Mvc.ControllerBase)">
+            <summary>
+            Gets the current site map node.
+            </summary>
+            <param name="controller">The controller.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.ControllerExtensions.GetCurrentSiteMapNode(System.Web.Mvc.ControllerBase,System.Web.SiteMapProvider)">
+            <summary>
+            Gets the current site map node.
+            </summary>
+            <param name="controller">The controller.</param>
+            <param name="provider">The provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.ControllerExtensions.GetCurrentSiteMapNodeForChildAction(System.Web.Mvc.ControllerBase)">
+            <summary>
+            Gets the current site map node for child action.
+            </summary>
+            <param name="controller">The controller.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.ControllerExtensions.GetCurrentSiteMapNodeForChildAction(System.Web.Mvc.ControllerBase,System.Web.SiteMapProvider)">
+            <summary>
+            Gets the current site map node for child action.
+            </summary>
+            <param name="controller">The controller.</param>
+            <param name="provider">The provider.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Web.Mvc.Infrastructure.Implementation.ObjectCopier">
+            <summary>
+            ObjectCopier
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Filters.AttributeTarget">
+            <summary>
+            AttributeTarget
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Filters.AttributeTarget.CurrentNode">
+            <summary>
+            CurrentNode
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Filters.AttributeTarget.ParentNode">
+            <summary>
+            ParentNode
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Filters.SiteMapTitleTarget">
+            <summary>
+            SiteMapTitleTarget
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Filters.SiteMapTitleTarget.CurrentNode">
+            <summary>
+            CurrentNode
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Filters.SiteMapTitleTarget.ParentNode">
+            <summary>
+            ParentNode
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.UrlResolverException">
+            <summary>
+            UrlResolverException
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.UrlResolverException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.UrlResolverException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.UrlResolverException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver">
+            <summary>
+            Default SiteMapNode URL resolver.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.ISiteMapNodeUrlResolver">
+            <summary>
+            SiteMapNode URL resolver contract.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.ISiteMapNodeUrlResolver.ResolveUrl(MvcSiteMapProvider.MvcSiteMapNode,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Resolves the URL.
+            </summary>
+            <param name="mvcSiteMapNode">The MVC site map node.</param>
+            <param name="area">The area.</param>
+            <param name="controller">The controller.</param>
+            <param name="action">The action.</param>
+            <param name="routeValues">The route values.</param>
+            <returns>The resolved URL.</returns>
+        </member>
+        <member name="F:MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver.UrlHelperCacheKey">
+            <summary>
+            UrlHelperCacheKey
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver.ResolveUrl(MvcSiteMapProvider.MvcSiteMapNode,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Resolves the URL.
+            </summary>
+            <param name="mvcSiteMapNode">The MVC site map node.</param>
+            <param name="area">The area.</param>
+            <param name="controller">The controller.</param>
+            <param name="action">The action.</param>
+            <param name="routeValues">The route values.</param>
+            <returns>The resolved URL.</returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver.UrlHelper">
+            <summary>
+            Gets the URL helper.
+            </summary>
+            <value>The URL helper.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultSiteMapProviderEventHandler">
+            <summary>
+            DefaultSiteMapProviderEventHandler
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.ISiteMapProviderEventHandler">
+            <summary>
+            ISiteMapProviderEventHandler contract.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.ISiteMapProviderEventHandler.OnAddingSiteMapNode(MvcSiteMapProvider.SiteMapProviderEventContext)">
+            <summary>
+            Called when adding site map node.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>Add the node to sitemap?</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.ISiteMapProviderEventHandler.OnAddedSiteMapNode(MvcSiteMapProvider.SiteMapProviderEventContext)">
+            <summary>
+            Called when added site map node.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProviderEventHandler.OnAddingSiteMapNode(MvcSiteMapProvider.SiteMapProviderEventContext)">
+            <summary>
+            Called when adding site map node.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>Add the node to sitemap?</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProviderEventHandler.OnAddedSiteMapNode(MvcSiteMapProvider.SiteMapProviderEventContext)">
+            <summary>
+            Called when added site map node.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.ISiteMapNodeVisibilityProvider">
+            <summary>
+            ISiteMapNode Visibility Provider contract.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.ISiteMapNodeVisibilityProvider.IsVisible(System.Web.SiteMapNode,System.Web.HttpContext,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Determines whether the node is visible.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="context">The context.</param>
+            <param name="sourceMetadata">The source metadata.</param>
+            <returns>
+            	<c>true</c> if the specified node is visible; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultSiteMapNodeVisibilityProvider">
+            <summary>
+            Default SiteMapNode Visibility Provider.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapNodeVisibilityProvider.IsVisible(System.Web.SiteMapNode,System.Web.HttpContext,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Determines whether the node is visible.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="context">The context.</param>
+            <param name="sourceMetadata">The source metadata.</param>
+            <returns>
+            	<c>true</c> if the specified node is visible; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.HttpRequest2">
+            <summary>
+            HttpRequest2 wrapper.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.HttpRequest2.#ctor(System.Web.HttpRequest)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.HttpRequest2"/> class.
+            </summary>
+            <param name="httpRequest">The object that this wrapper class provides access to.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="httpRequest"/> is null.
+            </exception>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.HttpRequest2.AppRelativeCurrentExecutionFilePath">
+            <summary>
+            Gets the virtual path of the application root and makes it relative by using the tilde (~) notation for the application root (as in "~/page.aspx").
+            </summary>
+            <value></value>
+            <returns>
+            The virtual path of the application root for the current request with the tilde operator added.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.HttpRequest2.CurrentExecutionFilePath">
+            <summary>
+            Gets the virtual path of the current request.
+            </summary>
+            <value></value>
+            <returns>
+            The virtual path of the page handler that is currently executing.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.HttpContext2">
+            <summary>
+            HttpContext2 wrapper.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.HttpContext2.#ctor(System.Web.HttpContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.HttpContext2"/> class.
+            </summary>
+            <param name="httpContext">The object that this wrapper class provides access to.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="httpContext"/> is null.
+            </exception>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.HttpContext2.Request">
+            <summary>
+            Gets the <see cref="T:System.Web.HttpRequestBase"/> object for the current HTTP request.
+            </summary>
+            <value></value>
+            <returns>
+            The current HTTP request.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile">
+            <summary>
+            MvcSiteMapProviderViewEngineVirtualFile class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile"/> class.
+            </summary>
+            <param name="filePath">The filePath.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile.Open">
+            <summary>
+            When overridden in a derived class, returns a read-only stream to the virtual resource.
+            </summary>
+            <returns>A read-only stream to the virtual file.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile.ReadResource(System.String)">
+            <summary>
+            Reads the resource.
+            </summary>
+            <param name="embeddedFileName">Name of the embedded file.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualFile.FilePath">
+            <summary>
+            Gets or sets the file path.
+            </summary>
+            <value>The file path.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.AclModuleDoesNotSupportRegularSiteMapNodes">
+            <summary>
+              Looks up a localized string similar to The current ACL module does not provide functionality for regular SiteMapNode objects..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.AmbiguousControllerFoundMultipleControllers">
+            <summary>
+              Looks up a localized string similar to Ambiguous controller. Found multiple controller types for {0}Controller. Consider narrowing the places to search by adding you controller namespaces to ControllerBuilder.Current.DefaultNamespaces..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.AssemblyScanTrustLevelNotSupported">
+            <summary>
+              Looks up a localized string similar to Scanning assemblies for sitemap nodes is not supported in the current trust level. Consider a higher trust level or disable scanning assemblies for SiteMap nodes..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.CannotEnumerateThreadSafeDictionary">
+            <summary>
+              Looks up a localized string similar to Cannot enumerate a threadsafe dictionary. Instead, enumerate the keys or values collection..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.CouldNotDetermineRootNode">
+            <summary>
+              Looks up a localized string similar to Root node could not be determined. Check that the XML SiteMap file exists or that there is an MvcSiteMapNode attribute defined that does not have the ParentKey defined..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.CouldNotResolve">
+            <summary>
+              Looks up a localized string similar to Could not resolve URL for sitemap node {0} which represents action {1} in controller {2}. Ensure that the route {3} for this sitemap node can be resolved and that its default values allow resolving the URL for the current sitemap node..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.DuplicateRootNodeDetected">
+            <summary>
+              Looks up a localized string similar to Duplicate root node detected. This usually happens when a rootnode is defined in the SiteMap XML file and/or one or more MvcSiteMapNode attributes have been defined without a ParentKey..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.InvalidSiteMapElement">
+            <summary>
+              Looks up a localized string similar to An invalid element was found in the sitemap..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.NoUrlResolverProvided">
+            <summary>
+              Looks up a localized string similar to No ISiteMapNodeUrlResolver is provided for the current node..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.RelativeUrlNotAllowed">
+            <summary>
+              Looks up a localized string similar to Relative URL is not allowed..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.SiteMapFileNotFound">
+            <summary>
+              Looks up a localized string similar to Site map file could not be found. Verify that the path provided in Web.config is correct..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.UnknownException">
+            <summary>
+              Looks up a localized string similar to An error occured while building the sitemap... Check the InnerException for more details..
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Resources.Messages.UnknownSiteMapProvider">
+            <summary>
+              Looks up a localized string similar to Unknown SiteMap provider: {0}.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.SiteMapProviderEventContext">
+            <summary>
+            SiteMapProviderEventContext
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.SiteMapProviderEventContext.#ctor(System.Web.SiteMapProvider,System.Web.SiteMapNode,System.Web.SiteMapNode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.SiteMapProviderEventContext"/> class.
+            </summary>
+            <param name="provider">The provider.</param>
+            <param name="currentNode">The current node.</param>
+            <param name="parentNode">The parent node.</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.SiteMapProviderEventContext.Provider">
+            <summary>
+            Gets or sets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.SiteMapProviderEventContext.CurrentNode">
+            <summary>
+            Gets the current node.
+            </summary>
+            <value>The current node.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.SiteMapProviderEventContext.ParentNode">
+            <summary>
+            Gets the parent node.
+            </summary>
+            <value>The parent node.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.IThreadSafeDictionary`2">
+            <summary>
+            Thread-safe dictionary contract.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.IThreadSafeDictionary`2.MergeSafe(`0,`1)">
+            <summary>
+            Merge is similar to the SQL merge or upsert statement.  
+            </summary>
+            <param name="key">Key to lookup</param>
+            <param name="newValue">New Value</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.IThreadSafeDictionary`2.RemoveSafe(`0)">
+            <summary>
+            This is a blind remove. Prevents the need to check for existence first.
+            </summary>
+            <param name="key">Key to Remove</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.ThreadSafeDictionary`2">
+            <summary>
+            Thread-safe dictionary implementation.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.RemoveSafe(`0)">
+            <summary>
+            This is a blind remove. Prevents the need to check for existence first.
+            </summary>
+            <param name="key">Key to remove</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.MergeSafe(`0,`1)">
+            <summary>
+            Merge does a blind remove, and then add.  Basically a blind Upsert.  
+            </summary>
+            <param name="key">Key to lookup</param>
+            <param name="newValue">New Value</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Remove(`0)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the dictionary contains the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+            	<c>true</c> if the dictionary contains the specified key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries to get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ThreadSafeDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the value with the specified key.
+            </summary>
+            <value>The value</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.ThreadSafeDictionary`2.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.External.ThreadSafeDictionary`2.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.Locks">
+            <summary>
+            Locks class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.GetReadLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Gets the read lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.GetReadOnlyLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Gets the read only lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.GetWriteLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Gets the write lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.ReleaseReadOnlyLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Releases the read only lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.ReleaseReadLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Releases the read lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.ReleaseWriteLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Releases the write lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.ReleaseLock(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Releases the lock.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.GetLockInstance">
+            <summary>
+            Gets the lock instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.Locks.GetLockInstance(System.Threading.LockRecursionPolicy)">
+            <summary>
+            Gets the lock instance.
+            </summary>
+            <param name="recursionPolicy">The recursion policy.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.BaseLock">
+            <summary>
+            Base lock
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.External.BaseLock._Locks">
+            <summary>
+            Locks
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.BaseLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.BaseLock"/> class.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.BaseLock.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.ReadLock">
+            <summary>
+            Read lock
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ReadLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.ReadLock"/> class.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ReadLock.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.ReadOnlyLock">
+            <summary>
+            Readonly lock
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ReadOnlyLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.ReadOnlyLock"/> class.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.ReadOnlyLock.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.WriteLock">
+            <summary>
+            Write lock
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.WriteLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.WriteLock"/> class.
+            </summary>
+            <param name="locks">The locks.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.WriteLock.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.FilteredSiteMapNodeVisibilityProvider">
+            <summary>
+            Filtered SiteMapNode Visibility Provider.
+            
+            The Web.config setting should specify attributesToIgnore=&quot;visibility&quot; in order to use this class!
+            
+            Rules are parsed left-to-right, first match wins. Asterisk can be used to match any control. Exclamation mark can be used to negate a match.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.FilteredSiteMapNodeVisibilityProvider.IsVisible(System.Web.SiteMapNode,System.Web.HttpContext,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Determines whether the node is visible.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="context">The context.</param>
+            <param name="sourceMetadata">The source metadata.</param>
+            <returns>
+            	<c>true</c> if the specified node is visible; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Filters.SiteMapPreserveRouteDataAttribute">
+            <summary>
+            Apply this attribute to keep route data when rendering the sitemap (e.g. breadcrumbs).
+            Note: Do NOT use this in conjunction with dynamic node providers!
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapPreserveRouteDataAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Filters.SiteMapPreserveRouteDataAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapPreserveRouteDataAttribute.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Ensures all routedata elements are included on the node whenever the mvc action is invoked.
+            This allows the MVC site map to have route values preserved for breadcrumb trails.
+            </summary>
+            <param name="filterContext">The current filter context.</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.Filters.SiteMapPreserveRouteDataAttribute.Target">
+            <summary>
+            Gets or sets the target.
+            </summary>
+            <value>The target.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForAction">
+            <summary>
+            MvcSiteMapNodeAttributeDefinition for Action
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.IMvcSiteMapNodeAttributeDefinition">
+            <summary>
+            MvcSiteMapNodeAttribute Definition
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttributeDefinition.SiteMapNodeAttribute">
+            <summary>
+            Gets or sets the site map node attribute.
+            </summary>
+            <value>The site map node attribute.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForAction.SiteMapNodeAttribute">
+            <summary>
+            Gets or sets the site map node attribute.
+            </summary>
+            <value>The site map node attribute.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForAction.ControllerType">
+            <summary>
+            Gets or sets the type of the controller.
+            </summary>
+            <value>The type of the controller.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForAction.ActionMethodInfo">
+            <summary>
+            Gets or sets the action method info.
+            </summary>
+            <value>The action method info.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultNodeKeyGenerator">
+            <summary>
+            DefaultNodeKeyGenerator class
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.INodeKeyGenerator">
+            <summary>
+            INodeKeyGenerator contract
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.INodeKeyGenerator.GenerateKey(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Generates the key.
+            </summary>
+            <param name="parentKey">The parent node's key</param>
+            <param name="key">The key.</param>
+            <param name="url">The URL.</param>
+            <param name="title">The title.</param>
+            <param name="area">The area.</param>
+            <param name="controller">The controller.</param>
+            <param name="action">The action.</param>
+            <param name="clickable">if set to <c>true</c> [clickable].</param>
+            <returns>
+            A key represented as a <see cref="T:System.String"/> instance 
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultNodeKeyGenerator.GenerateKey(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Generates the key.
+            </summary>
+            <param name="parentKey">The parent node's key</param>
+            <param name="key">The key.</param>
+            <param name="url">The URL.</param>
+            <param name="title">The title.</param>
+            <param name="area">The area.</param>
+            <param name="controller">The controller.</param>
+            <param name="action">The action.</param>
+            <param name="clickable">if set to <c>true</c> [clickable].</param>
+            <returns>
+            A key represented as a <see cref="T:System.String"/> instance
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.CacheDescription">
+            <summary>
+            CacheDescription class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.CacheDescription.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.CacheDescription"/> class.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.CacheDescription.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.CacheDescription.Dependencies">
+            <summary>
+            Gets or sets the dependencies.
+            </summary>
+            <value>The dependencies.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.CacheDescription.AbsoluteExpiration">
+            <summary>
+            Gets or sets the absolute expiration.
+            </summary>
+            <value>The absolute expiration.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.CacheDescription.SlidingExpiration">
+            <summary>
+            Gets or sets the sliding expiration.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.CacheDescription.Priority">
+            <summary>
+            Gets or sets the priority.
+            </summary>
+            <value>The priority.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.DynamicNode">
+            <summary>
+            DynamicNode class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="title">The title.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="parentKey">The parent key.</param>
+            <param name="title">The title.</param>
+            <param name="description">The description.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="parentKey">The parent key.</param>
+            <param name="title">The title.</param>
+            <param name="description">The description.</param>
+            <param name="controller">The controller (optional).</param>
+            <param name="action">The action (optional).</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="parentKey">The parent key.</param>
+            <param name="title">The title.</param>
+            <param name="description">The description.</param>
+            <param name="action">The action (optional).</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNode.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Extensibility.DynamicNode"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="parentKey">The parent key.</param>
+            <param name="title">The title.</param>
+            <param name="description">The description.</param>
+            <param name="area">The area (optional).</param>
+            <param name="controller">The controller (optional).</param>
+            <param name="action">The action (optional).</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Route">
+            <summary>
+            Gets or sets the route.
+            </summary>
+            <value>The route.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.ParentKey">
+            <summary>
+            Gets or sets the parent key (optional).
+            </summary>
+            <value>The parent key.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Area">
+            <summary>
+            Gets or sets the area (optional).
+            </summary>
+            <value>The area.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Controller">
+            <summary>
+            Gets or sets the controller (optional).
+            </summary>
+            <value>The controller.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Action">
+            <summary>
+            Gets or sets the action (optional).
+            </summary>
+            <value>The action.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Title">
+            <summary>
+            Gets or sets the title (optional).
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Description">
+            <summary>
+            Gets or sets the description (optional).
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.TargetFrame">
+            <summary>
+            Gets or sets the target frame (optional).
+            </summary>
+            <value>The target frame.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.ImageUrl">
+            <summary>
+            Gets or sets the image URL (optional).
+            </summary>
+            <value>The image URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.RouteValues">
+            <summary>
+            Gets or sets the route values.
+            </summary>
+            <value>The route values.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Attributes">
+            <summary>
+            Gets or sets the attributes (optional).
+            </summary>
+            <value>The attributes.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.PreservedRouteParameters">
+            <summary>
+            Gets or sets the preserved route parameter names (= values that will be used from the current request route).
+            </summary>
+            <value>The attributes.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>The roles.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.LastModifiedDate">
+            <summary>
+            Gets or sets the last modified date.
+            </summary>
+            <value>The last modified date.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.ChangeFrequency">
+            <summary>
+            Gets or sets the change frequency.
+            </summary>
+            <value>The change frequency.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Extensibility.DynamicNode.UpdatePriority">
+            <summary>
+            Gets or sets the update priority.
+            </summary>
+            <value>The update priority.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.DynamicNodeProviderBase">
+            <summary>
+            DynamicNodeProviderBase class
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.IDynamicNodeProvider">
+            <summary>
+            IDynamicNodeProvider contract.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.IDynamicNodeProvider.GetDynamicNodeCollection">
+            <summary>
+            Gets the dynamic node collection.
+            </summary>
+            <returns>A dynamic node collection.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.IDynamicNodeProvider.GetCacheDescription">
+            <summary>
+            Gets a cache description for the dynamic node collection 
+            or null if there is none.
+            </summary>
+            <returns>
+            A cache description represented as a <see cref="T:MvcSiteMapProvider.Extensibility.CacheDescription"/> instance .
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNodeProviderBase.GetDynamicNodeCollection">
+            <summary>
+            Gets the dynamic node collection.
+            </summary>
+            <returns>A dynamic node collection.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.DynamicNodeProviderBase.GetCacheDescription">
+            <summary>
+            Gets a cache description for the dynamic node collection
+            or null if there is none.
+            </summary>
+            <returns>
+            A cache description represented as a <see cref="T:MvcSiteMapProvider.Extensibility.CacheDescription"/> instance .
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.UrlUtilities">
+            <summary>
+            UrlUtilities class. See http://www.west-wind.com/Weblog/posts/154812.aspx for more information.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.UrlUtilities.ResolveUrl(System.String)">
+            <summary>
+            Returns a site relative HTTP path from a partial path starting out with a ~.
+            Same syntax that ASP.Net internally supports but this method can be used
+            outside of the Page framework.
+            Works like Control.ResolveUrl including support for ~ syntax///
+            but returns an absolute URL.
+            </summary>
+            <param name="originalUrl">Any Url including those starting with ~</param>
+            <returns>Relative url</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.UrlUtilities.ResolveServerUrl(System.String,System.Boolean)">
+            <summary>
+            This method returns a fully qualified absolute server Url which includes
+            the protocol, server, port in addition to the server relative Url.
+            Works like Control.ResolveUrl including support for ~ syntax
+            but returns an absolute URL.
+            </summary>
+            <param name="serverUrl">The server URL.</param>
+            <param name="forceHttps">if true forces the url to use https</param>
+            <returns>Fully qualified absolute server url.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.UrlUtilities.ResolveServerUrl(System.String)">
+            <summary>
+            This method returns a fully qualified absolute server Url which includes
+            the protocol, server, port in addition to the server relative Url.
+            It work like Page.ResolveUrl, but adds these to the beginning.
+            This method is useful for generating Urls for AJAX methods
+            </summary>
+            <param name="serverUrl">The server URL.</param>
+            <returns>Fully qualified absolute server url.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForController">
+            <summary>
+            MvcSiteMapNodeAttributeDefinition for Controller
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForController.SiteMapNodeAttribute">
+            <summary>
+            Gets or sets the site map node attribute.
+            </summary>
+            <value>The site map node attribute.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttributeDefinitionForController.ControllerType">
+            <summary>
+            Gets or sets the type of the controller.
+            </summary>
+            <value>The type of the controller.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.UnknownSiteMapProviderException">
+            <summary>
+            UnknownSiteMapProviderException
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.UnknownSiteMapProviderException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.UnknownSiteMapProviderException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.UnknownSiteMapProviderException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine">
+            <summary>
+            MvcSiteMapProviderViewEngine class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine.#cctor">
+            <summary>
+            Initializes the <see cref="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine.Register">
+            <summary>
+            Registers this instance.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine.CreatePartialView(System.Web.Mvc.ControllerContext,System.String)">
+            <summary>
+            Creates the specified partial view by using the specified controller context.
+            </summary>
+            <param name="controllerContext">The controller context.</param>
+            <param name="partialPath">The partial path for the new partial view.</param>
+            <returns>A reference to the partial view.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngine.CreateView(System.Web.Mvc.ControllerContext,System.String,System.String)">
+            <summary>
+            Creates the specified view by using the controller context, path of the view, and path of the master view.
+            </summary>
+            <param name="controllerContext">The controller context.</param>
+            <param name="viewPath">The path of the view.</param>
+            <param name="masterPath">The path of the master view.</param>
+            <returns>A reference to the view.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.HtmlHelperExtensions">
+            <summary>
+            HtmlHelperExtensions class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.HtmlHelperExtensions.MvcSiteMap(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Creates a new MvcSiteMapProvider HtmlHelper.
+            </summary>
+            <param name="helper">The helper.</param>
+            <returns>
+            A <see cref="T:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper"/> instance 
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.HtmlHelperExtensions.MvcSiteMap(System.Web.Mvc.HtmlHelper,System.Web.SiteMapProvider)">
+            <summary>
+            Creates a new MvcSiteMapProvider HtmlHelper.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="provider">The sitemap provider.</param>
+            <returns>
+            A <see cref="T:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper"/> instance
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.HtmlHelperExtensions.MvcSiteMap(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Creates a new MvcSiteMapProvider HtmlHelper.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="providerName">Name of the sitemap provider.</param>
+            <returns>
+            A <see cref="T:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper"/> instance
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.MenuHelper">
+            <summary>
+            MvcSiteMapHtmlHelper extension methods
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.Html.MenuHelper.SourceMetadata">
+            <summary>
+            Source metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startFromCurrentNode">Start from current node if set to <c>true</c>.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <param name="drillDownToContent">if set to <c>true</c> [drill down to content].</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Int32,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <param name="drillDownToContent">if set to <c>true</c> [drill down to content].</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Int32,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="drillDownToContent">if set to <c>true</c> [drill down to content].</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="drillDownToContent">if set to <c>true</c> [drill down to content].</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Web.SiteMapNode,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startFromCurrentNode">Start from current node if set to <c>true</c>.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Int32,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Int32,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.Menu(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Build a menu, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Show starting node in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.BuildModel(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Builds the model.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
+            <returns>The model.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.BuildModel(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Builds the model.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
+            <param name="maxDepth">The max depth.</param>
+            <returns>The model.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.GetCurrentNode(System.Web.SiteMapProvider)">
+            <summary>
+            This determines the deepest node matching the current HTTP context, so if the current URL describes a location
+            deeper than the site map designates, it will determine the closest parent to the current URL and return that 
+            as the current node. This allows menu relevence when navigating deeper than the sitemap structure designates, such
+            as when navigating to MVC actions, which are not shown in the menus
+            </summary>
+            <param name="selectedSiteMapProvider">the current MVC Site Map Provider</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.GetStartingNode(System.Web.SiteMapNode,System.Int32,System.Boolean)">
+            <summary>
+            Gets the starting node.
+            </summary>
+            <param name="currentNode">The current node.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <returns>The starting node.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.GetStartingNode(System.Web.SiteMapNode,System.Int32)">
+            <summary>
+            Gets the starting node.
+            </summary>
+            <param name="currentNode">The current node.</param>
+            <param name="startingNodeLevel">The starting node level.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <returns>The starting node.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.GetNodeAtLevel(System.Web.SiteMapNode,System.Int32,System.Boolean)">
+            <summary>
+            Gets the node at level.
+            </summary>
+            <param name="startingNode">The starting node.</param>
+            <param name="level">The level.</param>
+            <param name="allowForwardSearch">if set to <c>true</c> allow forward search. Forward search will search all parent nodes and child nodes, where in other circumstances only parent nodes are searched.</param>
+            <returns>The node at level.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MenuHelper.ReachedMaximalNodelevel(System.Int32,System.Web.SiteMapNode,System.Boolean)">
+            <summary>
+            Test if the maximal nodelevel has not been reached
+            </summary>
+            <param name="maxDepth">The normal max depth.</param>
+            <param name="node">The starting node</param>
+            <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
+            <returns></returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel">
+            <summary>
+            MenuHelperModel
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>The enumerator.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.MenuHelperModel.Nodes">
+            <summary>
+            Gets or sets the nodes.
+            </summary>
+            <value>The nodes.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModelList">
+            <summary>
+            SiteMapNodeModelList
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel">
+            <summary>
+            SiteMapHelperModel
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>The enumerator.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapHelperModel.Nodes">
+            <summary>
+            Gets or sets the nodes.
+            </summary>
+            <value>The nodes.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.SiteMapTitleHelperModel">
+            <summary>
+            SiteMapTitleHelperModel
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapTitleHelperModel.CurrentNode">
+            <summary>
+            Gets or sets the current node.
+            </summary>
+            <value>The current node.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel">
+            <summary>
+            SiteMapNodeModel
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel"/> class.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Area">
+            <summary>
+            Gets or sets the area.
+            </summary>
+            <value>The area.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Controller">
+            <summary>
+            Gets or sets the controller.
+            </summary>
+            <value>The controller.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Action">
+            <summary>
+            Gets or sets the action.
+            </summary>
+            <value>The action.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>The URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.TargetFrame">
+            <summary>
+            Gets or sets the target frame.
+            </summary>
+            <value>The target frame.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.ImageUrl">
+            <summary>
+            Gets or sets the image URL.
+            </summary>
+            <value>The image URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.IsCurrentNode">
+            <summary>
+            Gets or sets a value indicating whether this instance is current node.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is current node; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.IsInCurrentPath">
+            <summary>
+            Gets or sets a value indicating whether this instance is in current path.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is in current path; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.IsRootNode">
+            <summary>
+            Gets or sets a value indicating whether this instance is root node.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is root node; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.IsClickable">
+            <summary>
+            Gets or sets a value indicating whether this instance is clickable.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is clickable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.RouteValues">
+            <summary>
+            Gets or sets the route values.
+            </summary>
+            <value>The route values.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.MetaAttributes">
+            <summary>
+            Gets or sets the meta attributes.
+            </summary>
+            <value>The meta attributes.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.SourceMetadata">
+            <summary>
+            Gets or sets the source metadata generated by the HtmlHelper.
+            </summary>
+            <value>The source metadata.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModel.Children">
+            <summary>
+            Gets or sets the children.
+            </summary>
+            <value>The children.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel">
+            <summary>
+            SiteMapPathHelperModel
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>The enumerator.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel.Nodes">
+            <summary>
+            Gets or sets the nodes.
+            </summary>
+            <value>The nodes.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper">
+            <summary>
+            MvcSiteMapHtmlHelper class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper.#ctor(System.Web.Mvc.HtmlHelper,System.Web.SiteMapProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper"/> class.
+            </summary>
+            <param name="htmlHelper">The HTML helper.</param>
+            <param name="provider">The sitemap provider.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper.CreateHtmlHelperForModel``1(``0)">
+            <summary>
+            Creates the HTML helper for model.
+            </summary>
+            <typeparam name="TModel">The type of the model.</typeparam>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper.HtmlHelper">
+            <summary>
+            Gets or sets the HTML helper.
+            </summary>
+            <value>The HTML helper.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper.Provider">
+            <summary>
+            Gets or sets the sitemap provider.
+            </summary>
+            <value>The sitemap provider.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualPathProvider">
+            <summary>
+            MvcSiteMapProviderViewEnginePathProvider class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualPathProvider.PathExists(System.String)">
+            <summary>
+            Check if a path exists in the virtual file system.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>true if the path exists in the virtual file system; otherwise, false.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualPathProvider.FileExists(System.String)">
+            <summary>
+            Gets a value that indicates whether a file exists in the virtual file system.
+            </summary>
+            <param name="virtualPath">The path to the virtual file.</param>
+            <returns>
+            true if the file exists in the virtual file system; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualPathProvider.GetFile(System.String)">
+            <summary>
+            Gets a virtual file from the virtual file system.
+            </summary>
+            <param name="virtualPath">The path to the virtual file.</param>
+            <returns>
+            A descendent of the <see cref="T:System.Web.Hosting.VirtualFile"/> class that represents a file in the virtual file system.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Internal.MvcSiteMapProviderViewEngineVirtualPathProvider.GetCacheDependency(System.String,System.Collections.IEnumerable,System.DateTime)">
+            <summary>
+            Creates a cache dependency based on the specified virtual paths.
+            </summary>
+            <param name="virtualPath">The path to the primary virtual resource.</param>
+            <param name="virtualPathDependencies">An array of paths to other resources required by the primary virtual resource.</param>
+            <param name="utcStart">The UTC time at which the virtual resources were read.</param>
+            <returns>
+            A <see cref="T:System.Web.Caching.CacheDependency"/> object for the specified virtual resources.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.SiteMapHelper">
+            <summary>
+            MvcSiteMapHtmlHelper extension methods
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.Html.SiteMapHelper.SourceMetadata">
+            <summary>
+            Source metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Boolean)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="rootInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="rootInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Web.SiteMapNode)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNode">The starting node.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Boolean)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="rootInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.SiteMap(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String,System.Web.SiteMapNode,System.Boolean)">
+            <summary>
+            Build a sitemap tree, based on the MvcSiteMap
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="rootInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <returns>Html markup</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapHelper.BuildModel(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode,System.Boolean)">
+            <summary>
+            Builds the model.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <param name="startingNodeInChildLevel">Renders startingNode in child level if set to <c>true</c>.</param>
+            <returns>The model.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.SiteMapNodeModelMapper">
+            <summary>
+            SiteMapNodeModelMapper
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapNodeModelMapper.MapToSiteMapNodeModel(System.Web.SiteMapNode,MvcSiteMapProvider.MvcSiteMapNode,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Maps to SiteMapNodeModel.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="mvcNode">The MVC node.</param>
+            <param name="sourceMetadata">The source metadata provided by the HtmlHelper.</param>
+            <returns>SiteMapNodeModel instance.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.SiteMapPathHelper">
+            <summary>
+            MvcSiteMapHtmlHelper extension methods
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.Html.SiteMapPathHelper.SourceMetadata">
+            <summary>
+            Source metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapPathHelper.SiteMapPath(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper)">
+            <summary>
+            Gets SiteMap path for the current request
+            </summary>
+            <param name="helper">MvcSiteMapHtmlHelper instance</param>
+            <returns>SiteMap path for the current request</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapPathHelper.SiteMapPath(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String)">
+            <summary>
+            Gets SiteMap path for the current request
+            </summary>
+            <param name="helper">MvcSiteMapHtmlHelper instance</param>
+            <param name="templateName">Name of the template.</param>
+            <returns>SiteMap path for the current request</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapPathHelper.BuildModel(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.Web.SiteMapNode)">
+            <summary>
+            Builds the model.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="startingNode">The starting node.</param>
+            <returns>The model.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.Html.SiteMapTitleHelper">
+            <summary>
+            MvcSiteMapHtmlHelper extension methods
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.Html.SiteMapTitleHelper.SourceMetadata">
+            <summary>
+            Source metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapTitleHelper.SiteMapTitle(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper)">
+            <summary>
+            Gets the title of SiteMap.CurrentNode
+            </summary>
+            <param name="helper">MvcSiteMapHtmlHelper instance</param>
+            <returns>
+            The title of the CurrentNode or the RootNode (if CurrentNode is null)
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapTitleHelper.SiteMapTitle(MvcSiteMapProvider.Web.Html.MvcSiteMapHtmlHelper,System.String)">
+            <summary>
+            Gets the title of SiteMap.CurrentNode
+            </summary>
+            <param name="helper">MvcSiteMapHtmlHelper instance</param>
+            <param name="templateName">Name of the template.</param>
+            <returns>
+            The title of the CurrentNode or the RootNode (if CurrentNode is null)
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.Html.SiteMapTitleHelper.BuildModel(System.Web.SiteMapNode)">
+            <summary>
+            Builds the model.
+            </summary>
+            <param name="startingNode">The starting node.</param>
+            <returns>The model.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.MvcSiteMapException">
+            <summary>
+            MvcSiteMapException
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">Message</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.ChangeFrequency">
+            <summary>
+            Change frequency for the node
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Undefined">
+            <summary>
+            Undefined
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Always">
+            <summary>
+            Always
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Never">
+            <summary>
+            Never
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Hourly">
+            <summary>
+            Hourly
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Daily">
+            <summary>
+            Daily
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Weekly">
+            <summary>
+            Weekly
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Monthly">
+            <summary>
+            Monthly
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.ChangeFrequency.Yearly">
+            <summary>
+            Yearly
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.UpdatePriority">
+            <summary>
+            Sitemap update priority
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Undefined">
+            <summary>
+            Undefined
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Automatic">
+            <summary>
+            Automatic
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Low">
+            <summary>
+            Low
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Normal">
+            <summary>
+            Normal
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.High">
+            <summary>
+            High
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Critical">
+            <summary>
+            Critical
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_000">
+            <summary>
+            Absolute value (0)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_010">
+            <summary>
+            Absolute value (10)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_020">
+            <summary>
+            Absolute value (20)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_030">
+            <summary>
+            Absolute value (30)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_040">
+            <summary>
+            Absolute value (40)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_050">
+            <summary>
+            Absolute value (50)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_060">
+            <summary>
+            Absolute value (60)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_070">
+            <summary>
+            Absolute value (70)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_080">
+            <summary>
+            Absolute value (80)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_090">
+            <summary>
+            Absolute value (90)
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.UpdatePriority.Absolute_100">
+            <summary>
+            Absolute value (100)
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.ViewDataContainer`1">
+            <summary>
+            ViewDataContainer class.
+            </summary>
+            <typeparam name="TModel">The type of the model.</typeparam>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.ViewDataContainer`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.ViewDataContainer`1"/> class.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.ViewDataContainer`1.ViewData">
+            <summary>
+            Gets or sets the view data dictionary.
+            </summary>
+            <value></value>
+            <returns>The view data dictionary.</returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.XmlSiteMapController">
+            <summary>
+            XmlSiteMapController class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapController.Index(System.Int32)">
+            <summary>
+            GET: /XmlSiteMap/Index
+            </summary>
+            <param name="page">The page.</param>
+            <returns>XmlSiteMapResult instance</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapController.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the routes.
+            </summary>
+            <param name="routeCollection">The route collection.</param>
+        </member>
+        <member name="T:MvcSiteMapProvider.Web.XmlSiteMapResult">
+            <summary>
+            XmlSiteMapResult class.
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.XmlSiteMapResult.MaxNumberOfLinksPerFile">
+            <summary>
+            Maximal number of links per sitemap file.
+            </summary>
+            <remarks>
+            This number should be 50000 in theory, see http://www.sitemaps.org/protocol.php#sitemapIndex_sitemap.
+            Since sitemap files can be maximal 10MB per file and calculating the total sitemap size would degrade performance,
+            an average cap of 35000 has been chosen.
+            </remarks>
+        </member>
+        <member name="F:MvcSiteMapProvider.Web.XmlSiteMapResult.SourceMetadata">
+            <summary>
+            Source metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.XmlSiteMapResult"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.#ctor(System.Web.SiteMapNode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.XmlSiteMapResult"/> class.
+            </summary>
+            <param name="rootNode">The root node.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.#ctor(System.Web.SiteMapNode,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.Web.XmlSiteMapResult"/> class.
+            </summary>
+            <param name="rootNode">The root node.</param>
+            <param name="url">The base URL.</param>
+            <param name="siteMapUrlTemplate">The site map URL template.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.ExecuteSitemapIndexResult(System.Web.Mvc.ControllerContext,System.Collections.Generic.IEnumerable{System.Web.SiteMapNode},System.Int64)">
+            <summary>
+            Executes the sitemap index result.
+            </summary>
+            <param name="context">The context in which the result is executed. The context information includes the controller, HTTP content, request context, and route data.</param>
+            <param name="flattenedHierarchy">The flattened hierarchy.</param>
+            <param name="flattenedHierarchyCount">The flattened hierarchy count.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.ExecuteSitemapResult(System.Web.Mvc.ControllerContext,System.Collections.Generic.IEnumerable{System.Web.SiteMapNode},System.Int64,System.Int32)">
+            <summary>
+            Executes the sitemap result.
+            </summary>
+            <param name="context">The context in which the result is executed. The context information includes the controller, HTTP content, request context, and route data.</param>
+            <param name="flattenedHierarchy">The flattened hierarchy.</param>
+            <param name="flattenedHierarchyCount">The flattened hierarchy count.</param>
+            <param name="page">The page.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Enables processing of the result of an action method by a custom type that inherits from the <see cref="T:System.Web.Mvc.ActionResult"/> class.
+            </summary>
+            <param name="context">The context in which the result is executed. The context information includes the controller, HTTP content, request context, and route data.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.GenerateSiteMapIndexElements(System.Int32,System.String,System.String)">
+            <summary>
+            Generates the sitemap index elements.
+            </summary>
+            <param name="numPages">The number of pages.</param>
+            <param name="url">The URL.</param>
+            <param name="siteMapUrlTemplate">The site map URL template.</param>
+            <returns>The sitemap index elements.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.GenerateUrlElements(System.Collections.Generic.IEnumerable{System.Web.SiteMapNode},System.String)">
+            <summary>
+            Generates the URL elements.
+            </summary>
+            <param name="siteMapNodes">The site map nodes.</param>
+            <param name="url">The URL.</param>
+            <returns>The URL elements.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.FlattenHierarchy(System.Web.SiteMapNode,System.String)">
+            <summary>
+            Generates flat list of SiteMapNode from SiteMap hierarchy.
+            </summary>
+            <param name="startingNode">The starting node.</param>
+            <param name="url">The URL.</param>
+            <returns>A flat list of SiteMapNode.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.Web.XmlSiteMapResult.RetrieveOutputStream(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Retrieves the output stream.
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.XmlSiteMapResult.Ns">
+            <summary>
+            Gets or sets the XML namespace.
+            </summary>
+            <value>The XML namespace.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.XmlSiteMapResult.RootNode">
+            <summary>
+            Gets or sets the root node.
+            </summary>
+            <value>The root node.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.XmlSiteMapResult.Url">
+            <summary>
+            Gets or sets the URL.
+            </summary>
+            <value>The URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.XmlSiteMapResult.SiteMapUrlTemplate">
+            <summary>
+            Gets or sets the site map URL template.
+            </summary>
+            <value>The site map URL template.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Web.XmlSiteMapResult.Page">
+            <summary>
+            Gets or sets the page.
+            </summary>
+            <value>The page.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.XmlRolesAclModule">
+            <summary>
+            XmlRolesAclModule class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.XmlRolesAclModule.IsAccessibleToUser(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,MvcSiteMapProvider.DefaultSiteMapProvider,System.Web.HttpContext,System.Web.SiteMapNode)">
+            <summary>
+            Determines whether node is accessible to user.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="provider">The provider.</param>
+            <param name="context">The context.</param>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if accessible to user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultAclModule">
+            <summary>
+            DefaultAclModule class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultAclModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.DefaultAclModule"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultAclModule.IsAccessibleToUser(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,MvcSiteMapProvider.DefaultSiteMapProvider,System.Web.HttpContext,System.Web.SiteMapNode)">
+            <summary>
+            Determines whether node is accessible to user.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="provider">The provider.</param>
+            <param name="context">The context.</param>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if accessible to user; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultAclModule.ChildModules">
+            <summary>
+            Gets or sets the child modules.
+            </summary>
+            <value>The child modules.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultActionMethodParameterResolver">
+            <summary>
+            DefaultActionMethodParameterResolver class
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.IActionMethodParameterResolver">
+            <summary>
+            IActionMethodParameterResolver contract
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.IActionMethodParameterResolver.ResolveActionMethodParameters(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,System.String,System.String,System.String)">
+            <summary>
+            Resolves the action method parameters.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="areaName">Name of the area.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionMethodName">Name of the action method.</param>
+            <returns>
+            A action method parameters represented as a <see cref="T:System.String"/> instance 
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultActionMethodParameterResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.DefaultActionMethodParameterResolver"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultActionMethodParameterResolver.ResolveActionMethodParameters(MvcSiteMapProvider.Extensibility.IControllerTypeResolver,System.String,System.String,System.String)">
+            <summary>
+            Resolves the action method parameters.
+            </summary>
+            <param name="controllerTypeResolver">The controller type resolver.</param>
+            <param name="areaName">Name of the area.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionMethodName">Name of the action method.</param>
+            <returns>
+            A action method parameters represented as a <see cref="T:System.String"/> instance
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultActionMethodParameterResolver.Cache">
+            <summary>
+            Gets or sets the cache.
+            </summary>
+            <value>The cache.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultControllerTypeResolver">
+            <summary>
+            DefaultControllerTypeResolver class
+            </summary>
+        </member>
+        <member name="T:MvcSiteMapProvider.Extensibility.IControllerTypeResolver">
+            <summary>
+            IControllerTypeResolver contract
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Extensibility.IControllerTypeResolver.ResolveControllerType(System.String,System.String)">
+            <summary>
+            Resolves the type of the controller.
+            </summary>
+            <param name="areaName">Name of the area.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <returns>Controller type</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.DefaultControllerTypeResolver"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.ResolveControllerType(System.String,System.String)">
+            <summary>
+            Resolves the type of the controller.
+            </summary>
+            <param name="areaName">Name of the area.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <returns>Controller type</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.FindNamespacesForArea(System.String,System.Web.Routing.RouteCollection)">
+            <summary>
+            Finds the namespaces for area.
+            </summary>
+            <param name="area">The area.</param>
+            <param name="routes">The routes.</param>
+            <returns>
+            A namespaces for area represented as a <see cref="T:System.String"/> instance
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.InitAssemblyCache">
+            <summary>
+            Inits the assembly cache.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.GetListOfControllerTypes">
+            <summary>
+            Gets the list of controller types.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.IsNamespaceMatch(System.String,System.String)">
+            <summary>
+            Determines whether namespace matches the specified requested namespace.
+            </summary>
+            <param name="requestedNamespace">The requested namespace.</param>
+            <param name="targetNamespace">The target namespace.</param>
+            <returns>
+            	<c>true</c> if is namespace matches the specified requested namespace; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultControllerTypeResolver.GetControllerTypeWithinNamespaces(System.String,System.String,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Gets the controller type within namespaces.
+            </summary>
+            <param name="area">The area.</param>
+            <param name="controller">The controller.</param>
+            <param name="namespaces">The namespaces.</param>
+            <returns>
+            A controller type within namespaces represented as a <see cref="T:System.Type"/> instance 
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultControllerTypeResolver.Cache">
+            <summary>
+            Gets or sets the cache.
+            </summary>
+            <value>The cache.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultControllerTypeResolver.AssemblyCache">
+            <summary>
+            Gets or sets the assembly cache.
+            </summary>
+            <value>The assembly cache.</value>
+        </member>
+        <member name="T:Telerik.Web.Mvc.Infrastructure.Implementation.AuthorizeAttributeBuilder">
+            <summary>
+            AuthorizeAttributeBuilder class
+            </summary>
+        </member>
+        <member name="M:Telerik.Web.Mvc.Infrastructure.Implementation.AuthorizeAttributeBuilder.Build(System.Type)">
+            <summary>
+            Builds the specified parent type.
+            </summary>
+            <param name="parentType">Type of the parent.</param>
+            <returns>Constructor information.</returns>
+        </member>
+        <member name="M:Telerik.Web.Mvc.Infrastructure.Implementation.AuthorizeAttributeBuilder.WriteProperty(System.Type,System.Reflection.Emit.TypeBuilder,System.String,System.Type)">
+            <summary>
+            Writes the property.
+            </summary>
+            <param name="parentType">Type of the parent.</param>
+            <param name="builder">The builder.</param>
+            <param name="name">The name.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:Telerik.Web.Mvc.Infrastructure.Implementation.AuthorizeAttributeBuilder.WriteIsAuthorized(System.Type,System.Reflection.Emit.TypeBuilder)">
+            <summary>
+            Writes the is authorized.
+            </summary>
+            <param name="parentType">Type of the parent.</param>
+            <param name="builder">The builder.</param>
+        </member>
+        <member name="M:Telerik.Web.Mvc.Infrastructure.Implementation.AuthorizeAttributeBuilder.CreateModuleBuilder">
+            <summary>
+            Creates the module builder.
+            </summary>
+            <returns>
+            A module builder represented as a <see cref="T:System.Reflection.Emit.ModuleBuilder"/> instance 
+            </returns>
+        </member>
+        <member name="T:Telerik.Web.Mvc.Infrastructure.Implementation.IAuthorizeAttribute">
+            <summary>
+            IAuthorizeAttribute contract
+            </summary>
+        </member>
+        <member name="M:Telerik.Web.Mvc.Infrastructure.Implementation.IAuthorizeAttribute.IsAuthorized(System.Web.HttpContextBase)">
+            <summary>
+            Determines whether the specified HTTP context is authorized.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns>
+            	<c>true</c> if the specified HTTP context is authorized; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:Telerik.Web.Mvc.Infrastructure.Implementation.IAuthorizeAttribute.Order">
+            <summary>
+            Gets or sets the order.
+            </summary>
+            <value>The order.</value>
+        </member>
+        <member name="P:Telerik.Web.Mvc.Infrastructure.Implementation.IAuthorizeAttribute.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>The roles.</value>
+        </member>
+        <member name="P:Telerik.Web.Mvc.Infrastructure.Implementation.IAuthorizeAttribute.Users">
+            <summary>
+            Gets or sets the users.
+            </summary>
+            <value>The users.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.External.InternalAuthorize">
+            <summary>
+            InternalAuthorize class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.InternalAuthorize.#ctor(System.Web.Mvc.AuthorizeAttribute)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.External.InternalAuthorize"/> class.
+            </summary>
+            <param name="attribute">The attribute.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.External.InternalAuthorize.IsAuthorized(System.Web.HttpContextBase)">
+            <summary>
+            Determines whether the specified HTTP context is authorized.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns>
+            	<c>true</c> if the specified HTTP context is authorized; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.Filters.SiteMapTitleAttribute">
+            <summary>
+            SiteMapTitle attribute
+            Can be used for setting sitemap title on an action method.
+            Credits go to Kenny Eliasson - http://mvcsitemap.codeplex.com/Thread/View.aspx?ThreadId=67056
+            </summary>
+        </member>
+        <member name="F:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.PropertyName">
+            <summary>
+            Property name of ViewData to look in
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new SiteMapTitleAttribute instance.
+            </summary>
+            <param name="propertyName">Property in ViewData used as the SiteMap.CurrentNode.Title</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Called by the MVC framework after the action method executes.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.OnResultExecuted(System.Web.Mvc.ResultExecutedContext)">
+            <summary>
+            Called by the MVC framework after the action result executes.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.ResolveTarget(System.Object,System.String)">
+            <summary>
+            Resolve target
+            </summary>
+            <param name="target">Target object</param>
+            <param name="expression">Target expression</param>
+            <returns>
+            A target represented as a <see cref="T:System.Object"/> instance 
+            </returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.OriginalTitle">
+            <summary>
+            Gets or sets the original title.
+            </summary>
+            <value>The original title.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.SiteMapTitleTarget">
+            <summary>
+            Gets or sets the site map title target.
+            </summary>
+            <value>The site map title target.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.Filters.SiteMapTitleAttribute.Target">
+            <summary>
+            Gets or sets the target.
+            </summary>
+            <value>The target.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.IMvcSiteMapNodeAttribute">
+            <summary>
+            SiteMap node attribute contract
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Key">
+            <summary>
+            SiteMap node key
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Route">
+            <summary>
+            SiteMap node route (autodetected by default)
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.AreaName">
+            <summary>
+            Gets or sets the name of the area.
+            </summary>
+            <value>The name of the area.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Title">
+            <summary>
+            SiteMap node title
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Description">
+            <summary>
+            SiteMap node description
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Url">
+            <summary>
+            SiteMap node URL (optional)
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.ParentKey">
+            <summary>
+            SiteMap node parent key
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.ResourceKey">
+            <summary>
+            Resource key, used when working with localization
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Roles">
+            <summary>
+            Gets or sets the roles that may access the SiteMap node.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Clickable">
+            <summary>
+            Is it a clickable node?
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.DynamicNodeProvider">
+            <summary>
+            Dynamic node provider
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.UrlResolver">
+            <summary>
+            Gets or sets the site map node URL resolver.
+            </summary>
+            <value>The site map node URL resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.VisibilityProvider">
+            <summary>
+            Gets or sets the visibility provider.
+            </summary>
+            <value>The visibility provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.Order">
+            <summary>
+            Used for ordering nodes
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.LastModifiedDate">
+            <summary>
+            Gets or sets the last modified date.
+            </summary>
+            <value>The last modified date.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.ChangeFrequency">
+            <summary>
+            Gets or sets the change frequency.
+            </summary>
+            <value>The change frequency.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.UpdatePriority">
+            <summary>
+            Gets or sets the update priority.
+            </summary>
+            <value>The update priority.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.TargetFrame">
+            <summary>
+            Gets or sets the target frame.
+            </summary>
+            <value>The target frame.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.ImageUrl">
+            <summary>
+            Gets or sets the image URL.
+            </summary>
+            <value>The image URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.IMvcSiteMapNodeAttribute.PreservedRouteParameters">
+            <summary>
+            Gets or sets the preserved route parameter names (= values that will be used from the current request route).
+            </summary>
+            <value>
+            The preserved route parameter names.
+            </value>
+        </member>
+        <member name="T:MvcSiteMapProvider.MvcSiteMapNode">
+            <summary>
+            MvcSiteMapNode class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapNode.#ctor(System.Web.SiteMapProvider,System.String,System.Collections.Specialized.NameValueCollection,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.MvcSiteMapNode"/> class.
+            </summary>
+            <param name="provider">The provider.</param>
+            <param name="key">The key.</param>
+            <param name="explicitResourceKeys">The explicit resource keys.</param>
+            <param name="implicitResourceKey">The implicit resource key.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapNode.Clone">
+            <summary>
+            Creates a new node that is a copy of the current node.
+            </summary>
+            <returns>
+            A new node that is a copy of the current node.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapNode.Clone(System.String)">
+            <summary>
+            Creates a new node that is a copy of the current node with a specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+            A new node that is a copy of the current node.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapNode.GetRouteData(System.Web.HttpContextBase)">
+            <summary>
+            Gets the route data associated with the current node.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns>The route data associated with the current node.</returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.MetaAttributes">
+            <summary>
+            Gets the meta attributes.
+            </summary>
+            <value>The meta attributes.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Route">
+            <summary>
+            Gets or sets the route.
+            </summary>
+            <value>The route.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Area">
+            <summary>
+            Gets or sets the area.
+            </summary>
+            <value>The area.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Controller">
+            <summary>
+            Gets or sets the controller.
+            </summary>
+            <value>The controller.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Action">
+            <summary>
+            Gets or sets the action.
+            </summary>
+            <value>The action.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Clickable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:MvcSiteMapProvider.MvcSiteMapNode"/> is clickable.
+            </summary>
+            <value><c>true</c> if clickable; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.LastModifiedDate">
+            <summary>
+            Gets or sets the last modified date.
+            </summary>
+            <value>The last modified date.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.ChangeFrequency">
+            <summary>
+            Gets or sets the change frequency.
+            </summary>
+            <value>The change frequency.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.UpdatePriority">
+            <summary>
+            Gets or sets the update priority.
+            </summary>
+            <value>The update priority.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.TargetFrame">
+            <summary>
+            Gets or sets the target frame.
+            </summary>
+            <value>The target frame.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.ImageUrl">
+            <summary>
+            Gets or sets the image URL.
+            </summary>
+            <value>The image URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.DynamicNodeProvider">
+            <summary>
+            Gets or sets the dynamic node provider.
+            </summary>
+            <value>The dynamic node provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.UrlResolver">
+            <summary>
+            Gets or sets the site map node URL resolver.
+            </summary>
+            <value>The site map node URL resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.VisibilityProvider">
+            <summary>
+            Gets or sets the visibility provider.
+            </summary>
+            <value>The visibility provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.PreservedRouteParameters">
+            <summary>
+            Gets or sets the preserved route parameter names (= values that will be used from the current request route).
+            </summary>
+            <value>
+            The preserved route parameter names.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.InheritedRouteParameters">
+            <summary>
+            Gets or sets the inherited route parameters (= Route values that should be inherited from the parent sitemap node. This is not a replacement for the SiteMapPreserveRouteDataAttribute.)
+            </summary>
+            <value>
+            The inherited route parameters.
+            </value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.RouteValues">
+            <summary>
+            Gets or sets the route values.
+            </summary>
+            <value>The route values.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Url">
+            <summary>
+            Gets or sets the URL of the page that the <see cref="T:System.Web.SiteMapNode"/> object represents.
+            </summary>
+            <value></value>
+            <returns>
+            The URL of the page that the node represents. The default is <see cref="F:System.String.Empty"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The node is read-only.
+            </exception>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Title">
+            <summary>
+            Gets or sets the title of the <see cref="T:System.Web.SiteMapNode"/> object.
+            </summary>
+            <value></value>
+            <returns>
+            A string that represents the title of the node. The default is <see cref="F:System.String.Empty"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The node is read-only.
+            </exception>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.Description">
+            <summary>
+            Gets or sets a description for the <see cref="T:System.Web.SiteMapNode"/>.
+            </summary>
+            <value></value>
+            <returns>
+            A string that represents a description of the node; otherwise, <see cref="F:System.String.Empty"/>.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The node is read-only.
+            </exception>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNode.IsDynamic">
+            <summary>
+            Gets or sets a value indicating whether this instance is dynamic.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is dynamic; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:MvcSiteMapProvider.MvcSiteMapNodeAttribute">
+            <summary>
+            SiteMap node attribute, used to decorate action methods with SiteMap node metadata
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.MvcSiteMapNodeAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Key">
+            <summary>
+            SiteMap node key
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Route">
+            <summary>
+            SiteMap node route (autodetected by default)
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.AreaName">
+            <summary>
+            Gets or sets the name of the area.
+            </summary>
+            <value>The name of the area.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Title">
+            <summary>
+            SiteMap node title
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Description">
+            <summary>
+            SiteMap node description
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Url">
+            <summary>
+            SiteMap node URL (optional)
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.ParentKey">
+            <summary>
+            SiteMap node parent key
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.ResourceKey">
+            <summary>
+            Resource key, used when working with localization
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Roles">
+            <summary>
+            Gets or sets the roles that may access the SiteMap node.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Clickable">
+            <summary>
+            Is it a clickable node?
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.DynamicNodeProvider">
+            <summary>
+            Dynamic node provider
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.UrlResolver">
+            <summary>
+            Gets or sets the site map node URL resolver.
+            </summary>
+            <value>The site map node URL resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.VisibilityProvider">
+            <summary>
+            Gets or sets the visibility provider.
+            </summary>
+            <value>The visibility provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.Order">
+            <summary>
+            Used for ordering nodes
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.LastModifiedDate">
+            <summary>
+            Gets or sets the last modified date.
+            </summary>
+            <value>The last modified date.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.ChangeFrequency">
+            <summary>
+            Gets or sets the change frequency.
+            </summary>
+            <value>The change frequency.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.UpdatePriority">
+            <summary>
+            Gets or sets the update priority.
+            </summary>
+            <value>The update priority.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.TargetFrame">
+            <summary>
+            Gets or sets the target frame.
+            </summary>
+            <value>The target frame.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.ImageUrl">
+            <summary>
+            Gets or sets the image URL.
+            </summary>
+            <value>The image URL.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.MvcSiteMapNodeAttribute.PreservedRouteParameters">
+            <summary>
+            Gets or sets the preserved route parameter names (= values that will be used from the current request route).
+            </summary>
+            <value>
+            The preserved route parameter names.
+            </value>
+        </member>
+        <member name="T:MvcSiteMapProvider.DefaultSiteMapProvider">
+            <summary>
+            DefaultSiteMapProvider class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcSiteMapProvider.DefaultSiteMapProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.GetRootNodeCore">
+            <summary>
+            Returns the current root, otherwise calls the BuildSiteMap method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.IsAccessibleToUser(System.Web.HttpContext,System.Web.SiteMapNode)">
+            <summary>
+            Retrieves a Boolean value indicating whether the specified <see cref="T:System.Web.SiteMapNode"/> object can be viewed by the user in the specified context.
+            </summary>
+            <param name="context">The <see cref="T:System.Web.HttpContext"/> that contains user information.</param>
+            <param name="node">The <see cref="T:System.Web.SiteMapNode"/> that is requested by the user.</param>
+            <returns>
+            true if security trimming is enabled and <paramref name="node"/> can be viewed by the user or security trimming is not enabled; otherwise, false.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="context"/> is null.
+            - or -
+            <paramref name="node"/> is null.
+            </exception>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes our custom provider, gets the attributes that are set in the config
+            that enable us to customise the behaiviour of this provider.
+            </summary>
+            <param name="name"></param>
+            <param name="attributes"></param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.AddNode(System.Web.SiteMapNode)">
+            <summary>
+            Adds a <see cref="T:System.Web.SiteMapNode"/> object to the node collection that is maintained by the site map provider.
+            </summary>
+            <param name="node">The <see cref="T:System.Web.SiteMapNode"/> to add to the node collection maintained by the provider.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.AddNode(System.Web.SiteMapNode,System.Web.SiteMapNode)">
+            <summary>
+            Adds a <see cref="T:System.Web.SiteMapNode"/> to the collections that are maintained by the site map provider and establishes a parent/child relationship between the <see cref="T:System.Web.SiteMapNode"/> objects.
+            </summary>
+            <param name="node">The <see cref="T:System.Web.SiteMapNode"/> to add to the site map provider.</param>
+            <param name="parentNode">The <see cref="T:System.Web.SiteMapNode"/> under which to add <paramref name="node"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="node"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:System.Web.SiteMapNode.Url"/> or <see cref="P:System.Web.SiteMapNode.Key"/> is already registered with the <see cref="T:System.Web.StaticSiteMapProvider"/>. A site map node must be made up of pages with unique URLs or keys.
+            </exception>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.CreateSiteMapNode(System.String,System.Collections.Specialized.NameValueCollection,System.String)">
+            <summary>
+            Creates a site map node with the specified key and resources
+            </summary>
+            <param name="key">Node key</param>
+            <param name="explicitResourceKeys">Explicit resource keys</param>
+            <param name="implicitResourceKey">Implicit resource key.</param>
+            <returns>New Site Map Node</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.BuildSiteMap">
+            <summary>
+            Builds the sitemap, firstly reads in the XML file, and grabs the outer root element and 
+            maps this to become our main out root SiteMap node.
+            </summary>
+            <exception cref="T:MvcSiteMapProvider.MvcSiteMapException"></exception>
+            <returns>The root SiteMapNode.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.Refresh">
+            <summary>
+            Refreshes this instance.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.OnSiteMapChanged(System.String,System.Object,System.Web.Caching.CacheItemRemovedReason)">
+            <summary>
+            When using caching, this method is being used to refresh the sitemap when the root sitemap node identifier is removed from cache.
+            </summary>
+            <param name="key">Cached item key.</param>
+            <param name="item">Cached item.</param>
+            <param name="reason">Reason the cached item was removed.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.SetRootNode(System.Web.SiteMapNode)">
+            <summary>
+            Sets the root node.
+            </summary>
+            <param name="rootNode">The root node.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.ProcessXmlNodes(System.Web.SiteMapNode,System.Xml.Linq.XElement)">
+            <summary>
+            Recursively processes our XML document, parsing our siteMapNodes and dynamicNode(s).
+            </summary>
+            <param name="rootNode">The main root sitemap node.</param>
+            <param name="rootElement">The main root XML element.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.ProcessNodesInAssembly(System.Reflection.Assembly)">
+            <summary>
+            Process nodes in assembly
+            </summary>
+            <param name="assembly">Assembly</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.CreateNodesFromMvcSiteMapNodeAttributeDefinitions(System.Collections.Generic.IEnumerable{MvcSiteMapProvider.IMvcSiteMapNodeAttributeDefinition})">
+            <summary>
+            Creates the nodes from MVC site map node attribute definitions.
+            </summary>
+            <param name="definitions">The definitions.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.AddDynamicNodesFor(System.Web.SiteMapNode,System.Web.SiteMapNode)">
+            <summary>
+            Adds the dynamic nodes for node.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="parentNode">The parent node.</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.HasDynamicNodes(System.Web.SiteMapNode)">
+            <summary>
+            Determines whether the specified node has dynamic nodes.
+            </summary>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if the specified node has dynamic nodes; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.Clear">
+            <summary>
+            Clears the current sitemap.
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.FindSiteMapNode(System.Web.HttpContext)">
+            <summary>
+            Retrieves a <see cref="T:System.Web.SiteMapNode"/> object that represents the currently requested page using the specified <see cref="T:System.Web.HttpContext"/> object.
+            </summary>
+            <param name="context">The <see cref="T:System.Web.HttpContext"/> used to match node information with the URL of the requested page.</param>
+            <returns>
+            A <see cref="T:System.Web.SiteMapNode"/> that represents the currently requested page; otherwise, null, if no corresponding <see cref="T:System.Web.SiteMapNode"/> can be found in the <see cref="T:System.Web.SiteMapNode"/> or if the page context is null.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.FindSiteMapNode(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Finds the site map node.
+            </summary>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.FindSiteMapNode(System.Web.HttpContext,System.Web.Routing.RouteData)">
+            <summary>
+            Finds the site map node.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="routeData">The route data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.FindControllerActionNode(System.Web.SiteMapNode,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Routing.RouteBase)">
+            <summary>
+            Finds the controller action node.
+            </summary>
+            <param name="rootNode">The root node.</param>
+            <param name="values">The values.</param>
+            <param name="route">The route.</param>
+            <returns>
+            A controller action node represented as a <see cref="T:System.Web.SiteMapNode"/> instance
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.NodeMatchesRoute(MvcSiteMapProvider.MvcSiteMapNode,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Nodes the matches route.
+            </summary>
+            <param name="mvcNode">The MVC node.</param>
+            <param name="values">The values.</param>
+            <returns>
+            A matches route represented as a <see cref="T:System.Boolean"/> instance 
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.CompareMustMatchRouteValues(System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns whether the two route value collections have same keys and same values.
+            </summary>
+            <param name="mvcNodeRouteValues">The route values of the original node.</param>
+            <param name="routeValues">The route values to check in the given node.</param>
+            <returns><c>True</c> if the <paramref name="mvcNodeRouteValues"/> contains all keys and the same values as the given <paramref name="routeValues"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.GetSiteMapNodeFromXmlElement(System.Xml.Linq.XElement,System.Web.SiteMapNode)">
+            <summary>
+            Maps an XMLElement from the XML file to an MvcSiteMapNode.
+            </summary>
+            <param name="node">The element to map.</param>
+            <param name="parentNode">The parent SiteMapNode</param>
+            <returns>An MvcSiteMapNode which represents the XMLElement.</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.AttributesToRouteValues(System.Xml.Linq.XElement,MvcSiteMapProvider.MvcSiteMapNode,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Add each attribute to our attributes collection on the siteMapNode
+            and to a route data dictionary.
+            </summary>
+            <param name="node">The element to map.</param>
+            <param name="siteMapNode">The SiteMapNode to map to</param>
+            <param name="routeValues">The RouteValueDictionary to fill</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.GetSiteMapNodeFromMvcSiteMapNodeAttribute(MvcSiteMapProvider.IMvcSiteMapNodeAttribute,System.Type,System.Reflection.MethodInfo)">
+            <summary>
+            Gets the site map node from MVC site map node attribute.
+            </summary>
+            <param name="attribute">IMvcSiteMapNodeAttribute to map</param>
+            <param name="type">Type.</param>
+            <param name="methodInfo">MethodInfo on which the IMvcSiteMapNodeAttribute is applied</param>
+            <returns>
+            A SiteMapNode which represents the IMvcSiteMapNodeAttribute.
+            </returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.HandleResourceAttribute(System.String,System.String@,System.Collections.Specialized.NameValueCollection@)">
+            <summary>
+            Handle resource attribute
+            </summary>
+            <param name="attributeName">Attribute name</param>
+            <param name="text">Text</param>
+            <param name="collection">NameValueCollection to be used for localization</param>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.EncodeExternalUrl(System.Web.SiteMapNode)">
+            <summary>
+            Encodes the external URL.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.DefaultSiteMapProvider.DecodeExternalUrl(System.Web.SiteMapNode)">
+            <summary>
+            Decodes the external URL.
+            </summary>
+            <param name="node">The node.</param>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.NodeKeyGenerator">
+            <summary>
+            Gets or sets the node key generator.
+            </summary>
+            <value>The node key generator.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.ControllerTypeResolver">
+            <summary>
+            Gets or sets the controller type resolver.
+            </summary>
+            <value>The controller type resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.ActionMethodParameterResolver">
+            <summary>
+            Gets or sets the action method parameter resolver.
+            </summary>
+            <value>The action method parameter resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.AclModule">
+            <summary>
+            Gets or sets the acl module.
+            </summary>
+            <value>The acl module.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.SiteMapNodeUrlResolver">
+            <summary>
+            Gets or sets the site map node URL resolver.
+            </summary>
+            <value>The site map node URL resolver.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.SiteMapNodeVisibilityProvider">
+            <summary>
+            Gets or sets the site map node visibility provider.
+            </summary>
+            <value>The site map node visibility provider.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.SiteMapProviderEventHandler">
+            <summary>
+            Gets or sets the site map provider event handler.
+            </summary>
+            <value>The site map provider event handler.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.CacheDuration">
+            <summary>
+            Gets or sets the duration of the cache.
+            </summary>
+            <value>The duration of the cache.</value>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.RootNode">
+            <summary>
+            Gets the RootNode for the current SiteMapProvider.
+            </summary>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.CurrentNode">
+            <summary>
+            Gets the <see cref="T:System.Web.SiteMapNode"/> object that represents the currently requested page.
+            </summary>
+            <returns>A <see cref="T:System.Web.SiteMapNode"/> that represents the currently requested page; otherwise, null, if the <see cref="T:System.Web.SiteMapNode"/> is not found or cannot be returned for the current user.</returns>
+        </member>
+        <member name="P:MvcSiteMapProvider.DefaultSiteMapProvider.SiteMapNamespace">
+            <summary>
+            Namespace of the site map file
+            </summary>
+            <value>The site map namespace.</value>
+        </member>
+        <member name="T:MvcSiteMapProvider.SiteMapNodeExtensions">
+            <summary>
+            SiteMapNode extensions
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.SiteMapNodeExtensions.GetNodeLevel(System.Web.SiteMapNode)">
+            <summary>
+            Gets the level of the current SiteMapNode
+            </summary>
+            <param name="current">The current SiteMapNode</param>
+            <returns>The level of the current SiteMapNode</returns>
+        </member>
+        <member name="M:MvcSiteMapProvider.SiteMapNodeExtensions.IsInCurrentPath(System.Web.SiteMapNode)">
+            <summary>
+            Determines whether the specified node is in current path.
+            </summary>
+            <param name="current">The current.</param>
+            <returns>
+            	<c>true</c> if the specified node is in current path; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvcSiteMapProvider.XElementExtensions">
+            <summary>
+            XElementExtensions class
+            </summary>
+        </member>
+        <member name="M:MvcSiteMapProvider.XElementExtensions.GetAttributeValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Given an XElement and an attribute key, will either return an empty string if its value is
+            null or the actual value.
+            </summary>
+            <param name="node">The current node</param>
+            <param name="attributeName">The attribe to get the value for.</param>
+            <returns>Empty string or attribute value</returns>
+        </member>
+    </members>
+</doc>

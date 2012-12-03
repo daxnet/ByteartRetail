@@ -1,0 +1,2190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Practices.EnterpriseLibrary.Common.Silverlight</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.AssemblyQualifiedTypeNameConverter">
+            <summary>
+            Represents a configuration converter that converts a string to <see cref="T:System.Type"/> based on a fully qualified name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.AssemblyQualifiedTypeNameConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Returns the assembly qualified name for the passed in Type.
+            </summary>
+            <param name="context">The container representing this System.ComponentModel.TypeDescriptor.</param>
+            <param name="culture">Culture info for assembly</param>
+            <param name="value">Value to convert.</param>
+            <param name="destinationType">Type to convert to.</param>
+            <returns>Assembly Qualified Name as a string</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.AssemblyQualifiedTypeNameConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Returns a type based on the assembly qualified name passed in as data.
+            </summary>
+            <param name="context">The container representing this System.ComponentModel.TypeDescriptor.</param>
+            <param name="culture">Culture info for assembly.</param>
+            <param name="value">Data to convert.</param>
+            <returns>Type of the data</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames">
+            <summary>
+            A set of string constants listing the names of the configuration
+            sections used by the standard set of Entlib blocks.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Cryptography">
+            <summary>
+            Crypto block section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Data">
+            <summary>
+            Data Access Application Block custom settings
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.ExceptionHandling">
+            <summary>
+            Exception Handling Application Block section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Caching">
+            <summary>
+            Caching Application Block section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Security">
+            <summary>
+            Security Application Block section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Logging">
+            <summary>
+            Logging Application Block section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Instrumentation">
+            <summary>
+            Instrumentation section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.PolicyInjection">
+            <summary>
+            Policy injection section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.Validation">
+            <summary>
+             Validation section name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.DataRegistrationProviderLocatorType">
+            <summary>
+            Not actually a section name, this is the type name used to get the
+            TypeRegistrationProviderLocatorStrategy used to retrieve information
+            for the Data Access Application Block.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.BlockSectionNames.ValidationRegistrationProviderLocatorType">
+            <summary>
+            Not actually a section name, this is the type name used to get the
+            TypeRegistrationProviderLocatorStrategy used to retrieve information
+            for the Validation Application Block.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Collections.ConfigurationDictionary">
+            <summary>
+            Defines a dictionary that can be used to populate a <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException">
+            <summary>
+            Indicates errors when retrieving configuration.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException"/> class with a message.
+            </summary>
+            <param name="message">A message describing the error.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationErrorsException"/> class with a message and
+            an inner exception.
+            </summary>
+            <param name="message">A message describing the error.</param>
+            <param name="inner">The exception that is the cause of the current exception, or 
+            <see langword="null"/> if no inner exception is specified.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection">
+            <summary>
+            A base class for configuration sections.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder">
+            <summary>
+            Entry point that is used for programmatically building up a configuration source.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder">
+            <summary>
+            Defines a configuration source builder.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.IFluentInterface">
+            <summary>
+            Interface that is used to build fluent interfaces and hides methods declared by <see cref="T:System.Object"/> from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.IFluentInterface.GetType">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.GetType"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.IFluentInterface.GetHashCode">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.GetHashCode"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.IFluentInterface.ToString">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.ToString"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.IFluentInterface.Equals(System.Object)">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.Equals(System.Object)"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder.AddSection(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> to the builder.
+            </summary>
+            <param name="sectionName">Name of section to add.</param>
+            <param name="section">Configuration section to add.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder.Contains(System.String)">
+            <summary>
+            Determines if a section name is contained in the builder.
+            </summary>
+            <param name="sectionName"></param>
+            <returns>True if contained in the builder, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder.Get(System.String)">
+            <summary>
+            Returns a configuration section with the given name, if present in the builder.
+            </summary>
+            <param name="sectionName">Name of section to return.</param>
+            <returns>A valid configuration section or null.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder.Get``1(System.String)">
+            <summary>
+             Returns a configuration section of type <typeparamref name="T"/>, if present in the builder.
+            </summary>
+            <param name="sectionName">Section name to retrieve</param>
+            <typeparam name="T"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> type to return.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder.UpdateConfigurationWithReplace(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Updates a configuration source replacing any existing sections with those 
+            built up with the builder.
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.AddSection(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> to the builder.
+            </summary>
+            <param name="sectionName">Name of section to add.</param>
+            <param name="configurationSection">Configuration section to add.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.Contains(System.String)">
+            <summary>
+            Determines if a section name is contained in the builder.
+            </summary>
+            <param name="sectionName"></param>
+            <returns>True if contained in the builder, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.Get(System.String)">
+            <summary>
+            Returns a configuration section with the given name, if present in the builder.
+            </summary>
+            <param name="sectionName">Name of section to return.</param>
+            <returns>A valid configuration section or null.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.Get``1(System.String)">
+            <summary>
+             Returns a configuration section of type <typeparamref name="T"/>, if present in the builder.
+            </summary>
+            <param name="sectionName">Section name to retrieve</param>
+            <typeparam name="T"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> type to return.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.UpdateConfigurationWithReplace(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Updates a configuration source replacing any existing sections with those 
+            built up with the builder.
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceBuilder.ToString">
+            <summary/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceFactory">
+            <summary>
+            Contains factory methods to create configuration sources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceFactory.Create">
+            <summary>
+            Creates a default configuration source.
+            </summary>
+            <returns>The default configuration source.</returns>
+            <seealso cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.CreateDefault"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator">
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> implementation that looks up
+            a provider by looking for the named configuration section in the given <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/>.
+            If found, tries to cast the config section to <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider">
+            <summary>
+            This class encapsulates the logic used to find the type registration providers
+            in the current application.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider">
+            <summary>
+            This interface represents an object that can return configuration information
+            used to configure a container to resolve Entlib objects.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <remarks>If there are no reregistrations, return an empty sequence.</remarks>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.#ctor">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> instance
+            without a name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <remarks>If there are no reregistrations, return an empty sequence.</remarks>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.CreateDefaultProvider(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> that will return all the
+            configuration for entlib blocks.
+            </summary>
+            <param name="configurationSource">Configuration source containing any customizations
+            to the locator list.</param>
+            <returns>The locator.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider.Name">
+            <summary>
+            Every locator has a name associated with it so that it can be added and removed
+            from composites. This property returns that name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator.#ctor(System.String)">
+            <summary>
+            Construct an instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator"/> that will
+            look for the given <paramref name="sectionName"/>.
+            </summary>
+            <param name="sectionName">Section name in configuration to look for.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource)">
+            <summary>
+            Construct an instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator"/> that
+            will look for the given <paramref name="sectionName"/>. It also
+            registers for the <see cref="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource.ContainerReconfiguring"/>
+            event, and will request updated type registrations from the section
+            at that time.
+            </summary>
+            <param name="sectionName">Section name in configuration to look for.</param>
+            <param name="reconfiguringEventSource">Event source to signal when reconfiguration is needed.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigSectionLocator.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <remarks>If there are no reregistrations, return an empty sequence.</remarks>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigurationBasedTypeRegistrationsProviderFactory">
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> that can be configured through a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigurationBasedTypeRegistrationsProviderFactory.CreateProvider(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Create a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that contains all the default registration
+            providers, honoring any configuration overrides of locators.
+            </summary>
+            <returns>The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that will return all registrations.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigurationBasedTypeRegistrationsProviderFactory.CreateProvider(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource)">
+            <summary>
+            Create a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that contains all the default registration
+            providers, honoring any configuration overrides of locators.
+            </summary>
+            <param name="configurationSource">The configuration source to use when creating <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/>s</param>
+            <param name="reconfiguringEventSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource"/> responsible for raising container reconfiguration events.</param>
+            <returns>The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that will return all registrations.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConfigurationBasedTypeRegistrationsProviderFactory.CreateTypeRegistrationsProviderLocators(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource)">
+            <summary>
+            public for unittesting purposes.
+            </summary>
+            <param name="configurationSource"></param>
+            <param name="reconfiguringEventSource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue">
+            <summary>
+            Represents an injected parameter value that can be determined at the time of container configuration.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue">
+            <summary>
+            Represents a strategy to retrieve a value to inject. 
+            </summary>
+            <remarks>
+            These strategies can either represent values known at container configuration time or 
+            values that need to be resolved during object construction.
+            </remarks>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter"/>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.#ctor(System.Linq.Expressions.Expression)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> class with a <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Expression"/>.
+            </summary>
+            <param name="expression">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Expression"/> representing the value to inject.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Expression">
+            <summary>
+            Gets the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Expression"/> representing the value to inject.
+            </summary>
+            <remarks>
+            Concrete strategies interpret the expression to provide relevant registration data.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Type">
+            <summary>
+            Gets the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue.Type"/> of the value to inject.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue.#ctor(System.Linq.Expressions.Expression)">
+            <summary>
+            Initializes a value parameter with the specified expression to be evaluated when providing the value parameter.
+            </summary>
+            <param name="expression">The expression representing the value to provide to the parameter.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue.Value">
+            <summary>
+            The parameter value to inject.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container">
+            <summary>
+            A static marker class to denote types constructed by the container when registering a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container.Resolved``1">
+            <summary>
+            Indicates a type to be resolved from a container.
+            </summary>
+            <typeparam name="T">The type to resolve from the container.</typeparam>
+            <returns>The type resolved</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container.Resolved``1(System.String)">
+            <summary>
+            Indicates a type to be resolved by name from a container.
+            </summary>
+            <typeparam name="T">The type to resolve from the container.</typeparam>
+            <param name="name">The name to use when resolving the type.</param>
+            <returns>The type resolved.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container.ResolvedIfNotNull``1(System.String)">
+            <summary>
+            Indicates a type to be resolved by name from a container, if the name is not null.
+            </summary>
+            <typeparam name="T">The type to resolve from the container.</typeparam>
+            <param name="name">The name to use when resolving the type.</param>
+            <returns>The type resolved.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container.ResolvedEnumerable``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Indicates an enumerable set to be resolved from a container using the names supplied
+            in <paramref name="names"/>.
+            </summary>
+            <typeparam name="T">The type to resolve from the container.</typeparam>
+            <param name="names">The set of names to use when resolving from the container.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs">
+            <summary>
+            This class is the event arguments received when a container is being
+            reconfigured due to a configuration source change. This class is a
+            collecting argument: new type registrations should be added via the
+            AddTypeRegistrations method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs.#ctor(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs"/> class.
+            </summary>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> that changed,
+            causing the need to reconfigure the container.</param>
+            <param name="changedSectionNames">Sequence of changed section names in 
+            <paramref name="configurationSource"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs.AddTypeRegistrations(System.Collections.Generic.IEnumerable{Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration})">
+            <summary>
+            Called by event receivers to collect the set of type registrations that
+            must be used to update the container.
+            </summary>
+            <param name="newRegistrations">The new set of type registrations.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs.ConfigurationSource">
+            <summary>
+            The updated configuration source.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerReconfiguringEventArgs.ChangedSectionNames">
+            <summary>
+            The section names that have changed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter">
+            <summary>
+            A parameter representing a set of named items to be resolved by the container.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter.Names">
+            <summary>
+            The set of names to resolve in the container.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter.ElementType">
+            <summary>
+            Enumeration type
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter">
+            <summary>
+            Represents a construction parameter resolved through the container.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter.#ctor(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Initializes the construction parameter from the <see cref="T:System.Linq.Expressions.MethodCallExpression"/>.  This method call expression 
+            expected to be represented through the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container"/> static marker class.
+            </summary>
+            <remarks>
+            
+            Given a class Example defined as:
+            
+            public class Example
+            {
+                public Example(Argument arg); 
+            }
+            
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration`1"/> and <see cref="T:System.Linq.Expressions.LambdaExpression"/> for this configuration might appear as follows:
+              new TypeRegistration&lt;Example&gt;(() =&gt; new Example(Container.Resolved&lt;Argument&gt;("SomeName"));
+            
+            During construction of the Example class, Argument will be resolved and injected by the container.
+            The <see cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container.Resolved``1"/> marker interface is used to represent
+            this requirement to a container configurator and is translated to a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter"/>.
+            </remarks>
+            <seealso cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Container"/>
+            <param name="expression">The method expression representing the type to resolve and named value.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter.Name">
+            <summary>
+            The name to use when resolving the type represented by the method call expression.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator">
+            <summary>
+            Implement this interface to create an object that can read a set
+            of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects representing the current
+            Enterprise Library configuration and configure a dependency injection
+            container with that information.
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator.RegisterAll(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider)">
+            <summary>
+            Consume the set of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects and
+            configure the associated container.
+            </summary>
+            <param name="configurationSource">Configuration source to read registrations from.</param>
+            <param name="rootProvider"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that knows how to
+            read the <paramref name="configurationSource"/> and return all relevant type registrations.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource">
+            <summary>
+            A interface describing objects that raise events when a
+            container's type registrations need to updated due to
+            a configuration source change.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource.ContainerReconfiguring">
+            <summary>
+            The event raised when a container must be reconfigured.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.InjectedProperty">
+            <summary>
+            Represents a property injected in a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.InjectedProperty.PropertyName">
+            <summary>
+            Gets the name of the injected property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.InjectedProperty.PropertyValue">
+            <summary>
+            Gets the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> describing the value injected through the property.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.NullContainerReconfiguringEventSource">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource"/> that does
+            nothing. Saves null checking everywhere.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.NullContainerReconfiguringEventSource.ContainerReconfiguring">
+            <summary>
+            The event raised when the configuration source changes.
+            </summary>
+            <remarks>With this implementation the event is never raised.</remarks>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor">
+            <summary>
+            This class implements the Visitor pattern over the hierarchy of
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> types. This makes it easier for container
+            authors to figure out which type of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> they're
+            dealing with and centralize processing without manually having to switch
+            on the runtime type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.Visit(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue)">
+            <summary>
+            Main entry point. When this method is called, this class will figure out
+            the current runtime type of the passed <paramref name="parameterValue"/>
+            and then call the corresponding strongly-typed visit method based on that runtime
+            type.
+            </summary>
+            <param name="parameterValue">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> object to process.</param>
+            <seealso cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitConstantParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue)"/>
+            <seealso cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitResolvedParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter)"/>
+            <seealso cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitEnumerableParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter)"/>
+            <seealso cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue)"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitConstantParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue)">
+            <summary>
+            The method called when a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue"/> object is visited.
+            </summary>
+            <remarks>By default, this method throws an exception. Override it to provide your
+            specific processing.</remarks>
+            <param name="parameterValue">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue"/> to process.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitResolvedParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter)">
+            <summary>
+            The method called when a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter"/> object is visited.
+            </summary>
+            <remarks>By default, this method throws an exception. Override it to provide your
+            specific processing.</remarks>
+            <param name="parameterValue">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter"/> to process.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitEnumerableParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter)">
+            <summary>
+            The method called when a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter"/> object is visited.
+            </summary>
+            <remarks>By default, this method throws an exception. Override it to provide your
+            specific processing.</remarks>
+            <param name="parameterValue">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter"/> to process.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValueVisitor.VisitParameterValue(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue)">
+            <summary>
+            The method called when a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> object is visited and we haven't
+            been able to otherwise identify the runtime type as a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ConstantParameterValue"/>,
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedParameter"/>, or <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ContainerResolvedEnumerableParameter"/>.
+            </summary>
+            <remarks>By default, this method throws an exception. Override it to provide your
+            specific processing or do further type checking if you have extended the type hierarchy.</remarks>
+            <param name="parameterValue">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> to process.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator">
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> implementation that
+            loads a type by name, and returns an instance of that type as the provider.
+            </summary>
+            <remarks>
+            This is primarily used to support the Data Access Application Block's configuration provider, which
+            has to pull stuff from several spots. Also, we load by name rather than
+            using a type object directly to avoid a compile time dependency from Common on the
+            Data assembly.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator.#ctor(System.String)">
+            <summary>
+            Construct a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator"/> that will use the
+            type named in <paramref name="typeName"/> as the provider.
+            </summary>
+            <param name="typeName">type to construct as a provider. This type must have a single argument
+            constructor that takes an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> parameter.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerReconfiguringEventSource)">
+            <summary>
+            Construct a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator"/> that will use the
+            type named in <paramref name="typeName"/> as the provider.
+            </summary>
+            <param name="typeName">type to construct as a provider. This type must have a single argument
+            constructor that takes an <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> parameter.</param>
+            <param name="reconfiguringEventSource">The event source containing events raised when the configuration source is changed.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeLoadingLocator.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <remarks>If there are no reregistrations, return an empty sequence.</remarks>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration">
+            <summary>
+            Represents a container registration entry as a <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/> and additional metadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.#ctor(System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> class with a <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/>
+            as the model for injection.
+            </summary>
+            <param name="expression">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/> representing the injection.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.#ctor(System.Linq.Expressions.LambdaExpression,System.Type)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> class with a <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/>
+            as the model for injection.
+            </summary>
+            <param name="expression">The <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/> representing the injection.</param>
+            <param name="serviceType">The service type to register the implementation against.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.DefaultName(System.Type)">
+            <summary>
+            Returns the default name for a type that will be returned if no name
+            is otherwise specified.
+            </summary>
+            <param name="serviceType">Type that was registered.</param>
+            <returns>Default name that will be used.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.DefaultName``1">
+            <summary>
+            Returns the default name for a type that will be returned if no name
+            is otherwise specified.
+            </summary>
+            <typeparam name="TServiceType">Type that was registered.</typeparam>
+            <returns>Default name that will be used.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.ImplementationType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> for the registration entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.NewExpressionBody">
+            <summary>
+            Returns the expression body representing the creation constructor call.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.ServiceType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> for which the <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.ImplementationType"/> provides an implementation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.Name">
+            <summary>
+            Gets the name under which the entry should be registered to the container.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.IsPublicName">
+            <summary>
+            Is this registration for a type that is part of a public API? If
+            true, configurators should not transform the name in any way. If
+            false, this is an internal implementation class that users will not
+            be resolving directly, and as such the name can be manipulated safely
+            without interfering with the public API.
+            </summary>
+            <remarks>Some containers have restrictions on the allowed names (for example,
+            many require names to be globally unique). Some object names need to be
+            left alone (for example, Database or Exception policies) because that is
+            what the user will use to get those objects. Other names (like for instrumentation
+            providers) are internal and can be freely changed by the configurator as
+            needed to fit into the container.</remarks>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression">
+            <summary>
+            Gets <see cref="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.LambdaExpression"/> representing the injection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.IsDefault">
+            <summary>
+            Gets <see langword="true"/> if the registration is to be considered the default for the service type, 
+            <see langword="false"/> otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.Lifetime">
+            <summary>
+            The required lifetime for this service implementation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.ConstructorParameters">
+            <summary>
+            Gets the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ParameterValue"/> instances describing values injected through the constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration.InjectedProperties">
+            <summary>
+            Gets the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.InjectedProperty"/> instances describing values injected to properties.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration`1">
+            <summary>
+            Represents a container registration entry as a <see cref="T:System.Linq.Expressions.LambdaExpression"/> and additional metadata for constructing a specific type.
+            </summary>
+            <typeparam name="T">The service type registered with the container</typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
+            <summary>
+            Initializes the TypeRegistration with a <see cref="T:System.Linq.Expressions.LambdaExpression"/> for T.
+            </summary>
+            <param name="expression"><see cref="T:System.Linq.Expressions.LambdaExpression"/> that providing the construction model for T.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationLifetime">
+            <summary>
+            A set of values indicating what the lifetime of service implementations
+            in the container should be.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationLifetime.Singleton">
+            <summary>
+            This implementation should be stored by the container and it should return
+            the same object for each request.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationLifetime.Transient">
+            <summary>
+            A new instance should be returned for each request.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.CompositeTypeRegistrationsProviderLocator">
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> that provides a composite
+            over a collection of individual <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/>s.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.CompositeTypeRegistrationsProviderLocator.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider})">
+            <summary>
+            Create the composite with the list of locators to use.
+            </summary>
+            <param name="locators">The locators.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.CompositeTypeRegistrationsProviderLocator.#ctor(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider[])">
+            <summary>
+            Create the composite with the list of locators to use.
+            </summary>
+            <param name="locators">The locators.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.CompositeTypeRegistrationsProviderLocator.GetRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to configure
+            the container.
+            </summary>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.CompositeTypeRegistrationsProviderLocator.GetUpdatedRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Return the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to reconfigure
+            the container after a configuration source has changed.
+            </summary>
+            <remarks>If there are no reregistrations, return an empty sequence.</remarks>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing
+            the configuration information.</param>
+            <returns>The sequence of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator">
+            <summary>
+            The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> specific configurator for <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> entries.
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Initializer for the configurator.
+            </summary>
+            <param name="container">The <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> to configure.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.RegisterAll(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider)">
+            <summary>
+            Consume the set of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects and
+            configure the associated container.
+            </summary>
+            <param name="configurationSource">Configuration source to read registrations from.</param>
+            <param name="rootProvider"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that knows how to
+            read the <paramref name="configurationSource"/> and return all relevant type registrations.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.RegisterAllCore(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider)">
+            <summary>
+            Consume the set of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects and
+            configure the associated container.
+            </summary>
+            <param name="configurationSource">Configuration source to read registrations from.</param>
+            <param name="rootProvider"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> that knows how to
+            read the <paramref name="configurationSource"/> and return all relevant type registrations.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.RegisterConfigurationSource(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            This method performs the registration of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> with the container.
+            </summary>
+            <param name="configurationSource">Configuration source to read registrations from.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.Register(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration)">
+            <summary>
+            Registers the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> entry with the container.
+            </summary>
+            <param name="registrationEntry">The type registration entry to add to the container.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.LifetimeInspector">
+            <summary>
+            This class belongs to the Enterprise Library infrastructure and is not
+            intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator.PolicyListAccessor">
+            <summary>
+            This class belongs to the Enterprise Library infrastructure and is not
+            intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.CallHandlerData">
+            <summary>
+            Base class for configuration information stored about a call handler.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedConfigurationElement">
+            <summary>
+            Represents a named element where the name is the key to a collection.
+            </summary>
+            <remarks>
+            This class is used in conjunction with a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedElementCollection`1"/>.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithName">
+            <summary>
+            Represents the abstraction of an object with a name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithName.Name">
+            <summary>
+            Gets the name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedConfigurationElement.Name">
+            <summary>
+            Gets or sets the name of the element.
+            </summary>
+            <value>
+            The name of the element.
+            </value>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.CallHandlerData.GetRegistrations(System.String)">
+            <summary>
+            Get the set of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects needed to
+            register the call handler represented by this config element and its associated objects.
+            </summary>
+            <param name="nameSuffix">A suffix for the names in the generated type registration objects.</param>
+            <returns>The set of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistration"/> objects.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.CallHandlerData.Order">
+            <summary>
+            Gets or sets the Order in which the call handler will be executed
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1">
+            <summary>
+            Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.IndexOf(`0)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <returns>
+            The index of <paramref name="item"/> if found in the list; otherwise, -1.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Insert(System.Int32,`0)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param><param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.Generic.IList`1"/> item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove.</param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Add(`0)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Contains(`0)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains a specific value.
+            </summary>
+            <returns>
+            true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception><exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.-or-The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.-or-Type <typeparamref name="T"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Remove(`0)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <returns>
+            true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </returns>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.CanInsert(`0)">
+            <summary>
+            Determines if the item can be inserted into the collection.
+            </summary>
+            <param name="item">The item to check.</param>
+            <returns><see langword="true" /> if the item can be inserted.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <returns>
+            The element at the specified index.
+            </returns>
+            <param name="index">The zero-based index of the element to get or set.</param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception><exception cref="T:System.NotSupportedException">The property is set and the <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </returns>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationElementCollection`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DateTimeTypeConverter">
+            <summary>
+            Represents a configuration converter that converts most strings to <see cref="T:System.DateTime"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DateTimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Returns the string representation of the passed in DateTime.
+            </summary>
+            <param name="context">The container representing this System.ComponentModel.TypeDescriptor.</param>
+            <param name="culture">Culture info for assembly</param>
+            <param name="value">Value to convert.</param>
+            <param name="destinationType">Type to convert to.</param>
+            <returns>The DateTime as string with the following format : yyyy'-'MM'-'dd'T'HH':'mm':'ss.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DateTimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Returns a DateTime based on the string passed in as data.
+            </summary>
+            <param name="context">The container representing this System.ComponentModel.TypeDescriptor.</param>
+            <param name="culture">Culture info for assembly.</param>
+            <param name="value">Data to convert.</param>
+            <returns>The DateTime value.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource">
+            <summary>
+            Represents a configuration source that is backed by a dictionary of named objects.
+            </summary>
+            <summary>
+            A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> that uses an <see cref="T:System.Collections.IDictionary"/> as its backing store.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource">
+            <summary>
+            Represents a source for getting configuration information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource.GetSection(System.String)">
+            <summary>
+            Retrieves the specified <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>.
+            </summary>
+            <param name="sectionName">The name of the section to be retrieved.</param>
+            <returns>The specified <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>, or <see langword="null"/> (<b>Nothing</b> in Visual Basic)
+            if a section by that name is not found.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource.Add(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> to the configuration source and saves the configuration source.
+            </summary>
+            <remarks>
+            If a configuration section with the specified name already exists it will be replaced.
+            </remarks>
+            <param name="sectionName">The name by which the <paramref name="configurationSection"/> should be added.</param>
+            <param name="configurationSection">The configuration section to add.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource.Remove(System.String)">
+            <summary>
+            Removes a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> from the configuration source.
+            </summary>
+            <param name="sectionName">The name of the section to remove.</param>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.sections">
+            <summary>
+            This field supports the Enterprise Library infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.GetSection(System.String)">
+            <summary>
+            Retrieves the specified <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>.
+            </summary>
+            <param name="sectionName">The name of the section to be retrieved.</param>
+            <returns>The specified <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>, or <see langword="null"/> (<b>Nothing</b> in Visual Basic)
+            if a section by that name is not found.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Add(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> to the configuration source.
+            </summary>
+            <remarks>
+            If a configuration section with the specified name already exists it will be replaced.
+            </remarks>
+            <param name="name">The name by which the <paramref name="section"/> should be added.</param>
+            <param name="section">The configuration section to add.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Remove(System.String)">
+            <summary>
+            Removes a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/> from the configuration source.
+            </summary>
+            <param name="sectionName">The name of the section to remove.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Contains(System.String)">
+            <summary>
+            Determines if a section name exists in the source.
+            </summary>
+            <param name="name">The section name to find.</param>
+            <returns><b>true</b> if the section exists; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"><see langword="true"/> if the method is being called from the <see cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Dispose"/> method. <see langword="false"/> if it is being called from within the object finalizer.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.Finalize">
+            <summary>
+            Releases resources for the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> instance before garbage collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.FromXaml(System.Uri)">
+            <summary>
+            Creates a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> from a dictionary expressed in the XAML file located at 
+            <paramref name="sourceUri"/>.
+            </summary>
+            <param name="sourceUri">The source URI.</param>
+            <returns>A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> with all the keys that are <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>s.</returns>
+            <remarks>This method does not copy keys from the <see cref="P:System.Windows.ResourceDictionary.MergedDictionaries"/> property if the target dictionary is a <see cref="T:System.Windows.ResourceDictionary"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.FromDictionary(System.Collections.IDictionary)">
+            <summary>
+            Creates a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> from a dictionary.
+            </summary>
+            <param name="dictionary">The source dictionary.</param>
+            <returns>A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> with all the keys that are <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSection"/>s.</returns>
+            <remarks>This method does not copy keys from the <see cref="P:System.Windows.ResourceDictionary.MergedDictionaries"/> property if the target dictionary is a <see cref="T:System.Windows.ResourceDictionary"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource.CreateDefault">
+            <summary>
+            Creates a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/> from a dictionary expressed in the XAML file located at 
+            the default location.
+            </summary>
+            <remarks>The default location is a file named 'Configuration.xaml' in the XAP file for application.
+            This method does not copy keys from the <see cref="P:System.Windows.ResourceDictionary.MergedDictionaries"/> property if the target dictionary is a <see cref="T:System.Windows.ResourceDictionary"/>.</remarks>
+            <returns>A <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.DictionaryConfigurationSource"/>.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer">
+            <summary>
+            Entry point for the container infrastructure for Enterprise Library.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.ConfigureAsync(System.Uri,System.Object)">
+            <summary>
+            Configure Enterprise Library by asynchronously downloading a configuration XAML
+            from the given URI.
+            </summary>
+            <param name="uri">URI to download the XAML from.</param>
+            <param name="state">Extra information given by the caller. This will be passed
+            through in the eventargs of the <see cref="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.EnterpriseLibraryConfigurationCompleted"/>
+            event.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.ConfigureAsync(System.Uri,System.Net.ICredentials,System.Object)">
+            <summary>
+            Configure Enterprise Library by asynchronously downloading a configuration XAML
+            from the given URI.
+            </summary>
+            <param name="uri">URI to download the XAML from.</param>
+            <param name="credentials">Credentials to use for downloading the configuration XAML file.</param>
+            <param name="state">Extra information given by the caller. This will be passed
+            through in the eventargs of the <see cref="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.EnterpriseLibraryConfigurationCompleted"/>
+            event.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.ConfigureContainer(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Read the current Enterprise Library configuration in the given <paramref name="configSource"/>
+            and supply the corresponding type information to the <paramref name="configurator"/>.
+            </summary>
+            <param name="configurator"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator"/> object used to consume the configuration
+            information.</param>
+            <param name="configSource">Configuration information.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.ConfigureContainer(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator,Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Read the current Enterprise Library configuration in the given <paramref name="configSource"/>
+            and supply the corresponding type information to the <paramref name="configurator"/>.
+            </summary>
+            <param name="locator"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> used to identify what information
+            to pull from the configuration file.</param>
+            <param name="configurator"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.IContainerConfigurator"/> object used to consume the configuration
+            information.</param>
+            <param name="configSource">Configuration information.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.CreateDefaultContainer">
+            <summary>
+            Create a new instance of <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> that has been configured
+            with the information in the default <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/>
+            </summary>
+            <returns>The <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> object.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.CreateDefaultContainer(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Create a new instance of <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> that has been configured
+            with the information in the given <paramref name="configurationSource"/>.
+            </summary>
+            <param name="configurationSource"><see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> containing Enterprise Library
+            configuration information.</param>
+            <returns>The <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> object.</returns>
+        </member>
+        <member name="E:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.EnterpriseLibraryConfigurationCompleted">
+            <summary>
+            Event fired on the completion of asynchronous configuration of
+            Enterprise Library started by a call to <see cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.ConfigureAsync(System.Uri,System.Object)"/>.
+            This event is fired on success or failure of the configuration.
+            Once this event is fired, all Enterprise Library capabilities are
+            ready to use.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer.Current">
+            <summary>
+            Get or set the current container used to resolve Entlib objects (for use by the
+            various static factories).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs">
+            <summary>
+            Event args class used to signal when Enterprise Library has completed an asynchronous
+            configuration.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs.#ctor(System.Object)">
+            <summary>
+            Construct a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs"/>
+            that indicates that configuration was successful and Enterprise Library
+            is now ready to use.
+            </summary>
+            <param name="state">State object used by caller to track asynchronous operations.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs.#ctor(System.Exception,System.Object)">
+            <summary>
+            Construct a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs"/>
+            that indicates that the asynchronous configuration failed, and includes the exception
+            that reported the failure.
+            </summary>
+            <param name="error">Exception indicating what went wrong.</param>
+            <param name="state">State object used by caller to track asynchronous operations.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs.Error">
+            <summary>
+            Exception that occurred during the configuration. If configuration is
+            successful this will be null.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs.ConfiguredSuccessfully">
+            <summary>
+            Did the configuration complete successfully? Yes if true, false if not.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryConfigurationCompletedEventArgs.State">
+            <summary>
+            The state object passed to the original ConfigureAsync call.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistrations">
+            <summary>
+            Fluent interface that allows to add <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instances.
+            </summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistrations.AddTypeRegistrationsProviderNamed(System.String)">
+            <summary>
+            Adds a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance to configuration source builder. <br/>
+            </summary>
+            <param name="typeRegistrationsProviderName">The name of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistration">
+            <summary>
+            Fluent interface used to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance.
+            </summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistration.ForType``1">
+            <summary>
+            Specifies the type of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance that should be used to retrieve type registrations.
+            </summary>
+            <typeparam name="TTypeRegistrationsProvider">The type of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance that should be used to retrieve type registrations.</typeparam>
+            <returns>Fluent interface that allows to add more type registration providers.</returns>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistration.ForType(System.Type)">
+            <summary>
+            Specifies the type of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance that should be used to retrieve type registrations.
+            </summary>
+            <param name="typeRegistrationProvider">The type of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instance that should be used to retrieve type registrations.</param>
+            <returns>Fluent interface that allows to add more type registration providers.</returns>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent.IConfigureTypeRegistration.ForSection(System.String)">
+            <summary>
+            Specifies the name of the configuration section that implements <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>. <br/>
+            </summary>
+            <param name="sectionName">The name of the configuration section that implements <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>. </param>
+            <returns>Fluent interface that allows to add more type registration providers.</returns>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderConfigurationSourceBuilderExtension">
+            <summary>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder"/> extensions to support creation of type registration provider settings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderConfigurationSourceBuilderExtension.ConfigureTypeRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder)">
+            <summary>
+            Main entry point to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection"/> section.
+            </summary>
+            <param name="configurationSourceBuilder">The builder interface to extend.</param>
+            <returns>A fluent interface that allows to add <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instances.</returns>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderConfigurationSourceBuilderExtension.ConfigureEmptyTypeRegistrations(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSourceBuilder)">
+            <summary>
+            Main entry point to configure a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection"/> section with no 
+            default type registrations.
+            </summary>
+            <param name="configurationSourceBuilder">The builder interface to extend.</param>
+            <returns>A fluent interface that allows to add <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> instances.</returns>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithNameAndType">
+            <summary>
+            Represents the abstraction of an object with a name and a type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithNameAndType.Type">
+            <summary>
+            Gets the type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement">
+            <summary>
+            Contains settings specific to the registration of a <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement.SectionName">
+            <summary>
+            The section name used to retrieve the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/> if available.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement.ProviderTypeName">
+            <summary>
+            The name of the type that implements <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.ITypeRegistrationsProvider"/>. 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElementCollection">
+            <summary>
+            Contains a collection of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedElementCollection`1">
+            <summary>
+            Represents a collection of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithName"/> objects with unique names.
+            </summary>
+            <typeparam name="T">A type that implements <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IObjectWithName"/>.</typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedElementCollection`1.Get(System.Int32)">
+            <summary>
+            Gets the configuration element at the specified index location. 
+            </summary>
+            <param name="index">The index location of the <see name="T"/> to return. </param>
+            <returns>The <see name="T"/> at the specified index. </returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedElementCollection`1.Get(System.String)">
+            <summary>
+            Gets the named instance of <typeparamref name="T"/> from the collection.
+            </summary>
+            <param name="name">The name of the <typeparamref name="T"/> instance to retrieve.</param>
+            <returns>The instance of <typeparamref name="T"/> with the specified key; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.NamedElementCollection`1.CanInsert(`0)">
+            <summary>
+            Determines if the item can be inserted into the collection.
+            </summary>
+            <param name="item">The item to check.</param>
+            <returns><see langword="true" /> if the item has a name that is unique in the collection.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElementCollection.#ctor">
+            <summary>
+            Creates a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElementCollection"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection">
+            <summary>
+            Contains settings to determine which <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.TypeRegistrationsProvider"/> to configure the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.EnterpriseLibraryContainer"/> with.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.SectionName">
+            <summary>The section name under which this configuration section is expected to be found.</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.CachingTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Caching Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.CryptographyTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Cryptography Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.ExceptionHandlingTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Exception Handling Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.InstrumentationTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for Instrumentation Configuration</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.LoggingTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Logging Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.PolicyInjectionTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Policy Injection Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.SecurityTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Security Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.DataAccessTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Data Access Application Block</summary>
+        </member>
+        <member name="F:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.ValidationTypeRegistrationProviderName">
+            <summary>The Type Registration Provider name for the Validation Application Block</summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProvidersConfigurationSection.TypeRegistrationProviders">
+            <summary>
+            Gets the collection of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.TypeRegistrationProviderElement"/> configured in this section.   
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryBlockExtension">
+            <summary>
+            Base class for Enterprise Library Blocks' container extensions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryBlockExtension.Initialize">
+            <summary>
+            Ensure that this container has been configured to resolve Enterprise Library
+            objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension">
+            <summary>
+            Main <see cref="T:Microsoft.Practices.Unity.UnityContainerExtension"/> for Enterprise Library.
+            </summary>
+            <remarks>
+            This extension configures its container to resolve all Enterprise Library
+            objects. It's a convenient method to save having to manually create a 
+            <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel.Unity.UnityContainerConfigurator"/> object and configure it yourself.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension"/> class with the
+            default <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/>.
+            </summary>		
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension.#ctor(Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension"/> class with 
+            the specified <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/>.
+            </summary>
+            <param name="configurationSource">The <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.IConfigurationSource"/> to use when retrieving
+            configuration information.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.EnterpriseLibraryCoreExtension.Initialize">
+            <summary>
+            Configures the Unity container to be able to resolve Enterprise Library
+            objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.TransientPolicyBuildUpExtension">
+            <summary>
+            Container extension that allows for supplying additional, transient policies while building up an object
+            through a container.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.TransientPolicyBuildUpExtension.Initialize">
+            <summary>
+            Initializes the container with this extension's functionality.
+            </summary>
+            <remarks>
+            This extension does not perform any initialization.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.TransientPolicyBuildUpExtension.BuildUp(System.Type,System.Object,System.String,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Run an existing object through the container and perform injection on it.
+            </summary>
+            <param name="t"><see cref="T:System.Type"/> of object to perform injection on.</param>
+            <param name="existing">Instance to build up.</param>
+            <param name="name">Name to use when looking up the typemappings and other configurations.</param>
+            <param name="injectionMembers">Providers for transient policies to use.</param>
+            <returns>The resulting object. By default, this will be object supplied in the <paramref name="existing"/> 
+            parameter, but container extensions may add things like automatic proxy creation which would cause this to 
+            return a different object (but still type compatible with t).</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.UnityContainerExtensions">
+            <summary>
+            Extension methods on <see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> that provides
+            some convenience wrappers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.UnityContainerExtensions.AddExtensionIfNotPresent(Microsoft.Practices.Unity.IUnityContainer,Microsoft.Practices.Unity.UnityContainerExtension)">
+            <summary>
+            Add a new extension to the given <paramref name="container"/>, only
+            if the extension hasn't already been added to the container.
+            </summary>
+            <param name="container">The container to add the extension to.</param>
+            <param name="extension">The extension object.</param>
+            <returns><paramref name="container"/></returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity.UnityContainerExtensions.AddNewExtensionIfNotPresent``1(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Add a new extension to the given <paramref name="container"/>, only
+            if the extension hasn't already been added to the container.
+            </summary>
+            <typeparam name="TExtension">Type of extension to add.</typeparam>
+            <param name="container">Container to add the extension to.</param>
+            <returns><paramref name="container"/></returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.CannotStartConfigurationDownload">
+            <summary>
+              Looks up a localized string similar to Enterprise Library asynchronous configuration is already in progress. Only one asynchronous configuration can be done at a time..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ConfigurationElementCollection_CannotInsert">
+            <summary>
+              Looks up a localized string similar to Cannot add duplicate item to the collection..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.EntlibNotYetConfigured">
+            <summary>
+              Looks up a localized string similar to Enterprise Library is in the process of downloading configuration information. It may not be used until this process is complete..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionAvailableSpaceNotEnough">
+            <summary>
+              Looks up a localized string similar to The available space is not enough to store the specified content..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionCanNotConvertDateTime">
+            <summary>
+              Looks up a localized string similar to The DateTimeTypeConverter can only convert DateTime values..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionCanNotConvertType">
+            <summary>
+              Looks up a localized string similar to The AssemblyQualifiedTypeNameConverter can only convert values of type &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionIdDoesNotExistInFileSystem">
+            <summary>
+              Looks up a localized string similar to The specified ID does not exist in the file system..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionInvalidType">
+            <summary>
+              Looks up a localized string similar to The type &apos;{0}&apos; cannot be resolved. Please verify the spelling is correct or that the full type name is provided..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionOverwriteOverflow">
+            <summary>
+              Looks up a localized string similar to The content to overwrite overflows the current allocated disk space. Use overwrite method to overwrite a portion of the content that is of fixed size, otherwise remove the content and re-add it..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionRegistrationServiceTypeIsNotCompatible">
+            <summary>
+              Looks up a localized string similar to Service type of {0} is not compatible with supplied expression type of {1}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionRegistrationTypeExpressionMustBeNewLambda">
+            <summary>
+              Looks up a localized string similar to Lambda expression must construct a new instance of a type..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionSizeIsNotCurrent">
+            <summary>
+              Looks up a localized string similar to This property cannot be queried until at least one ReadAll() call is made..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionStringNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The value cannot be null or an empty string..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionTypeMustDeriveFromType">
+            <summary>
+              Looks up a localized string similar to Type must be derived from &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionTypeMustImplementInterface">
+            <summary>
+              Looks up a localized string similar to Type must implement interface &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionUnrecognizedContainerMarkerMethod">
+            <summary>
+              Looks up a localized string similar to Unrecognized Container marker method..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionUnrecognizedDependencyParameterType">
+            <summary>
+              Looks up a localized string similar to Unrecognized DependencyParameter type: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionUnsupportedBindingExpressionType">
+            <summary>
+              Looks up a localized string similar to The initialization expression for property {0} is not supported: only simple bindings are supported..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionUnsupportedDateTimeFormat">
+            <summary>
+              Looks up a localized string similar to The DateTime &apos;{0}&apos; cannot be parsed. Please verify the DateTime format is correct. Supported format are en-US and universal format (ex: &quot;yyyy&apos;-&apos;MM&apos;-&apos;dd&apos;T&apos;HH&apos;:&apos;mm&apos;:&apos;ss&quot;). The time part is optional..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionWriteNotSupportedInReadOnlyStorage">
+            <summary>
+              Looks up a localized string similar to The storage was opened in read-only mode because it was being used by another instance at creation time..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionXamlConfigurationInvalidFormat">
+            <summary>
+              Looks up a localized string similar to The configuration content has an invalid format. The content should be in XAML format and the root element must be an instance of IDictionary. Each entry in the dictionary should correspond to each configuration section..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.ExceptionXamlConfigurationResourceNotFound">
+            <summary>
+              Looks up a localized string similar to The configuration resource stream cannot be found at URI &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.StorageAccessor_GuardMaxSize">
+            <summary>
+              Looks up a localized string similar to The storage cannot be smaller than {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Properties.Resources.StorageDoesNotExist">
+            <summary>
+              Looks up a localized string similar to The storage you are trying to open does not currently exist..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter">
+            <summary>
+            This class provides an engine to process a string that contains
+            replacement tokens of the form "{token}" and replace them with
+            calculated value later.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.#ctor">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.#ctor(Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken[])">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter"/>.
+            </summary>
+            <param name="tokens">List of tokens to replace.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken})">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter"/>.
+            </summary>
+            <param name="tokens">List of tokens to replace.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.Add(Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken[])">
+            <summary>
+            Add a new set of replacement tokens.
+            </summary>
+            <param name="tokens">Tokens to add to the list.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.AddRange(System.Collections.Generic.IEnumerable{Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken})">
+            <summary>
+            Add new tokens to the set of replacements.
+            </summary>
+            <param name="tokens">Tokens to add to the list.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter.Format(System.String)">
+            <summary>
+            Format the given template, replacing any tokens present.
+            </summary>
+            <param name="template">The string to format, containing the replacement tokens.</param>
+            <returns>The formatted string, with tokens replaced.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken">
+            <summary>
+            A single replacement token used by the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementFormatter"/>. A
+            token consists of two things:
+            <list type="bullet">
+            <item><description>The actual text of the token (including the {})</description></item>
+            <item><description>A delegate to retrieve the value to replace the token.</description></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Common.ReplacementTextDelegate)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken"/>.
+            </summary>
+            <param name="token">The string marking where the token should be replaced.</param>
+            <param name="getReplacementText">Delegate to return the value that replaces the token.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken.ReplaceToken(System.Text.StringBuilder)">
+            <summary>
+            Replace this token in the given stringbuilder.
+            </summary>
+            <param name="sb"><see cref="T:System.Text.StringBuilder"/> holding the template to perform the token replacement on.</param>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken.Token">
+            <summary>
+            The token string.
+            </summary>
+            <value>The token string.</value>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementToken.ReplacementText">
+            <summary>
+            The text to replace this token with.
+            </summary>
+            <value>Replacement text.</value>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.ReplacementTextDelegate">
+            <summary>
+            Delegate type giving a function that returns the replacement text for a token.
+            </summary>
+            <returns>The replacement text.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.ResourceStringLoader">
+            <summary>
+            Helper class to load resources strings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ResourceStringLoader.LoadString(System.String,System.String)">
+            <summary>
+            Load a resource string.
+            </summary>
+            <param name="baseName">The base name of the resource.</param>
+            <param name="resourceName">The resource name.</param>
+            <returns>The string from the resource.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.ResourceStringLoader.LoadString(System.String,System.String,System.Reflection.Assembly)">
+            <summary>
+            Load a resource string.
+            </summary>
+            <param name="baseName">The base name of the resource.</param>
+            <param name="resourceName">The resource name.</param>
+            <param name="asm">The assembly to load the resource from.</param>
+            <returns>The string from the resource.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException">
+            <summary>
+            Represents an exception allocating storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException"/> class.
+            </summary>
+            <param name="message">A message describing the error.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.AllocationException"/> class.
+            </summary>
+            <param name="message">A message describing the error.</param>
+            <param name="inner">The exception that is the cause of the current exception, or 
+            <see langword="null"/> if no inner exception is specified.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ConstantStringResolver">
+            <summary>
+            Resolves strings by returning a constant value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IStringResolver">
+            <summary>
+            Resolves string objects. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IStringResolver.GetString">
+            <summary>
+            Returns a string represented by the receiver.
+            </summary>
+            <returns>The string object.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ConstantStringResolver.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ConstantStringResolver"/> with a constant value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.DelegateStringResolver">
+            <summary>
+            Resolves strings by invoking a delegate and returning the resulting value.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.DelegateStringResolver.#ctor(System.Func{System.String})">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ConstantStringResolver"/> with a delegate.
+            </summary>
+            <param name="resolverDelegate">The delegate to invoke when resolving a string.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.EnumerableExtensions">
+            <summary>
+            Some utility extensions on <see cref="T:System.Collections.Generic.IEnumerable`1"/> to supplement
+            those available from Linq.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Execute <paramref name="action"/> for each element of <paramref name="sequence"/>.
+            </summary>
+            <typeparam name="T">Type of items in <paramref name="sequence"/>.</typeparam>
+            <param name="sequence">Sequence of items to act on.</param>
+            <param name="action">Action to invoke for each item.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.EnumerableExtensions.Zip``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1,``2})">
+            <summary>
+            Given a sequence, combine it with another sequence, passing the corresponding
+            elements of each sequence to the <paramref name="zipper"/> action to create
+            a new single value from the two sequence elements. "Zip" here refers to a zipper,
+            not the compression algorithm. The resulting sequence will have the same number
+            of elements as the shorter of sequence1 and sequence2.
+            </summary>
+            <typeparam name="T1">Type of the elements in the first sequence.</typeparam>
+            <typeparam name="T2">Type of the elements in the second sequence.</typeparam>
+            <typeparam name="TResult">Type of the resulting sequence elements.</typeparam>
+            <param name="sequence1">The first sequence to combine.</param>
+            <param name="sequence2">The second sequence to combine.</param>
+            <param name="zipper">Func used to calculate the resulting values.</param>
+            <returns>The result sequence.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.EnumerableExtensions.Zip``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Take two sequences and return a new sequence of <see cref="T:System.Collections.Generic.KeyValuePair`2"/> objects.
+            </summary>
+            <typeparam name="T1">Type of objects in sequence1.</typeparam>
+            <typeparam name="T2">Type of objects in sequence2.</typeparam>
+            <param name="sequence1">First sequence.</param>
+            <param name="sequence2">Second sequence.</param>
+            <returns>The sequence of <see cref="T:System.Collections.Generic.KeyValuePair`2"/> objects.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.EnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Take two sequences and return a <see cref="T:System.Collections.Generic.IDictionary`2"/> with the first sequence
+            holding the keys and the corresponding elements of the second sequence containing the values.
+            </summary>
+            <typeparam name="TKey">Type of keys in the dictionary.</typeparam>
+            <typeparam name="TValue">Type of values in the dictionary.</typeparam>
+            <param name="keys">Sequence of dictionary keys.</param>
+            <param name="values">Sequence of dictionary values.</param>
+            <returns>The constructed dictionary.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler">
+            <summary>
+            This interface represents a task that will be run at recurring intervals.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler.SetAction(System.Action)">
+            <summary>
+            Set the delegate that will be run when the schedule
+            determines it should run.
+            </summary>
+            <param name="recurringWork"></param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler.Start">
+            <summary>
+            Start the scheduler running.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler.Stop">
+            <summary>
+            Stop the scheduler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.IRecurringWorkScheduler.ForceDoWork">
+            <summary>
+            Forces the scheduler to perform the action as soon as possible, and not necessarily in a synchronous manner.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler">
+            <summary>
+            Scheduler that wraps a timer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.#ctor(System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler"/> class.
+            </summary>
+            <param name="pollInterval">The poll interval.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.SetAction(System.Action)">
+            <summary>
+            Set the delegate that will be run when the schedule
+            determines it should run.
+            </summary>
+            <param name="recurringWork"></param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.Start">
+            <summary>
+            Start the scheduler running.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.Stop">
+            <summary>
+            Stop the scheduler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.RecurringWorkScheduler.ForceDoWork">
+            <summary>
+            Forces the scheduler to perform the action as soon as possible, and not necessarily in a synchronous manner.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ResourceStringResolver">
+            <summary>
+            Resolves strings by retrieving them from assembly resources, falling back to a specified
+            value.
+            </summary>
+            <remarks>
+            If both the resource type and the resource name are available, a resource lookup will be 
+            performed; otherwise, the default value will be returned.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ResourceStringResolver.#ctor(System.Type,System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ResourceStringResolver"/>
+            for a resource type, a resource name and a fallback value.
+            </summary>
+            <param name="resourceType">The type that identifies the resources file.</param>
+            <param name="resourceName">The name of the resource.</param>
+            <param name="fallbackValue">The fallback value, to use when any of the resource
+            identifiers is not available.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ResourceStringResolver.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ResourceStringResolver"/>
+            for a resource type name, a resource name and a fallback value.
+            </summary>
+            <param name="resourceTypeName">The name of the type that identifies the resources file.</param>
+            <param name="resourceName">The name of the resource.</param>
+            <param name="fallbackValue">The fallback value, to use when any of the resource
+            identifiers is not available.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ServiceLocatorExtensions">
+            <summary>
+            Extension methods on <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> for convenience.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.ServiceLocatorExtensions.Dispose(Microsoft.Practices.ServiceLocation.IServiceLocator)">
+            <summary>
+            If the object implements <see cref="T:System.IDisposable"/> then call it.
+            </summary>
+            <param name="locator">The service locator to dispose, if possible.</param>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor">
+            <summary>
+            Manages storage of entries to the application's Isolated Storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.#ctor(System.String,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="maxSize">The maximum size in bytes.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor"/> class. This constructor opens the storage if it's available, or throws if it's not already created.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.TryOpen(System.String)">
+            <summary>
+            Tries to open the storage that is currently on disk. If there is not a storage already created, <see langword="null"/> will be returned.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>The storage that was previously created, or <see langword="null"/> if it does not exist on disk.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.DeleteStorage(System.String)">
+            <summary>
+            Deletes storage for the supplied storage name.
+            </summary>
+            <param name="name">The storage name.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Save(System.Byte[])">
+            <summary>
+            Saves the specified content.
+            </summary>
+            <param name="content">The content.</param>
+            <returns>An id for the saved content.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Overwrite(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Overwrites a portion of the content.
+            </summary>
+            <param name="id">The block id.</param>
+            <param name="content">The content to overwrite.</param>
+            <param name="offset">The offset within the current block data where the content will be updated.</param>
+            <remarks>This method should be used to overwrite bytes when there is a guarantee that it will fit the previous content size.
+            For performance reasons, this method does not check what was the previous content size. If the data being updated should result in
+            an updated content length, then this method should not be used, as the data will be corrupt. In this case, the alternative
+            is to invoke the <see cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Remove(System.String)"/> method and then invoke <see cref="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Save(System.Byte[])"/> to re-add it.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.ReadAll">
+            <summary>
+            Returns a dictionary with all the content saved in the storage.
+            </summary>
+            <returns>A dictionary with ids as keys and the saved content as values.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Remove(System.String)">
+            <summary>
+            Removes the entry identified by <paramref name="id"/> from the storage.
+            </summary>
+            <param name="id">The entry id.</param>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.ChangeMaxSize(System.Int64)">
+            <summary>
+            Changes the Maximum size that can be used by the storage. This method changes the max size, but does not trim entries if
+            the new max size is smaller.
+            </summary>
+            <param name="maxSize">The new maximum size.</param>
+            <exception cref="T:System.InvalidOperationException">when the storage is in read-only mode.</exception>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Dispose">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Dispose(System.Boolean)">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.Finalize">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.MaxSize">
+            <summary>
+            Gets the maximum size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.UsedLogicalSize">
+            <summary>
+            Gets the logical size used for storage.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.EnterpriseLibrary.Common.Utility.StorageAccessor.UsedPhysicalSize">
+            <summary>
+            Gets an estimate of the physical size used for storage.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.EnterpriseLibrary.Common.Utility.XamlActivator">
+            <summary>
+            Creates instances of types from a partial type name using the <see cref="T:System.Windows.Markup.XamlReader"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.EnterpriseLibrary.Common.Utility.XamlActivator.CreateInstance``1(System.String)">
+            <summary>
+            Creates an instance of an object specified with an <see cref="T:System.Xml.Linq.XName"/>.
+            </summary>
+            <typeparam name="T">A type compatible with the element to create.</typeparam>
+            <param name="typeXName">XName of the object to create.</param>
+            <returns>The new instance, or <see langword="null"/> if the element cannot be created.</returns>
+        </member>
+    </members>
+</doc>

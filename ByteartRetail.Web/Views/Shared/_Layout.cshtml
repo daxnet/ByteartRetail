@@ -1,0 +1,123 @@
+﻿@using ByteartRetail.Web;
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Byteart Retail</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")" />
+    <link type="text/css" href="@Url.Content("~/Content/uploadify.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.23.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/hoverIntent.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.min.js")"></script>
+    <script type="text/javascript">
+        // initialise plugins
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish();
+        });
+
+    </script>
+</head>
+<body>
+    <table width="996" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <td height="607" valign="top">
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="300" height="55" class="logo"></td>
+                        <td width="480" class="menu">
+                            <ul class="sf-menu">
+                                <li>@Html.ActionLink("首页", "Index", "Home")</li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                <li>@Html.ActionLink("我的", "Account", "Account")
+                                    <ul>
+                                        <li>@Html.ActionLink("订单", "SalesOrders", "Home")</li>
+                                        <li>@Html.ActionLink("账户", "Account", "Account")</li>
+                                        <li>@Html.ActionLink("购物篮", "ShoppingCart", "Home")</li>
+                                    </ul>
+                                </li>
+                                }
+                                <li>@Html.ActionLink("注册", "Register", "Account")</li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>@Html.ActionLinkWithPermission("管理", "Administration", "Admin", PermissionKeys.Administrators | PermissionKeys.Buyers | PermissionKeys.SalesReps)
+                                        <ul>
+                                            <li>@Html.ActionLinkWithPermission("销售订单管理", "SalesOrders", "Admin", PermissionKeys.Administrators | PermissionKeys.SalesReps)</li>
+                                            <li>@Html.ActionLinkWithPermission("商品分类管理", "Categories", "Admin", PermissionKeys.Administrators | PermissionKeys.Buyers)</li>
+                                            <li>@Html.ActionLinkWithPermission("商品信息管理", "Products", "Admin", PermissionKeys.Administrators | PermissionKeys.Buyers)</li>
+                                            <li>@Html.ActionLinkWithPermission("用户账户管理", "UserAccounts", "Admin", PermissionKeys.Administrators)</li>
+                                            <li>@Html.ActionLinkWithPermission("用户角色管理", "Roles", "Admin", PermissionKeys.Administrators)</li>
+                                        </ul>
+                                    </li>
+                                }
+                                <li>@Html.ActionLink("关于", "About", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Byteart Retail 项目", "About", "Home")</li>
+                                        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td width="216" class="menu">
+                            @{Html.RenderAction("_LoginPartial", "Layout");}
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="100%" height="10px" />
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <img src="/images/header.jpg" alt="" width="996" height="300" border="0"></td>
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr align="left" valign="top">
+                        <td width="202" height="334">
+                            @{Html.RenderAction("CategoriesPartial", "Layout");}
+                        </td>
+                        <td width="20">&nbsp;</td>
+                        <td width="774">
+
+                            <table width="774" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>@RenderBody()</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <img src="/images/footer.jpg" alt="" width="996" height="5"></td>
+                    </tr>
+                    <tr>
+                        <td height="76">
+                            <table width="996" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="329" height="78" align="right"><span class="category"><a href="http://daxnet.cnblogs.com/">
+                                        <img src="/images/spacer.gif" alt="" width="10" height="10" border="0"></a></span><img src="@Url.Content("~/Images/byteartretail_logo_trans.png")" alt="" border="0"></a></td>
+                                    <td width="14">&nbsp;</td>
+                                    <td width="653"><span class="style7">@Html.ActionLink("主页", "Index", "Home")&nbsp; | &nbsp;&nbsp;@Html.ActionLink("所有分类", "Category", "Home", null, null)&nbsp;&nbsp;|&nbsp;&nbsp; @Html.ActionLink("我的账户", "Account", "Account")&nbsp;&nbsp; |&nbsp;&nbsp; @Html.ActionLink("联系我们", "Contact", "Home")&nbsp;&nbsp; |&nbsp;&nbsp;@Html.ActionLink("关于本站", "About", "Home")</span><br>
+                                        版权所有 &copy; 2011-2012, Byteart Retail, 保留所有权利。 </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+    @RenderSection("scripts", false)
+</body>
+</html>

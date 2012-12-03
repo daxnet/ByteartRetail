@@ -1,0 +1,47 @@
+﻿@model ByteartRetail.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "用户登录";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<section id="loginForm">
+    <h4>请向系统提供您的用户名和密码以便登录</h4>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.LabelFor(m => m.UserName)
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Password)
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div>
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+        </div>
+        <p>
+            <input type="submit" value="登录" />
+        </p>
+    }
+</section>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#UserName").focus();
+        });
+    </script>
+}

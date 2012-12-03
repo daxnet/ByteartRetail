@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UserDataObject"
+    targetNamespace="http://www.ByteartRetail.com/UserDataObject.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.ByteartRetail.com/UserDataObject.xsd"
+    xmlns:mstns="http://www.ByteartRetail.com/UserDataObject.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ado="http://www.ByteartRetail.com/AddressDataObject.xsd"
+    xmlns:rdo="http://www.ByteartRetail.com/RoleDataObject.xsd"
+>
+
+  <xs:import namespace="http://www.ByteartRetail.com/AddressDataObject.xsd"/>
+  <xs:import namespace="http://www.ByteartRetail.com/RoleDataObject.xsd"/>
+  
+  <xs:complexType name="UserDataObject">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="UserName" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Email" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="IsDisabled" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DateRegistered" type="xs:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DateLastLogon" type="xs:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Role" type="rdo:RoleDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="Contact" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="PhoneNumber" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="ContactAddress" type="ado:AddressDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+      <xs:element name="DeliveryAddress" type="ado:AddressDataObject" minOccurs="0" maxOccurs="1" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

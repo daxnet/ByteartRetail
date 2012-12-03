@@ -1,0 +1,187 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model UserAccountModel
+
+@{
+    ViewBag.Title = "账户设置";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("User_32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm("Account", "Account", FormMethod.Post, new { id = "UpdateAccountForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.ID)
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.UserName)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.UserName)
+        @Html.ValidationMessageFor(model => model.UserName)
+    </div>@*
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Password)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.ConfirmPassword)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.ConfirmPassword)
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+    </div>*@
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Contact)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Contact)
+        @Html.ValidationMessageFor(model => model.Contact)
+    </div> 
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PhoneNumber)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.PhoneNumber)
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div> 
+    
+    <p />
+    
+    <table id="adressTable" style="width: 100%">
+        <tr>
+            <td style="width: 48%;">
+                <fieldset name="contactAddress">
+                    <legend>联系地址</legend>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactAddress_Country)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactAddress_Country)
+                        @Html.ValidationMessageFor(model => model.ContactAddress_Country)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactAddress_State)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactAddress_State)
+                        @Html.ValidationMessageFor(model => model.ContactAddress_State)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactAddress_City)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactAddress_City)
+                        @Html.ValidationMessageFor(model => model.ContactAddress_City)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactAddress_Street)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactAddress_Street)
+                        @Html.ValidationMessageFor(model => model.ContactAddress_Street)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ContactAddress_Zip)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.ContactAddress_Zip)
+                        @Html.ValidationMessageFor(model => model.ContactAddress_Zip)
+                    </div>
+                </fieldset>
+            </td>
+            <td>
+                <img id="copyAddress" src="@Url.Content("~/Images/CopyTo.png")" alt="将联系地址复制到收货地址" title="将联系地址复制到收货地址" border="0" />
+            </td>
+            <td style="width: 48%;">
+                <fieldset name="deliveryAddress">
+                    <legend>收货地址</legend>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DeliveryAddress_Country)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DeliveryAddress_Country)
+                        @Html.ValidationMessageFor(model => model.DeliveryAddress_Country)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DeliveryAddress_State)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DeliveryAddress_State)
+                        @Html.ValidationMessageFor(model => model.DeliveryAddress_State)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DeliveryAddress_City)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DeliveryAddress_City)
+                        @Html.ValidationMessageFor(model => model.DeliveryAddress_City)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DeliveryAddress_Street)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DeliveryAddress_Street)
+                        @Html.ValidationMessageFor(model => model.DeliveryAddress_Street)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DeliveryAddress_Zip)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DeliveryAddress_Zip)
+                        @Html.ValidationMessageFor(model => model.DeliveryAddress_Zip)
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+    </table>
+}
+
+<p />
+
+<p>
+    <span>@Html.ImageSubmitButton("UpdateAccountForm", Url.Content("~/Images/Save.png"), "保存", "保存更改")</span>
+</p>
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#UserName").focus();
+            $("#copyAddress").click(function () {
+                $("#DeliveryAddress_Country").val($("#ContactAddress_Country").val());
+                $("#DeliveryAddress_State").val($("#ContactAddress_State").val());
+                $("#DeliveryAddress_City").val($("#ContactAddress_City").val());
+                $("#DeliveryAddress_Street").val($("#ContactAddress_Street").val());
+                $("#DeliveryAddress_Zip").val($("#ContactAddress_Zip").val());
+            });
+        });
+    </script>
+}

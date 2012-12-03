@@ -1,0 +1,150 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model ShoppingCartDataObject
+
+@{
+    ViewBag.Title = "我的购物篮";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("ShoppingCart32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+<div>
+    <span>我的购物篮中共有</span>
+    <span class="ShoppingCart_Count">@Model.Items.Count</span>
+    <span>条记录，共计</span>
+    <span class="ShoppingCart_Count">@Model.Items.Sum(p => p.Quantity)</span>
+    <span>件商品</span>
+</div>
+@if (Model.Items.Count > 0)
+{
+    <div>
+        <table id="ShoppingCartTable">
+            <thead>
+                <tr>
+                    <th id="ImageColumn">&nbsp;
+                    </th>
+                    <th id="NameColumn">名称
+                    </th>
+                    <th id="UnitPriceColumn">单价
+                    </th>
+                    <th id="QuantityColumn">数量
+                    </th>
+                    <th>总价
+                    </th>
+                    <th id="CommandColumn">更新
+                    </th>
+                    <th id="CommandColumn">删除
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>
+                            @Html.ProductImage(item.Product.ImageUrl, ImageSize.Small)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.Product.Name, "Product", "Home", new { id = item.Product.ID }, null)
+                        </td>
+                        <td class="price" style="text-align: right;">
+                            @string.Format("{0:N2} 元", item.Product.UnitPrice)
+                        </td>
+                        <td style="text-align: right">
+                            @Html.TextBoxFor(p => item.Quantity, new { style = "width: 30px;", id = "quantity_" + item.ID })
+                        </td>
+                        <td class="price" style="text-align: right;">
+                            @string.Format("{0:N2} 元", item.LineAmount)
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="@Url.Content("~/Images/Update.png")" alt="更新" title="更新" class="UpdateShoppingCartItemButton" id="@string.Format("update_{0}", item.ID)" />
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="@Url.Content("~/Images/Delete.png")" alt="删除" title="删除" class="DeleteShoppingCartItemButton" id="@string.Format("delete_{0}", item.ID)" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td style="text-align: right; font-weight: bold;">总计</td>
+                    <td>&nbsp;</td>
+                    <td style="text-align: right;">@string.Format("{0:##,#}", Model.Items.Sum(i => i.Quantity))</td>
+                    <td class="price" style="text-align: right;">@string.Format("{0:N2} 元", Model.Subtotal)</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <br />
+    <div id="checkout">
+        @using (Html.BeginForm("Checkout", "Home", FormMethod.Post, new {id = "CheckoutForm"})){
+            <span>
+                <a href="javascript:if (confirm('是否确认购买？')) document.getElementById('CheckoutForm').submit()">确认购买</a>
+            </span>
+        }
+    </div>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        function IsNumeric(input) {
+            return (input - 0) == input && input.length > 0;
+        }
+
+        $(function () {
+            $(".UpdateShoppingCartItemButton").click(function () {
+                var buttonID = $(this).attr('id');
+                var qid = buttonID.replace('update_', 'quantity_');
+                var itemID = buttonID.replace('update_', '');
+                var quantity = $('#' + qid).val();
+                var postUrl = '@Url.Action("UpdateShoppingCartItem", "Home")';
+                var redirectUrl = '@Url.Action("ShoppingCart", "Home")';
+
+                if (!IsNumeric(quantity)) {
+                    alert('输入的数量值必须是数值。');
+                    return;
+                }
+
+                var intQuantity = parseInt(quantity);
+                if (intQuantity <= 0) {
+                    alert('输入的数量值必须是大于或等于1的数值。');
+                    window.location.href = redirectUrl;
+                    return;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: postUrl,
+                    data: { shoppingCartItemID: itemID, quantity: intQuantity },
+                    success: function (msg) {
+                        window.location.href = redirectUrl;
+                    }
+                });
+            });
+
+            $('.DeleteShoppingCartItemButton').click(function () {
+                if (confirm('是否确定要删除所选商品？')) {
+                    var buttonID = $(this).attr('id');
+                    var itemID = buttonID.replace('delete_', '');
+                    var postUrl = '@Url.Action("DeleteShoppingCartItem", "Home")';
+                    var redirectUrl = '@Url.Action("ShoppingCart", "Home")';
+
+                    $.ajax({
+                        type: "POST",
+                        url: postUrl,
+                        data: { shoppingCartItemID: itemID },
+                        success: function (msg) {
+                            window.location.href = redirectUrl;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

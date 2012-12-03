@@ -1,0 +1,106 @@
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+F:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.csprojResolveAssemblyReference.cache
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ResolveAssemblyReference.cache
+E:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+E:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+G:\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.csprojResolveAssemblyReference.cache
+G:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+G:\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+D:\My Documents\Visual Studio 2010\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ResolveAssemblyReference.cache
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+G:\Documents\DDD\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\log4net.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\log4net.xml
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+G:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+G:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.csprojResolveAssemblyReference.cache
+G:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+G:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.pdb
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\log4net.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Infrastructure.pdb
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.xml
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\log4net.xml
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+F:\Projects\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+F:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.csprojResolveAssemblyReference.cache
+F:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
+F:\Projects\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb

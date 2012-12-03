@@ -1,0 +1,109 @@
+﻿@using ByteartRetail.DataObjects;
+@using ByteartRetail.Web;
+@model ByteartRetail.DataObjects.ProductDataObjectListWithPagination
+
+@if (ViewBag.CategoryName != null)
+{
+    <h2>商品分类：@ViewBag.CategoryName</h2>
+}
+<table width="774" border="0" cellspacing="0" cellpadding="0">
+
+    <tr>
+        <td height="479">&nbsp;</td>
+        <td align="left" valign="top" width="100%">
+            @{
+                 
+                if (Model.ProductDataObjectList.Count > 0)
+                {
+                    for (int i = 0; i < Model.ProductDataObjectList.Count; i++)
+                    {
+                        var model = Model.ProductDataObjectList[i];
+                <table width="207" height="234" border="0" cellpadding="0" cellspacing="0" class="productleft_top">
+                    <tr>
+                        <td align="left" valign="top">
+                            <table width="222" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="200" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td height="45"><span class="product_name">@Html.ActionLink(model.Name, "Product", "Home", new { id = model.ID }, null)</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="147" align="center"><a href="@Url.Action("Product", "Home", new { id = model.ID })">
+                                                    <img src="@Url.Content(string.Format("~/Images/Products/{0}", model.ImageUrl))" alt="" width="175" height="144" border="0"></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="35">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="24%" height="24"><span class="style7"><a href="@Url.Action("Product", "Home", new { id = model.ID })" id="blue1">详细信息</a></span></td>
+                                                <td width="5%">&nbsp;</td>
+                                                <td width="15%" height="24"><span class="style7"><a href="@Url.Action("AddToCart", "Home", new { productID = model.ID, items = "1" })" id="blue1">购买</a></span></td>
+                                                <td width="5%">&nbsp;</td>
+                                                <td width="51%" class="price">@Html.Encode(string.Format("{0:N2} {1}", model.UnitPrice, "元"))</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                    }
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="text-align: right; font-size: 12px;">
+                                @Html.Encode(string.Format("第{0}页，共{1}页", Model.Pagination.PageNumber, Model.Pagination.TotalPages))
+                                &nbsp;
+                                @if (!ViewBag.IsFirstPage)
+                                {
+                                    @Html.ActionLink("首页", (string)ViewBag.Action, "Home", new { categoryID = ViewBag.CategoryID, pageNumber = 1 }, new { id="blue1" })
+                                }
+                                else
+                                {
+                                    @Html.Encode("首页")
+                                }
+                                &nbsp;
+                                @if (!ViewBag.IsFirstPage)
+                                {
+                                    @Html.ActionLink("上页", (string)ViewBag.Action, "Home", new { categoryID = ViewBag.CategoryID, pageNumber = Model.Pagination.PageNumber - 1}, new { id="blue1" })
+                                }
+                                else
+                                {
+                                    @Html.Encode("上页")
+                                }
+                                &nbsp;
+                                @if (!ViewBag.IsLastPage)
+                                {
+                                    @Html.ActionLink("下页", (string)ViewBag.Action, "Home", new { categoryID = ViewBag.CategoryID, pageNumber = Model.Pagination.PageNumber + 1},  new { id="blue1" })
+                                }
+                                else
+                                {
+                                    @Html.Encode("下页")
+                                }
+                                &nbsp;
+                                @if (!ViewBag.IsLastPage)
+                                {
+                                    @Html.ActionLink("尾页", (string)ViewBag.Action, "Home", new { categoryID = ViewBag.CategoryID, pageNumber = Model.Pagination.TotalPages},  new { id="blue1" })
+                                }
+                                else
+                                {
+                                    @Html.Encode("尾页")
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else
+                {
+                <h4>没有找到任何商品</h4>
+                }
+            }
+
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+</table>

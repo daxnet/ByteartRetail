@@ -1,0 +1,109 @@
+﻿@using ByteartRetail.Web;
+@using ByteartRetail.DataObjects;
+
+@model ProductDataObject
+
+@{
+    ViewBag.Title = "添加商品信息";
+}
+
+<hgroup class="title">
+    <h1>@Html.Image("Product_32.png")&nbsp;@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { id = "AddProductForm", enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Description)
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.UnitPrice)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.UnitPrice)
+        @Html.ValidationMessageFor(model => model.UnitPrice)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Category.Name)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.Category.ID, (IEnumerable<SelectListItem>)ViewData["categories"])
+    </div>
+    
+    <table id="productImageTable">
+        <tr>
+            <td>
+                <div class="editor-label" style="width: 140px;">
+                    @Html.LabelFor(model => model.ImageUrl)
+                </div>
+            </td>
+            <td>
+                @Html.HiddenFor(model => model.ImageUrl, new { id = "productImageUrl" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-field" style="width: 140px;">
+                    @Html.ProductImage("ProductImage.png", ImageSize.Medium, new { id = "productImage" })
+                </div>
+            </td>
+            <td style="vertical-align: top; text-align: center;">
+                <input type="file" name="productImageFile" id="productImageFile" />
+            </td>
+        </tr>
+    </table>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.IsFeatured)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.IsFeatured)
+        @Html.ValidationMessageFor(model => model.IsFeatured)
+    </div>
+}
+
+<p>
+    <span>@Html.ImageSubmitButton("AddProductForm", Url.Content("~/Images/Save.png"), "保存", "保存更改")</span>
+    <span>&nbsp;</span>
+    <span>@Html.ImageActionLink(Url.Content("~/Images/Cancel.png"), "取消编辑", "取消编辑", "Products", "Admin")</span>
+</p>
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#Name").focus();
+            $("#productImageFile").uploadify({
+                'buttonText': '选择图片',
+                'fileTypeDesc': 'Image Files',
+                'fileTypeExts': '*.gif; *.jpg; *.png',
+                'method': 'post',
+                'swf': '@Url.Content("~/Content/uploadify.swf")',
+                'uploader': '@Url.Action("Upload", "Admin")',
+                'width': 80,
+                'height': 20,
+                'preventCaching': true,
+                'onUploadSuccess': function (file, data, response) { 
+                    $("#productImage").attr("src", '@Url.ProductImagePath()' + data + '?' + Math.random().toString());
+                    $("#productImageUrl").val(data);
+                }
+            });
+        });
+    </script>
+}

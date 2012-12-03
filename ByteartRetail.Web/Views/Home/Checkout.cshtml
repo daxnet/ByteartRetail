@@ -1,0 +1,61 @@
+﻿@using ByteartRetail.DataObjects;
+@using ByteartRetail.Web;
+
+@model SalesOrderDataObject
+
+@{
+    ViewBag.Title = "订单生成";
+}
+
+<div>
+    <h1>@Html.Image("Success_32.png")&nbsp;生成订单成功！</h1>
+    <table id="CheckoutResult">
+        <tr>
+            <td style="width: 75px;">
+                订单编号：
+            </td>
+            <td>
+                <b>@Model.ID.ToUpper()</b>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;">
+                收货地址：
+            </td>
+            <td>
+                <b>@Model.CustomerAddressZip, @Model.CustomerAddressStreet</b>
+                <br />
+                <b>@Model.CustomerAddressCity, @Model.CustomerAddressState, @Model.CustomerAddressCountry</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                联系人：
+            </td>
+            <td>
+                <b>@Model.CustomerContact</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                联系电话：
+            </td>
+            <td>
+                <b>@Model.CustomerPhone</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                电子邮件：
+            </td>
+            <td>
+                <b>@Model.CustomerEmail</b>
+            </td>
+        </tr>
+    </table>
+    <p />
+    <div>您可以 @Html.ActionLink("单击此处", "SalesOrder", "Home", new { id = Model.ID }, new { id = "blue1" }) 查看此订单的详细信息，或者 @Html.ActionLink("单击此处", "SalesOrders", "Home", null, new { id = "blue1" }) 查看所有订单。</div>
+    <p />
+    <div>请 @Html.ActionLink("单击此处", "Index", "Home", null, new { id = "blue1" }) 回到首页继续购物。</div>
+</div>
+
