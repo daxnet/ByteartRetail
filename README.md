@@ -31,9 +31,9 @@ Byteart Retail项目使用或涵盖了以下Microsoft技术：
 编译运行
 --------
 将下载的ByteartRetail_V3.zip文件解压到一个本地的磁盘目录下，然后在Microsoft Visual Studio 2012中打开ByteartRetail.sln文件，再将ByteartRetail.Web项目设置为启动项目后，直接按F5（或者Debug –> Start Debugging菜单项）运行本案例即可。注意：
-1.如果不打算以Debug的方式启动本案例，那就需要首先展开ByteartRetail.Services项目，任选其中一个.svc的服务文件（比如UserService.svc）然后点击右键选择View In Browser菜单项，以便启动服务端的ASP.NET Development Server；最后再直接启动ByteartRetail.Web项目
-2.由于Byteart Retail V3的数据库采用的是SQL Server 2012 Express LocalDB（默认实例），在程序连接LocalDB数据库时，LocalDB需要创建/初始化数据库实例，因此在首次启动时有可能会出现数据库连接超时的异常，如果碰到这类问题，则请稍等片刻然后再重试
-3.如果以上述第一点的方式运行ByteartRetail.Web项目并出现与WCF绑定相关的错误时，这表示WCF服务并没有完全启动，请重新启动ByteartRetail.Services项目，然后再启动ByteartRetail.Web项目
+- 如果不打算以Debug的方式启动本案例，那就需要首先展开ByteartRetail.Services项目，任选其中一个.svc的服务文件（比如UserService.svc）然后点击右键选择View In Browser菜单项，以便启动服务端的ASP.NET Development Server；最后再直接启动ByteartRetail.Web项目
+- 由于Byteart Retail V3的数据库采用的是SQL Server 2012 Express LocalDB（默认实例），在程序连接LocalDB数据库时，LocalDB需要创建/初始化数据库实例，因此在首次启动时有可能会出现数据库连接超时的异常，如果碰到这类问题，则请稍等片刻然后再重试
+- 如果以上述第一点的方式运行ByteartRetail.Web项目并出现与WCF绑定相关的错误时，这表示WCF服务并没有完全启动，请重新启动ByteartRetail.Services项目，然后再启动ByteartRetail.Web项目
 
 登录账户
 --------
