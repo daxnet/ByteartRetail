@@ -15,11 +15,10 @@ namespace ByteartRetail.Domain.Events.OrderDispatched
         {
             try
             {
-                Utils.Log(string.Format("SendEmailEventHandler ThreadID: {0}", System.Threading.Thread.CurrentThread.ManagedThreadId));
                 Utils.SendEmail(@event.DispatchedOrder.User.Email,
                     "Your Order Has Been Dispatched.",
                     string.Format("Your Order {0} has been dispatched on {1}. For more information please contact system administrator. Thank you for your order.",
-                    @event.DispatchedOrder.ID, @event.DispatchedDate));
+                    @event.DispatchedOrder.ID.ToString().ToUpper(), @event.DispatchedDate));
             }
             catch(Exception ex)
             {

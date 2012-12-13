@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderDispatched\EventAggregator.cs" />
     <Compile Include="OrderDispatched\SendEmailEventHandler.cs" />
     <Compile Include="OrderDispatched\UpdateStatusEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

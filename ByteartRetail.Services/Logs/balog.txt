@@ -522,3 +522,43 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2012-12-13 20:56:58,658 [11] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 11
 
 2012-12-13 20:56:58,658 [17] INFO  ByteartRetail.Logger - UpdateStatusEventHandler ThreadID: 17
+
+2012-12-13 22:17:48,272 [6] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 6
+
+2012-12-13 22:17:48,272 [16] INFO  ByteartRetail.Logger - UpdateStatusEventHandler ThreadID: 16
+
+2012-12-13 22:41:31,910 [10] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 41
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_4c4f558f50464e6d976094f2f8e7c02e.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 22:41:51,832 [16] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 41
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_4c4f558f50464e6d976094f2f8e7c02e.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 22:42:49,907 [12] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 41
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_483365c61fc946c7a1107580f93e3d43.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 22:49:13,355 [14] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 41
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_85390f32c93b42718d53eb64c8bdb6c9.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 22:51:11,037 [14] ERROR ByteartRetail.Logger - Exception caught
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 53
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_07cad81b53e54b4a8aaf8b5acaa6c038.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

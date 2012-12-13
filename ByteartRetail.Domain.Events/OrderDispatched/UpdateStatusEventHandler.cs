@@ -15,7 +15,6 @@ namespace ByteartRetail.Domain.Events.OrderDispatched
 
         public void Handle(OrderDispatchedEvent @event)
         {
-            Utils.Log(string.Format("UpdateStatusEventHandler ThreadID: {0}", System.Threading.Thread.CurrentThread.ManagedThreadId));
             @event.DispatchedOrder.DateDispatched = @event.DispatchedDate;
             @event.DispatchedOrder.Status = SalesOrderStatus.Dispatched;
         }

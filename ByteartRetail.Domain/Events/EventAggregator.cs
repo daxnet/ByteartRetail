@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace ByteartRetail.Domain.Events
 {
-    public abstract class EventAggregator<TEvent> : IEventAggregator<TEvent>
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
+    public class EventAggregator<TEvent> : IEventAggregator<TEvent>
         where TEvent : class, IDomainEvent
     {
         protected readonly List<IEventHandler<TEvent>> eventHandlers = new List<IEventHandler<TEvent>>();
