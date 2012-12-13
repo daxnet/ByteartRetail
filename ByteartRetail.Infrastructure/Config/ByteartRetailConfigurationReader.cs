@@ -36,6 +36,36 @@ namespace ByteartRetail.Infrastructure.Config
         {
             get { return configuration.Presentation.ProductsPageSize; }
         }
+
+        public string EmailHost
+        {
+            get { return configuration.EmailClient.Host; }
+        }
+
+        public int EmailPort
+        {
+            get { return configuration.EmailClient.Port; }
+        }
+
+        public string EmailUserName
+        {
+            get { return configuration.EmailClient.UserName; }
+        }
+
+        public string EmailPassword
+        {
+            get { return configuration.EmailClient.Password; }
+        }
+
+        public string EmailSender
+        {
+            get { return configuration.EmailClient.Sender; }
+        }
+
+        public bool EmailEnableSsl
+        {
+            get { return configuration.EmailClient.EnableSsl; }
+        }
         /// <summary>
         /// 获取<c>ByteartRetailConfigurationReader</c>的单例类型。
         /// </summary>
@@ -70,6 +100,7 @@ namespace ByteartRetail.Infrastructure.Config
                     return pke.KeyName;
             return null;
         }
+
         #endregion
     }
 }

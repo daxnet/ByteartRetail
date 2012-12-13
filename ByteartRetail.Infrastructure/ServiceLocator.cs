@@ -92,6 +92,16 @@ namespace ByteartRetail.Infrastructure
             var overrides = GetParameterOverrides(overridedArguments);
             return container.Resolve(serviceType, overrides.ToArray());
         }
+
+        public IEnumerable<object> GetAll(Type serviceType)
+        {
+            return container.ResolveAll(serviceType);
+        }
+
+        public IEnumerable<T> GetAll<T>()
+        {
+            return container.ResolveAll<T>();
+        }
         #endregion
 
         #region IServiceProvider Members

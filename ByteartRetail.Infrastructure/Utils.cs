@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ByteartRetail.Infrastructure.Config;
+using System;
+using System.Net;
+using System.Net.Mail;
 
 namespace ByteartRetail.Infrastructure
 {
@@ -27,6 +30,24 @@ namespace ByteartRetail.Infrastructure
         public static void Log(Exception ex)
         {
             log.Error("Exception caught", ex);
+        }
+        /// <summary>
+        /// 向指定的邮件地址发送邮件。
+        /// </summary>
+        /// <param name="to">需要发送邮件的邮件地址。</param>
+        /// <param name="subject">邮件主题。</param>
+        /// <param name="content">邮件内容。</param>
+        public static void SendEmail(string to, string subject, string content)
+        {
+            MailMessage msg = new MailMessage(ByteartRetailConfigurationReader.Instance.EmailSender, 
+                to, 
+                subject, 
+                content);
+            SmtpClient smtpClient = new SmtpClient(ByteartRetailConfigurationReader.Instance.EmailHost);
+            smtpClient.Port = ByteartRetailConfigurationReader.Instance.EmailPort;
+            smtpClient.Credentials = new NetworkCredential(ByteartRetailConfigurationReader.Instance.EmailUserName, ByteartRetailConfigurationReader.Instance.EmailPassword);
+            smtpClient.EnableSsl = ByteartRetailConfigurationReader.Instance.EmailEnableSsl;
+            smtpClient.Send(msg);
         }
         #endregion
     }

@@ -21,6 +21,11 @@
 					<xs:documentation>The Presentation.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="emailClient" type="tns:ByteartRetail.Infrastructure.Config.EmailClientElementCT">
+				<xs:annotation>
+					<xs:documentation>The EmailClient.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ByteartRetail.Infrastructure.Config.PermissionKeyElementCollectionCT">
@@ -52,6 +57,40 @@
 		<xs:attribute name="productsPageSize" use="required" type="xs:int">
 			<xs:annotation>
 				<xs:documentation>The ProductsPageSize.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ByteartRetail.Infrastructure.Config.EmailClientElementCT">
+		<xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="host" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Host.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="port" use="optional" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>The Port.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="userName" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The UserName.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="password" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Password.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="enableSsl" use="optional" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>The EnableSsl.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sender" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Sender.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>

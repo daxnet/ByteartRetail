@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteartRetail.Domain.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -121,8 +122,13 @@ namespace ByteartRetail.Domain.Model
         /// </summary>
         public void Dispatch()
         {
-            this.status = SalesOrderStatus.Dispatched;
-            this.dateDispatched = DateTime.Now;
+            //this.status = SalesOrderStatus.Dispatched;
+            //this.dateDispatched = DateTime.Now;
+            EventDispatcher.DispatchEvent<OrderDispatchedEvent>(new OrderDispatchedEvent
+            {
+                DispatchedDate = DateTime.Now,
+                DispatchedOrder = this
+            });
         }
         #endregion
 

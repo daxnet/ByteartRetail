@@ -47,7 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainException.cs" />
+    <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Events\EventAggregator.cs" />
+    <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="Events\EventDispatchMode.cs" />
     <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IEventAggregator.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\OrderDispatchedEvent.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Model\Address.cs" />

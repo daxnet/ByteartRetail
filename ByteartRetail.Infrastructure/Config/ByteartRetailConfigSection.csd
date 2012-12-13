@@ -23,6 +23,11 @@
             <configurationElementMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/PresentationElement" />
           </type>
         </elementProperty>
+        <elementProperty name="EmailClient" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="emailClient" isReadOnly="false">
+          <type>
+            <configurationElementMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/EmailClientElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationSection>
     <configurationElementCollection name="PermissionKeyElementCollection" namespace="ByteartRetail.Infrastructure.Config" xmlItemName="permissionKey" codeGenOptions="Indexer, AddMethod, RemoveMethod, GetItemMethods">
@@ -49,6 +54,40 @@
         <attributeProperty name="ProductsPageSize" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="productsPageSize" isReadOnly="false">
           <type>
             <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/Int32" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElement name="EmailClientElement" namespace="ByteartRetail.Infrastructure.Config">
+      <attributeProperties>
+        <attributeProperty name="Host" isRequired="true" isKey="true" isDefaultCollection="false" xmlName="host" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Port" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="port" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/Int32" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="UserName" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="userName" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Password" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="password" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="EnableSsl" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="enableSsl" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/Boolean" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Sender" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="sender" isReadOnly="false">
+          <type>
+            <externalTypeMoniker name="/b670722a-0209-40a5-882c-29e68f83f403/String" />
           </type>
         </attributeProperty>
       </attributeProperties>

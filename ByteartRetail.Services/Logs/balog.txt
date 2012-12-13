@@ -499,3 +499,26 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 System.InvalidOperationException: GetCategories failed - test
    at ByteartRetail.Application.Implementation.ProductServiceImpl.GetCategories(QuerySpec spec) in c:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 184
    at DynamicModule.ns.Wrapped_IProductService_c1dbcef457454cb3bc41d48d81d55fa3.<GetCategories_DelegateImplementation>__9(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 10:12:09,581 [6] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Domain.Events.EventDispatcher.DispatchEvent[TEvent](TEvent event) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\EventDispatcher.cs:line 28
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
+   at DynamicModule.ns.Wrapped_IOrderService_838c75fde28b4f2886260c430c132f12.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-13 20:51:36,859 [25] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 25
+
+2012-12-13 20:51:36,860 [22] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 22
+
+2012-12-13 20:53:45,128 [15] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 15
+
+2012-12-13 20:53:46,351 [15] INFO  ByteartRetail.Logger - UpdateStatusEventHandler ThreadID: 15
+
+2012-12-13 20:55:25,919 [14] INFO  ByteartRetail.Logger - UpdateStatusEventHandler ThreadID: 14
+
+2012-12-13 20:55:25,919 [7] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 7
+
+2012-12-13 20:56:58,658 [11] INFO  ByteartRetail.Logger - SendEmailEventHandler ThreadID: 11
+
+2012-12-13 20:56:58,658 [17] INFO  ByteartRetail.Logger - UpdateStatusEventHandler ThreadID: 17

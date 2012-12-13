@@ -153,6 +153,10 @@
       <Project>{05012b73-bd10-4af8-a371-8be475359b09}</Project>
       <Name>ByteartRetail.DataObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ByteartRetail.Domain.Events\ByteartRetail.Domain.Events.csproj">
+      <Project>{84cdc406-c20b-4969-b5e0-6519b1761c6c}</Project>
+      <Name>ByteartRetail.Domain.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Domain.Repositories\ByteartRetail.Domain.Repositories.csproj">
       <Project>{DB7E0E14-24AE-4D91-953B-41FABD2A363A}</Project>
       <Name>ByteartRetail.Domain.Repositories</Name>

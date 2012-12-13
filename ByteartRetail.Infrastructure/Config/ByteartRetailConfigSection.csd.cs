@@ -22,13 +22,13 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the ByteartRetailConfigSection Configuration Section.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string ByteartRetailConfigSectionSectionName = "byteartRetailConfigSection";
         
         /// <summary>
         /// Gets the ByteartRetailConfigSection instance.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public static global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection Instance
         {
             get
@@ -42,7 +42,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="Xmlns"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string XmlnsPropertyName = "xmlns";
         
         /// <summary>
@@ -52,7 +52,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// This property makes sure that if the configuration file contains the XML namespace,
         /// the parser doesn't throw an exception because it encounters the unknown "xmlns" attribute.
         /// </remarks>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string Xmlns
         {
@@ -67,7 +67,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public override bool IsReadOnly()
         {
             return false;
@@ -78,16 +78,16 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="PermissionKeys"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string PermissionKeysPropertyName = "permissionKeys";
         
         /// <summary>
         /// Gets or sets the PermissionKeys.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.ComponentModel.DescriptionAttribute("The PermissionKeys.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.PermissionKeysPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public global::ByteartRetail.Infrastructure.Config.PermissionKeyElementCollection PermissionKeys
+        public virtual global::ByteartRetail.Infrastructure.Config.PermissionKeyElementCollection PermissionKeys
         {
             get
             {
@@ -104,16 +104,16 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="Presentation"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string PresentationPropertyName = "presentation";
         
         /// <summary>
         /// Gets or sets the Presentation.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.ComponentModel.DescriptionAttribute("The Presentation.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.PresentationPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
-        public global::ByteartRetail.Infrastructure.Config.PresentationElement Presentation
+        public virtual global::ByteartRetail.Infrastructure.Config.PresentationElement Presentation
         {
             get
             {
@@ -122,6 +122,32 @@ namespace ByteartRetail.Infrastructure.Config
             set
             {
                 base[global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.PresentationPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region EmailClient Property
+        /// <summary>
+        /// The XML name of the <see cref="EmailClient"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string EmailClientPropertyName = "emailClient";
+        
+        /// <summary>
+        /// Gets or sets the EmailClient.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The EmailClient.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.EmailClientPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual global::ByteartRetail.Infrastructure.Config.EmailClientElement EmailClient
+        {
+            get
+            {
+                return ((global::ByteartRetail.Infrastructure.Config.EmailClientElement)(base[global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.EmailClientPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.ByteartRetailConfigSection.EmailClientPropertyName] = value;
             }
         }
         #endregion
@@ -142,7 +168,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the individual <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> instances in this collection.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string PermissionKeyElementPropertyName = "permissionKey";
         #endregion
         
@@ -151,7 +177,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Gets the type of the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
         /// <returns>The <see cref="global::System.Configuration.ConfigurationElementCollectionType"/> of this collection.</returns>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public override global::System.Configuration.ConfigurationElementCollectionType CollectionType
         {
             get
@@ -163,7 +189,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// Gets the name used to identify this collection of elements
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         protected override string ElementName
         {
             get
@@ -179,7 +205,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <returns>
         /// <see langword="true"/> if the element exists in the collection; otherwise, <see langword="false"/>.
         /// </returns>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         protected override bool IsElementName(string elementName)
         {
             return (elementName == global::ByteartRetail.Infrastructure.Config.PermissionKeyElementCollection.PermissionKeyElementPropertyName);
@@ -192,7 +218,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <returns>
         /// An <see cref="object"/> that acts as the key for the specified <see cref="global::System.Configuration.ConfigurationElement"/>.
         /// </returns>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
         {
             return ((global::ByteartRetail.Infrastructure.Config.PermissionKeyElement)(element)).RoleName;
@@ -204,7 +230,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <returns>
         /// A new <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/>.
         /// </returns>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         protected override global::System.Configuration.ConfigurationElement CreateNewElement()
         {
             return new global::ByteartRetail.Infrastructure.Config.PermissionKeyElement();
@@ -216,7 +242,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Gets the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> at the specified index.
         /// </summary>
         /// <param name="index">The index of the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public global::ByteartRetail.Infrastructure.Config.PermissionKeyElement this[int index]
         {
             get
@@ -229,7 +255,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Gets the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> with the specified key.
         /// </summary>
         /// <param name="roleName">The key of the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public global::ByteartRetail.Infrastructure.Config.PermissionKeyElement this[object roleName]
         {
             get
@@ -244,7 +270,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Adds the specified <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
         /// <param name="permissionKey">The <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to add.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public void Add(global::ByteartRetail.Infrastructure.Config.PermissionKeyElement permissionKey)
         {
             base.BaseAdd(permissionKey);
@@ -256,7 +282,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Removes the specified <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
         /// <param name="permissionKey">The <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to remove.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public void Remove(global::ByteartRetail.Infrastructure.Config.PermissionKeyElement permissionKey)
         {
             base.BaseRemove(this.GetElementKey(permissionKey));
@@ -268,7 +294,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Gets the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> at the specified index.
         /// </summary>
         /// <param name="index">The index of the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public global::ByteartRetail.Infrastructure.Config.PermissionKeyElement GetItemAt(int index)
         {
             return ((global::ByteartRetail.Infrastructure.Config.PermissionKeyElement)(base.BaseGet(index)));
@@ -278,7 +304,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// Gets the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> with the specified key.
         /// </summary>
         /// <param name="roleName">The key of the <see cref="global::ByteartRetail.Infrastructure.Config.PermissionKeyElement"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public global::ByteartRetail.Infrastructure.Config.PermissionKeyElement GetItemByKey(string roleName)
         {
             return ((global::ByteartRetail.Infrastructure.Config.PermissionKeyElement)(base.BaseGet(((object)(roleName)))));
@@ -289,7 +315,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public override bool IsReadOnly()
         {
             return false;
@@ -311,7 +337,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public override bool IsReadOnly()
         {
             return false;
@@ -322,16 +348,16 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="RoleName"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string RoleNamePropertyName = "roleName";
         
         /// <summary>
         /// Gets or sets the RoleName.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.ComponentModel.DescriptionAttribute("The RoleName.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.PermissionKeyElement.RoleNamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
-        public string RoleName
+        public virtual string RoleName
         {
             get
             {
@@ -348,16 +374,16 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="KeyName"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string KeyNamePropertyName = "keyName";
         
         /// <summary>
         /// Gets or sets the KeyName.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.ComponentModel.DescriptionAttribute("The KeyName.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.PermissionKeyElement.KeyNamePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
-        public string KeyName
+        public virtual string KeyName
         {
             get
             {
@@ -385,7 +411,7 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         public override bool IsReadOnly()
         {
             return false;
@@ -396,16 +422,16 @@ namespace ByteartRetail.Infrastructure.Config
         /// <summary>
         /// The XML name of the <see cref="ProductsPageSize"/> property.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         internal const string ProductsPageSizePropertyName = "productsPageSize";
         
         /// <summary>
         /// Gets or sets the ProductsPageSize.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
         [global::System.ComponentModel.DescriptionAttribute("The ProductsPageSize.")]
         [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.PresentationElement.ProductsPageSizePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
-        public int ProductsPageSize
+        public virtual int ProductsPageSize
         {
             get
             {
@@ -414,6 +440,184 @@ namespace ByteartRetail.Infrastructure.Config
             set
             {
                 base[global::ByteartRetail.Infrastructure.Config.PresentationElement.ProductsPageSizePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace ByteartRetail.Infrastructure.Config
+{
+    
+    
+    /// <summary>
+    /// The EmailClientElement Configuration Element.
+    /// </summary>
+    public partial class EmailClientElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Host Property
+        /// <summary>
+        /// The XML name of the <see cref="Host"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string HostPropertyName = "host";
+        
+        /// <summary>
+        /// Gets or sets the Host.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The Host.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.HostPropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
+        public virtual string Host
+        {
+            get
+            {
+                return ((string)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.HostPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.HostPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Port Property
+        /// <summary>
+        /// The XML name of the <see cref="Port"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string PortPropertyName = "port";
+        
+        /// <summary>
+        /// Gets or sets the Port.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The Port.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.PortPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual int Port
+        {
+            get
+            {
+                return ((int)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.PortPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.PortPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region UserName Property
+        /// <summary>
+        /// The XML name of the <see cref="UserName"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string UserNamePropertyName = "userName";
+        
+        /// <summary>
+        /// Gets or sets the UserName.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The UserName.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.UserNamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string UserName
+        {
+            get
+            {
+                return ((string)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.UserNamePropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.UserNamePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Password Property
+        /// <summary>
+        /// The XML name of the <see cref="Password"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string PasswordPropertyName = "password";
+        
+        /// <summary>
+        /// Gets or sets the Password.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The Password.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.PasswordPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Password
+        {
+            get
+            {
+                return ((string)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.PasswordPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.PasswordPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region EnableSsl Property
+        /// <summary>
+        /// The XML name of the <see cref="EnableSsl"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string EnableSslPropertyName = "enableSsl";
+        
+        /// <summary>
+        /// Gets or sets the EnableSsl.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The EnableSsl.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.EnableSslPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual bool EnableSsl
+        {
+            get
+            {
+                return ((bool)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.EnableSslPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.EnableSslPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Sender Property
+        /// <summary>
+        /// The XML name of the <see cref="Sender"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        internal const string SenderPropertyName = "sender";
+        
+        /// <summary>
+        /// Gets or sets the Sender.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.8")]
+        [global::System.ComponentModel.DescriptionAttribute("The Sender.")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::ByteartRetail.Infrastructure.Config.EmailClientElement.SenderPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public virtual string Sender
+        {
+            get
+            {
+                return ((string)(base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.SenderPropertyName]));
+            }
+            set
+            {
+                base[global::ByteartRetail.Infrastructure.Config.EmailClientElement.SenderPropertyName] = value;
             }
         }
         #endregion
