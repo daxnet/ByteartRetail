@@ -56,10 +56,10 @@ ByteartRetail.sln包含以下项目：
 - ByteartRetail.Infrastructure.Caching：位于基础结构层的缓存实现
 - ByteartRetail.ServiceContracts：基于WCF的服务契约
 - ByteartRetail.Services：WCF服务
-- ByteartRetail.Web：基于ASP.NET MVC的站点程序（表示层）
+- ByteartRetail.Web：基于ASP.NET MVC的站点程序（表示层） 
 
 以下是各项目之间的依赖关系：
-![Byteart Retail Version 3项目间依赖关系](http://sdrv.ms/TRGUqC)
+![Byteart Retail Version 3项目间依赖关系](https://github.com/daxnet/ByteartRetail/blob/master/Documents/ByteartRetailAssemblyDependency.png?raw=true)
 
 总结
 ====
