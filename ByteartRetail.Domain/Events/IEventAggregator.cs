@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ByteartRetail.Domain.Events
 {
     /// <summary>
@@ -57,6 +52,4 @@ namespace ByteartRetail.Domain.Events
         void DispatchEvent(TEvent domainEvent);
         #endregion
     }
-
-    
 }
