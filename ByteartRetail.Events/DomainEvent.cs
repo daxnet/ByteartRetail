@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteartRetail.Domain.Events
+namespace ByteartRetail.Events
 {
     /// <summary>
     /// 表示继承于该类的类型为领域事件。

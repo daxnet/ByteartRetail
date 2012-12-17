@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using ByteartRetail.Events.Handlers;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ByteartRetail.Domain.Events
+namespace ByteartRetail.Events.Bus
 {
     /// <summary>
     /// 表示事件聚合器。
     /// </summary>
     /// <typeparam name="TEvent">事件的类型，针对该类型事件的处理器将会被当前事件聚合器所聚合。</typeparam>
-    public class EventAggregator<TEvent> : IEventAggregator<TEvent>
-        where TEvent : class, IDomainEvent
+    internal class EventAggregator<TEvent> : IEventAggregator<TEvent>
+        where TEvent : class, IEvent
     {
         #region Protected Fields
         /// <summary>
@@ -72,7 +73,7 @@ namespace ByteartRetail.Domain.Events
         /// 向Event Aggreator注册用于处理<c>IDomainEvent</c>类型的事件处理器。
         /// </summary>
         /// <param name="eventHandler">需要注册的事件处理器。</param>
-        public void RegisterHandler(IEventHandler<IDomainEvent> eventHandler)
+        public void RegisterHandler(IEventHandler<IEvent> eventHandler)
         {
             IEventHandler<TEvent> genericEventHandler = eventHandler;
             this.RegisterHandler(genericEventHandler);
@@ -88,7 +89,7 @@ namespace ByteartRetail.Domain.Events
         /// 派发领域事件。
         /// </summary>
         /// <param name="domainEvent">需要派发的领域事件。</param>
-        public void DispatchEvent(IDomainEvent domainEvent)
+        public void DispatchEvent(IEvent domainEvent)
         {
             if (domainEvent is TEvent)
             {

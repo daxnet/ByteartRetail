@@ -1,18 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5B3CDA59-A2CD-4618-9E4A-07AA4B07BB9B}</ProjectGuid>
+    <ProjectGuid>{9E40C476-AF3B-4F23-8CA4-6D96DCFEF745}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ByteartRetail.Application</RootNamespace>
-    <AssemblyName>ByteartRetail.Application</AssemblyName>
+    <RootNamespace>ByteartRetail.Events.Handlers</RootNamespace>
+    <AssemblyName>ByteartRetail.Events.Handlers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,18 +28,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.2.1.265\lib\net40\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,24 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationService.cs" />
-    <Compile Include="Implementation\PostbackServiceImpl.cs" />
-    <Compile Include="Implementation\UserServiceImpl.cs" />
-    <Compile Include="Implementation\OrderServiceImpl.cs" />
-    <Compile Include="Implementation\ProductServiceImpl.cs" />
+    <Compile Include="OrderDispatchedSendEmailHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuerySpecExtension.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ByteartRetail.DataObjects\ByteartRetail.DataObjects.csproj">
-      <Project>{05012b73-bd10-4af8-a371-8be475359b09}</Project>
-      <Name>ByteartRetail.DataObjects</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Domain\ByteartRetail.Domain.csproj">
-      <Project>{EC63AD8B-46F2-4A56-911F-3894A45EAEC2}</Project>
+      <Project>{ec63ad8b-46f2-4a56-911f-3894a45eaec2}</Project>
       <Name>ByteartRetail.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Events\ByteartRetail.Events.csproj">
@@ -75,15 +52,10 @@
       <Name>ByteartRetail.Events</Name>
     </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Infrastructure\ByteartRetail.Infrastructure.csproj">
-      <Project>{1CA08502-48F4-47F3-B5F9-F79012E40272}</Project>
+      <Project>{1ca08502-48f4-47f3-b5f9-f79012e40272}</Project>
       <Name>ByteartRetail.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ByteartRetail.ServiceContracts\ByteartRetail.ServiceContracts.csproj">
-      <Project>{22b80c6a-5745-4b82-9d64-eb6d1338c0cc}</Project>
-      <Name>ByteartRetail.ServiceContracts</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

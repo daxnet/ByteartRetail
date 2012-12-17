@@ -47,13 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainException.cs" />
-    <Compile Include="Events\DomainEvent.cs" />
-    <Compile Include="Events\EventAggregator.cs" />
-    <Compile Include="Events\EventDispatcher.cs" />
-    <Compile Include="Events\EventDispatchMode.cs" />
-    <Compile Include="Events\IDomainEvent.cs" />
-    <Compile Include="Events\IEventAggregator.cs" />
-    <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Events\OrderDispatchedEvent.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
@@ -104,6 +97,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\ByteartRetail.Events\ByteartRetail.Events.csproj">
+      <Project>{1f5d6f33-3ae3-4b0b-9070-7c77f175d196}</Project>
+      <Name>ByteartRetail.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Infrastructure\ByteartRetail.Infrastructure.csproj">
       <Project>{1CA08502-48F4-47F3-B5F9-F79012E40272}</Project>
       <Name>ByteartRetail.Infrastructure</Name>

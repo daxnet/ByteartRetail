@@ -214,5 +214,7 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Auto
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Microsoft.Practices.Unity.Interception.xml
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\obj\Debug\ByteartRetail.Services.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\obj\Debug\ByteartRetail.Services.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Domain.Events.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Domain.Events.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Events.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Events.Handlers.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Events.Handlers.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Events.pdb

@@ -153,10 +153,6 @@
       <Project>{05012b73-bd10-4af8-a371-8be475359b09}</Project>
       <Name>ByteartRetail.DataObjects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ByteartRetail.Domain.Events\ByteartRetail.Domain.Events.csproj">
-      <Project>{84cdc406-c20b-4969-b5e0-6519b1761c6c}</Project>
-      <Name>ByteartRetail.Domain.Events</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Domain.Repositories\ByteartRetail.Domain.Repositories.csproj">
       <Project>{DB7E0E14-24AE-4D91-953B-41FABD2A363A}</Project>
       <Name>ByteartRetail.Domain.Repositories</Name>
@@ -164,6 +160,14 @@
     <ProjectReference Include="..\ByteartRetail.Domain\ByteartRetail.Domain.csproj">
       <Project>{EC63AD8B-46F2-4A56-911F-3894A45EAEC2}</Project>
       <Name>ByteartRetail.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByteartRetail.Events.Handlers\ByteartRetail.Events.Handlers.csproj">
+      <Project>{9e40c476-af3b-4f23-8ca4-6d96dcfef745}</Project>
+      <Name>ByteartRetail.Events.Handlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByteartRetail.Events\ByteartRetail.Events.csproj">
+      <Project>{1f5d6f33-3ae3-4b0b-9070-7c77f175d196}</Project>
+      <Name>ByteartRetail.Events</Name>
     </ProjectReference>
     <ProjectReference Include="..\ByteartRetail.Infrastructure.Caching\ByteartRetail.Infrastructure.Caching.csproj">
       <Project>{afb6e931-6e0a-4b27-8649-2a29b31efd70}</Project>

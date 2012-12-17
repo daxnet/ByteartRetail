@@ -1,4 +1,5 @@
 ﻿using ByteartRetail.Domain.Model;
+using ByteartRetail.Events;
 using System;
 
 namespace ByteartRetail.Domain.Events

@@ -1,5 +1,7 @@
 ﻿
-namespace ByteartRetail.Domain.Events
+using ByteartRetail.Events.Handlers;
+
+namespace ByteartRetail.Events.Bus
 {
     /// <summary>
     /// 表示实现该接口的类型为Event Aggregator类型。
@@ -20,12 +22,12 @@ namespace ByteartRetail.Domain.Events
         /// 向Event Aggreator注册用于处理<c>IDomainEvent</c>类型的事件处理器。
         /// </summary>
         /// <param name="eventHandler">需要注册的事件处理器。</param>
-        void RegisterHandler(IEventHandler<IDomainEvent> eventHandler);
+        void RegisterHandler(IEventHandler<IEvent> eventHandler);
         /// <summary>
         /// 派发领域事件。
         /// </summary>
-        /// <param name="domainEvent">需要派发的领域事件。</param>
-        void DispatchEvent(IDomainEvent domainEvent);
+        /// <param name="evnt">需要派发的领域事件。</param>
+        void DispatchEvent(IEvent evnt);
         #endregion
     }
 
@@ -37,7 +39,7 @@ namespace ByteartRetail.Domain.Events
     /// 有关Event Aggreator模式的更多信息，请参考：http://martinfowler.com/eaaDev/EventAggregator.html。
     /// </remarks>
     public interface IEventAggregator<TEvent> : IEventAggregator
-        where TEvent: class, IDomainEvent
+        where TEvent: class, IEvent
     {
         #region Methods
         /// <summary>
@@ -48,8 +50,8 @@ namespace ByteartRetail.Domain.Events
         /// <summary>
         /// 派发领域事件。
         /// </summary>
-        /// <param name="domainEvent">需要派发的领域事件。</param>
-        void DispatchEvent(TEvent domainEvent);
+        /// <param name="evnt">需要派发的领域事件。</param>
+        void DispatchEvent(TEvent evnt);
         #endregion
     }
 }

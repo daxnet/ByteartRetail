@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ByteartRetail.Domain.Events")]
+[assembly: AssemblyTitle("ByteartRetail.Events.Handlers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard Company")]
-[assembly: AssemblyProduct("ByteartRetail.Domain.Events")]
+[assembly: AssemblyProduct("ByteartRetail.Events.Handlers")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e8cac958-7205-4490-83ad-fe09f3938c9b")]
+[assembly: Guid("ecc60206-a1ff-43f4-9f25-a0f1e2be97e4")]
 
 // Version information for an assembly consists of the following four values:
 //

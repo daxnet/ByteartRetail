@@ -1,5 +1,5 @@
 ﻿
-namespace ByteartRetail.Domain.Events
+namespace ByteartRetail.Events.Bus
 {
     /// <summary>
     /// 表示事件派发的方式。

@@ -123,3 +123,5 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\obj\Debug\ByteartRetail.Domain.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Events.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Events.pdb

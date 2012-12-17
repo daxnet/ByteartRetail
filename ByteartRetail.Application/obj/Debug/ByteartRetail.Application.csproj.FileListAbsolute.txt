@@ -165,3 +165,5 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\D
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.pdb
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.ServiceContracts.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.pdb

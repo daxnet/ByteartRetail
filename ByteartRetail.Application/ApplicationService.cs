@@ -41,16 +41,6 @@ namespace ByteartRetail.Application
         #endregion
 
         #region Protected Methods
-        /// <summary>
-        /// 派发指定的领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">领域事件类型。</typeparam>
-        /// <param name="evnt">领域事件实例。</param>
-        protected virtual void DispatchDomainEvent<TEvent>(TEvent evnt)
-            where TEvent : IDomainEvent
-        {
-            // TODO: 在此添加领域事件派发逻辑。此部分功能将在下个版本的案例中完善。
-        }
 
         /// <summary>
         /// 判断指定的<see cref="String"/>值是否表示一个<see cref="Guid"/>类型的空值。

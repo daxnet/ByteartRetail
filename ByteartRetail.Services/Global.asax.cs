@@ -7,6 +7,8 @@ using System.Web.SessionState;
 using ByteartRetail.Application;
 using ByteartRetail.Domain.Repositories.EntityFramework;
 using ByteartRetail.Domain.Events;
+using ByteartRetail.Infrastructure;
+using ByteartRetail.Events.Bus;
 
 namespace ByteartRetail.Services
 {
@@ -17,7 +19,8 @@ namespace ByteartRetail.Services
         {
             ByteartRetailDbContextInitailizer.Initialize();
             ApplicationService.Initialize();
-            EventDispatcher.RegisterAggregator<OrderDispatchedEvent>();
+            EventAggregatorBus.RegisterAggregator<OrderDispatchedEvent>();
+            var bus = ServiceLocator.Instance.GetService<IBus>();
             log4net.Config.XmlConfigurator.Configure();
         }
 

@@ -161,3 +161,5 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositori
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\obj\Debug\ByteartRetail.Domain.Repositories.csprojResolveAssemblyReference.cache
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\obj\Debug\ByteartRetail.Domain.Repositories.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\obj\Debug\ByteartRetail.Domain.Repositories.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\bin\Debug\ByteartRetail.Events.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\bin\Debug\ByteartRetail.Events.pdb

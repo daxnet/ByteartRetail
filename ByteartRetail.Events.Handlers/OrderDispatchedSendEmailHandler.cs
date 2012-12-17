@@ -1,18 +1,17 @@
-﻿using ByteartRetail.Infrastructure;
+﻿using ByteartRetail.Domain.Events;
+using ByteartRetail.Infrastructure;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ByteartRetail.Domain.Events.OrderDispatched
+namespace ByteartRetail.Events.Handlers
 {
-    /// <summary>
-    /// 表示发送邮件的事件处理器。
-    /// </summary>
-    public class SendEmailEventHandler : IEventHandler<OrderDispatchedEvent>
+    public class OrderDispatchedSendEmailHandler : IEventHandler<OrderDispatchedEvent>
     {
         #region IEventHandler<OrderDispatchedEvent> Members
-        /// <summary>
-        /// 处理给定的领域事件。
-        /// </summary>
-        /// <param name="event">需要处理的领域事件。</param>
+
         public void Handle(OrderDispatchedEvent @event)
         {
             try
@@ -24,7 +23,7 @@ namespace ByteartRetail.Domain.Events.OrderDispatched
                     string.Format("Your Order {0} has been dispatched on {1}. For more information please contact system administrator. Thank you for your order.",
                     @event.DispatchedOrder.ID.ToString().ToUpper(), @event.DispatchedDate));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // 如遇异常，直接记Log
                 Utils.Log(ex);

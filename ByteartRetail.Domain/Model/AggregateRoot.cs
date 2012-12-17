@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ByteartRetail.Events;
+using System;
+using System.Collections.Generic;
 
 namespace ByteartRetail.Domain.Model
 {
@@ -9,9 +11,22 @@ namespace ByteartRetail.Domain.Model
     {
         #region Protected Fields
         protected Guid id;
+        private readonly List<IDomainEvent> events = new List<IDomainEvent>();
+        #endregion
+
+        #region Protected Methods
+        protected void RaiseEvent<TEvent>(TEvent evnt)
+            where TEvent : class, IDomainEvent
+        {
+            events.Add(evnt);
+        }
         #endregion
 
         #region Public Methods
+        public void ClearEvents()
+        {
+            events.Clear();
+        }
         /// <summary>
         /// 确定指定的Object是否等于当前的Object。
         /// </summary>
