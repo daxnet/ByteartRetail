@@ -1,45 +1,100 @@
-﻿using ByteartRetail.Infrastructure;
-using System;
+﻿using ByteartRetail.Events.Handlers;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ByteartRetail.Events.Bus
 {
     /// <summary>
-    /// 表示事件派发器。
+    /// 表示事件聚合器。
     /// </summary>
-    public static class EventDispatcher
+    /// <typeparam name="TEvent">事件的类型，针对该类型事件的处理器将会被当前事件聚合器所聚合。</typeparam>
+    internal class EventDispatcher<TEvent> : IEventDispatcher<TEvent>
+        where TEvent : class, IEvent
     {
-        #region Private Fields
-        private static Dictionary<Type, IEventAggregator> eventAggregators = new Dictionary<Type, IEventAggregator>();
+        #region Protected Fields
+        /// <summary>
+        /// 保存事件处理器的列表。
+        /// </summary>
+        protected readonly List<IEventHandler<TEvent>> eventHandlers = new List<IEventHandler<TEvent>>();
+        /// <summary>
+        /// 指定事件聚合器向所注册的各事件处理器进行事件派发的方式。
+        /// </summary>
+        protected readonly EventDispatchMode dispatchMode;
         #endregion
 
-        #region Public Methods
+        #region Ctor
         /// <summary>
-        /// 向事件派发器注册给定事件类型的事件聚合器。
+        /// 创建一个新的<c>EventAggregator{TEvent}</c>类型的实例。
         /// </summary>
-        /// <typeparam name="TEvent">需要注册的事件类型。</typeparam>
-        public static void RegisterAggregator<TEvent>()
-            where TEvent : class, IEvent
+        /// <param name="dispatchMode">事件聚合器向所注册的各事件处理器进行事件派发的方式。</param>
+        /// <param name="eventHandlers">事件处理器的列表。</param>
+        public EventDispatcher(EventDispatchMode dispatchMode, IEventHandler<TEvent>[] eventHandlers)
         {
-            if (eventAggregators.ContainsKey(typeof(TEvent)))
-                return;
-            IEventAggregator<TEvent> eventAggregator = ServiceLocator
-                .Instance
-                .GetService<IEventAggregator<TEvent>>(); // 从IoC容器中解析应用于给定事件类型的事件聚合器实例。
+            this.dispatchMode = dispatchMode;
+            foreach (var eh in eventHandlers)
+                this.RegisterHandler(eh);
+        }
+        #endregion
 
-            eventAggregators.Add(typeof(TEvent), eventAggregator); // 将事件聚合器实例添加到线程的本地存储中。
+        #region IEventAggregator<TEvent> Members
+        /// <summary>
+        /// 向Event Aggreator注册用于处理<c>TEvent</c>类型的事件处理器。
+        /// </summary>
+        /// <param name="eventHandler">需要注册的事件处理器。</param>
+        public virtual void RegisterHandler(IEventHandler<TEvent> eventHandler)
+        {
+            if (!eventHandlers.Contains(eventHandler))
+                eventHandlers.Add(eventHandler);
         }
         /// <summary>
         /// 派发领域事件。
         /// </summary>
-        /// <typeparam name="TEvent">需要派发的领域事件的类型。</typeparam>
-        /// <param name="event">需要派发的领域事件。</param>
-        public static void DispatchEvent<TEvent>(TEvent @event)
-            where TEvent : class, IEvent
+        /// <param name="domainEvent">需要派发的领域事件。</param>
+        public virtual void DispatchEvent(TEvent domainEvent)
         {
-            var eventAggregator = eventAggregators[typeof(TEvent)];
-            if (eventAggregator != null)
-                eventAggregator.DispatchEvent(@event);
+            switch (dispatchMode)
+            {
+                case EventDispatchMode.Sequential:
+                    foreach (var eventHandler in eventHandlers)
+                        eventHandler.Handle(domainEvent);
+                    break;
+                case EventDispatchMode.Parallel:
+                    Parallel.ForEach<IEventHandler<TEvent>>(eventHandlers,
+                        p => p.Handle(domainEvent));
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
+        #region IEventAggregator Members
+        /// <summary>
+        /// 向Event Aggreator注册用于处理<c>IDomainEvent</c>类型的事件处理器。
+        /// </summary>
+        /// <param name="eventHandler">需要注册的事件处理器。</param>
+        public void RegisterHandler(IEventHandler<IEvent> eventHandler)
+        {
+            IEventHandler<TEvent> genericEventHandler = eventHandler;
+            this.RegisterHandler(genericEventHandler);
+        }
+        /// <summary>
+        /// 获取领域事件的派发方式。
+        /// </summary>
+        public EventDispatchMode DispatchMode
+        {
+            get { return this.dispatchMode; }
+        }
+        /// <summary>
+        /// 派发领域事件。
+        /// </summary>
+        /// <param name="domainEvent">需要派发的领域事件。</param>
+        public void DispatchEvent(IEvent domainEvent)
+        {
+            if (domainEvent is TEvent)
+            {
+                DispatchEvent(domainEvent as TEvent);
+            }
         }
         #endregion
     }

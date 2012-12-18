@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using ByteartRetail.Infrastructure;
 using System.Threading;
+using ByteartRetail.Events.Bus;
+using System.Transactions;
+using ByteartRetail.Domain.Events;
 
 namespace ByteartRetail.Domain.Repositories
 {
@@ -16,6 +20,14 @@ namespace ByteartRetail.Domain.Repositories
         private readonly ThreadLocal<Dictionary<Guid, object>> localModifiedCollection = new ThreadLocal<Dictionary<Guid, object>>(() => new Dictionary<Guid, object>());
         private readonly ThreadLocal<Dictionary<Guid, object>> localDeletedCollection = new ThreadLocal<Dictionary<Guid, object>>(() => new Dictionary<Guid, object>());
         private readonly ThreadLocal<bool> localCommitted = new ThreadLocal<bool>(() => true);
+        private readonly IBus bus;
+        #endregion
+
+        #region Ctor
+        public RepositoryContext(IBus bus)
+        {
+            this.bus = bus;
+        }
         #endregion
 
         #region Protected Methods
@@ -43,6 +55,8 @@ namespace ByteartRetail.Domain.Repositories
                 this.localNewCollection.Dispose();
             }
         }
+
+        protected abstract void DoCommit();
         #endregion
 
         #region Protected Properties
@@ -66,6 +80,13 @@ namespace ByteartRetail.Domain.Repositories
         protected IEnumerable<KeyValuePair<Guid, object>> DeletedCollection
         {
             get { return localDeletedCollection.Value; }
+        }
+        #endregion
+
+        #region Public Properties
+        public IBus Bus
+        {
+            get { return bus; }
         }
         #endregion
 
@@ -148,7 +169,45 @@ namespace ByteartRetail.Domain.Repositories
         /// <summary>
         /// Commits the UnitOfWork.
         /// </summary>
-        public abstract void Commit();
+        public virtual void Commit()
+        {
+            Action funcCommit = () =>
+                {
+                    this.DoCommit();
+                    List<IDomainEvent> domainEvents = new List<IDomainEvent>();
+                    foreach (var item in localNewCollection.Value)
+                    {
+                        var aggregateRoot = (item.Value as IAggregateRoot);
+                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
+                    }
+                    foreach (var item in localModifiedCollection.Value)
+                    {
+                        var aggregateRoot = (item.Value as IAggregateRoot);
+                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
+                    }
+                    foreach (var item in localDeletedCollection.Value)
+                    {
+                        var aggregateRoot = (item.Value as IAggregateRoot);
+                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
+                    }
+                    domainEvents
+                        .OrderBy(de => de.TimeStamp)
+                        .ToList()
+                        .ForEach(p => bus.Publish(p));
+                };
+            if (this.bus.IsDistributedTransactionSupported)
+            {
+                using (var transactionScope = new TransactionScope())
+                {
+                    funcCommit();
+                }
+            }
+            else
+                funcCommit();
+            localNewCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
+            localModifiedCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
+            localDeletedCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
+        }
         /// <summary>
         /// Rolls-back the UnitOfWork.
         /// </summary>

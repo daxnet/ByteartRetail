@@ -562,3 +562,13 @@ System.Collections.Generic.KeyNotFoundException: The given key was not present i
    at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 127
    at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 170
    at DynamicModule.ns.Wrapped_IOrderService_07cad81b53e54b4a8aaf8b5acaa6c038.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-18 21:39:34,976 [14] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: The ID of the object is empty.
+Parameter name: obj
+   at ByteartRetail.Domain.Repositories.RepositoryContext.RegisterNew[TAggregateRoot](TAggregateRoot obj) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 109
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.RegisterNew[TAggregateRoot](TAggregateRoot obj) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 30
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepository`1.DoAdd(TAggregateRoot aggregateRoot) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepository.cs:line 61
+   at ByteartRetail.Domain.Repositories.Repository`1.Add(TAggregateRoot aggregateRoot) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 355
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.AddProductToCart(Guid customerID, Guid productID, Int32 quantity) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 82
+   at DynamicModule.ns.Wrapped_IOrderService_36e4cd1cd41f46acac6483c4fc61452b.<AddProductToCart_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

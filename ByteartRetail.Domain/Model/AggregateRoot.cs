@@ -18,16 +18,12 @@ namespace ByteartRetail.Domain.Model
         protected virtual void RaiseEvent<TEvent>(TEvent evnt)
             where TEvent : class, IDomainEvent
         {
-            EventAggregator.Publish<TEvent>(evnt);
+            DomainEventAggregator.Publish<TEvent>(evnt);
             events.Add(evnt);
         }
         #endregion
 
         #region Public Methods
-        public void ClearEvents()
-        {
-            events.Clear();
-        }
         /// <summary>
         /// 确定指定的Object是否等于当前的Object。
         /// </summary>
@@ -68,6 +64,19 @@ namespace ByteartRetail.Domain.Model
             set { id = value; }
         }
 
+        #endregion
+
+        #region IAggregateRoot Members
+
+        public IEnumerable<IDomainEvent> UncommittedEvents
+        {
+            get { return events; }
+        }
+
+        public void ClearEvents()
+        {
+            events.Clear();
+        }
         #endregion
     }
 }

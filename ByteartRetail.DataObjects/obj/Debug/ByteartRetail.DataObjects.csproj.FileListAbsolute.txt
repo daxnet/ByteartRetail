@@ -13,3 +13,8 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\bin\D
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.pdb
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.csprojResolveAssemblyReference.cache
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.csprojResolveAssemblyReference.cache
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\obj\Debug\ByteartRetail.DataObjects.pdb

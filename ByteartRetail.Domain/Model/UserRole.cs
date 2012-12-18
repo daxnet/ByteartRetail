@@ -5,10 +5,9 @@ namespace ByteartRetail.Domain.Model
     /// <summary>
     /// 表示“用户角色关系”领域概念的聚合根。
     /// </summary>
-    public class UserRole : IAggregateRoot
+    public class UserRole : AggregateRoot
     {
         #region Private Fields
-        private Guid id;
         private Guid userID;
         private Guid roleID;
         #endregion
@@ -49,16 +48,6 @@ namespace ByteartRetail.Domain.Model
             get { return roleID; }
             set { roleID = value; }
         }
-        #endregion
-
-        #region IEntity Members
-
-        public Guid ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
         #endregion
     }
 }

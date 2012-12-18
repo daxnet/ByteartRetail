@@ -8,7 +8,7 @@ namespace ByteartRetail.Events.Bus
     /// </summary>
     /// <remarks>有关Event Aggreator模式的更多信息，请参考：http://martinfowler.com/eaaDev/EventAggregator.html。
     /// </remarks>
-    public interface IEventAggregator
+    public interface IEventDispatcher
     {
         #region Properties
         /// <summary>
@@ -35,10 +35,10 @@ namespace ByteartRetail.Events.Bus
     /// 表示实现该接口的类型为Event Aggregator类型。
     /// </summary>
     /// <typeparam name="TEvent">领域事件的类型。</typeparam>
-    /// <remarks>此接口为<see cref="IEventAggregator"/>接口的泛型版本。
+    /// <remarks>此接口为<see cref="IEventDispatcher"/>接口的泛型版本。
     /// 有关Event Aggreator模式的更多信息，请参考：http://martinfowler.com/eaaDev/EventAggregator.html。
     /// </remarks>
-    public interface IEventAggregator<TEvent> : IEventAggregator
+    public interface IEventDispatcher<TEvent> : IEventDispatcher
         where TEvent: class, IEvent
     {
         #region Methods

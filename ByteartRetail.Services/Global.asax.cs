@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
-using ByteartRetail.Application;
-using ByteartRetail.Domain.Repositories.EntityFramework;
+﻿using ByteartRetail.Application;
 using ByteartRetail.Domain.Events;
-using ByteartRetail.Infrastructure;
+using ByteartRetail.Domain.Model;
+using ByteartRetail.Domain.Repositories.EntityFramework;
 using ByteartRetail.Events.Bus;
+using System;
 
 namespace ByteartRetail.Services
 {
@@ -19,8 +14,13 @@ namespace ByteartRetail.Services
         {
             ByteartRetailDbContextInitailizer.Initialize();
             ApplicationService.Initialize();
-            EventAggregatorBus.RegisterAggregator<OrderDispatchedEvent>();
-            var bus = ServiceLocator.Instance.GetService<IBus>();
+            EventDispatcherBus.RegisterDispatchersFor<OrderDispatchedEvent>();
+            DomainEventAggregator.Subscribe<OrderDispatchedEvent>(p =>
+            {
+                SalesOrder salesOrder = p.Source as SalesOrder;
+                salesOrder.DateDispatched = p.DispatchedDate;
+                salesOrder.Status = SalesOrderStatus.Dispatched;
+            });
             log4net.Config.XmlConfigurator.Configure();
         }
 

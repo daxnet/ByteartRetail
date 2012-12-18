@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ByteartRetail.Domain.Events
 {
-    public static class EventAggregator
+    public static class DomainEventAggregator
     {
         private static readonly Dictionary<Type, List<Delegate>> domainEventHandlers = new Dictionary<Type, List<Delegate>>();
 
@@ -33,7 +33,14 @@ namespace ByteartRetail.Domain.Events
         public static void Subscribe<TEvent>(Action<TEvent> domainEventHandlerAction)
             where TEvent : class, IDomainEvent
         {
-            
+            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            {
+                List<Delegate> delegates = domainEventHandlers[typeof(TEvent)];
+                if (!delegates.Contains(domainEventHandlerAction))
+                    delegates.Add(domainEventHandlerAction);
+            }
+            else
+                domainEventHandlers.Add(typeof(TEvent), new List<Delegate> { domainEventHandlerAction });
         }
     }
 }

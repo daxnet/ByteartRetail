@@ -1,4 +1,5 @@
 ﻿using ByteartRetail.Domain.Model;
+using ByteartRetail.Events.Bus;
 using System.Data.Entity;
 using System.Threading;
 
@@ -7,6 +8,8 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
     public class EntityFrameworkRepositoryContext : RepositoryContext, IEntityFrameworkRepositoryContext
     {
         private readonly ThreadLocal<ByteartRetailDbContext> localCtx = new ThreadLocal<ByteartRetailDbContext>(() => new ByteartRetailDbContext());
+
+        public EntityFrameworkRepositoryContext(IBus bus) : base(bus) { }
 
         public override void RegisterDeleted<TAggregateRoot>(TAggregateRoot obj)
         {
@@ -26,7 +29,12 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
             Committed = false;
         }
 
-        public override void Commit()
+        public override void Rollback()
+        {
+            Committed = false;
+        }
+
+        protected override void DoCommit()
         {
             if (!Committed)
             {
@@ -34,11 +42,6 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
                 var count = localCtx.Value.SaveChanges();
                 Committed = true;
             }
-        }
-
-        public override void Rollback()
-        {
-            Committed = false;
         }
 
         protected override void Dispose(bool disposing)
