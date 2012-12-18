@@ -1,4 +1,5 @@
 ﻿using ByteartRetail.Events.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace ByteartRetail.Events.Bus
         }
         #endregion
 
-        #region IEventAggregator<TEvent> Members
+        #region IEventDispatcher<TEvent> Members
         /// <summary>
         /// 向Event Aggreator注册用于处理<c>TEvent</c>类型的事件处理器。
         /// </summary>
@@ -68,7 +69,12 @@ namespace ByteartRetail.Events.Bus
         }
         #endregion
 
-        #region IEventAggregator Members
+        #region IEventDispatcher Members
+
+        public Type EventType
+        {
+            get { return typeof(TEvent); }
+        }
         /// <summary>
         /// 向Event Aggreator注册用于处理<c>IDomainEvent</c>类型的事件处理器。
         /// </summary>

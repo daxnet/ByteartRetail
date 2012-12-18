@@ -6,6 +6,7 @@ using System.Threading;
 using ByteartRetail.Events.Bus;
 using System.Transactions;
 using ByteartRetail.Domain.Events;
+using ByteartRetail.Events;
 
 namespace ByteartRetail.Domain.Repositories
 {
@@ -20,6 +21,7 @@ namespace ByteartRetail.Domain.Repositories
         private readonly ThreadLocal<Dictionary<Guid, object>> localModifiedCollection = new ThreadLocal<Dictionary<Guid, object>>(() => new Dictionary<Guid, object>());
         private readonly ThreadLocal<Dictionary<Guid, object>> localDeletedCollection = new ThreadLocal<Dictionary<Guid, object>>(() => new Dictionary<Guid, object>());
         private readonly ThreadLocal<bool> localCommitted = new ThreadLocal<bool>(() => true);
+        private readonly ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>> pendingEvents = new ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>>(() => new Dictionary<IAggregateRoot, List<IEvent>>());
         private readonly IBus bus;
         #endregion
 
@@ -37,9 +39,6 @@ namespace ByteartRetail.Domain.Repositories
         /// <remarks>Note that this can only be called after the repository context has successfully committed.</remarks>
         protected void ClearRegistrations()
         {
-            //this.newCollection.Clear();
-            //this.modifiedCollection.Clear();
-            //this.localDeletedCollection.Value.Clear();
             this.localNewCollection.Value.Clear();
             this.localModifiedCollection.Value.Clear();
             this.localDeletedCollection.Value.Clear();
@@ -56,6 +55,13 @@ namespace ByteartRetail.Domain.Repositories
             }
         }
 
+        protected void AddPendingEvent(IAggregateRoot aggregateRoot, IEnumerable<IEvent> evnts)
+        {
+            if (this.pendingEvents.Value.ContainsKey(aggregateRoot))
+                this.pendingEvents.Value[aggregateRoot].AddRange(evnts);
+            else
+                this.pendingEvents.Value.Add(aggregateRoot, new List<IEvent>(evnts));
+        }
         protected abstract void DoCommit();
         #endregion
 
@@ -174,26 +180,11 @@ namespace ByteartRetail.Domain.Repositories
             Action funcCommit = () =>
                 {
                     this.DoCommit();
-                    List<IDomainEvent> domainEvents = new List<IDomainEvent>();
-                    foreach (var item in localNewCollection.Value)
-                    {
-                        var aggregateRoot = (item.Value as IAggregateRoot);
-                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
-                    }
-                    foreach (var item in localModifiedCollection.Value)
-                    {
-                        var aggregateRoot = (item.Value as IAggregateRoot);
-                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
-                    }
-                    foreach (var item in localDeletedCollection.Value)
-                    {
-                        var aggregateRoot = (item.Value as IAggregateRoot);
-                        domainEvents.AddRange(aggregateRoot.UncommittedEvents);
-                    }
-                    domainEvents
-                        .OrderBy(de => de.TimeStamp)
+                    this.pendingEvents
+                        .Value
+                        .Values
                         .ToList()
-                        .ForEach(p => bus.Publish(p));
+                        .ForEach(p => p.ForEach(q => bus.Publish(q)));
                 };
             if (this.bus.IsDistributedTransactionSupported)
             {
@@ -204,9 +195,11 @@ namespace ByteartRetail.Domain.Repositories
             }
             else
                 funcCommit();
-            localNewCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
-            localModifiedCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
-            localDeletedCollection.Value.ToList().ForEach(kvp => (kvp.Value as IAggregateRoot).ClearEvents());
+            this.pendingEvents
+                .Value
+                .Keys
+                .ToList()
+                .ForEach(p => p.ClearEvents());
         }
         /// <summary>
         /// Rolls-back the UnitOfWork.

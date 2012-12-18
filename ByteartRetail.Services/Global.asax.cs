@@ -3,6 +3,7 @@ using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories.EntityFramework;
 using ByteartRetail.Events.Bus;
+using ByteartRetail.Infrastructure;
 using System;
 
 namespace ByteartRetail.Services
@@ -14,13 +15,13 @@ namespace ByteartRetail.Services
         {
             ByteartRetailDbContextInitailizer.Initialize();
             ApplicationService.Initialize();
-            EventDispatcherBus.RegisterDispatchersFor<OrderDispatchedEvent>();
             DomainEventAggregator.Subscribe<OrderDispatchedEvent>(p =>
             {
                 SalesOrder salesOrder = p.Source as SalesOrder;
                 salesOrder.DateDispatched = p.DispatchedDate;
                 salesOrder.Status = SalesOrderStatus.Dispatched;
             });
+            IBus bus = ServiceLocator.Instance.GetService<IBus>();
             log4net.Config.XmlConfigurator.Configure();
         }
 

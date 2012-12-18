@@ -123,6 +123,5 @@ C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\obj\Debug\ByteartRetail.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\obj\Debug\ByteartRetail.Infrastructure.dll
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\obj\Debug\ByteartRetail.Infrastructure.pdb

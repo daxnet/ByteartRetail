@@ -1,5 +1,6 @@
 ﻿
 using ByteartRetail.Events.Handlers;
+using System;
 
 namespace ByteartRetail.Events.Bus
 {
@@ -15,6 +16,8 @@ namespace ByteartRetail.Events.Bus
         /// 获取领域事件的派发方式。
         /// </summary>
         EventDispatchMode DispatchMode { get; }
+
+        Type EventType { get; }
         #endregion
 
         #region Methods

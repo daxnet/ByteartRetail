@@ -572,3 +572,16 @@ Parameter name: obj
    at ByteartRetail.Domain.Repositories.Repository`1.Add(TAggregateRoot aggregateRoot) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 355
    at ByteartRetail.Application.Implementation.OrderServiceImpl.AddProductToCart(Guid customerID, Guid productID, Int32 quantity) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 82
    at DynamicModule.ns.Wrapped_IOrderService_36e4cd1cd41f46acac6483c4fc61452b.<AddProductToCart_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-18 22:26:32,399 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at ByteartRetail.Events.Bus.EventDispatcherBus.Publish[TEvent](TEvent evnt) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\EventDispatcherBus.cs:line 38
+   at ByteartRetail.Domain.Repositories.RepositoryContext.<Commit>b__c(IEvent q) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 187
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at ByteartRetail.Domain.Repositories.RepositoryContext.<Commit>b__b(List`1 p) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 187
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at ByteartRetail.Domain.Repositories.RepositoryContext.<Commit>b__a() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 183
+   at ByteartRetail.Domain.Repositories.RepositoryContext.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 197
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 172
+   at DynamicModule.ns.Wrapped_IOrderService_7de737716a634c3e8a94fca000261808.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

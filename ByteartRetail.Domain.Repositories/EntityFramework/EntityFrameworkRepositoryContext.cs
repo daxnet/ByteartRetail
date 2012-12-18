@@ -13,18 +13,21 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
 
         public override void RegisterDeleted<TAggregateRoot>(TAggregateRoot obj)
         {
+            this.AddPendingEvent(obj, obj.UncommittedEvents);
             localCtx.Value.Set<TAggregateRoot>().Remove(obj);
             Committed = false;
         }
 
         public override void RegisterModified<TAggregateRoot>(TAggregateRoot obj)
         {
+            this.AddPendingEvent(obj, obj.UncommittedEvents);
             localCtx.Value.Entry<TAggregateRoot>(obj).State = System.Data.EntityState.Modified;
             Committed = false;
         }
 
         public override void RegisterNew<TAggregateRoot>(TAggregateRoot obj)
         {
+            this.AddPendingEvent(obj, obj.UncommittedEvents);
             localCtx.Value.Set<TAggregateRoot>().Add(obj);
             Committed = false;
         }
