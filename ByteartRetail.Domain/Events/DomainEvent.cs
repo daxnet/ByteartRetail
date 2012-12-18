@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteartRetail.Events
+namespace ByteartRetail.Domain.Events
 {
     /// <summary>
     /// 表示继承于该类的类型为领域事件。
@@ -8,9 +8,15 @@ namespace ByteartRetail.Events
     public abstract class DomainEvent : IDomainEvent
     {
         #region Private Fields
+        private readonly IEntity source;
         private readonly Guid id = Guid.NewGuid();
         private readonly DateTime timeStamp = DateTime.UtcNow;
         #endregion
+
+        public DomainEvent(IEntity source)
+        {
+            this.source = source;
+        }
 
         #region IDomainEvent Members
         /// <summary>
@@ -28,6 +34,13 @@ namespace ByteartRetail.Events
             get { return timeStamp; }
         }
 
+        /// <summary>
+        /// 获取产生领域事件的事件源对象。
+        /// </summary>
+        public IEntity Source
+        {
+            get { return source; }
+        }
         #endregion
     }
 }

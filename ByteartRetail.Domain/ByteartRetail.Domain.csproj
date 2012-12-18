@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainException.cs" />
+    <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Events\EventAggregator.cs" />
+    <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IDomainEventHandler.cs" />
     <Compile Include="Events\OrderDispatchedEvent.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
@@ -95,7 +99,9 @@
     <Compile Include="Specifications\ParameterRebinder.cs" />
     <Compile Include="Specifications\Specification.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Events\Handlers\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ByteartRetail.Events\ByteartRetail.Events.csproj">
       <Project>{1f5d6f33-3ae3-4b0b-9070-7c77f175d196}</Project>

@@ -41,11 +41,8 @@
   <ItemGroup>
     <Compile Include="Bus\EventAggregatorBus.cs" />
     <Compile Include="Bus\IBus.cs" />
-    <Compile Include="DomainEvent.cs" />
     <Compile Include="Bus\EventAggregator.cs" />
     <Compile Include="Bus\EventDispatchMode.cs" />
-    <Compile Include="Handlers\IDomainEventHandler.cs" />
-    <Compile Include="IDomainEvent.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="Bus\IEventAggregator.cs" />
     <Compile Include="Handlers\IEventHandler.cs" />

@@ -124,11 +124,7 @@ namespace ByteartRetail.Domain.Model
         {
             //this.status = SalesOrderStatus.Dispatched;
             //this.dateDispatched = DateTime.Now;
-            RaiseEvent<OrderDispatchedEvent>((new OrderDispatchedEvent
-            {
-                DispatchedDate = DateTime.Now,
-                DispatchedOrder = this
-            }));
+            RaiseEvent<OrderDispatchedEvent>(new OrderDispatchedEvent(this) { DispatchedDate = DateTime.Now });
         }
         #endregion
 

@@ -1,4 +1,5 @@
 ﻿using ByteartRetail.Domain.Events;
+using ByteartRetail.Domain.Model;
 using ByteartRetail.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,13 @@ namespace ByteartRetail.Events.Handlers
         {
             try
             {
+                SalesOrder salesOrder = @event.Source as SalesOrder;
                 // 此处仅为演示，所以邮件内容很简单。可以根据自己的实际情况做一些复杂的邮件功能，比如
                 // 使用邮件模板或者邮件风格等。
-                Utils.SendEmail(@event.DispatchedOrder.User.Email,
+                Utils.SendEmail(salesOrder.User.Email,
                     "Your Order Has Been Dispatched.",
                     string.Format("Your Order {0} has been dispatched on {1}. For more information please contact system administrator. Thank you for your order.",
-                    @event.DispatchedOrder.ID.ToString().ToUpper(), @event.DispatchedDate));
+                    salesOrder.ID.ToString().ToUpper(), @event.DispatchedDate));
             }
             catch (Exception ex)
             {

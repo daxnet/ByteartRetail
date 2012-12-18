@@ -1,4 +1,4 @@
-﻿using ByteartRetail.Events;
+﻿using ByteartRetail.Domain.Events;
 using System;
 using System.Collections.Generic;
 
@@ -15,9 +15,10 @@ namespace ByteartRetail.Domain.Model
         #endregion
 
         #region Protected Methods
-        protected void RaiseEvent<TEvent>(TEvent evnt)
+        protected virtual void RaiseEvent<TEvent>(TEvent evnt)
             where TEvent : class, IDomainEvent
         {
+            EventAggregator.Publish<TEvent>(evnt);
             events.Add(evnt);
         }
         #endregion

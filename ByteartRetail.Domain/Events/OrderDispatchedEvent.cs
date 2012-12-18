@@ -9,15 +9,13 @@ namespace ByteartRetail.Domain.Events
     /// </summary>
     public class OrderDispatchedEvent : DomainEvent
     {
+        public OrderDispatchedEvent(IEntity source) : base(source) { }
+
         #region Properties
         /// <summary>
         /// 获取或设置订单发货的日期。
         /// </summary>
         public DateTime DispatchedDate { get; set; }
-        /// <summary>
-        /// 获取或设置销售订单实体。
-        /// </summary>
-        public SalesOrder DispatchedOrder { get; set; }
         #endregion
     }
 }
