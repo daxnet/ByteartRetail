@@ -1,17 +1,13 @@
 ﻿using ByteartRetail.Events.Handlers;
-using ByteartRetail.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByteartRetail.Events.Bus
 {
     public class EventDispatcherBus : IBus
     {
         #region Private Fields
-        //private static Dictionary<Type, IEventDispatcher> eventDispatchers = new Dictionary<Type, IEventDispatcher>();
         private readonly List<IEventDispatcher> eventDispatchers = new List<IEventDispatcher>();
         #endregion
 
@@ -20,36 +16,60 @@ namespace ByteartRetail.Events.Bus
             this.eventDispatchers.AddRange(eventDispatchers);
         }
 
-        //public static void RegisterDispatchersFor<TEvent>()
-        //    where TEvent : class, IEvent
-        //{
-        //    if (eventDispatchers.ContainsKey(typeof(TEvent)))
-        //        return;
-        //    IEventDispatcher<TEvent> eventDispatcher = ServiceLocator
-        //        .Instance
-        //        .GetService<IEventDispatcher<TEvent>>(); // 从IoC容器中解析应用于给定事件类型的事件聚合器实例。
+        private IEventDispatcher GetEventDispatcher(Type eventType)
+        {
+            return this.eventDispatchers.Where(p =>
+                {
+                    Type eventDispatcherType = p.GetType();
+                    if (eventDispatcherType.IsGenericType &&
+                        eventDispatcherType.GetGenericArguments().Any(q => q == eventType))
+                        return true;
+                    return false;
+                }).FirstOrDefault();
+        }
 
-        //    eventDispatchers.Add(typeof(TEvent), eventDispatcher); // 将事件聚合器实例添加到线程的本地存储中。
-        //}
+        private IEventDispatcher<TEvent> GetEventDispatcher<TEvent>() where TEvent : class, IEvent
+        {
+            return GetEventDispatcher(typeof(TEvent)) as IEventDispatcher<TEvent>;
+        }
 
         #region IBus Members
 
         public void Publish<TEvent>(TEvent evnt) where TEvent : class, IEvent
         {
-            var eventDispatcher = this.eventDispatchers.Where(p => p.EventType == evnt.GetType()).FirstOrDefault();
+            var eventDispatcher = GetEventDispatcher(evnt.GetType());
             if (eventDispatcher != null)
                 eventDispatcher.DispatchEvent(evnt);
-        }
-
-        public void Publish<TEvent>(IEnumerable<TEvent> evnts) where TEvent : class, IEvent
-        {
-            foreach (var evnt in evnts)
-                Publish<TEvent>(evnt);
         }
 
         public bool IsDistributedTransactionSupported
         {
             get { return false; }
+        }
+
+        public void Subscribe<TEvent>(IEventHandler<TEvent> eventHandler) where TEvent : class, IEvent
+        {
+            IEventDispatcher<TEvent> eventDispatcher = GetEventDispatcher<TEvent>();
+            if (eventDispatcher == null)
+            {
+                // 针对给定的事件类型，创建事件派发器。
+                Type eventDispatcherType = typeof(EventDispatcher<>).MakeGenericType(typeof(TEvent));
+                eventDispatcher = (IEventDispatcher<TEvent>)Activator.CreateInstance(eventDispatcherType, EventDispatchMode.Sequential, new IEventHandler<TEvent>[] { eventHandler });
+                this.eventDispatchers.Add(eventDispatcher);
+            }
+            else
+            {
+                eventDispatcher.RegisterHandler(eventHandler);
+            }
+        }
+
+        public void Unsubscribe<TEvent>(IEventHandler<TEvent> eventHandler) where TEvent : class, IEvent
+        {
+            IEventDispatcher<TEvent> eventDispatcher = GetEventDispatcher<TEvent>();
+            if (eventDispatcher != null)
+            {
+                eventDispatcher.UnregisterHandler(eventHandler);
+            }
         }
 
         #endregion

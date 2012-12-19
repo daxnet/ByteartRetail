@@ -16,11 +16,17 @@ namespace ByteartRetail.Services
             ByteartRetailDbContextInitailizer.Initialize();
             ApplicationService.Initialize();
             DomainEventAggregator.Subscribe<OrderDispatchedEvent>(p =>
-            {
-                SalesOrder salesOrder = p.Source as SalesOrder;
-                salesOrder.DateDispatched = p.DispatchedDate;
-                salesOrder.Status = SalesOrderStatus.Dispatched;
-            });
+                {
+                    SalesOrder salesOrder = p.Source as SalesOrder;
+                    salesOrder.DateDispatched = p.DispatchedDate;
+                    salesOrder.Status = SalesOrderStatus.Dispatched;
+                });
+            DomainEventAggregator.Subscribe<OrderConfirmedEvent>(p =>
+                {
+                    SalesOrder salesOrder = p.Source as SalesOrder;
+                    salesOrder.DateDelivered = p.ConfirmedDate;
+                    salesOrder.Status = SalesOrderStatus.Delivered;
+                });
             IBus bus = ServiceLocator.Instance.GetService<IBus>();
             log4net.Config.XmlConfigurator.Configure();
         }

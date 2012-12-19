@@ -12,8 +12,8 @@ namespace ByteartRetail.Events.Handlers
         /// <summary>
         /// 处理给定的领域事件。
         /// </summary>
-        /// <param name="event">需要处理的领域事件。</param>
-        void Handle(TEvent @event);
+        /// <param name="evnt">需要处理的领域事件。</param>
+        void Handle(TEvent evnt);
         #endregion
     }
 }

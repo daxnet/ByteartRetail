@@ -52,6 +52,7 @@
     <Compile Include="Events\DomainEventAggregator.cs" />
     <Compile Include="Events\IDomainEvent.cs" />
     <Compile Include="Events\IDomainEventHandler.cs" />
+    <Compile Include="Events\OrderConfirmedEvent.cs" />
     <Compile Include="Events\OrderDispatchedEvent.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />

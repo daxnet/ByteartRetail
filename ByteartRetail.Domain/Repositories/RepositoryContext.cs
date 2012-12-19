@@ -23,6 +23,7 @@ namespace ByteartRetail.Domain.Repositories
         private readonly ThreadLocal<bool> localCommitted = new ThreadLocal<bool>(() => true);
         private readonly ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>> pendingEvents = new ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>>(() => new Dictionary<IAggregateRoot, List<IEvent>>());
         private readonly IBus bus;
+        private readonly object sync = new object();
         #endregion
 
         #region Ctor
@@ -180,11 +181,14 @@ namespace ByteartRetail.Domain.Repositories
             Action funcCommit = () =>
                 {
                     this.DoCommit();
-                    this.pendingEvents
-                        .Value
-                        .Values
-                        .ToList()
-                        .ForEach(p => p.ForEach(q => bus.Publish(q)));
+                    lock (sync)
+                    {
+                        this.pendingEvents
+                            .Value
+                            .Values
+                            .ToList()
+                            .ForEach(p => p.ForEach(q => bus.Publish(q)));
+                    }
                 };
             if (this.bus.IsDistributedTransactionSupported)
             {

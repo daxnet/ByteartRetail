@@ -113,8 +113,9 @@ namespace ByteartRetail.Domain.Model
         /// </summary>
         public void Confirm()
         {
-            this.status = SalesOrderStatus.Delivered;
-            this.dateDelivered = DateTime.Now;
+            //this.status = SalesOrderStatus.Delivered;
+            //this.dateDelivered = DateTime.Now;
+            RaiseEvent<OrderConfirmedEvent>(new OrderConfirmedEvent(this) { ConfirmedDate = DateTime.Now });
         }
 
         /// <summary>

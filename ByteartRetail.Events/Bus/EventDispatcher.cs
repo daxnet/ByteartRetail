@@ -47,6 +47,13 @@ namespace ByteartRetail.Events.Bus
             if (!eventHandlers.Contains(eventHandler))
                 eventHandlers.Add(eventHandler);
         }
+
+        public void UnregisterHandler(IEventHandler<TEvent> eventHandler)
+        {
+            if (eventHandlers.Contains(eventHandler))
+                eventHandlers.Remove(eventHandler);
+        }
+
         /// <summary>
         /// 派发领域事件。
         /// </summary>
@@ -70,11 +77,6 @@ namespace ByteartRetail.Events.Bus
         #endregion
 
         #region IEventDispatcher Members
-
-        public Type EventType
-        {
-            get { return typeof(TEvent); }
-        }
         /// <summary>
         /// 向Event Aggreator注册用于处理<c>IDomainEvent</c>类型的事件处理器。
         /// </summary>
@@ -84,6 +86,13 @@ namespace ByteartRetail.Events.Bus
             IEventHandler<TEvent> genericEventHandler = eventHandler;
             this.RegisterHandler(genericEventHandler);
         }
+
+        public void UnregisterHandler(IEventHandler<IEvent> eventHandler)
+        {
+            IEventHandler<TEvent> genericEventHandler = eventHandler;
+            this.UnregisterHandler(genericEventHandler);
+        }
+
         /// <summary>
         /// 获取领域事件的派发方式。
         /// </summary>
