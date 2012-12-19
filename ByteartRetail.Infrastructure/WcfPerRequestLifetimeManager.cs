@@ -91,14 +91,27 @@ namespace ByteartRetail.Infrastructure
                 //WCF without HttpContext environment
                 ContainerExtension containerExtension = OperationContext.Current.Extensions.Find<ContainerExtension>();
                 if (containerExtension != null)
+                {
+                    object obj = containerExtension.Value;
+                    if (obj is IDisposable)
+                    {
+                        (obj as IDisposable).Dispose();
+                    }
                     OperationContext.Current.Extensions.Remove(containerExtension);
+                }
 
             }
             else if (HttpContext.Current != null)
             {
                 //HttpContext avaiable ( ASP.NET ..)
                 if (HttpContext.Current.Items[key.ToString()] != null)
+                {
+                    if (HttpContext.Current.Items[key.ToString()] is IDisposable)
+                    {
+                        (HttpContext.Current.Items[key.ToString()] as IDisposable).Dispose();
+                    }
                     HttpContext.Current.Items[key.ToString()] = null;
+                }
             }
             else
             {

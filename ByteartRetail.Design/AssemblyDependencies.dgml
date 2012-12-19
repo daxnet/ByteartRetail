@@ -1,96 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" GraphDirection="TopToBottom" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@5)" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:06:59" Bounds="622.24964941754,170.179528947011,261.123333333334,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Infrastructure.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPath)" Group="Collapsed" Label="ByteartRetail.Infrastructure.Caching.dll" UseManualLocation="True">
+    <Node Id="(@5)" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:06:59" Bounds="754.558247946494,171.773533958894,261.123333333334,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Infrastructure.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPath)" Group="Collapsed" Label="ByteartRetail.Infrastructure.Caching.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@11" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:03" Bounds="486.912386554245,-79.6588571945156,187.286666666667,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPath)" Group="Collapsed" Label="ByteartRetail.Services.dll" UseManualLocation="True">
+    <Node Id="@11" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:03" Bounds="286.429948507084,-100.527191642519,187.286666666667,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPath)" Group="Collapsed" Label="ByteartRetail.Services.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@13" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:00" Bounds="419.340923860782,102.096815866217,254.163333333333,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.Domain.Repositories, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPath)" Group="Collapsed" Label="ByteartRetail.Domain.Repositories.dll" UseManualLocation="True">
+    <Node Id="@13" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:00" Bounds="347.829997354771,11.4063301968425,254.163333333333,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.Domain.Repositories, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPath)" Group="Collapsed" Label="ByteartRetail.Domain.Repositories.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@15" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:21" Bounds="29.6916297563851,136.965205525255,232.493333333333,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPath)" Group="Collapsed" Label="ByteartRetail.ServiceContracts.dll" UseManualLocation="True">
+    <Node Id="@15" Category="CodeSchema_Assembly" Bounds="787.014834069815,-54.7519262658457,228.473333333333,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Events.Handlers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(9e40c476-af3b-4f23-8ca4-6d96dcfef745.OutputPath)" Group="Collapsed" Label="ByteartRetail.Events.Handlers.dll" UseManualLocation="True" />
+    <Node Id="@17" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:21" Bounds="83.9938577299786,122.4964555248,232.493333333333,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.ServiceContracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPath)" Group="Collapsed" Label="ByteartRetail.ServiceContracts.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@17" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:19" Bounds="287.640225869129,32.2613428054845,209.576666666667,25.9599999999999" CodeSchemaProperty_StrongName="ByteartRetail.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(05012b73-bd10-4af8-a371-8be475359b09.OutputPath)" Group="Collapsed" Label="ByteartRetail.DataObjects.dll" UseManualLocation="True">
+    <Node Id="@19" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:19" Bounds="108.253330688104,-31.774297232358,209.576666666667,25.9599999999999" CodeSchemaProperty_StrongName="ByteartRetail.DataObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(05012b73-bd10-4af8-a371-8be475359b09.OutputPath)" Group="Collapsed" Label="ByteartRetail.DataObjects.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@19" Category="CodeSchema_Assembly" Bounds="725.069989773949,103.28564220278,223.123333333333,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Domain.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(84cdc406-c20b-4969-b5e0-6519b1761c6c.OutputPath)" Group="Collapsed" Label="ByteartRetail.Domain.Events.dll" UseManualLocation="True" />
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:23" Bounds="-14.5567519913885,-84.7074211112386,169.436666666666,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPath)" Group="Collapsed" Label="ByteartRetail.Web.dll" UseManualLocation="True">
+    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:23" Bounds="34.9177080066448,-109.787925829783,169.436666666666,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPath)" Group="Collapsed" Label="ByteartRetail.Web.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:19" Bounds="335.282862575267,184.42060731198,215.89,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPath)" Group="Collapsed" Label="ByteartRetail.Infrastructure.dll">
+    <Node Id="@21" Category="CodeSchema_Assembly" Bounds="742.404297573111,62.1355363097795,178.94,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(1f5d6f33-3ae3-4b0b-9070-7c77f175d196.OutputPath)" Group="Collapsed" Label="ByteartRetail.Events.dll" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:05:19" Bounds="405.4381535634,177.286332078443,215.89,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPath)" Group="Collapsed" Label="ByteartRetail.Infrastructure.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@7" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:06:59" Bounds="611.663172324953,-18.8332479598245,186.48,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPath)" Group="Collapsed" Label="ByteartRetail.Domain.dll" UseManualLocation="True">
+    <Node Id="@7" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:06:59" Bounds="479.312534308445,67.3663308240426,186.48,25.9600000000001" CodeSchemaProperty_StrongName="ByteartRetail.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPath)" Group="Collapsed" Label="ByteartRetail.Domain.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@9" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:01" Bounds="184.879914675278,-79.6588571945156,205,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPath)" Group="Collapsed" Label="ByteartRetail.Application.dll" UseManualLocation="True">
+    <Node Id="@9" Category="CodeSchema_Assembly" AssemblyTimestamp="11/08/2012 02:07:01" Bounds="630.505822984568,-110.712026265846,205,25.96" CodeSchemaProperty_StrongName="ByteartRetail.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPath)" Group="Collapsed" Label="ByteartRetail.Application.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
   </Nodes>
   <Links>
-    <Link Source="(@5)" Target="@4" Category="Implements" Bounds="560.163355340811,189.165466620315,62.0862940767281,2.85601755945174" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@11" Target="@13" Category="CodeSchema_Calls" Bounds="550.521325360578,-53.6988571945156,27.5967923788334,146.950299230139" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@11" Target="@15" Category="References" Bounds="165.609191894531,-53.6988563537598,370.280822753906,184.364322662354" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="58">
+    <Link Source="(@5)" Target="@4" Category="Implements" Bounds="630.327164067399,186.689743088313,124.231083879095,1.84232757520161" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@13" Category="CodeSchema_Calls" Bounds="391.070900609853,-74.5671916425188,67.0251825853678,79.1068401439669" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@17" Category="References" Bounds="216.356105769884,-74.5671916425188,153.250890448951,190.057545718559" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="58">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@11" Target="@17" Category="References" Bounds="421.981423317075,-53.6988571945156,136.75615698808,81.3586745560671" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="192">
+    <Link Source="@11" Target="@19" Category="References" Bounds="252.898444263221,-74.5671916425188,95.6405957406816,39.3672040428311" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="192">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@11" Target="@4" Category="Implements" Bounds="413.127685546875,-53.6988563537598,160.475830078125,229.70943069458" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="12">
+    <Link Source="@11" Target="@21" Category="References" Bounds="416.125653874471,-74.5671916425188,371.228370749809,133.654014437138" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@4" Category="Implements" Bounds="386.301784009024,-74.5671916425188,116.959252035207,243.739353430546" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="12">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@11" Target="@9" Category="CodeSchema_Calls" Bounds="398.879914675278,-66.6788571945156,88.0324718789675,0" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@13" Target="@4" Category="Implements" Bounds="466.534113142036,128.056815866217,63.6177548482731,50.7511855140869" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
+    <Link Source="@11" Target="@9" Category="CodeSchema_Calls" Bounds="473.716615173751,-94.5144966116647,147.792952932422,4.26497023830699" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@13" Target="@21" Category="References" Bounds="566.247116289024,37.3663301968426,169.81652197619,24.1332188162075" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@13" Target="@4" Category="Implements" Bounds="477.922032532351,37.3663301968425,30.4174090791111,131.152703868481" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_FieldRead" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@13" Target="@7" Category="References" Bounds="563.43306655507,12.5863655923226,117.304727935722,89.5104502738948" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="455">
+    <Link Source="@13" Target="@7" Category="References" Bounds="497.559599727667,37.3663301968426,44.5365085704387,25.5247934620948" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="455">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_FunctionPointer" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
       <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@15" Target="@17" Category="References" Bounds="176.49536975128,61.7400572005163,177.092478696908,75.2251483247383" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="54">
+    <Link Source="@15" Target="@21" Category="Implements" Bounds="844.172064835885,-28.7919262658457,49.3753068416055,83.1880512250936" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@15" Target="@4" Category="CodeSchema_Calls" Bounds="542.803568636316,-28.7919262658457,336.750944791993,201.457796942783" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@15" Target="@7" Category="References" Bounds="615.926658766005,-28.7919262658457,250.387293024822,93.0239001172545" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@17" Target="@19" Category="References" Bounds="201.317583977675,3.15487749622255,9.9027727296544,119.341578028577" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="54">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@15" Target="@4" Category="Implements" Bounds="227.252929180732,162.925205525255,125.772818186749,20.0767208151698" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="22">
+    <Link Source="@17" Target="@4" Category="Implements" Bounds="274.425603507108,148.4564555248,155.907148272387,27.2787305593124" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="22">
       <Category Ref="CodeSchema_AttributeUse" />
     </Link>
-    <Link Source="@19" Target="@4" Category="CodeSchema_Calls" Bounds="514.979231680512,129.24564220278,258.715548685782,53.3570782568841" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@19" Target="@7" Category="References" Bounds="725.5047210575,13.2454176305304,97.1255329666302,90.0402245722495" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="23">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="Implements" />
-      <Category Ref="InheritsFrom" />
-    </Link>
-    <Link Source="@2" Target="@15" Category="References" Bounds="74.5986729967737,-58.7474211112386,63.991360114216,187.196460857099" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="164">
+    <Link Source="@2" Target="@17" Category="References" Bounds="124.140202075944,-83.8279258297829,68.645683731415,197.821753499791" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="164">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@2" Target="@17" Category="References" Bounds="105.923482490252,-58.7474211112386,242.283187938725,87.9381598423079" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="208">
+    <Link Source="@2" Target="@19" Category="References" Bounds="135.17697956068,-83.8279258297829,55.4161459302138,46.2843081903521" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="208">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_FieldRead" />
     </Link>
-    <Link Source="@2" Target="@4" Category="CodeSchema_Calls" Bounds="88.1545059688573,-58.7474211112386,329.781453026667,237.902583879199" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="115" />
-    <Link Source="@7" Target="@4" Category="InheritsFrom" Bounds="505.316986083984,7.12675189971924,197.728973388672,175.166018486023" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="34">
+    <Link Source="@2" Target="@4" Category="CodeSchema_Calls" Bounds="137.439231197196,-83.8279258297829,350.868374492929,255.812106563131" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="115" />
+    <Link Source="@21" Target="@4" Category="InheritsFrom" Bounds="557.747829905391,88.0955363097796,238.225586378534,86.1307020929544" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@7" Target="@21" Category="References" Bounds="665.792534308445,77.1017435415933,67.6135936283873,1.36383776736864" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="39">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@9" Target="@15" Category="Implements" Bounds="159.333841661997,-53.6988571945156,119.570965576629,183.128195693757" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@9" Target="@17" Category="References" Bounds="299.56298266446,-53.6988571945156,74.5231868554638,79.3979780990172" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="332">
+    <Link Source="@7" Target="@4" Category="InheritsFrom" Bounds="524.636096799685,93.3263308240427,40.9293691562663,76.0352103123096" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="34">
+      <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="Implements" />
+    </Link>
+    <Link Source="@9" Target="@17" Category="Implements" Bounds="219.962600708008,-84.7520294189453,461.17594909668,200.958778381348" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@9" Target="@19" Category="References" Bounds="307.439189578505,-84.7520262658457,340.067153423832,51.6268830214958" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="332">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@9" Target="@4" Category="Implements" Bounds="281.058227539063,-53.6988563537598,138.246276855469,232.617176055908" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
+    <Link Source="@9" Target="@4" Category="Implements" Bounds="545.650207519531,-84.7520294189453,183.677795410156,257.801605224609" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@9" Target="@7" Category="References" Bounds="376.478107894884,-53.6988571945156,230.673521375447,33.604972213897" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="488">
+    <Link Source="@9" Target="@7" Category="References" Bounds="590.27232901852,-84.7520262658458,131.038172192808,145.432123035255" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="488">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
@@ -157,12 +167,14 @@
     <Alias n="11" Id="(@10)" />
     <Alias n="12" Uri="Assembly=$(db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPathUri)" />
     <Alias n="13" Id="(@12)" />
-    <Alias n="14" Uri="Assembly=$(22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPathUri)" />
+    <Alias n="14" Uri="Assembly=$(9e40c476-af3b-4f23-8ca4-6d96dcfef745.OutputPathUri)" />
     <Alias n="15" Id="(@14)" />
-    <Alias n="16" Uri="Assembly=$(05012b73-bd10-4af8-a371-8be475359b09.OutputPathUri)" />
+    <Alias n="16" Uri="Assembly=$(22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPathUri)" />
     <Alias n="17" Id="(@16)" />
-    <Alias n="18" Uri="Assembly=$(84cdc406-c20b-4969-b5e0-6519b1761c6c.OutputPathUri)" />
+    <Alias n="18" Uri="Assembly=$(05012b73-bd10-4af8-a371-8be475359b09.OutputPathUri)" />
     <Alias n="19" Id="(@18)" />
+    <Alias n="20" Uri="Assembly=$(1f5d6f33-3ae3-4b0b-9070-7c77f175d196.OutputPathUri)" />
+    <Alias n="21" Id="(@20)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
@@ -239,25 +251,28 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="05012b73-bd10-4af8-a371-8be475359b09.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.dll" />
-    <Path Id="05012b73-bd10-4af8-a371-8be475359b09.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.DataObjects/bin/Debug/ByteartRetail.DataObjects.dll" />
-    <Path Id="1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\bin\Debug\ByteartRetail.Infrastructure.dll" />
-    <Path Id="1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Infrastructure/bin/Debug/ByteartRetail.Infrastructure.dll" />
-    <Path Id="22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.ServiceContracts\bin\Debug\ByteartRetail.ServiceContracts.dll" />
-    <Path Id="22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.ServiceContracts/bin/Debug/ByteartRetail.ServiceContracts.dll" />
-    <Path Id="416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Services.dll" />
-    <Path Id="416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Services/bin/ByteartRetail.Services.dll" />
-    <Path Id="42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.dll" />
-    <Path Id="42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Web/bin/ByteartRetail.Web.dll" />
-    <Path Id="5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.dll" />
-    <Path Id="5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Application/bin/Debug/ByteartRetail.Application.dll" />
+    <Path Id="05012b73-bd10-4af8-a371-8be475359b09.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.DataObjects\bin\Debug\ByteartRetail.DataObjects.dll" />
+    <Path Id="05012b73-bd10-4af8-a371-8be475359b09.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.DataObjects/bin/Debug/ByteartRetail.DataObjects.dll" />
+    <Path Id="1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\bin\Debug\ByteartRetail.Infrastructure.dll" />
+    <Path Id="1ca08502-48f4-47f3-b5f9-f79012e40272.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Infrastructure/bin/Debug/ByteartRetail.Infrastructure.dll" />
+    <Path Id="1f5d6f33-3ae3-4b0b-9070-7c77f175d196.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\bin\Debug\ByteartRetail.Events.dll" />
+    <Path Id="1f5d6f33-3ae3-4b0b-9070-7c77f175d196.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Events/bin/Debug/ByteartRetail.Events.dll" />
+    <Path Id="22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.ServiceContracts\bin\Debug\ByteartRetail.ServiceContracts.dll" />
+    <Path Id="22b80c6a-5745-4b82-9d64-eb6d1338c0cc.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.ServiceContracts/bin/Debug/ByteartRetail.ServiceContracts.dll" />
+    <Path Id="416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\ByteartRetail.Services.dll" />
+    <Path Id="416ea6dd-0b38-4142-8630-7aff9d41363e.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Services/bin/ByteartRetail.Services.dll" />
+    <Path Id="42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.dll" />
+    <Path Id="42475f5c-5fd0-4180-b7a3-3a42c1a96af5.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Web/bin/ByteartRetail.Web.dll" />
+    <Path Id="5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.dll" />
+    <Path Id="5b3cda59-a2cd-4618-9e4a-07aa4b07bb9b.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Application/bin/Debug/ByteartRetail.Application.dll" />
     <Path Id="84cdc406-c20b-4969-b5e0-6519b1761c6c.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Events\bin\Debug\ByteartRetail.Domain.Events.dll" />
-    <Path Id="84cdc406-c20b-4969-b5e0-6519b1761c6c.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Domain.Events/bin/Debug/ByteartRetail.Domain.Events.dll" />
-    <Path Id="afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure.Caching\bin\Debug\ByteartRetail.Infrastructure.Caching.dll" />
-    <Path Id="afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Infrastructure.Caching/bin/Debug/ByteartRetail.Infrastructure.Caching.dll" />
-    <Path Id="db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\bin\Debug\ByteartRetail.Domain.Repositories.dll" />
-    <Path Id="db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Domain.Repositories/bin/Debug/ByteartRetail.Domain.Repositories.dll" />
-    <Path Id="ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPath" Value="C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll" />
-    <Path Id="ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPathUri" Value="file:///C:/Users/chenqiny/Documents/GitHub/ByteartRetail/ByteartRetail.Domain/bin/Debug/ByteartRetail.Domain.dll" />
+    <Path Id="9e40c476-af3b-4f23-8ca4-6d96dcfef745.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events.Handlers\bin\Debug\ByteartRetail.Events.Handlers.dll" />
+    <Path Id="9e40c476-af3b-4f23-8ca4-6d96dcfef745.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Events.Handlers/bin/Debug/ByteartRetail.Events.Handlers.dll" />
+    <Path Id="afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure.Caching\bin\Debug\ByteartRetail.Infrastructure.Caching.dll" />
+    <Path Id="afb6e931-6e0a-4b27-8649-2a29b31efd70.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Infrastructure.Caching/bin/Debug/ByteartRetail.Infrastructure.Caching.dll" />
+    <Path Id="db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\bin\Debug\ByteartRetail.Domain.Repositories.dll" />
+    <Path Id="db7e0e14-24ae-4d91-953b-41fabd2a363a.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Domain.Repositories/bin/Debug/ByteartRetail.Domain.Repositories.dll" />
+    <Path Id="ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPath" Value="C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\bin\Debug\ByteartRetail.Domain.dll" />
+    <Path Id="ec63ad8b-46f2-4a56-911f-3894a45eaec2.OutputPathUri" Value="file:///C:/Users/Sunny Chen/Documents/GitHub/ByteartRetail/ByteartRetail.Domain/bin/Debug/ByteartRetail.Domain.dll" />
   </Paths>
 </DirectedGraph>

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 
 namespace ByteartRetail.Infrastructure
 {
@@ -91,16 +91,6 @@ namespace ByteartRetail.Infrastructure
         {
             var overrides = GetParameterOverrides(overridedArguments);
             return container.Resolve(serviceType, overrides.ToArray());
-        }
-
-        public IEnumerable<object> GetAll(Type serviceType)
-        {
-            return container.ResolveAll(serviceType);
-        }
-
-        public IEnumerable<T> GetAll<T>()
-        {
-            return container.ResolveAll<T>();
         }
         #endregion
 

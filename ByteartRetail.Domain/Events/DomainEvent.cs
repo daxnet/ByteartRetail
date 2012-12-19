@@ -13,10 +13,16 @@ namespace ByteartRetail.Domain.Events
         private readonly DateTime timeStamp = DateTime.UtcNow;
         #endregion
 
+        #region Ctor
+        /// <summary>
+        /// 初始化一个新的<c>DomainEvent</c>类型的实例。
+        /// </summary>
+        /// <param name="source">产生领域事件的事件源对象。</param>
         public DomainEvent(IEntity source)
         {
             this.source = source;
         }
+        #endregion
 
         #region IDomainEvent Members
         /// <summary>

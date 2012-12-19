@@ -8,9 +8,11 @@ namespace ByteartRetail.Domain.Events
     /// </summary>
     public interface IDomainEvent : IEvent
     {
+        #region Properties
         /// <summary>
         /// 获取产生领域事件的事件源对象。
         /// </summary>
         IEntity Source { get; }
+        #endregion
     }
 }

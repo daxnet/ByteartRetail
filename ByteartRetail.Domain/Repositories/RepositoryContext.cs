@@ -44,7 +44,11 @@ namespace ByteartRetail.Domain.Repositories
             this.localModifiedCollection.Value.Clear();
             this.localDeletedCollection.Value.Clear();
         }
-
+        /// <summary>
+        /// Disposes the object.
+        /// </summary>
+        /// <param name="disposing">A <see cref="System.Boolean"/> value which indicates whether
+        /// the object should be disposed explicitly.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -53,15 +57,19 @@ namespace ByteartRetail.Domain.Repositories
                 this.localDeletedCollection.Dispose();
                 this.localModifiedCollection.Dispose();
                 this.localNewCollection.Dispose();
+                this.bus.Dispose();
             }
         }
-
-        protected void AddPendingEvent(IAggregateRoot aggregateRoot, IEnumerable<IEvent> evnts)
+        /// <summary>
+        /// 将指定的聚合根中所保存的未提交的事件收集到RepositoryContext的本地存储中。
+        /// </summary>
+        /// <param name="aggregateRoot">聚合根。</param>
+        protected void DumpPendingEvents(IAggregateRoot aggregateRoot)
         {
             if (this.pendingEvents.Value.ContainsKey(aggregateRoot))
-                this.pendingEvents.Value[aggregateRoot].AddRange(evnts);
+                this.pendingEvents.Value[aggregateRoot].AddRange(aggregateRoot.UncommittedEvents);
             else
-                this.pendingEvents.Value.Add(aggregateRoot, new List<IEvent>(evnts));
+                this.pendingEvents.Value.Add(aggregateRoot, new List<IEvent>(aggregateRoot.UncommittedEvents));
         }
         protected abstract void DoCommit();
         #endregion
@@ -91,6 +99,9 @@ namespace ByteartRetail.Domain.Repositories
         #endregion
 
         #region Public Properties
+        /// <summary>
+        /// 获取事件总线的实例。
+        /// </summary>
         public IBus Bus
         {
             get { return bus; }
@@ -187,7 +198,10 @@ namespace ByteartRetail.Domain.Repositories
                             .Value
                             .Values
                             .ToList()
-                            .ForEach(p => p.ForEach(q => bus.Publish(q)));
+                            .ForEach(p => p
+                                .OrderBy(q => q.TimeStamp)
+                                .ToList()
+                                .ForEach(r => bus.Publish(r)));
                     }
                 };
             if (this.bus.IsDistributedTransactionSupported)
