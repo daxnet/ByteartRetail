@@ -76,6 +76,11 @@ namespace ByteartRetail.Events.Bus
                     Parallel.ForEach<IEventHandler<TEvent>>(eventHandlers,
                         p => p.Handle(domainEvent));
                     break;
+                case EventDispatchMode.ParallelNoWait:
+                    Task.Factory.StartNew(() =>
+                        Parallel.ForEach<IEventHandler<TEvent>>(eventHandlers,
+                        p => p.Handle(domainEvent)));
+                    break;
                 default:
                     break;
             }

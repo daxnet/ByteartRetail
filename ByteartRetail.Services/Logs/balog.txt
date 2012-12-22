@@ -585,3 +585,13 @@ System.Collections.Generic.KeyNotFoundException: The given key was not present i
    at ByteartRetail.Domain.Repositories.RepositoryContext.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 197
    at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 172
    at DynamicModule.ns.Wrapped_IOrderService_7de737716a634c3e8a94fca000261808.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2012-12-22 13:11:01,985 [10] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: Cannot bind to the target method because its signature or security transparency is not compatible with that of the delegate type.
+   at System.Delegate.CreateDelegate(Type type, MethodInfo method, Boolean throwOnBindFailure)
+   at System.Delegate.CreateDelegate(Type type, MethodInfo method)
+   at ByteartRetail.Domain.Events.DomainEventAggregator.Publish[TEvent](TEvent evnt) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Events\DomainEventAggregator.cs:line 30
+   at ByteartRetail.Domain.Model.AggregateRoot.RaiseEvent[TEvent](TEvent evnt) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\AggregateRoot.cs:line 21
+   at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 128
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 199
+   at DynamicModule.ns.Wrapped_IOrderService_2f4e318967db4f1b94815beeea043149.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

@@ -16,6 +16,7 @@ using ByteartRetail.Infrastructure;
 
 namespace ByteartRetail.Services
 {
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
 	public class PostbackService : IPostbackService
 	{
 		private readonly IPostbackService postbackServiceImpl = ServiceLocator.Instance.GetService<IPostbackService>();
@@ -30,6 +31,7 @@ namespace ByteartRetail.Services
 				throw new FaultException<FaultData>(FaultData.CreateFromException(ex), FaultData.CreateFaultReason(ex));
 			}
 		}
+		public void Dispose() { postbackServiceImpl.Dispose(); }
 	}
 }
 

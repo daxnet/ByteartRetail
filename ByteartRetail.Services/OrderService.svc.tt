@@ -32,6 +32,7 @@ using ByteartRetail.Infrastructure;
 
 namespace ByteartRetail.Services
 {
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
 	public class OrderService : IOrderService
 	{
 		private readonly IOrderService orderServiceImpl = ServiceLocator.Instance.GetService<IOrderService>();
@@ -48,6 +49,6 @@ namespace ByteartRetail.Services
 			}
 		}
 <#}#>
-
+		public void Dispose() { orderServiceImpl.Dispose(); }
 	}
 }

@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
 using ByteartRetail.DataObjects;
 using ByteartRetail.Domain;
+using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories;
 using ByteartRetail.Domain.Services;
 using ByteartRetail.ServiceContracts;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 
 namespace ByteartRetail.Application.Implementation
 {
@@ -22,6 +25,19 @@ namespace ByteartRetail.Application.Implementation
         private readonly IUserRepository userRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
+        private readonly List<IDomainEventHandler<OrderDispatchedEvent>> orderDispatchedDomainEventHandlers = new List<IDomainEventHandler<OrderDispatchedEvent>>();
+
+        private readonly Action<OrderConfirmedEvent> orderConfirmedEventHandlerAction = e =>
+            {
+                SalesOrder salesOrder = e.Source as SalesOrder;
+                salesOrder.DateDelivered = e.ConfirmedDate;
+                salesOrder.Status = SalesOrderStatus.Delivered;
+            };
+
+        private readonly Action<OrderConfirmedEvent> orderConfirmedEventHandlerAction2 = _ =>
+            {
+                
+            };
         #endregion
 
         #region Ctor
@@ -40,7 +56,8 @@ namespace ByteartRetail.Application.Implementation
             IProductRepository productRepository,
             IUserRepository customerRepository,
             ISalesOrderRepository salesOrderRepository,
-            IDomainService domainService)
+            IDomainService domainService,
+            IDomainEventHandler<OrderDispatchedEvent>[] orderDispatchedDomainEventHandlers)
             :base(context)
         {
             this.shoppingCartRepository = shoppingCartRepository;
@@ -49,6 +66,25 @@ namespace ByteartRetail.Application.Implementation
             this.userRepository = customerRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
+            this.orderDispatchedDomainEventHandlers.AddRange(orderDispatchedDomainEventHandlers);
+
+            foreach (var handler in this.orderDispatchedDomainEventHandlers)
+                DomainEventAggregator.Subscribe<OrderDispatchedEvent>(handler);
+            DomainEventAggregator.Subscribe<OrderConfirmedEvent>(orderConfirmedEventHandlerAction);
+            DomainEventAggregator.Subscribe<OrderConfirmedEvent>(orderConfirmedEventHandlerAction2);
+        }
+        #endregion
+
+        #region Protected Methods
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                foreach (var handler in this.orderDispatchedDomainEventHandlers)
+                    DomainEventAggregator.Unsubscribe<OrderDispatchedEvent>(handler);
+                DomainEventAggregator.Unsubscribe<OrderConfirmedEvent>(orderConfirmedEventHandlerAction);
+                DomainEventAggregator.Unsubscribe<OrderConfirmedEvent>(orderConfirmedEventHandlerAction2);
+            }
         }
         #endregion
 
@@ -205,5 +241,7 @@ namespace ByteartRetail.Application.Implementation
         }
 
         #endregion
+
+        
     }
 }

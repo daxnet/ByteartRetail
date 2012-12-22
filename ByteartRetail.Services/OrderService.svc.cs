@@ -16,6 +16,7 @@ using ByteartRetail.Infrastructure;
 
 namespace ByteartRetail.Services
 {
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
 	public class OrderService : IOrderService
 	{
 		private readonly IOrderService orderServiceImpl = ServiceLocator.Instance.GetService<IOrderService>();
@@ -140,6 +141,6 @@ namespace ByteartRetail.Services
 				throw new FaultException<FaultData>(FaultData.CreateFromException(ex), FaultData.CreateFaultReason(ex));
 			}
 		}
-
+		public void Dispose() { orderServiceImpl.Dispose(); }
 	}
 }

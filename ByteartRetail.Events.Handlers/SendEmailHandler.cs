@@ -21,8 +21,8 @@ namespace ByteartRetail.Events.Handlers
                 // 此处仅为演示，所以邮件内容很简单。可以根据自己的实际情况做一些复杂的邮件功能，比如
                 // 使用邮件模板或者邮件风格等。
                 Utils.SendEmail(salesOrder.User.Email,
-                    "Your Order Has Been Dispatched.",
-                    string.Format("Your Order {0} has been dispatched on {1}. For more information please contact system administrator. Thank you for your order.",
+                    "您的订单已经发货",
+                    string.Format("您的订单 {0} 已于 {1} 发货。有关订单的更多信息，请与系统管理员联系。",
                     salesOrder.ID.ToString().ToUpper(), evnt.DispatchedDate));
             }
             catch (Exception ex)
@@ -44,8 +44,8 @@ namespace ByteartRetail.Events.Handlers
                 // 此处仅为演示，所以邮件内容很简单。可以根据自己的实际情况做一些复杂的邮件功能，比如
                 // 使用邮件模板或者邮件风格等。
                 Utils.SendEmail(salesOrder.User.Email,
-                    "Your Order Has Been Delivered and Confirmed.",
-                    string.Format("Your Order {0} has been delivered and confirmed on {1}. For more information please contact system administrator. Thank you for your order.",
+                    "您的订单已经确认收货",
+                    string.Format("您的订单 {0} 已于 {1} 确认收货。有关订单的更多信息，请与系统管理员联系。",
                     salesOrder.ID.ToString().ToUpper(), evnt.ConfirmedDate));
             }
             catch (Exception ex)

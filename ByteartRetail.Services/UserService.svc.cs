@@ -16,6 +16,7 @@ using ByteartRetail.Infrastructure;
 
 namespace ByteartRetail.Services
 {
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
 	public class UserService : IUserService
 	{
 		private readonly IUserService userServiceImpl = ServiceLocator.Instance.GetService<IUserService>();
@@ -217,6 +218,7 @@ namespace ByteartRetail.Services
 				throw new FaultException<FaultData>(FaultData.CreateFromException(ex), FaultData.CreateFaultReason(ex));
 			}
 		}
+		public void Dispose() { userServiceImpl.Dispose(); }
 	}
 }
 

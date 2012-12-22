@@ -13,6 +13,10 @@ namespace ByteartRetail.Events.Bus
         /// <summary>
         /// 表示需要将事件以并行的方式派发到每个已经注册的事件处理器上进行处理。
         /// </summary>
-        Parallel
+        Parallel,
+        /// <summary>
+        /// 表示需要将事件以并行的方式派发到每个已经注册的事件处理器上进行处理，并且不等待事件的派发完成。
+        /// </summary>
+        ParallelNoWait
     }
 }

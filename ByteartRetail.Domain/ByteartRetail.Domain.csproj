@@ -48,8 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainException.cs" />
+    <Compile Include="Events\ActionDelegatedDomainEventHandler.cs" />
     <Compile Include="Events\DomainEvent.cs" />
     <Compile Include="Events\DomainEventAggregator.cs" />
+    <Compile Include="Events\DomainEventHandler.cs" />
+    <Compile Include="Events\Handlers\OrderDispatchedDomainEventHandler.cs" />
+    <Compile Include="Events\Handlers\OrderDispatchedDomainEventUpdateStatusHandler.cs" />
     <Compile Include="Events\IDomainEvent.cs" />
     <Compile Include="Events\IDomainEventHandler.cs" />
     <Compile Include="Events\OrderConfirmedEvent.cs" />

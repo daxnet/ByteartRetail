@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ByteartRetail.Domain.Events
 {
@@ -9,7 +11,7 @@ namespace ByteartRetail.Domain.Events
     public static class DomainEventAggregator
     {
         #region Private Static Fields
-        private static readonly Dictionary<Type, List<Delegate>> domainEventHandlers = new Dictionary<Type, List<Delegate>>();
+        private static readonly Dictionary<Type, List<object>> domainEventHandlers = new Dictionary<Type, List<object>>();
         #endregion
 
         #region Public Static Methods
@@ -23,12 +25,25 @@ namespace ByteartRetail.Domain.Events
         {
             if (domainEventHandlers.ContainsKey(typeof(TEvent)))
             {
-                var delegates = domainEventHandlers[typeof(TEvent)];
-                foreach (var del in delegates)
+                var handlers = domainEventHandlers[typeof(TEvent)];
+                foreach (var handler in handlers)
                 {
-                    Action<TEvent> action = (Action<TEvent>)Delegate.CreateDelegate(typeof(Action<>).MakeGenericType(typeof(TEvent)), del.Method);
-                    action(evnt);
+                    (handler as IDomainEventHandler<TEvent>).Handle(evnt);
                 }
+            }
+        }
+        /// <summary>
+        /// 发布一个领域事件。
+        /// </summary>
+        /// <typeparam name="TEvent">需要发布的领域事件的类型。</typeparam>
+        /// <param name="evnt">需要发布的领域事件。</param>
+        public static async Task PublishAsync<TEvent>(TEvent evnt)
+            where TEvent : class, IDomainEvent
+        {
+            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            {
+                var handlers = domainEventHandlers[typeof(TEvent)];
+                await Task.WhenAll(handlers.Select(p => (p as IDomainEventHandler<TEvent>).HandleAsync(evnt)));
             }
         }
         /// <summary>
@@ -39,7 +54,32 @@ namespace ByteartRetail.Domain.Events
         public static void Subscribe<TEvent>(IDomainEventHandler<TEvent> domainEventHandler)
             where TEvent : class, IDomainEvent
         {
-            Subscribe<TEvent>(p => domainEventHandler.Handle(p));
+            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            {
+                var handlers = domainEventHandlers[typeof(TEvent)];
+                if (!handlers.Exists(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler)))
+                    handlers.Add(domainEventHandler);
+            }
+            else
+                domainEventHandlers.Add(typeof(TEvent), new List<object> { domainEventHandler });
+        }
+        /// <summary>
+        /// 解除领域事件处理器对指定领域事件的订阅。
+        /// </summary>
+        /// <typeparam name="TEvent">需要解除订阅的领域事件的类型。</typeparam>
+        /// <param name="domainEventHandler">需要解除订阅的领域事件处理器。</param>
+        public static void Unsubscribe<TEvent>(IDomainEventHandler<TEvent> domainEventHandler)
+            where TEvent : class, IDomainEvent
+        {
+            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            {
+                var handlers = domainEventHandlers[typeof(TEvent)];
+                if (handlers.Exists(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler)))
+                {
+                    var handlerToRemove = handlers.First(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler));
+                    handlers.Remove(handlerToRemove);
+                }
+            }
         }
         /// <summary>
         /// 订阅一个领域事件。
@@ -49,14 +89,17 @@ namespace ByteartRetail.Domain.Events
         public static void Subscribe<TEvent>(Action<TEvent> domainEventHandlerAction)
             where TEvent : class, IDomainEvent
         {
-            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
-            {
-                List<Delegate> delegates = domainEventHandlers[typeof(TEvent)];
-                if (!delegates.Contains(domainEventHandlerAction))
-                    delegates.Add(domainEventHandlerAction);
-            }
-            else
-                domainEventHandlers.Add(typeof(TEvent), new List<Delegate> { domainEventHandlerAction });
+            Subscribe<TEvent>(new ActionDelegatedDomainEventHandler<TEvent>(domainEventHandlerAction));
+        }
+        /// <summary>
+        /// 解除领域事件处理委托对指定领域事件的订阅。
+        /// </summary>
+        /// <typeparam name="TEvent">需要解除订阅的领域事件的类型。</typeparam>
+        /// <param name="domainEventHandler">需要解除订阅的领域事件处理委托。</param>
+        public static void Unsubscribe<TEvent>(Action<TEvent> domainEventHandlerAction)
+            where TEvent : class, IDomainEvent
+        {
+            Unsubscribe<TEvent>(new ActionDelegatedDomainEventHandler<TEvent>(domainEventHandlerAction));
         }
         #endregion
     }

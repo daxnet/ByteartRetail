@@ -4,6 +4,7 @@ using ByteartRetail.Domain;
 using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories;
+using ByteartRetail.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace ByteartRetail.Application
     /// <summary>
     /// 表示应用层服务的抽象类。
     /// </summary>
-    public abstract class ApplicationService
+    public abstract class ApplicationService : DisposableObject
     {
         #region Private Fields
         private readonly IRepositoryContext context;
@@ -53,6 +54,10 @@ namespace ByteartRetail.Application
                 return true;
             Guid guid = new Guid(s);
             return guid == Guid.Empty;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
         }
 
         /// <summary>
@@ -267,5 +272,7 @@ namespace ByteartRetail.Application
             Mapper.CreateMap<ShoppingCartItemDataObject, ShoppingCartItem>();
         }
         #endregion
+
+        
     }
 }
