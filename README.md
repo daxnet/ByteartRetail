@@ -50,8 +50,9 @@ ByteartRetail.sln包含以下项目：
 - ByteartRetail.Application：应用层
 - ByteartRetail.DataObjects：数据传输对象及其类型扩展
 - ByteartRetail.Domain：领域层
-- ByteartRetail.Domain.Events：领域事件相关的事件处理器和事件聚合器的定义
 - ByteartRetail.Domain.Repositories：仓储的具体实现（目前是基于Entity Framework 5.0的实现）
+- ByteartRetail.Events：事件相关的事件处理器、事件总线和事件聚合器的定义
+- ByteartRetail.Events.Handlers：具体的事件处理器定义
 - ByteartRetail.Infrastructure：基础结构层
 - ByteartRetail.Infrastructure.Caching：位于基础结构层的缓存实现
 - ByteartRetail.ServiceContracts：基于WCF的服务契约

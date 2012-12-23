@@ -2,17 +2,19 @@
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByteartRetail.Events.Handlers
 {
+    /// <summary>
+    /// 表示向外发送邮件的事件处理器。
+    /// </summary>
     public class SendEmailHandler : IEventHandler<OrderDispatchedEvent>, IEventHandler<OrderConfirmedEvent>
     {
         #region IEventHandler<OrderDispatchedEvent> Members
-
+        /// <summary>
+        /// 处理给定的事件。
+        /// </summary>
+        /// <param name="evnt">需要处理的事件。</param>
         public void Handle(OrderDispatchedEvent evnt)
         {
             try
@@ -35,7 +37,10 @@ namespace ByteartRetail.Events.Handlers
         #endregion
 
         #region IEventHandler<OrderConfirmedEvent> Members
-
+        /// <summary>
+        /// 处理给定的事件。
+        /// </summary>
+        /// <param name="evnt">需要处理的事件。</param>
         public void Handle(OrderConfirmedEvent evnt)
         {
             try
