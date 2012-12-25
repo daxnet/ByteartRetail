@@ -26,6 +26,13 @@
     <Content Include="AssemblyDependencies.dgml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="EventAggregator.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EventAggregator.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>EventAggregator.componentdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\ByteartRetail.Design.uml">
       <SubType>Content</SubType>
     </Content>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="eea76619-4b25-49b1-a227-7ff348c5b053" name="EventAggregator" linkedPackageId="30505d42-222d-482b-b918-fab091b8e4a1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b22213f8-9adf-4d93-9b6d-59ac72dd466c">
+      <profileInstance Id="339373e4-255f-4143-9f64-23b0ff78f550" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2eafac47-4bef-431d-8d88-0944e49cd547">
+      <profileInstance Id="81d690ff-d113-485c-9a8b-0a0c006fdc2a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="fcc6984d-b81c-4770-81be-b540c3137f0f" name="Event Aggregator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a783fc47-d9d9-4626-af6a-f7c24325d217" />
+        <ownedAttributesInternal>
+          <part Id="48978aa1-ee5b-4691-b976-31dd7dac6e4b" name="OrderDispatchedEvent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="4ce1bff3-3762-4ed4-a313-98ae4725931d" />
+            <type_NamedElement>
+              <componentMoniker Id="c536bc43-e5ac-4aa6-b1db-71be09d14739" LastKnownName="Domain Event" />
+            </type_NamedElement>
+          </part>
+          <part Id="828b0819-6fd6-4ac6-92ba-f164049184ec" name="OrderConfirmedEvent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="true">
+            <elementDefinition Id="10f2df38-d76b-4978-9626-2cfba09e2a8f" />
+            <type_NamedElement>
+              <componentMoniker Id="1ee9f57f-6cd4-4636-89b2-1156d2f8edd2" LastKnownName="Domain Event" />
+            </type_NamedElement>
+          </part>
+          <providedInterface Id="8f454e2a-8e1b-452a-ad3a-0c4bdea2c374" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="14a238b0-8df2-4067-8641-0711fb54ff72" />
+            <type_NamedElement>
+              <interfaceMoniker Id="0520429f-c227-486d-bb3b-98e20c274b23" LastKnownName="Subscribe" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="d0637f95-a0c3-44ac-b08f-f9d77a62b341" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="7f9b61c8-7e3f-494b-9d02-2ffbc555f4af" />
+            <type_NamedElement>
+              <interfaceMoniker Id="b5be6d5e-a61b-4a46-8cf6-22009e2076fe" LastKnownName="Unsubscribe" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="92ecb4be-f02e-4bb9-874c-9dc6fa787755" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="75afe9ae-b1ea-49ec-afe0-062cc63066de" />
+            <type_NamedElement>
+              <interfaceMoniker Id="3114b0fe-83cb-4650-a78e-9e17b9ab5240" LastKnownName="Subscribe" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="721bff2b-4ff1-4aa4-b461-31d892277510" name="Port4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="79af71a8-66e3-41dc-9ea2-acd7b285efc7" />
+            <type_NamedElement>
+              <interfaceMoniker Id="20bbcacc-2fda-4faf-8751-12fc92b6910a" LastKnownName="Publish" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="c536bc43-e5ac-4aa6-b1db-71be09d14739" name="Domain Event" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f2fd1d51-52a1-4c57-ac58-d03389c4324e" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="1ee9f57f-6cd4-4636-89b2-1156d2f8edd2" name="Domain Event" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5a50aac2-74a8-4441-b2d5-17d781d50324" />
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="0520429f-c227-486d-bb3b-98e20c274b23" name="Subscribe" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0d2bba7d-a2e0-4ddd-847d-7069edcc93d9" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="b5be6d5e-a61b-4a46-8cf6-22009e2076fe" name="Unsubscribe" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b8865ab-80e9-442d-adf2-4455cbb8c2b2" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="89585437-5be9-461c-ab61-37846b9eba0c" name="OrderDispatchedDomainEventHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="92a333ff-6ef0-4284-a8a3-e353e9211649" />
+        <suppliersInternal>
+          <dependency Id="6cab6f94-da5b-43dd-9bcb-748a69d487ab">
+            <providedInterfaceMoniker Id="8f454e2a-8e1b-452a-ad3a-0c4bdea2c374" LastKnownName="Port1" />
+            <elementDefinition Id="72f6ac05-76c4-4dea-9e54-2de2fe9da2c5" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="abb6e38f-a42f-4c5e-803d-5836f3aa83c7" name="OrderConfirmedActionDelegate" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="419ea782-a6a6-41c8-bedc-2a3a9aa88e28" />
+        <suppliersInternal>
+          <dependency Id="22d6bbfa-2a2a-4f28-aee6-3fba2b02547d">
+            <providedInterfaceMoniker Id="92ecb4be-f02e-4bb9-874c-9dc6fa787755" LastKnownName="Port3" />
+            <elementDefinition Id="ee4e9f9b-1b87-4303-a6dc-0e56ccf2b173" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="3114b0fe-83cb-4650-a78e-9e17b9ab5240" name="Subscribe" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e8cd7208-5228-49f9-b4cd-4ec806dc1239" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="20bbcacc-2fda-4faf-8751-12fc92b6910a" name="Publish" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c078933b-3b7c-4f7f-9ecc-25e64dc3bf0e" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="660ab04b-0ea0-4124-a4fa-3f77efd7ee90" name="Domain Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6e507420-45c0-48a6-b29b-41116fcd9db7" />
+        <suppliersInternal>
+          <dependency Id="60518a2e-66f2-4b91-8237-f8bac6ed3447">
+            <providedInterfaceMoniker Id="721bff2b-4ff1-4aa4-b461-31d892277510" LastKnownName="Port4" />
+            <elementDefinition Id="97bd2f6f-fd95-4d9e-8359-71e94b31aa09" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="30505d42-222d-482b-b918-fab091b8e4a1" name="ByteartRetail.Design">
+    <elementDefinition Id="25dba410-6ab1-4b39-8acc-3689cd1ff95b" />
+  </package>
+</componentModel>
