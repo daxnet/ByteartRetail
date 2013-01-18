@@ -260,3 +260,7 @@ C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Mi
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Services\obj\Debug\ByteartRetail.Services.csprojResolveAssemblyReference.cache
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Services\obj\Debug\ByteartRetail.Services.dll
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Services\obj\Debug\ByteartRetail.Services.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Microsoft.ApplicationServer.Caching.Client.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Microsoft.ApplicationServer.Caching.Core.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Microsoft.WindowsFabric.Common.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Services\bin\Microsoft.WindowsFabric.Data.Common.dll

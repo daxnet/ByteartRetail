@@ -24,7 +24,7 @@ namespace ByteartRetail.ServiceContracts
             "GetProductsWithPagination", 
             "GetFeaturedProducts",
             "GetProductsForCategoryWithPagination",
-            "GetProducts")]
+            "GetProducts", "GetProductByID")]
         ProductDataObjectList CreateProducts(ProductDataObjectList productDataObjects);
         /// <summary>
         /// 创建商品分类。
@@ -46,7 +46,7 @@ namespace ByteartRetail.ServiceContracts
             "GetProductsWithPagination", 
             "GetFeaturedProducts",
             "GetProductsForCategoryWithPagination",
-            "GetProducts")]
+            "GetProducts", "GetProductByID")]
         ProductDataObjectList UpdateProducts(ProductDataObjectList productDataObjects);
         /// <summary>
         /// 更新商品分类。
@@ -67,7 +67,7 @@ namespace ByteartRetail.ServiceContracts
             "GetProductsWithPagination", 
             "GetFeaturedProducts",
             "GetProductsForCategoryWithPagination",
-            "GetProducts")]
+            "GetProducts", "GetProductByID")]
         void DeleteProducts(IDList productIDs);
         /// <summary>
         /// 删除商品分类。
@@ -124,6 +124,7 @@ namespace ByteartRetail.ServiceContracts
         /// <returns>商品信息。</returns>
         [OperationContract]
         [FaultContract(typeof(FaultData))]
+        [Caching(CachingMethod.Get)]
         ProductDataObject GetProductByID(Guid id, QuerySpec spec);
         /// <summary>
         /// 获取所有的商品信息。
