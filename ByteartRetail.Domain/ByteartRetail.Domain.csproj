@@ -52,8 +52,11 @@
     <Compile Include="Events\DomainEvent.cs" />
     <Compile Include="Events\DomainEventAggregator.cs" />
     <Compile Include="Events\DomainEventHandler.cs" />
+    <Compile Include="Events\GetUserSalesOrdersEvent.cs" />
+    <Compile Include="Events\Handlers\GetUserSalesOrdersDomainEventHandler.cs" />
+    <Compile Include="Events\Handlers\OrderConfirmedDomainEventHandler.cs" />
     <Compile Include="Events\Handlers\OrderDispatchedDomainEventHandler.cs" />
-    <Compile Include="Events\Handlers\OrderDispatchedDomainEventUpdateStatusHandler.cs" />
+    <Compile Include="Events\HandlesAsynchronouslyAttribute.cs" />
     <Compile Include="Events\IDomainEvent.cs" />
     <Compile Include="Events\IDomainEventHandler.cs" />
     <Compile Include="Events\OrderConfirmedEvent.cs" />

@@ -9,13 +9,6 @@ namespace ByteartRetail.Domain
     /// </summary>
     public interface IAggregateRoot : IEntity
     {
-        /// <summary>
-        /// 获取所有未经提交的领域事件。
-        /// </summary>
-        IEnumerable<IDomainEvent> UncommittedEvents { get; }
-        /// <summary>
-        /// 当完成领域事件向外部系统提交后，清除所有已产生的领域事件。
-        /// </summary>
-        void ClearEvents();
+
     }
 }

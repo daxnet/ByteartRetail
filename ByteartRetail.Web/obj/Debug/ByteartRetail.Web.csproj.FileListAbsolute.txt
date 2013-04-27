@@ -130,6 +130,46 @@ F:\Projects\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.ServiceLocat
 F:\Projects\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.csprojResolveAssemblyReference.cache
 F:\Projects\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.dll
 F:\Projects\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Antlr3.Runtime.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.DataObjects.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Infrastructure.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.ServiceContracts.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Newtonsoft.Json.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Helpers.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Mvc.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Razor.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\log4net.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.DataObjects.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Infrastructure.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.ServiceContracts.pdb
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Newtonsoft.Json.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Helpers.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Mvc.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Razor.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Interception.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\log4net.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.csprojResolveAssemblyReference.cache
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.dll
+C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.pdb
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.pdb
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Antlr3.Runtime.dll
@@ -172,43 +212,3 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.csprojResolveAssemblyReference.cache
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.pdb
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Web.pdb
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Antlr3.Runtime.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.DataObjects.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Infrastructure.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.ServiceContracts.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Newtonsoft.Json.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Net.Http.Formatting.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Helpers.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.WebHost.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Mvc.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Razor.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Razor.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Interception.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\log4net.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.DataObjects.pdb
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.Infrastructure.pdb
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\ByteartRetail.ServiceContracts.pdb
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Newtonsoft.Json.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Net.Http.Formatting.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Helpers.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Http.WebHost.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Mvc.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Razor.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.WebPages.Razor.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Interception.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\log4net.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft.Practices.Unity.Configuration.xml
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.csprojResolveAssemblyReference.cache
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.dll
-C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.pdb

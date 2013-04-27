@@ -10,37 +10,8 @@ namespace ByteartRetail.Domain.Model
     /// </summary>
     public abstract class AggregateRoot : IAggregateRoot
     {
-        #region Private Fields
-        private readonly List<IDomainEvent> events = new List<IDomainEvent>();
-        #endregion
-
         #region Protected Fields
         protected Guid id;
-        #endregion
-
-        #region Protected Methods
-        /// <summary>
-        /// 产生领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要产生的领域事件的类型。</typeparam>
-        /// <param name="evnt">需要产生的领域事件。</param>
-        protected virtual void RaiseEvent<TEvent>(TEvent evnt)
-            where TEvent : class, IDomainEvent
-        {
-            DomainEventAggregator.Publish<TEvent>(evnt);
-            events.Add(evnt);
-        }
-        /// <summary>
-        /// 产生领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要产生的领域事件的类型。</typeparam>
-        /// <param name="evnt">需要产生的领域事件。</param>
-        protected virtual async void RaiseEventAsync<TEvent>(TEvent evnt)
-            where TEvent : class, IDomainEvent
-        {
-            await DomainEventAggregator.PublishAsync<TEvent>(evnt);
-            events.Add(evnt);
-        }
         #endregion
 
         #region Public Methods
@@ -84,23 +55,6 @@ namespace ByteartRetail.Domain.Model
             set { id = value; }
         }
 
-        #endregion
-
-        #region IAggregateRoot Members
-        /// <summary>
-        /// 获取所有未经提交的领域事件。
-        /// </summary>
-        public IEnumerable<IDomainEvent> UncommittedEvents
-        {
-            get { return events; }
-        }
-        /// <summary>
-        /// 当完成领域事件向外部系统提交后，清除所有已产生的领域事件。
-        /// </summary>
-        public void ClearEvents()
-        {
-            events.Clear();
-        }
         #endregion
     }
 }

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 using ByteartRetail.Infrastructure;
 using System.Threading;
-using ByteartRetail.Events.Bus;
 using System.Transactions;
 using ByteartRetail.Domain.Events;
 using ByteartRetail.Events;
@@ -22,14 +21,12 @@ namespace ByteartRetail.Domain.Repositories
         private readonly ThreadLocal<Dictionary<Guid, object>> localDeletedCollection = new ThreadLocal<Dictionary<Guid, object>>(() => new Dictionary<Guid, object>());
         private readonly ThreadLocal<bool> localCommitted = new ThreadLocal<bool>(() => true);
         private readonly ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>> pendingEvents = new ThreadLocal<Dictionary<IAggregateRoot, List<IEvent>>>(() => new Dictionary<IAggregateRoot, List<IEvent>>());
-        private readonly IBus bus;
         private readonly object sync = new object();
         #endregion
 
         #region Ctor
-        public RepositoryContext(IBus bus)
+        public RepositoryContext()
         {
-            this.bus = bus;
         }
         #endregion
 
@@ -57,20 +54,9 @@ namespace ByteartRetail.Domain.Repositories
                 this.localDeletedCollection.Dispose();
                 this.localModifiedCollection.Dispose();
                 this.localNewCollection.Dispose();
-                this.bus.Dispose();
             }
         }
-        /// <summary>
-        /// 将指定的聚合根中所保存的未提交的事件收集到RepositoryContext的本地存储中。
-        /// </summary>
-        /// <param name="aggregateRoot">聚合根。</param>
-        protected void DumpPendingEvents(IAggregateRoot aggregateRoot)
-        {
-            if (this.pendingEvents.Value.ContainsKey(aggregateRoot))
-                this.pendingEvents.Value[aggregateRoot].AddRange(aggregateRoot.UncommittedEvents);
-            else
-                this.pendingEvents.Value.Add(aggregateRoot, new List<IEvent>(aggregateRoot.UncommittedEvents));
-        }
+
         protected abstract void DoCommit();
         #endregion
 
@@ -95,16 +81,6 @@ namespace ByteartRetail.Domain.Repositories
         protected IEnumerable<KeyValuePair<Guid, object>> DeletedCollection
         {
             get { return localDeletedCollection.Value; }
-        }
-        #endregion
-
-        #region Public Properties
-        /// <summary>
-        /// 获取事件总线的实例。
-        /// </summary>
-        public IBus Bus
-        {
-            get { return bus; }
         }
         #endregion
 
@@ -189,35 +165,7 @@ namespace ByteartRetail.Domain.Repositories
         /// </summary>
         public virtual void Commit()
         {
-            Action funcCommit = () =>
-                {
-                    this.DoCommit();
-                    lock (sync)
-                    {
-                        this.pendingEvents
-                            .Value
-                            .Values
-                            .ToList()
-                            .ForEach(p => p
-                                .OrderBy(q => q.TimeStamp)
-                                .ToList()
-                                .ForEach(r => bus.Publish(r)));
-                    }
-                };
-            if (this.bus.IsDistributedTransactionSupported)
-            {
-                using (var transactionScope = new TransactionScope())
-                {
-                    funcCommit();
-                }
-            }
-            else
-                funcCommit();
-            this.pendingEvents
-                .Value
-                .Keys
-                .ToList()
-                .ForEach(p => p.ClearEvents());
+            this.DoCommit();
         }
         /// <summary>
         /// Rolls-back the UnitOfWork.

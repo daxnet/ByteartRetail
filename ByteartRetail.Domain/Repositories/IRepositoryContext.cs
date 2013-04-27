@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteartRetail.Infrastructure;
+using System;
 
 namespace ByteartRetail.Domain.Repositories
 {

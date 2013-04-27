@@ -178,6 +178,10 @@ namespace ByteartRetail.ServiceContracts
         [Caching(CachingMethod.Get)]
         RoleDataObject GetUserRoleByUserName(string userName);
 
+        [OperationContract]
+        [FaultContract(typeof(FaultData))]
+        SalesOrderDataObjectList GetSalesOrders(string userName);
+
         #endregion
     }
 }

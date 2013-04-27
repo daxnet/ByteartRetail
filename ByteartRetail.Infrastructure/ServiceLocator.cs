@@ -70,6 +70,11 @@ namespace ByteartRetail.Infrastructure
         {
             return container.Resolve<T>();
         }
+
+        public IEnumerable<T> ResolveAll<T>()
+        {
+            return container.ResolveAll<T>();
+        }
         /// <summary>
         /// Gets the service instance with the given type by using the overrided arguments.
         /// </summary>

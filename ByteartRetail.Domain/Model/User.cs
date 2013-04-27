@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ByteartRetail.Domain.Events;
+using System;
+using System.Collections.Generic;
 
 namespace ByteartRetail.Domain.Model
 {
@@ -114,6 +116,20 @@ namespace ByteartRetail.Domain.Model
         {
             get { return deliveryAddress; }
             set { deliveryAddress = value; }
+        }
+
+        public IEnumerable<SalesOrder> SalesOrders
+        {
+            get
+            {
+                IEnumerable<SalesOrder> result = null;
+                DomainEvent.Publish<GetUserSalesOrdersEvent>(new GetUserSalesOrdersEvent(this),
+                    (e, ret, exc) =>
+                    {
+                        result = e.SalesOrders;
+                    });
+                return result;
+            }
         }
         #endregion
 

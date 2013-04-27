@@ -218,6 +218,17 @@ namespace ByteartRetail.Services
 				throw new FaultException<FaultData>(FaultData.CreateFromException(ex), FaultData.CreateFaultReason(ex));
 			}
 		}
+		public SalesOrderDataObjectList GetSalesOrders(String userName)
+		{
+			try
+			{
+				return userServiceImpl.GetSalesOrders(userName);
+			}
+			catch(Exception ex)
+			{
+				throw new FaultException<FaultData>(FaultData.CreateFromException(ex), FaultData.CreateFaultReason(ex));
+			}
+		}
 		public void Dispose() { userServiceImpl.Dispose(); }
 	}
 }

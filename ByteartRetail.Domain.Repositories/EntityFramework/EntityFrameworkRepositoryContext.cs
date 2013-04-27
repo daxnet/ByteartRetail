@@ -1,5 +1,4 @@
 ﻿using ByteartRetail.Domain.Model;
-using ByteartRetail.Events.Bus;
 using System.Data.Entity;
 using System.Threading;
 
@@ -9,25 +8,22 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
     {
         private readonly ThreadLocal<ByteartRetailDbContext> localCtx = new ThreadLocal<ByteartRetailDbContext>(() => new ByteartRetailDbContext());
 
-        public EntityFrameworkRepositoryContext(IBus bus) : base(bus) { }
+        public EntityFrameworkRepositoryContext() { }
 
         public override void RegisterDeleted<TAggregateRoot>(TAggregateRoot obj)
         {
-            this.DumpPendingEvents(obj);
             localCtx.Value.Set<TAggregateRoot>().Remove(obj);
             Committed = false;
         }
 
         public override void RegisterModified<TAggregateRoot>(TAggregateRoot obj)
         {
-            this.DumpPendingEvents(obj);
             localCtx.Value.Entry<TAggregateRoot>(obj).State = System.Data.EntityState.Modified;
             Committed = false;
         }
 
         public override void RegisterNew<TAggregateRoot>(TAggregateRoot obj)
         {
-            this.DumpPendingEvents(obj);
             localCtx.Value.Set<TAggregateRoot>().Add(obj);
             Committed = false;
         }

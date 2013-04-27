@@ -140,33 +140,6 @@ F:\Projects\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practice
 F:\Projects\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.csprojResolveAssemblyReference.cache
 F:\Projects\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.dll
 F:\Projects\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.csprojResolveAssemblyReference.cache
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\AutoMapper.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.DataObjects.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Domain.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Infrastructure.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.ServiceContracts.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\log4net.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.ServiceLocation.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.DataObjects.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Domain.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Infrastructure.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\AutoMapper.xml
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Interception.xml
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.xml
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\log4net.xml
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.ServiceContracts.pdb
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.dll
-C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.pdb
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.dll
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.pdb
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\AutoMapper.dll
@@ -192,3 +165,30 @@ C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.csprojResolveAssemblyReference.cache
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.dll
 C:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Application.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\AutoMapper.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.DataObjects.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Domain.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Infrastructure.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.ServiceContracts.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\log4net.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.DataObjects.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Domain.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Events.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.Infrastructure.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\ByteartRetail.ServiceContracts.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\AutoMapper.xml
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\log4net.xml
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.csprojResolveAssemblyReference.cache
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.dll
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\obj\Debug\ByteartRetail.Application.pdb

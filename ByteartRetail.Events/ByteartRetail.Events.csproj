@@ -39,12 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus\EventDispatcherBus.cs" />
     <Compile Include="Bus\IBus.cs" />
-    <Compile Include="Bus\EventDispatcher.cs" />
-    <Compile Include="Bus\EventDispatchMode.cs" />
     <Compile Include="IEvent.cs" />
-    <Compile Include="Bus\IEventDispatcher.cs" />
     <Compile Include="Handlers\IEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

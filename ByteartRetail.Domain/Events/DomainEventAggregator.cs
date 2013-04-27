@@ -8,99 +8,239 @@ namespace ByteartRetail.Domain.Events
     /// <summary>
     /// 表示领域事件聚合器。
     /// </summary>
-    public static class DomainEventAggregator
+    internal sealed class DomainEventAggregator
     {
-        #region Private Static Fields
-        private static readonly Dictionary<Type, List<object>> domainEventHandlers = new Dictionary<Type, List<object>>();
-        #endregion
+        private static readonly DomainEventAggregator instance = new DomainEventAggregator();
+        private readonly object sync = new object();
+        private readonly Dictionary<Type, List<object>> domainEventHandlers = new Dictionary<Type, List<object>>();
 
-        #region Public Static Methods
-        /// <summary>
-        /// 发布一个领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要发布的领域事件的类型。</typeparam>
-        /// <param name="evnt">需要发布的领域事件。</param>
-        public static void Publish<TEvent>(TEvent evnt)
-            where TEvent : class, IDomainEvent
+        static DomainEventAggregator() { }
+        private DomainEventAggregator() { }
+
+        public static DomainEventAggregator Instance
         {
-            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            get { return instance; }
+        }
+
+        public void Subscribe<TDomainEvent>(IDomainEventHandler<TDomainEvent> domainEventHandler)
+            where TDomainEvent : class, IDomainEvent
+        {
+            lock (sync)
             {
-                var handlers = domainEventHandlers[typeof(TEvent)];
-                foreach (var handler in handlers)
+                var eventType = typeof(TDomainEvent);
+                if (domainEventHandlers.ContainsKey(eventType))
                 {
-                    (handler as IDomainEventHandler<TEvent>).Handle(evnt);
+                    var handlers = domainEventHandlers[eventType];
+                    if (handlers != null)
+                    {
+                        if (!handlers.Exists(deh => deh.Equals(domainEventHandler)))
+                            handlers.Add(domainEventHandler);
+                    }
+                    else
+                    {
+                        handlers = new List<object>();
+                        handlers.Add(domainEventHandler);
+                    }
+                }
+                else
+                    domainEventHandlers.Add(eventType, new List<object> { domainEventHandler });
+            }
+        }
+
+        public void Subscribe<TDomainEvent>(IEnumerable<IDomainEventHandler<TDomainEvent>> domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandler in domainEventHandlers)
+                Subscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public void Subscribe<TDomainEvent>(params IDomainEventHandler<TDomainEvent>[] domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandler in domainEventHandlers)
+                Subscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public void Subscribe<TDomainEvent>(Action<TDomainEvent> domainEventHandlerFunc)
+            where TDomainEvent : class, IDomainEvent
+        {
+            Subscribe<TDomainEvent>(new ActionDelegatedDomainEventHandler<TDomainEvent>(domainEventHandlerFunc));
+        }
+
+        public void Subscribe<TDomainEvent>(IEnumerable<Func<TDomainEvent, bool>> domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandlerFunc in domainEventHandlerFuncs)
+                Subscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public void Subscribe<TDomainEvent>(params Func<TDomainEvent, bool>[] domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandlerFunc in domainEventHandlerFuncs)
+                Subscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public void Unsubscribe<TDomainEvent>(IDomainEventHandler<TDomainEvent> domainEventHandler)
+            where TDomainEvent : class, IDomainEvent
+        {
+            lock (sync)
+            {
+                var eventType = typeof(TDomainEvent);
+                if (domainEventHandlers.ContainsKey(eventType))
+                {
+                    var handlers = domainEventHandlers[eventType];
+                    if (handlers != null &&
+                        handlers.Exists(deh => deh.Equals(domainEventHandler)))
+                    {
+                        var handlerToRemove = handlers.First(deh => deh.Equals(domainEventHandler));
+                        handlers.Remove(handlerToRemove);
+                    }
                 }
             }
         }
-        /// <summary>
-        /// 发布一个领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要发布的领域事件的类型。</typeparam>
-        /// <param name="evnt">需要发布的领域事件。</param>
-        public static async Task PublishAsync<TEvent>(TEvent evnt)
-            where TEvent : class, IDomainEvent
+
+        public void Unsubscribe<TDomainEvent>(IEnumerable<IDomainEventHandler<TDomainEvent>> domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
         {
-            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            foreach (var domainEventHandler in domainEventHandlers)
+                Unsubscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public void Unsubscribe<TDomainEvent>(params IDomainEventHandler<TDomainEvent>[] domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandler in domainEventHandlers)
+                Unsubscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public void Unsubscribe<TDomainEvent>(Action<TDomainEvent> domainEventHandlerFunc)
+            where TDomainEvent : class, IDomainEvent
+        {
+            Unsubscribe<TDomainEvent>(new ActionDelegatedDomainEventHandler<TDomainEvent>(domainEventHandlerFunc));
+        }
+
+        public void Unsubscribe<TDomainEvent>(IEnumerable<Func<TDomainEvent, bool>> domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandlerFunc in domainEventHandlerFuncs)
+                Unsubscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public void Unsubscribe<TDomainEvent>(params Func<TDomainEvent, bool>[] domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            foreach (var domainEventHandlerFunc in domainEventHandlerFuncs)
+                Unsubscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public void UnsubscribeAll<TDomainEvent>()
+            where TDomainEvent : class, IDomainEvent
+        {
+            lock (sync)
             {
-                var handlers = domainEventHandlers[typeof(TEvent)];
-                await Task.WhenAll(handlers.Select(p => (p as IDomainEventHandler<TEvent>).HandleAsync(evnt)));
+                var eventType = typeof(TDomainEvent);
+                if (domainEventHandlers.ContainsKey(eventType))
+                {
+                    var handlers = domainEventHandlers[eventType];
+                    if (handlers != null)
+                        handlers.Clear();
+                }
             }
         }
-        /// <summary>
-        /// 订阅一个领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要订阅的领域事件的类型。</typeparam>
-        /// <param name="domainEventHandler">订阅了指定类型领域事件的事件处理器。</param>
-        public static void Subscribe<TEvent>(IDomainEventHandler<TEvent> domainEventHandler)
-            where TEvent : class, IDomainEvent
+
+        public void UnsubscribeAll()
         {
-            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            lock (sync)
             {
-                var handlers = domainEventHandlers[typeof(TEvent)];
-                if (!handlers.Exists(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler)))
-                    handlers.Add(domainEventHandler);
+                domainEventHandlers.Clear();
+            }
+        }
+
+        public IEnumerable<IDomainEventHandler<TDomainEvent>> GetSubscriptions<TDomainEvent>()
+            where TDomainEvent : class, IDomainEvent
+        {
+            var eventType = typeof(TDomainEvent);
+            if (domainEventHandlers.ContainsKey(eventType))
+            {
+                var handlers = domainEventHandlers[eventType];
+                if (handlers != null)
+                    return handlers.Select(p => p as IDomainEventHandler<TDomainEvent>).ToList();
+                else
+                    return null;
             }
             else
-                domainEventHandlers.Add(typeof(TEvent), new List<object> { domainEventHandler });
+                return null;
         }
-        /// <summary>
-        /// 解除领域事件处理器对指定领域事件的订阅。
-        /// </summary>
-        /// <typeparam name="TEvent">需要解除订阅的领域事件的类型。</typeparam>
-        /// <param name="domainEventHandler">需要解除订阅的领域事件处理器。</param>
-        public static void Unsubscribe<TEvent>(IDomainEventHandler<TEvent> domainEventHandler)
-            where TEvent : class, IDomainEvent
+
+        public void Publish<TDomainEvent>(TDomainEvent domainEvent)
+            where TDomainEvent : class, IDomainEvent
         {
-            if (domainEventHandlers.ContainsKey(typeof(TEvent)))
+            if (domainEvent == null)
+                throw new ArgumentNullException("domainEvent");
+            var eventType = domainEvent.GetType();
+            if (domainEventHandlers.ContainsKey(eventType) &&
+                domainEventHandlers[eventType] != null &&
+                domainEventHandlers[eventType].Count > 0)
             {
-                var handlers = domainEventHandlers[typeof(TEvent)];
-                if (handlers.Exists(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler)))
+                var handlers = domainEventHandlers[eventType];
+                foreach (var handler in handlers)
                 {
-                    var handlerToRemove = handlers.First(deh => (deh as IDomainEventHandler<TEvent>).Equals(domainEventHandler));
-                    handlers.Remove(handlerToRemove);
+                    var domainEventHandler = handler as IDomainEventHandler<TDomainEvent>;
+                    if (domainEventHandler.GetType().IsDefined(typeof(HandlesAsynchronouslyAttribute), false))
+                    {
+                        Task.Factory.StartNew((o) => domainEventHandler.Handle((TDomainEvent)o), domainEvent);
+                    }
+                    else
+                    {
+                        domainEventHandler.Handle(domainEvent);
+                    }
                 }
             }
         }
-        /// <summary>
-        /// 订阅一个领域事件。
-        /// </summary>
-        /// <typeparam name="TEvent">需要订阅的领域事件的类型。</typeparam>
-        /// <param name="domainEventHandlerAction">订阅了指定类型领域事件的事件处理函数委托。</param>
-        public static void Subscribe<TEvent>(Action<TEvent> domainEventHandlerAction)
-            where TEvent : class, IDomainEvent
+
+        public void Publish<TDomainEvent>(TDomainEvent domainEvent, Action<TDomainEvent, bool, Exception> callback, TimeSpan? timeout = null)
+            where TDomainEvent : class, IDomainEvent
         {
-            Subscribe<TEvent>(new ActionDelegatedDomainEventHandler<TEvent>(domainEventHandlerAction));
+            if (domainEvent == null)
+                throw new ArgumentNullException("domainEvent");
+            var eventType = domainEvent.GetType();
+            if (domainEventHandlers.ContainsKey(eventType) &&
+                domainEventHandlers[eventType] != null &&
+                domainEventHandlers[eventType].Count > 0)
+            {
+                var handlers = domainEventHandlers[eventType];
+                List<Task> tasks = new List<Task>();
+                try
+                {
+                    foreach (var handler in handlers)
+                    {
+                        var domainEventHandler = handler as IDomainEventHandler<TDomainEvent>;
+                        if (domainEventHandler.GetType().IsDefined(typeof(HandlesAsynchronouslyAttribute), false))
+                        {
+                            tasks.Add(Task.Factory.StartNew((o) => domainEventHandler.Handle((TDomainEvent)o), domainEvent));
+                        }
+                        else
+                        {
+                            domainEventHandler.Handle(domainEvent);
+                        }
+                    }
+                    if (tasks.Count > 0)
+                    {
+                        if (timeout == null)
+                            Task.WaitAll(tasks.ToArray());
+                        else
+                            Task.WaitAll(tasks.ToArray(), timeout.Value);
+                    }
+                    callback(domainEvent, true, null);
+                }
+                catch (Exception ex)
+                {
+                    callback(domainEvent, false, ex);
+                }
+            }
+            else
+                callback(domainEvent, false, null);
         }
-        /// <summary>
-        /// 解除领域事件处理委托对指定领域事件的订阅。
-        /// </summary>
-        /// <typeparam name="TEvent">需要解除订阅的领域事件的类型。</typeparam>
-        /// <param name="domainEventHandler">需要解除订阅的领域事件处理委托。</param>
-        public static void Unsubscribe<TEvent>(Action<TEvent> domainEventHandlerAction)
-            where TEvent : class, IDomainEvent
-        {
-            Unsubscribe<TEvent>(new ActionDelegatedDomainEventHandler<TEvent>(domainEventHandlerAction));
-        }
-        #endregion
     }
 }

@@ -115,7 +115,7 @@ namespace ByteartRetail.Domain.Model
         {
             //this.status = SalesOrderStatus.Delivered;
             //this.dateDelivered = DateTime.Now;
-            RaiseEvent<OrderConfirmedEvent>(new OrderConfirmedEvent(this) { ConfirmedDate = DateTime.Now });
+            DomainEvent.Publish<OrderConfirmedEvent>(new OrderConfirmedEvent(this) { ConfirmedDate = DateTime.Now });
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace ByteartRetail.Domain.Model
         {
             //this.status = SalesOrderStatus.Dispatched;
             //this.dateDispatched = DateTime.Now;
-            RaiseEvent<OrderDispatchedEvent>(new OrderDispatchedEvent(this) { DispatchedDate = DateTime.Now });
+            DomainEvent.Publish<OrderDispatchedEvent>(new OrderDispatchedEvent(this) { DispatchedDate = DateTime.Now });
         }
         #endregion
 

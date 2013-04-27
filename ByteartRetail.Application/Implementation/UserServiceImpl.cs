@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ByteartRetail.DataObjects;
+using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories;
 using ByteartRetail.Domain.Services;
@@ -22,6 +23,7 @@ namespace ByteartRetail.Application.Implementation
         private readonly IShoppingCartRepository shoppingCartRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
+        private readonly IDomainEventHandler<GetUserSalesOrdersEvent>[] getUserSalesOrdersEventHandlers;
         #endregion
 
         #region Ctor
@@ -41,7 +43,8 @@ namespace ByteartRetail.Application.Implementation
             IRoleRepository roleRepository,
             IShoppingCartRepository shoppingCartRepository,
             ISalesOrderRepository salesOrderRepository,
-            IDomainService domainService)
+            IDomainService domainService,
+            IDomainEventHandler<GetUserSalesOrdersEvent>[] getUserSalesOrdersEventHandlers)
             : base(context)
         {
             this.userRepository = userRepository;
@@ -50,8 +53,18 @@ namespace ByteartRetail.Application.Implementation
             this.shoppingCartRepository = shoppingCartRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
+            this.getUserSalesOrdersEventHandlers = getUserSalesOrdersEventHandlers;
+            DomainEvent.Subscribe<GetUserSalesOrdersEvent>(getUserSalesOrdersEventHandlers);
         }
         #endregion
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                DomainEvent.UnsubscribeAll<GetUserSalesOrdersEvent>();
+            }
+        }
 
         #region IUserService Members
         /// <summary>
@@ -427,6 +440,19 @@ namespace ByteartRetail.Application.Implementation
             var role = userRoleRepository.GetRoleForUser(user);
             return Mapper.Map<Role, RoleDataObject>(role);
         }
+
+        public SalesOrderDataObjectList GetSalesOrders(string userName)
+        {
+            User user = userRepository.GetUserByName(userName);
+            var salesOrders = user.SalesOrders;
+            SalesOrderDataObjectList result = new SalesOrderDataObjectList();
+            foreach (var so in salesOrders)
+            {
+                result.Add(Mapper.Map<SalesOrder, SalesOrderDataObject>(so));
+            }
+            return result;
+        }
+
         #endregion
     }
 }

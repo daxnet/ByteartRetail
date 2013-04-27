@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ByteartRetail.Infrastructure;
+using System;
+using System.Collections.Generic;
 
 namespace ByteartRetail.Domain.Events
 {
@@ -46,6 +48,110 @@ namespace ByteartRetail.Domain.Events
         public IEntity Source
         {
             get { return source; }
+        }
+        #endregion
+
+        #region Public Static Methods
+
+        public static void Subscribe<TDomainEvent>(IDomainEventHandler<TDomainEvent> domainEventHandler)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public static void Subscribe<TDomainEvent>(IEnumerable<IDomainEventHandler<TDomainEvent>> domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandlers);
+        }
+
+        public static void Subscribe<TDomainEvent>(params IDomainEventHandler<TDomainEvent>[] domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandlers);
+        }
+
+        public static void Subscribe<TDomainEvent>(Func<TDomainEvent, bool> domainEventHandlerFunc)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public static void Subscribe<TDomainEvent>(IEnumerable<Func<TDomainEvent, bool>> domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandlerFuncs);
+        }
+
+        public static void Subscribe<TDomainEvent>(params Func<TDomainEvent, bool>[] domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Subscribe<TDomainEvent>(domainEventHandlerFuncs);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(IDomainEventHandler<TDomainEvent> domainEventHandler)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandler);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(IEnumerable<IDomainEventHandler<TDomainEvent>> domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandlers);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(params IDomainEventHandler<TDomainEvent>[] domainEventHandlers)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandlers);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(Func<TDomainEvent, bool> domainEventHandlerFunc)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandlerFunc);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(IEnumerable<Func<TDomainEvent, bool>> domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandlerFuncs);
+        }
+
+        public static void Unsubscribe<TDomainEvent>(params Func<TDomainEvent, bool>[] domainEventHandlerFuncs)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Unsubscribe<TDomainEvent>(domainEventHandlerFuncs);
+        }
+
+        public static IEnumerable<IDomainEventHandler<TDomainEvent>> GetSubscriptions<TDomainEvent>()
+            where TDomainEvent : class, IDomainEvent
+        {
+            return DomainEventAggregator.Instance.GetSubscriptions<TDomainEvent>();
+        }
+
+        public static void UnsubscribeAll<TDomainEvent>()
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.UnsubscribeAll<TDomainEvent>();
+        }
+
+        public static void UnsubscribeAll()
+        {
+            DomainEventAggregator.Instance.UnsubscribeAll();
+        }
+
+        public static void Publish<TDomainEvent>(TDomainEvent domainEvent)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Publish<TDomainEvent>(domainEvent);
+        }
+
+        public static void Publish<TDomainEvent>(TDomainEvent domainEvent, Action<TDomainEvent, bool, Exception> callback, TimeSpan? timeout = null)
+            where TDomainEvent : class, IDomainEvent
+        {
+            DomainEventAggregator.Instance.Publish<TDomainEvent>(domainEvent, callback, timeout);
         }
         #endregion
     }

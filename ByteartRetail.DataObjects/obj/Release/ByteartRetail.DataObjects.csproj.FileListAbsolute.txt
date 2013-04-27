@@ -1,5 +1,0 @@
-C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Release\ByteartRetail.DataObjects.dll
-C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.DataObjects\bin\Release\ByteartRetail.DataObjects.pdb
-C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Release\ByteartRetail.DataObjects.csprojResolveAssemblyReference.cache
-C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Release\ByteartRetail.DataObjects.dll
-C:\Users\chenqiny\Documents\Visual Studio 2012\Projects\ByteartRetail\ByteartRetail.DataObjects\obj\Release\ByteartRetail.DataObjects.pdb

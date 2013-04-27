@@ -1,8 +1,8 @@
 ﻿using ByteartRetail.Application;
 using ByteartRetail.Domain.Events;
+using ByteartRetail.Domain.Events.Handlers;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories.EntityFramework;
-using ByteartRetail.Events.Bus;
 using ByteartRetail.Infrastructure;
 using System;
 
@@ -15,18 +15,7 @@ namespace ByteartRetail.Services
         {
             ByteartRetailDbContextInitailizer.Initialize();
             ApplicationService.Initialize();
-            //DomainEventAggregator.Subscribe<OrderDispatchedEvent>(p =>
-            //    {
-            //        SalesOrder salesOrder = p.Source as SalesOrder;
-            //        salesOrder.DateDispatched = p.DispatchedDate;
-            //        salesOrder.Status = SalesOrderStatus.Dispatched;
-            //    });
-            //DomainEventAggregator.Subscribe<OrderConfirmedEvent>(p =>
-            //    {
-            //        SalesOrder salesOrder = p.Source as SalesOrder;
-            //        salesOrder.DateDelivered = p.ConfirmedDate;
-            //        salesOrder.Status = SalesOrderStatus.Delivered;
-            //    });
+            
             log4net.Config.XmlConfigurator.Configure();
         }
 
