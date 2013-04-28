@@ -152,6 +152,10 @@ namespace ByteartRetail.Domain.Repositories
 
         #region IUnitOfWork Members
         /// <summary>
+        /// 获得一个<see cref="System.Boolean"/>值，该值表示当前的Unit Of Work是否支持Microsoft分布式事务处理机制。
+        /// </summary>
+        public abstract bool DistributedTransactionSupported { get; }
+        /// <summary>
         /// Gets a <see cref="System.Boolean"/> value which indicates whether the UnitOfWork
         /// was committed.
         /// </summary>

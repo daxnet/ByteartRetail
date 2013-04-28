@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace ByteartRetail.Domain.Events
 {
     [Serializable]
-    public class GetUserSalesOrdersEvent : DomainEvent
+    public class GetUserOrdersEvent : DomainEvent
     {
-        public GetUserSalesOrdersEvent(IEntity source) : base(source) { }
+        public GetUserOrdersEvent(IEntity source) : base(source) { }
 
         public IEnumerable<SalesOrder> SalesOrders { get; set; }
 

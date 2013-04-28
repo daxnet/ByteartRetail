@@ -28,6 +28,11 @@ namespace ByteartRetail.Domain.Repositories.EntityFramework
             Committed = false;
         }
 
+        public override bool DistributedTransactionSupported
+        {
+            get { return true; }
+        }
+
         public override void Rollback()
         {
             Committed = false;

@@ -3,23 +3,23 @@
 namespace ByteartRetail.Domain.Events
 {
     /// <summary>
-    /// 表示订单确认的领域事件。
+    /// 表示当针对某销售订单进行发货时所产生的领域事件。
     /// </summary>
-    public class OrderConfirmedEvent : DomainEvent
+    public class DispatchOrderEvent : DomainEvent
     {
         #region Ctor
         /// <summary>
-        /// 初始化一个新的<c>OrderConfirmedEvent</c>类型的实例。
+        /// 初始化一个新的<c>OrderDispatchedEvent</c>类型的实例。
         /// </summary>
         /// <param name="source">产生领域事件的事件源对象。</param>
-        public OrderConfirmedEvent(IEntity source) : base(source) { }
+        public DispatchOrderEvent(IEntity source) : base(source) { }
         #endregion
 
         #region Public Properties
         /// <summary>
-        /// 获取或设置订单确认的日期。
+        /// 获取或设置订单发货的日期。
         /// </summary>
-        public DateTime ConfirmedDate { get; set; }
+        public DateTime DispatchedDate { get; set; }
         #endregion
     }
 }

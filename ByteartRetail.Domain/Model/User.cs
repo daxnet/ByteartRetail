@@ -123,7 +123,7 @@ namespace ByteartRetail.Domain.Model
             get
             {
                 IEnumerable<SalesOrder> result = null;
-                DomainEvent.Publish<GetUserSalesOrdersEvent>(new GetUserSalesOrdersEvent(this),
+                DomainEvent.Publish<GetUserOrdersEvent>(new GetUserOrdersEvent(this),
                     (e, ret, exc) =>
                     {
                         result = e.SalesOrders;

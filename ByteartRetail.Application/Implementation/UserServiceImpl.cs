@@ -5,6 +5,7 @@ using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories;
 using ByteartRetail.Domain.Services;
 using ByteartRetail.Domain.Specifications;
+using ByteartRetail.Events;
 using ByteartRetail.ServiceContracts;
 using System;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace ByteartRetail.Application.Implementation
         private readonly IShoppingCartRepository shoppingCartRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
-        private readonly IDomainEventHandler<GetUserSalesOrdersEvent>[] getUserSalesOrdersEventHandlers;
+        private readonly IEventAggregator eventAggregator;
         #endregion
 
         #region Ctor
@@ -44,7 +45,7 @@ namespace ByteartRetail.Application.Implementation
             IShoppingCartRepository shoppingCartRepository,
             ISalesOrderRepository salesOrderRepository,
             IDomainService domainService,
-            IDomainEventHandler<GetUserSalesOrdersEvent>[] getUserSalesOrdersEventHandlers)
+            IEventAggregator aggregator)
             : base(context)
         {
             this.userRepository = userRepository;
@@ -53,8 +54,7 @@ namespace ByteartRetail.Application.Implementation
             this.shoppingCartRepository = shoppingCartRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
-            this.getUserSalesOrdersEventHandlers = getUserSalesOrdersEventHandlers;
-            DomainEvent.Subscribe<GetUserSalesOrdersEvent>(getUserSalesOrdersEventHandlers);
+            this.eventAggregator = aggregator;
         }
         #endregion
 
@@ -62,7 +62,6 @@ namespace ByteartRetail.Application.Implementation
         {
             if (disposing)
             {
-                DomainEvent.UnsubscribeAll<GetUserSalesOrdersEvent>();
             }
         }
 
@@ -446,9 +445,12 @@ namespace ByteartRetail.Application.Implementation
             User user = userRepository.GetUserByName(userName);
             var salesOrders = user.SalesOrders;
             SalesOrderDataObjectList result = new SalesOrderDataObjectList();
-            foreach (var so in salesOrders)
+            if (salesOrders != null)
             {
-                result.Add(Mapper.Map<SalesOrder, SalesOrderDataObject>(so));
+                foreach (var so in salesOrders)
+                {
+                    result.Add(Mapper.Map<SalesOrder, SalesOrderDataObject>(so));
+                }
             }
             return result;
         }

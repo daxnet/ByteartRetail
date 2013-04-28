@@ -25,8 +25,6 @@ namespace ByteartRetail.Application.Implementation
         private readonly IUserRepository userRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
-        private readonly IDomainEventHandler<OrderDispatchedEvent>[] orderDispatchedEventHandlers;
-        private readonly IDomainEventHandler<OrderConfirmedEvent>[] orderConfirmedEventHandlers;
         #endregion
 
         #region Ctor
@@ -46,8 +44,8 @@ namespace ByteartRetail.Application.Implementation
             IUserRepository customerRepository,
             ISalesOrderRepository salesOrderRepository,
             IDomainService domainService,
-            IDomainEventHandler<OrderDispatchedEvent>[] orderDispatchedEventHandlers,
-            IDomainEventHandler<OrderConfirmedEvent>[] orderConfirmedEventHandlers)
+            IDomainEventHandler<DispatchOrderEvent>[] orderDispatchedEventHandlers,
+            IDomainEventHandler<ConfirmOrderEvent>[] orderConfirmedEventHandlers)
             :base(context)
         {
             this.shoppingCartRepository = shoppingCartRepository;
@@ -56,10 +54,6 @@ namespace ByteartRetail.Application.Implementation
             this.userRepository = customerRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
-            this.orderDispatchedEventHandlers = orderDispatchedEventHandlers;
-            this.orderConfirmedEventHandlers = orderConfirmedEventHandlers;
-            DomainEvent.Subscribe<OrderDispatchedEvent>(orderDispatchedEventHandlers);
-            DomainEvent.Subscribe<OrderConfirmedEvent>(orderConfirmedEventHandlers);
         }
         #endregion
 
@@ -68,8 +62,6 @@ namespace ByteartRetail.Application.Implementation
         {
             if (disposing)
             {
-                DomainEvent.Unsubscribe<OrderDispatchedEvent>(this.orderDispatchedEventHandlers);
-                DomainEvent.Unsubscribe<OrderConfirmedEvent>(this.orderConfirmedEventHandlers);
             }
         }
         #endregion

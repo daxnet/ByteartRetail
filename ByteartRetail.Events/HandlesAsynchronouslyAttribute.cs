@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ByteartRetail.Domain.Events
+namespace ByteartRetail.Events
 {
     /// <summary>
     /// Represents that the event handlers applied with this attribute

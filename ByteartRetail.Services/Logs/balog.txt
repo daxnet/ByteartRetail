@@ -595,3 +595,8 @@ System.ArgumentException: Cannot bind to the target method because its signature
    at ByteartRetail.Domain.Model.SalesOrder.Dispatch() in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Model\SalesOrder.cs:line 128
    at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 199
    at DynamicModule.ns.Wrapped_IOrderService_2f4e318967db4f1b94815beeea043149.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-28 16:24:03,642 [11] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Application.Implementation.UserServiceImpl.GetSalesOrders(String userName) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 444
+   at DynamicModule.ns.Wrapped_IUserService_a41cb7bf55024211ab42f63088da916a.<GetSalesOrders_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

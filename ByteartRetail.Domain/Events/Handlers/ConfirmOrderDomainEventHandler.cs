@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ByteartRetail.Domain.Events.Handlers
 {
-    public class OrderConfirmedDomainEventHandler : DomainEventHandler<OrderConfirmedEvent>
+    public class ConfirmOrderDomainEventHandler : IDomainEventHandler<ConfirmOrderEvent>
     {
-        public override void Handle(OrderConfirmedEvent evnt)
+        public void Handle(ConfirmOrderEvent evnt)
         {
             SalesOrder salesOrder = evnt.Source as SalesOrder;
             salesOrder.DateDelivered = evnt.ConfirmedDate;
