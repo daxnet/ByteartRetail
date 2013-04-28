@@ -212,3 +212,4 @@ C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\Microsoft
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.csprojResolveAssemblyReference.cache
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.dll
 C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\obj\Debug\ByteartRetail.Web.pdb
+C:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Web\bin\System.Web.Optimization.dll
