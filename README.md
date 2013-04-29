@@ -12,16 +12,26 @@ Byteart Retail所使用的技术
 ==========================
 Byteart Retail项目使用或涵盖了以下Microsoft技术：
 - Microsoft Entity Framework 5 Code First（包括Repository模式的实现、枚举类型的支持以及分页功能的实现）
-- ASP.NET MVC 3/4
+- ASP.NET MVC 4
 - WCF
 - Microsoft Patterns & Practices Unity Application Block
 - Microsoft Patterns & Practices Unity Policy Injection Extension
 - Microsoft Patterns & Practices Caching Application Block
-- Microsoft Appfabrid Caching
+- Microsoft Appfabric Caching
 - 使用AutoMapper实现DTO与领域对象映射
 - T4自动化代码生成
 - 基于Unity的AOP拦截
 - 使用log4net记录拦截的Exception详细信息
+
+Byteart Retail所演示的模式和设计思想
+==================================
+Byteart Retail项目演示或涵盖了以下模式和设计思想：
+- 实体、值对象、领域服务
+- 规约、仓储、仓储上下文
+- 领域事件、事件聚合器、事件总线
+- 事务协调器
+- 服务定位器模式、工作单元模式、分离接口模式、数据传输对象模式、层超类型模式、传输对象组装器模式
+
 
 运行Byteart Retail案例
 ======================
