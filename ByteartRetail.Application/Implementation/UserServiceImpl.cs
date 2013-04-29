@@ -24,7 +24,6 @@ namespace ByteartRetail.Application.Implementation
         private readonly IShoppingCartRepository shoppingCartRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
-        private readonly IEventAggregator eventAggregator;
         #endregion
 
         #region Ctor
@@ -44,8 +43,7 @@ namespace ByteartRetail.Application.Implementation
             IRoleRepository roleRepository,
             IShoppingCartRepository shoppingCartRepository,
             ISalesOrderRepository salesOrderRepository,
-            IDomainService domainService,
-            IEventAggregator aggregator)
+            IDomainService domainService)
             : base(context)
         {
             this.userRepository = userRepository;
@@ -54,7 +52,6 @@ namespace ByteartRetail.Application.Implementation
             this.shoppingCartRepository = shoppingCartRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
-            this.eventAggregator = aggregator;
         }
         #endregion
 

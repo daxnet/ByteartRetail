@@ -14,9 +14,9 @@ namespace ByteartRetail.Infrastructure.Transactions
             foreach (var arg in args)
                 ret = ret && arg.DistributedTransactionSupported;
             if (ret)
-                return new DistributedTransactionCoordinator();
+                return new DistributedTransactionCoordinator(args);
             else
-                return new SuppressedTransactionCoordinator();
+                return new SuppressedTransactionCoordinator(args);
         }
     }
 }

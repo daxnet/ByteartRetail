@@ -10,19 +10,17 @@ namespace ByteartRetail.Domain.Events
     /// <summary>
     /// 表示继承于该类的类型为领域事件。
     /// </summary>
+    [Serializable]
     public abstract class DomainEvent : IDomainEvent
     {
         #region Private Fields
         private readonly IEntity source;
-        private readonly Guid id = Guid.NewGuid();
-        private readonly DateTime timeStamp = DateTime.UtcNow;
+        private Guid id = Guid.NewGuid();
+        private DateTime timeStamp = DateTime.UtcNow;
         #endregion
 
         #region Ctor
-        /// <summary>
-        /// 初始化一个新的<c>DomainEvent</c>类型的实例。
-        /// </summary>
-        /// <param name="source">产生领域事件的事件源对象。</param>
+        public DomainEvent() { }
         public DomainEvent(IEntity source)
         {
             this.source = source;
@@ -36,6 +34,7 @@ namespace ByteartRetail.Domain.Events
         public Guid ID
         {
             get { return id; }
+            set { id = value; }
         }
         /// <summary>
         /// 获取产生领域事件的时间戳。
@@ -43,11 +42,9 @@ namespace ByteartRetail.Domain.Events
         public DateTime TimeStamp
         {
             get { return timeStamp; }
+            set { timeStamp = value; }
         }
 
-        /// <summary>
-        /// 获取产生领域事件的事件源对象。
-        /// </summary>
         public IEntity Source
         {
             get { return source; }

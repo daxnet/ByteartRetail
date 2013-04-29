@@ -12,6 +12,7 @@ namespace ByteartRetail.Events.Bus
     /// </summary>
     public interface IBus : IUnitOfWork, IDisposable
     {
+        Guid ID { get; }
         /// <summary>
         /// Publishes the specified message to the bus.
         /// </summary>

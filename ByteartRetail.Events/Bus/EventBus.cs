@@ -15,6 +15,7 @@ namespace ByteartRetail.Events.Bus
     /// </summary>
     public class EventBus : DisposableObject, IEventBus
     {
+        private readonly Guid id = Guid.NewGuid();
         private readonly ThreadLocal<Queue<object>> messageQueue = new ThreadLocal<Queue<object>>(() => new Queue<object>());
         private readonly IEventAggregator aggregator;
         private ThreadLocal<bool> committed = new ThreadLocal<bool>(() => true);
@@ -41,7 +42,7 @@ namespace ByteartRetail.Events.Bus
             }
         }
 
-        #region IBus<IEvent> Members
+        #region IBus Members
 
         public void Publish<TMessage>(TMessage message)
             where TMessage : class, IEvent
@@ -92,6 +93,11 @@ namespace ByteartRetail.Events.Bus
         public void Rollback()
         {
             Clear();
+        }
+
+        public Guid ID
+        {
+            get { return id; }
         }
 
         #endregion

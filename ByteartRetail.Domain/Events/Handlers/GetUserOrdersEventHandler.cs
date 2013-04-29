@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace ByteartRetail.Domain.Events.Handlers
 {
     [HandlesAsynchronously]
-    public class GetUserOrdersDomainEventHandler : IDomainEventHandler<GetUserOrdersEvent>
+    public class GetUserOrdersEventHandler : IDomainEventHandler<GetUserOrdersEvent>
     {
         private readonly ISalesOrderRepository salesOrderRepository;
 
-        public GetUserOrdersDomainEventHandler(ISalesOrderRepository salesOrderRepository)
+        public GetUserOrdersEventHandler(ISalesOrderRepository salesOrderRepository)
         {
             this.salesOrderRepository = salesOrderRepository;
         }

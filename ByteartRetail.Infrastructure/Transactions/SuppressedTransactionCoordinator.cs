@@ -6,35 +6,12 @@ using System.Threading.Tasks;
 
 namespace ByteartRetail.Infrastructure.Transactions
 {
-    internal sealed class SuppressedTransactionCoordinator : DisposableObject, ITransactionCoordinator
+    internal sealed class SuppressedTransactionCoordinator : TransactionCoordinator
     {
-        protected override void Dispose(bool disposing)
+        public SuppressedTransactionCoordinator(params IUnitOfWork[] unitOfWorks)
+            : base(unitOfWorks)
         {
-            
         }
 
-        #region IUnitOfWork Members
-
-        public bool DistributedTransactionSupported
-        {
-            get { return false; }
-        }
-
-        public bool Committed
-        {
-            get { return true;  }
-        }
-
-        public void Commit()
-        {
-            // do nothing
-        }
-
-        public void Rollback()
-        {
-            // do nothing
-        }
-
-        #endregion
     }
 }

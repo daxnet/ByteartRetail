@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,14 +44,13 @@
     <Compile Include="Bus\EventBus.cs" />
     <Compile Include="Bus\IBus.cs" />
     <Compile Include="Bus\IEventBus.cs" />
-    <Compile Include="Event.cs" />
+    <Compile Include="Bus\MSMQBusOptions.cs" />
+    <Compile Include="Bus\MSMQEventBus.cs" />
     <Compile Include="EventAggregator.cs" />
     <Compile Include="HandlesAsynchronouslyAttribute.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="IEventAggregator.cs" />
     <Compile Include="IEventHandler.cs" />
-    <Compile Include="OrderConfirmedEvent.cs" />
-    <Compile Include="OrderDispatchedEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

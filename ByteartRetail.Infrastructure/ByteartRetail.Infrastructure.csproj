@@ -91,7 +91,25 @@
     <Compile Include="Transactions\DistributedTransactionCoordinator.cs" />
     <Compile Include="Transactions\ITransactionCoordinator.cs" />
     <Compile Include="Transactions\SuppressedTransactionCoordinator.cs" />
+    <Compile Include="Transactions\TransactionCoordinator.cs" />
     <Compile Include="Transactions\TransactionCoordinatorFactory.cs" />
+    <Compile Include="UnityExtensions\GlobalSuppressions.cs" />
+    <Compile Include="UnityExtensions\UnityBehaviorExtensionElement.cs" />
+    <Compile Include="UnityExtensions\UnityCallContextInitializer.cs" />
+    <Compile Include="UnityExtensions\UnityContextChannelExtension.cs" />
+    <Compile Include="UnityExtensions\UnityContextChannelLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\UnityInstanceContextExtension.cs" />
+    <Compile Include="UnityExtensions\UnityInstanceContextInitializer.cs" />
+    <Compile Include="UnityExtensions\UnityInstanceContextLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\UnityInstanceProvider.cs" />
+    <Compile Include="UnityExtensions\UnityOperationContextExtension.cs" />
+    <Compile Include="UnityExtensions\UnityOperationContextLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\UnityOperationContextMessageInspector.cs" />
+    <Compile Include="UnityExtensions\UnityServiceBehavior.cs" />
+    <Compile Include="UnityExtensions\UnityServiceHostBaseExtension.cs" />
+    <Compile Include="UnityExtensions\UnityServiceHostBaseLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\UnityWcfExtension.cs" />
+    <Compile Include="UnityExtensions\UnityWcfLifetimeManager.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WcfPerRequestLifetimeManager.cs" />
   </ItemGroup>

@@ -172,10 +172,6 @@ namespace ByteartRetail.Application.Implementation
                 var salesOrder = salesOrderRepository.GetByKey(orderID);
                 salesOrder.Confirm();
                 salesOrderRepository.Update(salesOrder);
-                Context.Commit();
-                OrderConfirmedEvent evnt = new OrderConfirmedEvent(salesOrder.User.Email, salesOrder.ID, salesOrder.DateDelivered.Value);
-                bus.Publish(evnt);
-                bus.Commit();
                 coordinator.Commit();
             }
         }
@@ -187,10 +183,6 @@ namespace ByteartRetail.Application.Implementation
                 var salesOrder = salesOrderRepository.GetByKey(orderID);
                 salesOrder.Dispatch();
                 salesOrderRepository.Update(salesOrder);
-                Context.Commit();
-                OrderDispatchedEvent evnt = new OrderDispatchedEvent(salesOrder.User.Email, salesOrder.ID, salesOrder.DateDispatched.Value);
-                bus.Publish(evnt);
-                bus.Commit();
                 coordinator.Commit();
             }
         }

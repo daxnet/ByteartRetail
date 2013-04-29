@@ -7,9 +7,14 @@ using System.Transactions;
 
 namespace ByteartRetail.Infrastructure.Transactions
 {
-    internal sealed class DistributedTransactionCoordinator : DisposableObject, ITransactionCoordinator
+    internal sealed class DistributedTransactionCoordinator : TransactionCoordinator
     {
         private readonly TransactionScope scope = new TransactionScope();
+
+        public DistributedTransactionCoordinator(params IUnitOfWork[] unitOfWorks)
+            : base(unitOfWorks)
+        {
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -17,28 +22,12 @@ namespace ByteartRetail.Infrastructure.Transactions
                 scope.Dispose();
         }
 
-        #region IUnitOfWork Members
 
-        public bool DistributedTransactionSupported
+        public override void Commit()
         {
-            get { return true; }
-        }
-
-        public bool Committed
-        {
-            get { return true; }
-        }
-
-        public void Commit()
-        {
+            base.Commit();
             scope.Complete();
         }
 
-        public void Rollback()
-        {
-            
-        }
-
-        #endregion
     }
 }

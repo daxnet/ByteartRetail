@@ -621,3 +621,81 @@ System.NullReferenceException: Object reference not set to an instance of an obj
    at ByteartRetail.Events.Bus.EventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\EventBus.cs:line 75
    at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
    at DynamicModule.ns.Wrapped_IOrderService_b80b18cbedb444e6a8ccadfe206f6c5d.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 17:54:17,812 [6] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage(Object message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 72
+   at ByteartRetail.Events.Bus.MSMQEventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 163
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_addec7c4c4ea4312b8cc9636e23e1a62.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 17:56:54,577 [14] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage(Object message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 72
+   at ByteartRetail.Events.Bus.MSMQEventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 160
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_d48d5626fef546e78b1a7de8a2b01434.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 17:58:46,124 [12] ERROR ByteartRetail.Logger - Exception caught
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage(Object message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 72
+   at ByteartRetail.Events.Bus.MSMQEventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 160
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_2420c79a8d7141a1b27789cf2a35e062.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 18:00:42,057 [14] ERROR ByteartRetail.Logger - Exception caught
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: ByteartRetail.Domain.Events.DispatchOrderEvent cannot be serialized because it does not have a parameterless constructor.
+   at System.Xml.Serialization.TypeDesc.CheckSupported()
+   at System.Xml.Serialization.TypeScope.GetTypeDesc(Type type, MemberInfo source, Boolean directReference, Boolean throwOnError)
+   at System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
+   at System.Messaging.XmlMessageFormatter.Write(Message message, Object obj)
+   at System.Messaging.Message.AdjustToSend()
+   at System.Messaging.MessageQueue.SendInternal(Object obj, MessageQueueTransaction internalTransaction, MessageQueueTransactionType transactionType)
+   at System.Messaging.MessageQueue.Send(Object obj, MessageQueueTransactionType transactionType)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage[TMessage](TMessage message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 66
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage(Object message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 79
+   at ByteartRetail.Events.Bus.MSMQEventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 160
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_13d4a762b3f7466487b9ec11733dd598.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 18:00:54,830 [14] ERROR ByteartRetail.Logger - Exception caught
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: ByteartRetail.Domain.Events.DispatchOrderEvent cannot be serialized because it does not have a parameterless constructor.
+   at System.Xml.Serialization.TypeDesc.CheckSupported()
+   at System.Xml.Serialization.TypeScope.GetTypeDesc(Type type, MemberInfo source, Boolean directReference, Boolean throwOnError)
+   at System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
+   at System.Messaging.XmlMessageFormatter.Write(Message message, Object obj)
+   at System.Messaging.Message.AdjustToSend()
+   at System.Messaging.MessageQueue.SendInternal(Object obj, MessageQueueTransaction internalTransaction, MessageQueueTransactionType transactionType)
+   at System.Messaging.MessageQueue.Send(Object obj, MessageQueueTransactionType transactionType)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage[TMessage](TMessage message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 66
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at ByteartRetail.Events.Bus.MSMQEventBus.SendMessage(Object message, MessageQueueTransaction transaction) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 79
+   at ByteartRetail.Events.Bus.MSMQEventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\MSMQEventBus.cs:line 160
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_13d4a762b3f7466487b9ec11733dd598.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 20:43:47,783 [11] ERROR ByteartRetail.Logger - Exception caught
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at ByteartRetail.Domain.Repositories.EntityFramework.EntityFrameworkRepositoryContext.DoCommit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\EntityFramework\EntityFrameworkRepositoryContext.cs:line 48
+   at ByteartRetail.Domain.Repositories.RepositoryContext.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\RepositoryContext.cs:line 172
+   at ByteartRetail.Infrastructure.Transactions.TransactionCoordinator.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\Transactions\TransactionCoordinator.cs:line 43
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 186
+   at DynamicModule.ns.Wrapped_IOrderService_b642c4f8ecce401ab681ebf43b4da749.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
