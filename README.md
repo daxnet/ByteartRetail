@@ -17,6 +17,7 @@ Byteart Retail项目使用或涵盖了以下Microsoft技术：
 - Microsoft Patterns & Practices Unity Application Block
 - Microsoft Patterns & Practices Unity Policy Injection Extension
 - Microsoft Patterns & Practices Caching Application Block
+- Microsoft Appfabrid Caching
 - 使用AutoMapper实现DTO与领域对象映射
 - T4自动化代码生成
 - 基于Unity的AOP拦截
@@ -26,11 +27,13 @@ Byteart Retail项目使用或涵盖了以下Microsoft技术：
 ======================
 先决条件
 --------
-从V3开始，本案例使用Visual Studio 2012开发，因此，要编译本案例的源代码程序，则需要首先安装Visual Studio 2012。由于数据库采用了SQL Server Express LocalDB，因此，这部分组件也需要正确安装（如果是选择完整安装Visual Studio 2012，则可以忽略LocalDB的安装）。此外，无需安装其它组件。
+从V3开始，本案例使用Visual Studio 2012开发，因此，要编译本案例的源代码程序，则需要首先安装Visual Studio 2012。由于数据库采用了SQL Server Express LocalDB，因此，这部分组件也需要正确安装（如果是选择完整安装Visual Studio 2012，则可以忽略LocalDB的安装）。
+另外，Byteart Retail提供了两种事件总线（Event Bus）的实现：一种是面向事件聚合器（Event Aggregator）的，它将把所获得的事件通过聚合器派发到一个或多个事件处理器上；另一种是面向微软MSMQ的，它将把所获得的事件直接派发到MSMQ队列中，如果采用这种事件总线，则需要在机器上安装和配置MSMQ组件，并确保新建的队列是事务型队列。
+此外，无需安装其它组件。
 
 编译运行
 --------
-将下载的ByteartRetail_V3.zip文件解压到一个本地的磁盘目录下，然后在Microsoft Visual Studio 2012中打开ByteartRetail.sln文件，再将ByteartRetail.Web项目设置为启动项目后，直接按F5（或者Debug –> Start Debugging菜单项）运行本案例即可。注意：
+克隆源代码资源库，或者直接下载zip压缩包，然后在Microsoft Visual Studio 2012中打开ByteartRetail.sln文件，再将ByteartRetail.Web项目设置为启动项目后，直接按F5（或者Debug –> Start Debugging菜单项）运行本案例即可。注意：
 - 如果不打算以Debug的方式启动本案例，那就需要首先展开ByteartRetail.Services项目，任选其中一个.svc的服务文件（比如UserService.svc）然后点击右键选择View In Browser菜单项，以便启动服务端的ASP.NET Development Server；最后再直接启动ByteartRetail.Web项目
 - 由于Byteart Retail V3的数据库采用的是SQL Server 2012 Express LocalDB（默认实例），在程序连接LocalDB数据库时，LocalDB需要创建/初始化数据库实例，因此在首次启动时有可能会出现数据库连接超时的异常，如果碰到这类问题，则请稍等片刻然后再重试
 - 如果以上述第一点的方式运行ByteartRetail.Web项目并出现与WCF绑定相关的错误时，这表示WCF服务并没有完全启动，请重新启动ByteartRetail.Services项目，然后再启动ByteartRetail.Web项目
@@ -64,4 +67,4 @@ ByteartRetail.sln包含以下项目：
 
 总结
 ====
-热烈欢迎爱好Microsoft.NET技术以及领域驱动设计的读者朋友对本案例进行深入讨论。
+热烈欢迎爱好Microsoft.NET技术以及领域驱动设计的读者朋友对本案例进行深入讨论。同时也欢迎访问我的.NET/DDD架构经验分享交流网站：[http://apworks.org](http://apworks.org "Apworks.ORG")
