@@ -5,6 +5,9 @@ using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories;
 using ByteartRetail.Domain.Services;
+using ByteartRetail.Events;
+using ByteartRetail.Events.Bus;
+using ByteartRetail.Infrastructure.Transactions;
 using ByteartRetail.ServiceContracts;
 using System;
 using System.Collections.Generic;
@@ -25,6 +28,7 @@ namespace ByteartRetail.Application.Implementation
         private readonly IUserRepository userRepository;
         private readonly ISalesOrderRepository salesOrderRepository;
         private readonly IDomainService domainService;
+        private readonly IEventBus bus;
         #endregion
 
         #region Ctor
@@ -44,8 +48,7 @@ namespace ByteartRetail.Application.Implementation
             IUserRepository customerRepository,
             ISalesOrderRepository salesOrderRepository,
             IDomainService domainService,
-            IDomainEventHandler<DispatchOrderEvent>[] orderDispatchedEventHandlers,
-            IDomainEventHandler<ConfirmOrderEvent>[] orderConfirmedEventHandlers)
+            IEventBus bus)
             :base(context)
         {
             this.shoppingCartRepository = shoppingCartRepository;
@@ -54,15 +57,7 @@ namespace ByteartRetail.Application.Implementation
             this.userRepository = customerRepository;
             this.salesOrderRepository = salesOrderRepository;
             this.domainService = domainService;
-        }
-        #endregion
-
-        #region Protected Methods
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-            }
+            this.bus = bus;
         }
         #endregion
 
@@ -172,18 +167,32 @@ namespace ByteartRetail.Application.Implementation
         /// <param name="orderID">需要被确认的销售订单的全局唯一标识。</param>
         public void Confirm(Guid orderID)
         {
-            var salesOrder = salesOrderRepository.GetByKey(orderID);
-            salesOrder.Confirm();
-            salesOrderRepository.Update(salesOrder);
-            Context.Commit();
+            using (ITransactionCoordinator coordinator = TransactionCoordinatorFactory.Create(Context, bus))
+            {
+                var salesOrder = salesOrderRepository.GetByKey(orderID);
+                salesOrder.Confirm();
+                salesOrderRepository.Update(salesOrder);
+                Context.Commit();
+                OrderConfirmedEvent evnt = new OrderConfirmedEvent(salesOrder.User.Email, salesOrder.ID, salesOrder.DateDelivered.Value);
+                bus.Publish(evnt);
+                bus.Commit();
+                coordinator.Commit();
+            }
         }
 
         public void Dispatch(Guid orderID)
         {
-            var salesOrder = salesOrderRepository.GetByKey(orderID);
-            salesOrder.Dispatch();
-            salesOrderRepository.Update(salesOrder);
-            Context.Commit();
+            using (ITransactionCoordinator coordinator = TransactionCoordinatorFactory.Create(Context, bus))
+            {
+                var salesOrder = salesOrderRepository.GetByKey(orderID);
+                salesOrder.Dispatch();
+                salesOrderRepository.Update(salesOrder);
+                Context.Commit();
+                OrderDispatchedEvent evnt = new OrderDispatchedEvent(salesOrder.User.Email, salesOrder.ID, salesOrder.DateDispatched.Value);
+                bus.Publish(evnt);
+                bus.Commit();
+                coordinator.Commit();
+            }
         }
 
         public SalesOrderDataObjectList GetSalesOrdersForUser(Guid userID)

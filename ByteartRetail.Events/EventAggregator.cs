@@ -12,6 +12,20 @@ namespace ByteartRetail.Events
         private readonly object sync = new object();
         private readonly Dictionary<Type, List<object>> eventHandlers = new Dictionary<Type, List<object>>();
         private readonly MethodInfo registerEventHandlerMethod;
+        private readonly Func<object, object, bool> eventHandlerEquals = (o1, o2) =>
+            {
+                var o1Type = o1.GetType();
+                var o2Type = o2.GetType();
+                if (o1Type.IsGenericType &&
+                    o1Type.GetGenericTypeDefinition() == typeof(ActionDelegatedEventHandler<>) &&
+                    o2Type.IsGenericType &&
+                    o2Type.GetGenericTypeDefinition() == typeof(ActionDelegatedEventHandler<>))
+                    return o1.Equals(o2);
+                return o1Type == o2Type;
+            }; // checks if the two event handlers are equal. if the event handler is an action-delegated, just simply
+        // compare the two with the object.Equals override (since it was overriden by comparing the two delegates. Otherwise,
+        // the type of the event handler will be used because we don't need to register the same type of the event handler
+        // more than once for each specific event.
 
         public EventAggregator()
         {
@@ -56,7 +70,7 @@ namespace ByteartRetail.Events
                     var handlers = eventHandlers[eventType];
                     if (handlers != null)
                     {
-                        if (!handlers.Exists(deh => deh.Equals(eventHandler)))
+                        if (!handlers.Exists(deh => eventHandlerEquals(deh, eventHandler)))
                             handlers.Add(eventHandler);
                     }
                     else
@@ -114,9 +128,9 @@ namespace ByteartRetail.Events
                 {
                     var handlers = eventHandlers[eventType];
                     if (handlers != null &&
-                        handlers.Exists(deh => deh.Equals(eventHandler)))
+                        handlers.Exists(deh => eventHandlerEquals(deh, eventHandler)))
                     {
-                        var handlerToRemove = handlers.First(deh => deh.Equals(eventHandler));
+                        var handlerToRemove = handlers.First(deh => eventHandlerEquals(deh, eventHandler));
                         handlers.Remove(handlerToRemove);
                     }
                 }

@@ -59,6 +59,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,6 +88,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocator.cs" />
     <Compile Include="Communication\ServiceProxy.cs" />
+    <Compile Include="Transactions\DistributedTransactionCoordinator.cs" />
+    <Compile Include="Transactions\ITransactionCoordinator.cs" />
+    <Compile Include="Transactions\SuppressedTransactionCoordinator.cs" />
+    <Compile Include="Transactions\TransactionCoordinatorFactory.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WcfPerRequestLifetimeManager.cs" />
   </ItemGroup>

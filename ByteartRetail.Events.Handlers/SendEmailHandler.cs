@@ -8,6 +8,7 @@ namespace ByteartRetail.Events.Handlers
     /// <summary>
     /// 表示向外发送邮件的事件处理器。
     /// </summary>
+    [HandlesAsynchronously]
     public class SendEmailHandler : IEventHandler<OrderDispatchedEvent>, IEventHandler<OrderConfirmedEvent>
     {
         public SendEmailHandler()
@@ -62,5 +63,19 @@ namespace ByteartRetail.Events.Handlers
         }
 
         #endregion
+
+        //public override bool Equals(object obj)
+        //{
+        //    if (ReferenceEquals(this, obj))
+        //        return true;
+        //    if (obj == null)
+        //        return false;
+        //    return this.GetType() == obj.GetType();
+        //}
+
+        //public override int GetHashCode()
+        //{
+        //    return this.GetType().GetHashCode();
+        //}
     }
 }

@@ -600,3 +600,24 @@ System.ArgumentException: Cannot bind to the target method because its signature
 System.NullReferenceException: Object reference not set to an instance of an object.
    at ByteartRetail.Application.Implementation.UserServiceImpl.GetSalesOrders(String userName) in c:\Users\chenqiny\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\UserServiceImpl.cs:line 444
    at DynamicModule.ns.Wrapped_IUserService_a41cb7bf55024211ab42f63088da916a.<GetSalesOrders_DelegateImplementation>__18(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 10:29:23,650 [11] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Events.EventAggregator.Publish[TEvent](TEvent evnt) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\EventAggregator.cs:line 227
+   at ByteartRetail.Events.Bus.EventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\EventBus.cs:line 73
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_e509b0f8bd97425b86ffed4c994198e7.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 10:32:08,265 [12] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Events.EventAggregator.Publish[TEvent](TEvent evnt) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\EventAggregator.cs:line 227
+   at ByteartRetail.Events.Bus.EventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\EventBus.cs:line 73
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_5a620bf2a0dd40b283b8024562eed057.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-04-29 10:40:28,772 [11] ERROR ByteartRetail.Logger - Exception caught
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ByteartRetail.Events.EventAggregator.Publish[TEvent](TEvent evnt) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\EventAggregator.cs:line 227
+   at ByteartRetail.Events.Bus.EventBus.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Events\Bus\EventBus.cs:line 75
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_b80b18cbedb444e6a8ccadfe206f6c5d.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

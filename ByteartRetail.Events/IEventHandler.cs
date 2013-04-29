@@ -5,7 +5,7 @@ namespace ByteartRetail.Events
     /// 表示实现该接口的类型为事件处理器。
     /// </summary>
     /// <typeparam name="TEvent">事件的类型。</typeparam>
-    public interface IEventHandler<TEvent>
+    public interface IEventHandler<in TEvent>
         where TEvent : IEvent
     {
         #region Methods

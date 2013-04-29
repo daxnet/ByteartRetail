@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionDelegatedEventHandler.cs" />
+    <Compile Include="Bus\EventBus.cs" />
     <Compile Include="Bus\IBus.cs" />
     <Compile Include="Bus\IEventBus.cs" />
     <Compile Include="Event.cs" />

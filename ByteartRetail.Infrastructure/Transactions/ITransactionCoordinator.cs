@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ByteartRetail.Events.Bus
+namespace ByteartRetail.Infrastructure.Transactions
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public interface IEventBus : IBus
+    public interface ITransactionCoordinator : IUnitOfWork, IDisposable
     {
     }
 }
