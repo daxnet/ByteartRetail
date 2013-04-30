@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7893b1b9-3095-4c56-9aa6-32ffac5a7ab0" name="TransactionCoordinator" linkedPackageId="105b0f28-7ef3-49e3-9928-7d40ec29737b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="8ccc85bc-54e8-45f1-aa7e-4b77ed424ef5">
+      <profileInstance Id="d52f12e4-ebf0-4f07-a08d-9600daef59a4" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="45414c6f-efe3-4d1b-8843-4384ca888564">
+      <profileInstance Id="6835e7a1-c04b-4b11-8960-cb83e766d765" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="0f41d3fe-fe25-4d28-b5ce-31285aa65514" name="ITransactionCoordinator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="38a27963-b80d-4a65-a7b4-d933b65f8c49" />
+        <generalsInternal>
+          <generalization Id="c870c6f7-4a53-4af2-82f9-993f26cd474d" isSubstitutable="false">
+            <interfaceMoniker Id="8bdbc3d8-bae6-4bf0-a2d1-68e1ca578cdf" LastKnownName="IUnitOfWork" />
+            <elementDefinition Id="127953d1-a6c8-4494-9117-4fc6f6a75711" />
+          </generalization>
+          <generalization Id="0400367a-b02e-45f5-81d8-5c643e681525" isSubstitutable="false">
+            <interfaceMoniker Id="f6cd5186-3e27-41ff-9657-565ba9ef0fca" LastKnownName="IDisposable" />
+            <elementDefinition Id="45a32740-7cd1-4e6d-b6bf-9431462557c4" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="8bdbc3d8-bae6-4bf0-a2d1-68e1ca578cdf" name="IUnitOfWork" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33eeb82e-af97-4948-976a-7644e6cd2903" />
+        <ownedAttributes>
+          <property Id="6d0f312f-1bfa-4bb4-8b7a-93c5108bccb1" name="DistributedTransactionSupported" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5bad9646-6c9a-4a1c-8307-4e43358250b0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cf579426-8589-4f09-8bd2-b3dac23a9fe2" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="558fdee8-c801-4583-9eb8-c1c950b107ab" name="Committed" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bdbdace3-0641-440c-861a-24d38759bd64" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cf579426-8589-4f09-8bd2-b3dac23a9fe2" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="5ceb5a37-c93d-40ad-91f2-6ca3a3b622e5" name="Commit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d90507b9-ae24-40c6-9a3d-a792fa4147dc" />
+          </operation>
+          <operation Id="e46e9c63-93d0-4c0e-9336-ba428b95fd83" name="Rollback" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c99fc57f-a568-41e0-bf2a-6915d72cfaa0" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="cf579426-8589-4f09-8bd2-b3dac23a9fe2" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f6cd5186-3e27-41ff-9657-565ba9ef0fca" name="IDisposable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6f3fb2c7-abf9-4510-8b76-b4cafd8ab963" />
+        <ownedOperations>
+          <operation Id="d9c4d153-ce00-4019-9877-3095371839fc" name="Dispose" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe7c87ec-feab-4775-b8fe-311197bb7501" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8ffef78a-9bb2-4808-888f-32b7eb13cee7" direction="Return" isUnique="false">
+                  <elementDefinition Id="085a6534-37d7-408c-a952-bd59d0a83e84" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d3809850-1446-4ba1-9fa4-7b3c932cab99" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="d3809850-1446-4ba1-9fa4-7b3c932cab99" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="a0a13773-df4b-4b58-89b4-1c01072b66cd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3257dc49-ce05-4f4a-a541-2ed0f4c1eabe" name="TransactionCoordinator" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="15f0a58d-70ce-4ecc-9648-8efabc2518e0" />
+        <suppliersInternal>
+          <interfaceRealization Id="ac206d0b-e316-4942-96e4-33b11d44e42c">
+            <interfaceMoniker Id="0f41d3fe-fe25-4d28-b5ce-31285aa65514" LastKnownName="ITransactionCoordinator" />
+            <elementDefinition Id="b0841c16-3e76-4bcf-8942-ebb8f1be328f" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="e31d6e5a-33a2-46e9-a0f0-f9b9483586e6" name="Commit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6d96d578-655b-4795-9170-895611479ce8" />
+          </operation>
+          <operation Id="9a831202-6527-46fd-a738-004df49b7414" name="Rollback" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef85f36d-5950-47ba-a0db-169e443d0806" />
+          </operation>
+          <operation Id="8b10ccbc-98e0-4c46-91f6-fed5ba5bcb02" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73015d6f-c5be-4ad5-ac03-9f4a7ed82d74" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d8d09780-d390-44e3-a0aa-0672a41fd380" direction="Return" isUnique="false">
+                  <elementDefinition Id="0ab4f670-d274-491d-9c2b-d0c09a6b118c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d3809850-1446-4ba1-9fa4-7b3c932cab99" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4e057416-6c3e-4654-9aaa-45512706de14" name="DistributedTransactionCoordinator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="196c0a4f-a9de-45a4-b1c6-f8a9f408417c" />
+        <generalsInternal>
+          <generalization Id="8864333e-d266-444d-90d5-900850df9a5d" isSubstitutable="false">
+            <classMoniker Id="3257dc49-ce05-4f4a-a541-2ed0f4c1eabe" LastKnownName="TransactionCoordinator" />
+            <elementDefinition Id="5db44fce-b9c2-4cf5-b461-cf3b737c56d8" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="144436d7-bbf9-4caa-a652-f06078ec3417" name="Commit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="613d4751-918a-45b7-9bbe-1667ff54e651" />
+          </operation>
+          <operation Id="03b52a51-3120-4136-83ba-7778e05f1aed" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5c98c94c-29cc-4ec5-a975-cacac3efd7d5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f9661489-b57b-4d23-822b-d306183eebd8" direction="Return" isUnique="false">
+                  <elementDefinition Id="c4f8d781-dbef-4ffb-a4d6-fbb29b2ad706" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d3809850-1446-4ba1-9fa4-7b3c932cab99" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1f06fc2b-fc1f-45d0-b0ca-1aae8f37494d" name="SuppressedTransactionCoordinator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="982ae4fe-faf5-4737-9e9a-40d73a710348" />
+        <generalsInternal>
+          <generalization Id="237edae0-d368-408b-9cce-05900305a370" isSubstitutable="false">
+            <classMoniker Id="3257dc49-ce05-4f4a-a541-2ed0f4c1eabe" LastKnownName="TransactionCoordinator" />
+            <elementDefinition Id="9d893153-1b17-45e8-9d20-3a43197d992d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fe170db6-5ac3-45c6-bdbd-6d70adfae63d" name="TransactionCoordinatorFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93c43ada-b507-48da-9e24-8828d1c88186" />
+        <suppliersInternal>
+          <dependency Id="d38ee23c-7edc-4595-bb11-a0f77ec17daa">
+            <interfaceMoniker Id="0f41d3fe-fe25-4d28-b5ce-31285aa65514" LastKnownName="ITransactionCoordinator" />
+            <elementDefinition Id="63d914ea-e1a9-4e75-be22-c896a417db56" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="7a184338-0f1d-4280-8154-c4fffaee3411" name="Create" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c9a3818b-2d85-4c7b-972a-04af32807218" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5ee49287-9bc1-4184-8583-4ee1199ccab8" name="params IUnitOfWork[]" direction="In" isUnique="false">
+                  <elementDefinition Id="edd82927-ef28-40b3-9e67-3235d4eee18c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c9ca4424-4bb0-44d0-a4c7-37fe9178b4e9" direction="Return" isUnique="false">
+                  <elementDefinition Id="4084517c-1d0c-4bb4-8fef-920a91306a12" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7684b60b-9d49-4141-9ccf-f0d0aa67daa1" LastKnownName="ITransactionCoordinator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="7684b60b-9d49-4141-9ccf-f0d0aa67daa1" name="ITransactionCoordinator" isAbstract="false" isLeaf="false" cachedFullName="ByteartRetail.Design::ITransactionCoordinator">
+        <elementDefinition Id="38a27963-b80d-4a65-a7b4-d933b65f8c49" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="105b0f28-7ef3-49e3-9928-7d40ec29737b" name="ByteartRetail.Design">
+    <elementDefinition Id="25dba410-6ab1-4b39-8acc-3689cd1ff95b" />
+  </package>
+</logicalClassDesignerModel>
