@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ByteartRetail.Domain.Model;
+﻿using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories.Specifications;
-using ByteartRetail.Domain.Repositories.EntityFramework;
 using ByteartRetail.Domain.Specifications;
+using System.Collections.Generic;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.EntityFramework
 {
     public class ShoppingCartItemRepository : EntityFrameworkRepository<ShoppingCartItem>, IShoppingCartItemRepository
     {

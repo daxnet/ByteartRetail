@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ByteartRetail.Domain.Model;
+﻿using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories.Specifications;
-using ByteartRetail.Domain.Repositories.EntityFramework;
+using System;
+using System.Collections.Generic;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.MongoDB
 {
-    public class SalesOrderRepository : EntityFrameworkRepository<SalesOrder>, ISalesOrderRepository
+    public class SalesOrderRepository : MongoDBRepository<SalesOrder>, ISalesOrderRepository
     {
         public SalesOrderRepository(IRepositoryContext context)
             : base(context)

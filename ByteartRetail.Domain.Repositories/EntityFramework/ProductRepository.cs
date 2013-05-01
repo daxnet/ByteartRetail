@@ -1,11 +1,8 @@
 ﻿using ByteartRetail.Domain.Model;
-using ByteartRetail.Domain.Repositories.EntityFramework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.EntityFramework
 {
     /// <summary>
     /// 表示Product仓储的一个具体实现。

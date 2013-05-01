@@ -3,6 +3,7 @@ using ByteartRetail.Domain.Events;
 using ByteartRetail.Domain.Events.Handlers;
 using ByteartRetail.Domain.Model;
 using ByteartRetail.Domain.Repositories.EntityFramework;
+using ByteartRetail.Domain.Repositories.MongoDB;
 using ByteartRetail.Infrastructure;
 using System;
 
@@ -14,6 +15,7 @@ namespace ByteartRetail.Services
         protected void Application_Start(object sender, EventArgs e)
         {
             ByteartRetailDbContextInitailizer.Initialize();
+            MongoDBBootstrapper.Bootstrap();
             ApplicationService.Initialize();
             
             log4net.Config.XmlConfigurator.Configure();

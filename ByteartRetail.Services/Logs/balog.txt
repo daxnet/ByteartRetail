@@ -699,3 +699,105 @@ System.Exception: Exception of type 'System.Exception' was thrown.
    at ByteartRetail.Infrastructure.Transactions.TransactionCoordinator.Commit() in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Infrastructure\Transactions\TransactionCoordinator.cs:line 43
    at ByteartRetail.Application.Implementation.OrderServiceImpl.Dispatch(Guid orderID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 186
    at DynamicModule.ns.Wrapped_IOrderService_b642c4f8ecce401ab681ebf43b4da749.<Dispatch_DelegateImplementation>__7(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:31:19,925 [20] ERROR ByteartRetail.Logger - Exception caught
+System.IO.FileFormatException: Element '_id' does not match any field or property of class ByteartRetail.Domain.Model.Product.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.ProductRepository.GetFeaturedProducts(Int32 count) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\ProductRepository.cs:line 30
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetFeaturedProducts(Int32 count) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 330
+   at DynamicModule.ns.Wrapped_IProductService_c516469587ed4ea681161174aceb3b51.<GetFeaturedProducts_DelegateImplementation>__15(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:41:18,695 [11] ERROR ByteartRetail.Logger - Exception caught
+System.IO.FileFormatException: Element '_entityWrapper' does not match any field or property of class ByteartRetail.Domain.Model.ShoppingCart.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDB.Driver.Linq.SelectQuery.<TranslateFirstOrSingle>b__b(IEnumerable source)
+   at MongoDB.Driver.Linq.SelectQuery.Execute()
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.MongoDBRepository`1.DoFind(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\MongoDBRepository.cs:line 246
+   at ByteartRetail.Domain.Repositories.Repository`1.Find(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 537
+   at ByteartRetail.Domain.Repositories.MongoDB.ShoppingCartRepository.FindShoppingCartByUser(User user) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\ShoppingCartRepository.cs:line 18
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 68
+   at DynamicModule.ns.Wrapped_IOrderService_433de782c8db41d69bb8378d1b09c8ab.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:44:05,489 [6] ERROR ByteartRetail.Logger - Exception caught
+System.IO.FileFormatException: Element '_entityWrapper' does not match any field or property of class ByteartRetail.Domain.Model.ShoppingCart.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDB.Driver.Linq.SelectQuery.<TranslateFirstOrSingle>b__b(IEnumerable source)
+   at MongoDB.Driver.Linq.SelectQuery.Execute()
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.MongoDBRepository`1.DoFind(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\MongoDBRepository.cs:line 246
+   at ByteartRetail.Domain.Repositories.Repository`1.Find(ISpecification`1 specification) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 537
+   at ByteartRetail.Domain.Repositories.MongoDB.ShoppingCartRepository.FindShoppingCartByUser(User user) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\ShoppingCartRepository.cs:line 18
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetShoppingCartItemCount(Guid userID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 68
+   at DynamicModule.ns.Wrapped_IOrderService_e6372a13cde644e58f66c26584addeb5.<GetShoppingCartItemCount_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:45:23,466 [11] ERROR ByteartRetail.Logger - Exception caught
+System.IO.FileFormatException: Element '_entityWrapper' does not match any field or property of class ByteartRetail.Domain.Model.SalesOrder.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.MongoDBRepository`1.DoFindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\MongoDBRepository.cs:line 138
+   at ByteartRetail.Domain.Repositories.Repository`1.FindAll(ISpecification`1 specification, Expression`1 sortPredicate, SortOrder sortOrder) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain\Repositories\Repository.cs:line 499
+   at ByteartRetail.Domain.Repositories.MongoDB.SalesOrderRepository.FindSalesOrdersByUser(User user) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\SalesOrderRepository.cs:line 18
+   at ByteartRetail.Application.Implementation.OrderServiceImpl.GetSalesOrdersForUser(Guid userID) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\OrderServiceImpl.cs:line 193
+   at DynamicModule.ns.Wrapped_IOrderService_9e8d4f6cf305416dbd1ba1098d69ba0e.<GetSalesOrdersForUser_DelegateImplementation>__8(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:51:05,117 [11] ERROR ByteartRetail.Logger - Exception caught
+System.ArgumentException: Unsupported where clause: System.Collections.Generic.List`1[ByteartRetail.Domain.Model.Categorization].Exists((Categorization q) => (q.ProductID == p.ID)).
+   at MongoDB.Driver.Linq.PredicateTranslator.BuildQuery(Expression expression)
+   at MongoDB.Driver.Linq.SelectQuery.BuildQuery()
+   at MongoDB.Driver.Linq.SelectQuery.Execute()
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\CategorizationRepository.cs:line 33
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 304
+   at DynamicModule.ns.Wrapped_IProductService_b183f397130a47379af2f5819d54de39.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2013-05-01 11:52:07,726 [6] ERROR ByteartRetail.Logger - Exception caught
+System.NotSupportedException: Unable to determine the serialization information for the expression: System.Collections.Generic.List`1[ByteartRetail.Domain.Model.Categorization].
+   at MongoDB.Driver.Linq.Utils.BsonSerializationInfoFinder.GetSerializationInfo(Expression node, Dictionary`2 serializationInfoCache)
+   at MongoDB.Driver.Linq.Utils.BsonSerializationInfoHelper.GetSerializationInfo(Expression node)
+   at MongoDB.Driver.Linq.PredicateTranslator.BuildAnyQuery(MethodCallExpression methodCallExpression)
+   at MongoDB.Driver.Linq.PredicateTranslator.BuildMethodCallQuery(MethodCallExpression methodCallExpression)
+   at MongoDB.Driver.Linq.PredicateTranslator.BuildQuery(Expression expression)
+   at MongoDB.Driver.Linq.SelectQuery.BuildQuery()
+   at MongoDB.Driver.Linq.SelectQuery.Execute()
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute(Expression expression)
+   at MongoDB.Driver.Linq.MongoQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   at ByteartRetail.Domain.Repositories.MongoDB.CategorizationRepository.GetProductsForCategoryWithPagination(Category category, Int32 pageNumber, Int32 pageSize) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Domain.Repositories\MongoDB\CategorizationRepository.cs:line 33
+   at ByteartRetail.Application.Implementation.ProductServiceImpl.GetProductsForCategoryWithPagination(Guid categoryID, Pagination pagination) in c:\Users\Sunny Chen\Documents\GitHub\ByteartRetail\ByteartRetail.Application\Implementation\ProductServiceImpl.cs:line 304
+   at DynamicModule.ns.Wrapped_IProductService_320d114fc84348579573b852c52686e3.<GetProductsForCategoryWithPagination_DelegateImplementation>__14(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

@@ -40,6 +40,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,8 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategorizationRepository.cs" />
-    <Compile Include="CategoryRepository.cs" />
+    <Compile Include="EntityFramework\CategorizationRepository.cs" />
+    <Compile Include="EntityFramework\CategoryRepository.cs" />
     <Compile Include="EntityFramework\ByteartRetailDbContext.cs" />
     <Compile Include="EntityFramework\ByteartRetailDbContextInitailizer.cs" />
     <Compile Include="EntityFramework\ModelConfigurations\CategorizationTypeConfiguration.cs" />
@@ -60,10 +66,28 @@
     <Compile Include="EntityFramework\ModelConfigurations\RoleTypeConfiguration.cs" />
     <Compile Include="EntityFramework\ModelConfigurations\UserRoleTypeConfiguration.cs" />
     <Compile Include="EntityFramework\SortByExtension.cs" />
-    <Compile Include="ProductRepository.cs" />
-    <Compile Include="RoleRepository.cs" />
+    <Compile Include="EntityFramework\ProductRepository.cs" />
+    <Compile Include="EntityFramework\RoleRepository.cs" />
+    <Compile Include="MongoDB\CategorizationRepository.cs" />
+    <Compile Include="MongoDB\CategoryRepository.cs" />
+    <Compile Include="MongoDB\GuidIDGeneratorConvention.cs" />
+    <Compile Include="MongoDB\IMongoDBRepositoryContext.cs" />
+    <Compile Include="MongoDB\IMongoDBRepositoryContextSettings.cs" />
+    <Compile Include="MongoDB\MongoDBBootstrapper.cs" />
+    <Compile Include="MongoDB\MongoDBRepository.cs" />
+    <Compile Include="MongoDB\MongoDBRepositoryContext.cs" />
+    <Compile Include="MongoDB\MongoDBRepositoryContextSettings.cs" />
+    <Compile Include="MongoDB\ProductRepository.cs" />
+    <Compile Include="MongoDB\RoleRepository.cs" />
+    <Compile Include="MongoDB\SalesOrderRepository.cs" />
+    <Compile Include="MongoDB\ShoppingCartItemRepository.cs" />
+    <Compile Include="MongoDB\ShoppingCartRepository.cs" />
+    <Compile Include="MongoDB\SortExpressionHelper.cs" />
+    <Compile Include="MongoDB\UserLocalDateTimeConvention.cs" />
+    <Compile Include="MongoDB\UserRepository.cs" />
+    <Compile Include="MongoDB\UserRoleRepository.cs" />
     <Compile Include="Specifications\UserRolesSpecification.cs" />
-    <Compile Include="UserRepository.cs" />
+    <Compile Include="EntityFramework\UserRepository.cs" />
     <Compile Include="EntityFramework\EntityFrameworkRepository.cs" />
     <Compile Include="EntityFramework\EntityFrameworkRepositoryContext.cs" />
     <Compile Include="EntityFramework\IEntityFrameworkRepositoryContext.cs" />
@@ -74,9 +98,9 @@
     <Compile Include="EntityFramework\ModelConfigurations\ShoppingCartItemTypeConfiguration.cs" />
     <Compile Include="EntityFramework\ModelConfigurations\ShoppingCartTypeConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesOrderRepository.cs" />
-    <Compile Include="ShoppingCartItemRepository.cs" />
-    <Compile Include="ShoppingCartRepository.cs" />
+    <Compile Include="EntityFramework\SalesOrderRepository.cs" />
+    <Compile Include="EntityFramework\ShoppingCartItemRepository.cs" />
+    <Compile Include="EntityFramework\ShoppingCartRepository.cs" />
     <Compile Include="Specifications\UserEmailEqualsSpecification.cs" />
     <Compile Include="Specifications\UserPasswordEqualsSpecification.cs" />
     <Compile Include="Specifications\UserStringEqualsSpecification.cs" />
@@ -86,7 +110,7 @@
     <Compile Include="Specifications\ShoppingCartBelongsToCustomerSpecification.cs" />
     <Compile Include="Specifications\ShoppingCartItemBelongsToShoppingCartSpecification.cs" />
     <Compile Include="Specifications\ShoppingCartItemHasProductSpecification.cs" />
-    <Compile Include="UserRoleRepository.cs" />
+    <Compile Include="EntityFramework\UserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ByteartRetail.Domain\ByteartRetail.Domain.csproj">
@@ -108,6 +132,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

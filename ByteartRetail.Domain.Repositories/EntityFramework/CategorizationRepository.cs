@@ -1,11 +1,10 @@
 ﻿using ByteartRetail.Domain.Model;
-using ByteartRetail.Domain.Repositories.EntityFramework;
 using ByteartRetail.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.EntityFramework
 {
     public class CategorizationRepository : EntityFrameworkRepository<Categorization>, ICategorizationRepository
     {

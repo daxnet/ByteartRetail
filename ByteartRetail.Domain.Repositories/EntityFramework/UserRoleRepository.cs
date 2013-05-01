@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ByteartRetail.Domain.Model;
+using System;
 using System.Linq;
-using System.Text;
-using ByteartRetail.Domain.Model;
-using ByteartRetail.Domain.Repositories.EntityFramework;
-using ByteartRetail.Domain.Repositories.Specifications;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.EntityFramework
 {
     public class UserRoleRepository : EntityFrameworkRepository<UserRole>, IUserRoleRepository
     {

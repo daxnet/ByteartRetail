@@ -1,9 +1,6 @@
 ﻿using ByteartRetail.Domain.Model;
-using ByteartRetail.Domain.Repositories.EntityFramework;
-using System;
-using System.Collections.Generic;
 
-namespace ByteartRetail.Domain.Repositories
+namespace ByteartRetail.Domain.Repositories.EntityFramework
 {
     public class RoleRepository : EntityFrameworkRepository<Role>, IRoleRepository
     {
