@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A20A5D
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetail.Services.SelfHosting", "ByteartRetail.Services.SelfHosting\ByteartRetail.Services.SelfHosting.csproj", "{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,16 @@ Global
 		{9E40C476-AF3B-4F23-8CA4-6D96DCFEF745}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9E40C476-AF3B-4F23-8CA4-6D96DCFEF745}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9E40C476-AF3B-4F23-8CA4-6D96DCFEF745}.Release|x86.ActiveCfg = Release|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BFF6DC19-16EB-4634-BF87-DEDAA3B06FFD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -177,7 +189,7 @@ Global
 		{6730377F-D9E5-495B-AD4D-5FB0AA67090E} = {5BCFFA59-F5F9-4801-A06F-38F75CEBB578}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Caching.5.0.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

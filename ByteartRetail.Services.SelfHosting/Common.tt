@@ -1,0 +1,53 @@
+﻿<#@ template  debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
+<#+
+	private string GetTypeName(Type type)
+	{
+		if (!type.IsGenericType)
+		{
+			if (type == typeof(void))
+				return "void";
+			else
+				return type.Name;
+		}
+		string returnTypeGenericTypeName = type.Name.Replace("`1", "");
+		string returnTypeGenericTypeArgumentName = type.GetGenericArguments()[0].Name;
+		return string.Format("{0}<{1}>", returnTypeGenericTypeName, returnTypeGenericTypeArgumentName);
+	}
+	
+	private string GetMethodReturnType(MethodInfo method)
+	{
+		return GetTypeName(method.ReturnType);
+	}
+	
+	private string GetMethodParameterList(MethodInfo method)
+	{
+		ParameterInfo[] parameters = method.GetParameters();
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < parameters.Length; i++)
+		{
+			sb.Append(GetTypeName(parameters[i].ParameterType));
+			sb.Append(" ");
+			sb.Append(parameters[i].Name);
+			if (i != parameters.Length - 1)
+				sb.Append(", ");
+		}
+		return sb.ToString();
+	}
+	
+	private string GetMethodParameterValueList(MethodInfo method)
+	{
+		ParameterInfo[] parameters = method.GetParameters();
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < parameters.Length; i++)
+		{
+			sb.Append(parameters[i].Name);
+			if (i != parameters.Length - 1)
+				sb.Append(", ");
+		}
+		return sb.ToString();
+	}
+#>

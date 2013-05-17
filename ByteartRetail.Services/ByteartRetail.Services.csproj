@@ -201,6 +201,7 @@
       <LastGenOutput>PostbackService.svc.cs</LastGenOutput>
       <CustomToolNamespace>ByteartRetail.Services</CustomToolNamespace>
     </Content>
+    <None Include="Properties\PublishProfiles\LocalFileSystemProfile.pubxml" />
     <None Include="UserService.svc.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UserService.svc.cs</LastGenOutput>

@@ -186,8 +186,16 @@ namespace ByteartRetail.Application
         public static void Initialize()
         {
             Mapper.CreateMap<AddressDataObject, Address>();
-            Mapper.CreateMap<UserDataObject, User>();
-            Mapper.CreateMap<User, UserDataObject>();
+            Mapper.CreateMap<UserDataObject, User>()
+                .ForMember(uMember => uMember.ContactAddress, mceUDO =>
+                    mceUDO.ResolveUsing<AddressResolver>().FromMember(fm => fm.ContactAddress))
+                    .ForMember(uMember => uMember.DeliveryAddress, mceUDO =>
+                        mceUDO.ResolveUsing<AddressResolver>().FromMember(fm => fm.DeliveryAddress));
+            Mapper.CreateMap<User, UserDataObject>()
+                .ForMember(udoMember => udoMember.ContactAddress, mceU =>
+                    mceU.ResolveUsing<InversedAddressResolver>().FromMember(fm => fm.ContactAddress))
+                    .ForMember(udoMember => udoMember.DeliveryAddress, mceU =>
+                        mceU.ResolveUsing<InversedAddressResolver>().FromMember(fm => fm.DeliveryAddress));
             Mapper.CreateMap<RoleDataObject, Role>();
             Mapper.CreateMap<Role, RoleDataObject>();
             Mapper.CreateMap<Address, AddressDataObject>();

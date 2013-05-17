@@ -7,7 +7,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <ProjectView>ProjectFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>ByteartRetailServicesDeployment</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>LocalFileSystemProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
