@@ -10,7 +10,7 @@ Byteart Retail项目简介
 
 Byteart Retail演示体验
 ============
-目前，Byteart Retail已被部署到了Windows Azure，请通过[http://byteartretail.cloudapp.net](http://byteartretail.cloudapp.net "Byteart Retail")访问演示站点。
+目前，Byteart Retail已被部署到了Windows Azure，请通过[http://daxnetsvr.cloudapp.net/ByteartRetailWeb/](http://daxnetsvr.cloudapp.net/ByteartRetailWeb/ "Byteart Retail")访问演示站点。
 
 **郑重声明：在体验的过程中，如需注册新用户，请确保不要用自己的常用密码进行注册，因为为了简化演示和平时的开发调试，Byteart Retail没有对密码进行任何加密处理（数据库明文存储），如果使用自己的常用密码，势必会带来一定的安全隐患。由此导致的密码泄露我本人可不负责哦！另外，我偷懒了，部署的时候直接用的SqlLocalDB，而不是SQL Express。众所周知SqlLocalDB是一个开发版，因此在体验的过程中万一遇到了数据库挂掉的错误，还恳请大家多多包涵！**
 
