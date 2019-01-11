@@ -84,4 +84,4 @@ ByteartRetail.sln包含以下项目：
 
 总结
 ====
-热烈欢迎爱好Microsoft.NET技术以及领域驱动设计的读者朋友对本案例进行深入讨论。同时也欢迎访问我的.NET/DDD架构经验分享交流网站：[http://apworks.org](http://apworks.org "Apworks.ORG")
+热烈欢迎爱好Microsoft.NET技术以及领域驱动设计的读者朋友对本案例进行深入讨论。同时也欢迎访问我的.NET/DDD架构经验分享交流网站：[http://sunnycoding.cn](http://sunnycoding.cn "sunnycoding.cn")
